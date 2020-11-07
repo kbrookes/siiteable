@@ -1,0 +1,4 @@
+{
+  "editor.default_syntax" : "php",
+  "php.validate" : "onSave"
+}

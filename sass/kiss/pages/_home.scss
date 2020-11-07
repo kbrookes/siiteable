@@ -1,0 +1,129 @@
+.page-template-page-home {
+	.site-content {
+		background-color: $brand-secondary;
+		max-width: 100%;
+		.content-area {
+			@include make-container();
+		}
+	}
+	.hero-header {
+		&__wrap {
+			&:before {
+				@include hero-primary(0.7);
+			}
+			//min-height: 750px;
+			@include media-breakpoint-up(xs){
+				//background-position: 66% top;
+				//padding-bottom: 40px;
+				min-height: 580px;
+			}
+			@include media-breakpoint-up(sm) {
+				//padding-bottom: 80px;
+			}
+			@include media-breakpoint-up(md){
+				//background-position: center center;
+				//padding-bottom: 0;
+				//min-height: 750px;
+			}
+			.container {
+				position: relative;
+				align-items: center;
+			}
+		}
+		&__separator {
+			&.has-angle {
+				@include angled-edge('inside bottom', 'upper right', $brand-secondary);
+			}
+			.fill-body {
+				fill: $brand-secondary;
+			}
+			.fill-border {
+				fill: $white;
+			}
+		}
+	}
+	.blog-post {
+		&__featured {
+			position: relative;
+			@include angled-edge('inside top', 'lower right', $brand-secondary);
+			.blog-post__wrap {
+				margin-top: 75px;
+			}
+		}
+		&__latest {
+			padding-bottom: 90px;
+		}
+	}
+	.testimonial {
+		background: $brand-primary;
+		padding-top: 0;
+		padding-bottom: 60px;
+		@include angled-edge('outside top', 'upper right', $brand-primary);
+		&-quote {
+			top: -90px;
+			z-index: 2;
+			svg.fill-body {
+				fill: $brand-secondary;
+			}
+		}
+		blockquote {
+			margin-top: 0;
+			p {
+				color: $white;
+			}
+			footer {
+				color: $white;
+				cite {
+					color: $background-light;
+				}
+			}
+		}
+	}
+	.logos {
+		@include angled-edge('outside top', 'upper left', $white);
+		&::before {
+			top: -130px;
+		}
+		h2 {
+			color: $brand-primary;
+		}
+		&-wrap__inner {
+			& > .row {
+				justify-content: center;
+			}
+			&-image {
+				align-items: center;
+				display: flex;
+				height: 100%;
+				justify-content: center;
+				width: 100%;
+			}
+		}
+	}
+	.site-footer {
+		margin-top: 0;
+	}
+}
+
+.home-article {
+	&__content {
+		&-inner {
+			background-color: $white;
+			border-radius: 4px;
+			@include media-breakpoint-up(xs) {
+				border-radius: 0 0 4px 4px;
+				margin-left: 0px;
+				margin-top: -10px;
+				padding: 15px;
+			}
+			@include media-breakpoint-up(sm) {
+				padding: 30px;
+			}
+			@include media-breakpoint-up(md) {
+				border-radius: 4px;
+				margin-left: -60px;
+				margin-top: 0;
+			}
+		}
+	}
+}

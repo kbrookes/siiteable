@@ -1,0 +1,124 @@
+#main-nav {
+	transition: 0.3s ease all;
+	.navbar-nav {
+		.nav-link {
+			font-weight: bold;
+			font-family: $headings-font-family;
+			transition: 0.3s ease all;
+			text-transform: uppercase;
+			font-size: 0.9rem;
+		}	
+	}
+	/// CONTROL NAV BACKGROUND TRANSPARENCY
+	&.headerTransparent {
+		&.notScrolled {
+			.hasHero & {
+				background-color: transparent !important;
+			}
+			.hasHero.home & {
+			}
+		}
+		&.navScrolled {
+			.hasHero & {
+			}
+		}
+	}
+	.navbar-brand {
+		svg {
+			width: 100%;
+		}
+	}
+	//// CONTROL SIZING & COLOUR OF LOGO
+	&.notScrolled {
+		.navbar-brand {
+			transition: 0.3s ease all;
+			@include media-breakpoint-up(xs){
+				max-width: 200px;	
+			}
+			@include media-breakpoint-up(sm){
+				max-width: 260px;	
+			}
+			@include media-breakpoint-up(md){
+				max-width: 280px;	
+			}
+			@include media-breakpoint-up(lg){
+				max-width: 300px;	
+			}
+			@include media-breakpoint-up(xl){
+				max-width: 320px;	
+			}
+		}
+		.navbar-collapse {
+			transition: 0.3s ease all;
+			&.collapsing,
+			&.show {
+				background-color: $dark;
+				padding: 15px;
+			}
+		}
+	}
+	&.navScrolled {
+		.navbar-brand {
+			max-width: 120px;
+			transition: 0.3s ease all;
+		}
+	}
+	/// MAIN NAVIGATION
+	.navbar-light {
+		.navbar-nav {
+			.nav-link {
+				color: $dark;
+				
+			}
+			.show,
+			.active {
+				> .nav-link {
+					color: rgba($dark, 0.7);
+				}
+			}
+			.nav-link.show,
+			.nav-link.active {
+				color: rgba($dark, 0.7);
+			}
+		}
+	}
+	
+	&.navbar-dark {
+		.navbar-nav {
+			.nav-link {
+				color: $light;
+			}
+			.show,
+			.active {
+				> .nav-link {
+					color: rgba($light, 0.7);
+				}
+			}
+			.nav-link.show,
+			.nav-link.active {
+				color: rgba($light, 0.7);
+			}
+		}
+	}
+	&.bg-dark {
+		.logo-fill {
+			fill: $primary;
+			transition: 0.3s ease all;
+		}
+	}
+	&.bg-primary,
+	&.bg-secondary,
+	&.bg-alternate {
+		.logo-fill {
+			fill: $light;
+			transition: 0.3s ease all;
+		}
+	}
+	&.bg-light,
+	&.bg-white {
+		.logo-fill {
+			fill: $primary;
+			transition: 0.3s ease all;
+		}
+	}
+}

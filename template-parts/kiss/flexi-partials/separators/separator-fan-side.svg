@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 109">
+	<title>separator-transparent-fan-side</title>
+	<g id="Layer_1-2" data-name="Layer 1">
+		<polygon class="separator-fill separator-fill__foreground opacity-25" points="0 109 1920 109 1920 0 0 109"/>
+		<polygon class="separator-fill separator-fill__foreground opacity-50" points="0 109 1920 109 1920 10 0 109"/>
+		<polygon class="separator-fill separator-fill__foreground opacity-75" points="0 109 1920 109 1920 30 0 109"/>
+		<polygon class="separator-fill separator-fill__foreground" points="0 109 1920 109 1920 60 0 109"/>
+	</g>
+</svg>

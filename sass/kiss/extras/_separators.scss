@@ -1,0 +1,152 @@
+/// SVG SEPARATORS
+
+section,
+article {
+	position: relative;
+	z-index: 100;
+	.section-separator {
+		position: absolute;
+		width: 100%;
+		z-index: 101;
+		&__lower {
+			bottom: 0;
+		}
+	}
+}
+
+.hasSeparatorUpper {
+	.hasBgImg,
+	.editable-content__inner,
+	section {
+		//padding-top: 90px;
+	}
+	.section-separator__upper {
+		&.direction-up,
+		&.directionXup {
+			svg {
+				vertical-align: bottom;
+				margin-bottom: -1px;
+			}
+		}
+		&.direction-down,
+		&.directionXdown {
+			svg {
+				vertical-align: top;
+				margin-top: -1px;
+			}
+		}
+		&.directionXup.directionYnone {
+			svg {
+				transform: none;
+			}
+		}
+		&.directionXdown.directionYnone {
+			svg {
+				transform: rotateX(180deg);
+			}
+		}
+		&.directionXup.directionYflip {
+			svg {
+				transform: rotateY(180deg);
+			}
+		}
+		&.directionXdown.directionYflip {
+			svg {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+.hasSeparatorLower {
+	.hasBgImg,
+	.editable-content__inner,
+	section {
+		//padding-bottom: 90px;
+	}
+	.section-separator__lower{
+		&.direction-up,
+		&.directionXup {
+			svg {
+				vertical-align: bottom;
+				margin-bottom: -1px;
+			}
+		}
+		&.direction-down,
+		&.directionXdown {
+			svg {
+				vertical-align: top;
+				margin-top: -1px;
+			}
+		}
+		&.directionXup.directionYnone {
+			svg {
+				transform: none;
+			}
+		}
+		&.directionXdown.directionYnone {
+			svg {
+				transform: rotateX(180deg);
+			}
+		}
+		&.directionXup.directionYflip {
+			svg {
+				transform: rotateY(180deg);
+			}
+		}
+		&.directionXdown.directionYflip {
+			svg {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+
+.flexi-inner {
+	
+}
+
+.separator-fill {
+	fill: $brand-primary;
+	&__foreground {
+		fill: $brand-primary;
+		.fg-primary & {
+			fill: $brand-primary;
+		}
+		.fg-secondary & {
+			fill: $brand-secondary;
+		}
+		.fg-dark & {
+			fill: $background-dark;
+		}
+		.fg-light & {
+			fill: $background-light;
+		}
+		.fg-white & {
+			fill: $white;
+		}
+		.fg-alternate & {
+			fill: $alternate;
+		}
+	}
+	&__background {
+		fill: darken($brand-primary, 20%);
+		.shadow-primary & {
+			fill: $brand-primary;
+		}
+		.shadow-secondary & {
+			fill: $brand-secondary;
+		}
+		.shadow-dark & {
+			fill: $background-dark;
+		}
+		.shadow-light & {
+			fill: $background-light;
+		}
+		.shadow-white & {
+			fill: $white;
+		}
+		.shadow-alternate & {
+			fill: $alternate;
+		}
+	}
+}

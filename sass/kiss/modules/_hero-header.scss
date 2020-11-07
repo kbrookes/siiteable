@@ -1,0 +1,335 @@
+//// HERO HEADER MODULE
+/// For large heros on home pages. 
+/// Requires hero-header.php mod_custom, hero-header module position in the index.php
+/// Use with ModuleStyle None
+
+.hero-header {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	&__wrap {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		display: flex;
+		min-height: 430px;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		@include media-breakpoint-up(xs){
+			min-height: 520px;
+		}
+		@include media-breakpoint-up(sm){
+			min-height: 480px;
+		}
+		@include media-breakpoint-up(md){
+			min-height: 500px;
+		}
+		@include media-breakpoint-up(lg){
+			min-height: 590px;
+		}
+		@include media-breakpoint-up(xl){
+			min-height: 620px;
+		}
+		.container {
+			align-items: flex-end;
+			display: flex;
+			justify-content: flex-start;
+			position: relative;
+		}
+		&-inner {
+			width: 100%;
+			.btn + .btn {
+				margin-left: 15px;
+			}
+		}
+		&.hasOverlay {
+			&:before {
+				content: '';
+				left: 0;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				width: 100%;
+			}
+			&.overlay-primary {
+				&:before {
+					background-color: $brand-primary;
+				}
+			}
+			&.overlay-secondary {
+				&:before {
+					background-color: $brand-secondary;
+				}
+			}
+			&.overlay-dark {
+				&:before {
+					background-color: $background-dark;
+				}
+			}
+			&.overlay-light {
+				&:before {
+					background-color: $background-light;
+				}
+			}
+			&.overlay-white {
+				&:before {
+					background-color: $white;
+				}
+			}
+			&.overlay-alternate {
+				&:before {
+					background-color: $alternate;
+				}
+			}
+			&.overlay-05 {
+				&:before {
+					opacity: .05;
+				}
+			}
+			&.overlay-15 {
+				&:before {
+					opacity: .15;
+				}
+			}
+			&.overlay-25 {
+				&:before {
+					opacity: .25;
+				}
+			}
+			&.overlay-35 {
+				&:before {
+					opacity: .35;
+				}
+			}
+			&.overlay-45 {
+				&:before {
+					opacity: .45;
+				}
+			}
+			&.overlay-50 {
+				&:before {
+					opacity: .50;
+				}
+			}
+			&.overlay-65 {
+				&:before {
+					opacity: .65;
+				}
+			}
+			&.overlay-75 {
+				&:before {
+					opacity: .75;
+				}
+			}
+			&.overlay-85 {
+				&:before {
+					opacity: .85;
+				}
+			}
+			&.overlay-90 {
+				&:before {
+					opacity: .90;
+				}
+			}
+			&.overlay-95 {
+				&:before {
+					opacity: .95;
+				}
+			}
+		}
+		.video-hero & {
+			display: block;
+			min-height: auto;
+			.video-background {
+				position: relative;
+				padding-top: 56.25%;
+				width: 100%;
+				-webkit-transition: 2s opacity ease;
+				transition: 2s opacity ease;
+				opacity: 1;
+				z-index: 100;
+			}
+			.video-foreground,
+			.video-background iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				pointer-events: none;
+			}
+			.container {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				-webkit-transform: translate(-50%, -50%);
+				-ms-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+				z-index: 102;
+			}
+		}
+		.video-hero & {
+			/// SORT OUT Z-INDEX
+			&[class*='overlay'] {
+				&:before {
+					z-index: 101;
+				}
+			}
+		}
+	}
+	&__content {
+		background-color: rgba($dark, 0.5);
+		@include media-breakpoint-up(xs){
+			width: 100%;
+			margin-bottom: 15px;
+			padding: 20px;
+		}
+		@include media-breakpoint-up(sm){
+			width: 85%;
+			margin-bottom: 30px;
+		}
+		@include media-breakpoint-up(md){
+			width: 75%;
+			margin-bottom: 30px;
+			padding: 30px;
+		}
+		@include media-breakpoint-up(lg){
+			width: 65%;
+			margin-bottom: 45px;
+			padding: 40px;
+		}
+		@include media-breakpoint-up(xl){
+			width: 70%;
+			margin-bottom: 60px;
+		}
+	}
+	&__separator {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+		
+	h1 {
+		color: $white;
+		margin: 0 0 0.1em;
+		//text-shadow: 1px 1px 4px $background-dark;
+		@include media-breakpoint-up(xs){
+			margin-bottom: 0.5rem;
+			font-size: 1.1rem;
+		}
+		@include media-breakpoint-up(sm){
+			font-size: 1.8rem;
+			margin-bottom: 0.6rem;
+			.home & {
+				font-size: 1.1rem;;
+			}
+		}
+		@include media-breakpoint-up(lg){
+			font-size: 2.2rem;
+			margin-bottom: 0.8rem;
+			.home & {
+				font-size: 1.5rem;;
+			}
+		}
+		@include media-breakpoint-up(xl){
+			font-size: 2.5rem;
+			margin-bottom: 1rem;
+			.home & {
+				font-size: 2rem;;
+			}
+		}
+	}
+	h2 {
+		color: $white;
+		margin: 0 0 80px;
+		//text-shadow: 1px 1px 4px $background-dark;
+		@include media-breakpoint-up(xs){
+			margin-bottom: 1.2rem;
+			font-size: 1rem;
+		}
+		@include media-breakpoint-up(sm){
+			margin-bottom: 1.4rem;
+			font-size: 1rem;
+		}
+		@include media-breakpoint-up(lg){
+			margin-bottom: 1.5rem;
+			font-size: 1.2rem;
+		}
+		@include media-breakpoint-up(xl){
+			margin-bottom: 1.6rem;
+			font-size: 1.6rem;
+		}
+	}
+	h6 {
+		color: $white;
+		font-family: $font-family-base;
+		font-weight: bold;
+		margin-top: 3rem;
+		@include media-breakpoint-up(xs){
+			font-size: 0.9rem;
+		}
+		@include media-breakpoint-up(sm){
+			font-size: 1rem;
+		}
+		@include media-breakpoint-up(md){
+			font-size: 1.1rem;
+		}
+		@include media-breakpoint-up(lg){
+			font-size: 1.2rem;
+		}
+	}
+	p {
+		color: $white;
+		@include media-breakpoint-up(md){
+			font-size: 1.1rem;
+		}
+		@include media-breakpoint-up(lg){
+			font-size: 1.4rem;
+		}
+		@include media-breakpoint-up(xl){
+			font-size: 1.5rem;
+		}
+	}
+	//// COLOUR ADJUSTMENTS
+	
+	
+	/// ALIGNMENT
+	.content-left {
+		.container {
+			max-width: 1140px;
+			justify-content: flex-start;
+		}
+		.hero-header__wrap-inner {
+			max-width: 50%;
+			text-align: left;
+		}
+	}
+	.content-right {
+		.container {
+			max-width: 1140px;
+			justify-content: flex-end;
+		}
+		.hero-header__wrap-inner {
+			max-width: 50%;
+			text-align: right;
+		}
+	}
+	.content-left,
+	.content-right {
+		.hero-header__wrap-inner {
+			@include media-breakpoint-down(xl) {
+				max-width: 50%;
+			}
+			@include media-breakpoint-down(md) {
+				max-width: 75%;
+			}
+			@include media-breakpoint-down(sm) {
+				max-width: 100%;
+			}
+		}
+	}
+}
+

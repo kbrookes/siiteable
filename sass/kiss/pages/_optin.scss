@@ -1,0 +1,161 @@
+.page-template-page-growth,
+.page-optin-thank-you {
+	.site {
+		padding-top: 0;
+	}
+	.hero-header{
+		&__wrap {
+			.container {
+				display: flex;
+				justify-content: flex-end;
+				//text-align: right;
+			}
+			&-inner {
+				max-width: 760px;
+			}
+			h1 {
+				margin-bottom: 15px;
+			}
+			h2 {
+				margin-bottom: 15px;
+			}
+		}
+	}
+	
+	
+	.site-footer {
+		.site-info {
+			text-align: center;
+		}
+	}
+}
+
+.page-growth {
+	.hero-header {
+		&__wrap {
+			@include media-breakpoint-up(xs){
+				background-position: 18% center;
+				min-height: 560px;
+			}
+			@include media-breakpoint-up(sm){
+				background-position: center center;
+			}
+			.container {
+				@include media-breakpoint-up(md){
+					text-align: left;
+				}
+				@include media-breakpoint-up(lg){
+					//align-items: flex-start;
+					text-align: right;
+				}
+			}
+			&-inner {
+				@include media-breakpoint-up(sm){
+					width: 412px;
+				}
+				@include media-breakpoint-up(md){
+					width: 460px;
+				}
+				@include media-breakpoint-up(lg){
+					width: 510px;
+				}
+				@include media-breakpoint-up(xl){
+					//width: 760px;
+				}
+				.m-b__lg {
+					@include media-breakpoint-up(lg){
+						//margin-bottom: 220px;
+					}
+					@include media-breakpoint-up(xl){
+						//xmargin-bottom: 60px;
+					}
+				}
+			}
+			h1 {
+				@include media-breakpoint-up(xs){
+					//font-size: 1rem;
+					margin-top: 14rem;
+				}
+				@include media-breakpoint-up(sm){
+					//font-size: 1.3rem;
+					margin-top: 3rem;
+				}
+			}
+			h2 {
+				@include media-breakpoint-up(xs){
+					font-size: 1rem;
+				}
+				@include media-breakpoint-up(sm){
+					font-size: 1.3rem;
+				}
+				@include media-breakpoint-up(md){
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+}
+
+.page-optin-thank-you {
+	.hero-header__wrap {
+		.container {
+			justify-content: flex-start;
+			text-align: left;
+		}
+	}
+	.cta-wrap {
+		padding-top: 0;
+	}
+	.list-icons {
+		padding-top: 60px;
+	}
+	.site-footer {
+		margin-top: 0;
+	}
+	.btn-outline-white {
+		background-color: $success;
+		border-color: $success;
+		color: $white;
+		&:hover {
+			background-color: darken($success, 10%);
+			border-color: darken($success, 10%);
+		}
+	}
+}
+
+/// OPTIN FORM
+.pum-theme-421 .pum-container, .pum-theme-optin-formn .pum-container {
+	padding: 0;
+	.pum-title {
+		font-family: $headings-font-family;
+		padding: 45px;
+	}
+	.pum-content {
+		@include angled-edge('outside top', 'upper left', $brand-primary, 50);
+		background-color: $brand-primary;
+		padding: 15px 45px 45px 45px;
+		blockquote {
+			margin-bottom: 30px;
+			p {
+				color: $white;
+				font-family: $headings-font-family;
+				font-size: 1.5rem;
+			}
+			footer {
+				color: $light;
+				font-weight: 300;
+				text-transform: uppercase;
+				cite {
+					color: $white;
+					display: block;
+					font-weight: bold;
+					font-style: normal;
+					text-transform: none;
+				}
+			}
+		}
+		.evf-container {
+			margin-bottom: 0;
+		}
+	}
+}

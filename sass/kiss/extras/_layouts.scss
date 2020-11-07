@@ -1,0 +1,83 @@
+
+
+//// FOOTER
+.footer {
+	&-nav {
+		&__inner {
+			@include media-breakpoint-down(md){
+				margin-bottom: 30px;
+			}
+		}
+		&__logo {
+			padding: 0 10px;
+			&:first-child {
+				padding-bottom: 30px;
+			}
+		}
+		&__address {
+			span {
+				//display: block;
+			}
+		}
+		&__row {
+			display: flex;
+			margin-bottom: 10px;
+		}
+		&__icon {
+			margin-right: 8px;
+		}
+		&__content {
+			a {
+				transition: 0.3s ease all;
+				&:hover {
+					text-decoration: none;
+				}
+				@include media-breakpoint-up(lg){
+					font-size: 0.9rem;
+				}
+				@include media-breakpoint-up(xl){
+					font-size: 1rem;
+				}
+			}
+		}
+		.menu-item {
+			a {
+				color: $white;
+				font-family: $headings-font-family;
+				transition: 0.3s ease all;
+				&:hover {
+					color: $alternate;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+/// SOCIAL ICONS 
+.social-block {
+	&__inner {
+		align-items: center;
+		display: flex;
+		justify-content: flex-start;
+		.page-template-page-growth &,
+		.page-optin-thank-you & {
+			justify-content: center;
+		}
+	}
+	&__icon {
+		margin-right: 8px;
+		@include rem(font-size, 26);
+		&:last-child {
+			margin-right: 0;
+		}
+		a {
+			color: $white;
+			transition: 0.3s ease all;
+			&:hover {
+				color: $alternate;
+				text-decoration: none;
+			}
+		}
+	}
+}

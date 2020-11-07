@@ -1,0 +1,209 @@
+//// HERO HEADER MODULE
+/// For large heros on home pages. 
+/// Requires cta.php mod_custom, hero-header module position in the index.php
+/// Use with ModuleStyle None
+
+.cta {
+	&.hasBgImg {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+		/*&::before {
+			background-color: rgba($background-dark, 0.7);
+			content: '';
+			left: 0;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: 100;
+		}*/
+		& > .container {
+			position: relative;
+			z-index: 101;
+		}
+	}
+	&.hasOverlay {
+		&:before {
+			content: '';
+			left: 0;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+		&.overlay-primary {
+			&:before {
+				background-color: $brand-primary;
+			}
+		}
+		&.overlay-secondary {
+			&:before {
+				background-color: $brand-secondary;
+			}
+		}
+		&.overlay-dark {
+			&:before {
+				background-color: $background-dark;
+			}
+		}
+		&.overlay-light {
+			&:before {
+				background-color: $background-light;
+			}
+		}
+		&.overlay-white {
+			&:before {
+				background-color: $white;
+			}
+		}
+		&.overlay-alternate {
+			&:before {
+				background-color: $alternate;
+			}
+		}
+		&.overlay-05 {
+			&:before {
+				opacity: .05;
+			}
+		}
+		&.overlay-15 {
+			&:before {
+				opacity: .15;
+			}
+		}
+		&.overlay-25 {
+			&:before {
+				opacity: .25;
+			}
+		}
+		&.overlay-35 {
+			&:before {
+				opacity: .35;
+			}
+		}
+		&.overlay-45 {
+			&:before {
+				opacity: .45;
+			}
+		}
+		&.overlay-50 {
+			&:before {
+				opacity: .50;
+			}
+		}
+		&.overlay-65 {
+			&:before {
+				opacity: .65;
+			}
+		}
+		&.overlay-75 {
+			&:before {
+				opacity: .75;
+			}
+		}
+		&.overlay-85 {
+			&:before {
+				opacity: .85;
+			}
+		}
+		&.overlay-90 {
+			&:before {
+				opacity: .90;
+			}
+		}
+		&.overlay-95 {
+			&:before {
+				opacity: .95;
+			}
+		}
+	}
+	&-wrap {
+		position: relative;
+		z-index: 101;
+		& > .container {
+			text-align: center;
+			ul {
+				display: inline-block;
+				text-align: left;
+			}
+			@include media-breakpoint-up(xs){
+				max-width: 500px;
+			}
+			@include media-breakpoint-up(sm){
+				max-width: 620px;
+			}
+			@include media-breakpoint-up(md){
+				max-width: 720px;
+			}
+			@include media-breakpoint-up(lg){
+				max-width: 800px;
+			}
+		}
+		.bg-primary &,
+		.bg-secondary &,
+		.bg-dark & {
+			h2 {
+				color: $white;
+			}
+		}
+		@include media-breakpoint-up(xs) {
+			padding-bottom: 60px;
+			padding-top: 60px;
+		}
+		&__inner {
+			.bg-dark & {
+				color: $white;
+				h1, h2, h3, h4, h5, p {
+					color: $white;
+				}
+			}
+			.bg-primary &,
+			.bg-secondary &,
+			.bg-light &,
+			.bg-white {
+				h1, h2, h3, h4, h5, p {
+					color: $dark;
+				}
+			}
+		}
+		h2 {
+			@include media-breakpoint-up(xs){
+				font-size: 1.3rem;
+			}
+			@include media-breakpoint-up(sm){
+				font-size: 1.4rem;
+			}
+			@include media-breakpoint-up(md){
+				font-size: 1.6rem;
+			}
+			@include media-breakpoint-up(lg){
+				font-size: 2rem;
+			}
+		}
+		h3 {
+			@include media-breakpoint-up(xs){
+				font-size: 1.1rem;
+			}
+			@include media-breakpoint-up(sm){
+				font-size: 1.2rem;
+			}
+			@include media-breakpoint-up(md){
+				font-size: 1.5rem;
+			}
+		}
+		p {
+			@include media-breakpoint-up(xs){
+				font-size: 1rem;
+			}
+			@include media-breakpoint-up(sm){
+				font-size: 1.1rem;
+			}
+			@include media-breakpoint-up(md){
+				font-size: 1.2rem;
+			}
+		}
+		
+	}
+}

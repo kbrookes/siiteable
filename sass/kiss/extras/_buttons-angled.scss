@@ -1,0 +1,49 @@
+.btnType-angled .btn-custom {
+	box-shadow: 6px 6px 0 $dark;
+	display: inline-block;
+	font-family: $headings-font-family;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 8px 16px;
+    transform: skewX(-15deg) translateY(-3px);
+    transition: 0.2s ease all;
+    &:hover {
+	    box-shadow: 3px 3px 0 $dark;
+	    transform: translateY(0);
+	    text-decoration: none;
+    }
+    &.primary {
+	    background-color: $brand-primary;
+	    color: $white !important;
+	    &:hover {
+			box-shadow: 3px 3px 0 $brand-secondary;
+			color: $white !important;
+	    }
+	    i {
+		    color: $white !important;
+	    }
+    }
+    &.secondary {
+	    background-color: $brand-secondary;
+	    color: $white !important;
+    }
+    &.dark {
+	    background-color: $background-dark;
+	    box-shadow: $white;
+	    color: $white !important;
+    }
+    &.light {
+	    background-color: $background-light;
+	    color: $dark !important;
+	    &:hover {
+			color: $dark !important;
+	    }
+    }
+    &.alternate {
+	    background-color: $alternate;
+	    color: $white !important;
+	    &:hover {
+			color: $white !important;
+	    }
+    }
+}

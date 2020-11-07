@@ -1,0 +1,61 @@
+.editable-content {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	&:before {
+		content: '';
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	&.bg-primary,
+	&.bg-secondary {
+		color: $white;	
+		&.hasBg:before {
+			background-color: rgba($background-dark, 0.75);
+		}
+	}
+	&.bg-dark {
+		color: $light;	
+		&.hasBg:before {
+			background-color: rgba($background-dark, 0.75);
+		}
+	}
+	&.bg-light {
+		color: $dark;	
+		&.hasBg:before {
+			background-color: rgba($light, 0.75);
+		}
+	}
+	&.bg-white {
+		color: $dark;
+		&.hasBg:before {
+			background-color: rgba($white, 0.75);
+		}
+	}
+	.container {
+		max-width: 960px;
+	}
+	&__inner {
+		padding: 30px 0;
+		position: relative;
+		p {
+			font-size: 1.3rem;
+			.bg-dark &, .bg-primary &, .bg-secondary & {
+				color: $white;
+			}
+			@include media-breakpoint-up(xs){
+				font-size: 1rem;
+			}
+			@include media-breakpoint-up(sm){
+				font-size: 1.1rem;
+			}
+			@include media-breakpoint-up(md){
+				font-size: 1.2rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,73 @@
+.case-study {
+	&__featured {
+		background-color: $brand-secondary;
+		padding: 60px 0;
+		.post-type-archive-testimonials & {
+			@include angled-edge('outside bottom', 'lower right', $brand-secondary);
+			padding: 60px 0 0;
+		}
+		h2 {
+			color: $white;
+		}
+		h3 {
+			a {
+				color: $white;
+				&:hover {
+					color: $light;
+				}
+			}
+		}
+		p {
+			color: $white;
+		}
+	}
+	&__image {
+		position: relative;
+		&-inner {
+			align-items: center;
+			background-color: rgba($dark, 0);
+			cursor: hand;
+			display: flex;
+			height: 100%;
+			justify-content: center;
+			left: 0;
+			position: absolute;
+			top: 0;
+			transition: 0.3s ease all;
+			width: 100%;
+			.btn {
+				opacity: 0;
+				transition: 0.3s ease all;
+			}
+			&:hover {
+				background-color: rgba($dark, 0.8);
+				.btn {
+					opacity: 1;
+				}
+			}
+		}
+		&-info {
+			align-items: center;
+			bottom: 0;
+			cursor: hand;
+			display: flex;
+			justify-content: space-between;
+			left: 0;
+			padding: 0 15px 15px;
+			position: absolute;
+			width: 100%;
+			h4 {
+				color: $white;
+				font-size: 0.9rem;
+				font-family: $font-family-base;
+				font-weight: bold;
+			}
+			&_logo {
+				background-color: $white;
+				border-radius: 4px;
+				max-width: 100px;
+				padding: 5px;
+			}
+		}
+	}
+}

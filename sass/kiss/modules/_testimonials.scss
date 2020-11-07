@@ -1,0 +1,114 @@
+.testimonial {
+	&-wrap {
+		position: relative;
+	}
+	&-quote {
+		display: flex;
+		justify-content: center;
+		position: absolute;
+		top: -60px;
+		width: 100%;
+	}
+	blockquote {
+		margin-bottom: 0;
+		margin-top: 0;
+		p {
+			@include rem(font-size, 20);
+		}
+		footer {
+			color: $brand-secondary;
+			font-weight: light;
+			text-transform: uppercase;
+			@include rem(font-size, 12);
+			cite {
+				color: $brand-primary;
+				display: block;
+				font-style: normal;
+				font-weight: bold;
+				@include rem(font-size, 16);
+				text-transform: none;
+			}
+		}
+	}
+	&-row {
+		&__quote {
+			&.hasImage {
+				position: relative;
+				svg {
+					position: absolute;
+					top: -10px;
+					left: -40px;
+				}
+			}
+		}
+		&__headshot {
+			width: 150px;
+			height: 150px;
+		}
+	}
+	&.bg-primary,
+	&.bg-secondary {
+		blockquote {
+			p {
+				color: $white;
+			}
+			footer {
+				color: $light;
+				cite {
+					color: $alternate;
+				}
+			}
+		}
+		&.hasBg:before {
+			background-color: rgba($background-dark, 0.75);
+		}
+	}
+	&.bg-dark {
+		blockquote {
+			p {
+				color: $light;	
+			}
+			footer {
+				color: $white;
+				cite {
+					color: $alternate;
+				}
+			}
+		}
+		&.hasBg:before {
+			background-color: rgba($background-dark, 0.75);
+		}
+	}
+	&.bg-light {
+		blockquote {
+			p {
+				color: $dark;	
+			}
+			footer {
+				color: $secondary;
+				cite {
+					color: $primary;
+				}
+			}
+		}
+		&.hasBg:before {
+			background-color: rgba($light, 0.75);
+		}
+	}
+	&.bg-white {
+		blockquote {
+			p {
+				color: $dark;
+			}
+			footer {
+				color: $secondary;
+				cite {
+					color: $primary;
+				}
+			}
+		}
+		&.hasBg:before {
+			background-color: rgba($white, 0.75);
+		}
+	}
+}

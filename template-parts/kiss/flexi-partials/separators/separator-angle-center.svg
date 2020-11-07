@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1922 61">
+  <g data-name="Layer 2">
+    <g data-name="Layer 1">
+      <path  class="separator-fill separator-fill__background" d="M1 61h1921L960 0 1 61z"/>
+      <path class="separator-fill separator-fill__foreground" d="M0 61h1921L959 11 0 61z"/>
+    </g>
+  </g>
+</svg>

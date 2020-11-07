@@ -1,0 +1,93 @@
+/// BLOG
+.blog {
+	.page-header {
+		h1.page-title {
+			color: $brand-primary;
+			font-size: 1.8rem;
+			margin-bottom: 30px;
+			text-transform: uppercase;
+		}
+	}
+	.type-post {
+		.post-item {
+			padding: 0;
+		}
+		h2.entry-title {
+			@include media-breakpoint-up(xs){
+				font-size: 1.4rem;
+			}
+			@include media-breakpoint-up(sm){
+				font-size: 1.5rem;
+			}
+			@include media-breakpoint-up(xl){
+				font-size: 1.6rem;
+			}
+			a {
+				color: $brand-primary;
+				transition: 0.3s ease all;
+				&:hover {
+					color: $dark;
+				}
+			}
+		}
+		.entry-content {
+			p {
+				color: $dark;
+				font-size: 1.2rem;
+			}
+		}
+	}
+	.entry-meta {
+		margin: 0.75rem 0;
+	}
+	.entry-footer {
+		margin-bottom: 0;
+		a.btn {
+			svg {
+				color: $red;
+			}
+			&:hover {
+				svg {
+					color: $white;
+				}
+			}
+		}
+	}
+}
+
+.header-featured {
+	background-color: $white;
+	.separator-fill__foreground {
+		fill: $background-dark;
+	}
+	.separator-fill__background {
+		fill: $alternate;
+	}
+	svg {
+		transform: rotate(180deg);
+	}
+	&__inner {
+		background-color: $background-dark;
+		.blog-post {
+			h2 {
+				color: $light;
+			}
+			&__image {
+				box-shadow: 6px 6px 0 $brand-secondary;
+			}
+			&__content {
+				h3 {
+					a {
+						color: $alternate;
+						&:hover {
+							color: $light;
+						}
+					}
+				}
+				p {
+					color: $light;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+// Navbar
+
+
+$navbar-nav-link-padding-x:         .5rem !default;
+
+
+$navbar-toggler-padding-y:          .25rem !default;
+$navbar-toggler-padding-x:          .75rem !default;
+
+$navbar-dark-color:                 rgba($light, .5) !default;
+$navbar-dark-hover-color:           rgba($light, .75) !default;
+$navbar-dark-active-color:          $light !default;
+$navbar-dark-disabled-color:        rgba($light, .25) !default;
+$navbar-dark-toggler-border-color:  rgba($light, .1) !default;
+
+$navbar-light-color:                rgba($dark, .5) !default;
+$navbar-light-hover-color:          rgba($dark, .7) !default;
+$navbar-light-active-color:         $dark !default;
+$navbar-light-disabled-color:       rgba($dark, .3) !default;
+$navbar-light-toggler-border-color: rgba($dark, .1) !default;
+
+$navbar-light-brand-color:                $navbar-light-active-color !default;
+$navbar-light-brand-hover-color:          $navbar-light-active-color !default;
+$navbar-dark-brand-color:                 $navbar-dark-active-color !default;
+$navbar-dark-brand-hover-color:           $navbar-dark-active-color !default;

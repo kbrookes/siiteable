@@ -1,0 +1,49 @@
+.pum-theme-lifeguard-popup {
+	.pum-title {
+		padding: 30px 30px 15px 30px;
+	}
+	.pum-content {
+		padding: 15px 0 0 0;
+	}
+	.popup-footer {
+		background: $brand-primary;
+		padding: 0;
+		position: relative;
+		width: 100%;
+		.testimonial-row__item {
+			padding: 30px 30px 0;
+			p {
+				color: $white;
+			}
+			footer {
+				color: $light;
+				cite {
+					color: $alternate;
+				}
+			}
+		}
+		.testimonial-row__quote {
+			width: 260px;
+			.fill-body {
+				fill: $white;
+			}
+		}
+		&__inner {
+			background-color: $white;
+		}
+		svg {
+			width: 100%;
+		}
+		.separator-fill {
+			&__foreground {
+				fill: $brand-primary;
+			}
+			&__background {
+				fill: $alternate;
+			}
+		}
+		._form_1 {
+			padding: 30px;
+		}
+	}
+}

@@ -1,0 +1,77 @@
+.client-logos {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	&:before {
+		content: '';
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	h2 {
+		text-align: center;
+	}
+	&.bg-primary,
+	&.bg-secondary {
+		color: $white;	
+		&.hasBg:before {
+			background-color: rgba($background-dark, 0.75);
+		}
+	}
+	&.bg-dark {
+		color: $light;	
+		&.hasBg:before {
+			background-color: rgba($background-dark, 0.75);
+		}
+	}
+	&.bg-light {
+		color: $dark;	
+		&.hasBg:before {
+			background-color: rgba($light, 0.75);
+		}
+	}
+	&.bg-white {
+		color: $dark;
+		&.hasBg:before {
+			background-color: rgba($white, 0.75);
+		}
+	}
+	&__inner {
+		padding: 60px 0 30px;
+		position: relative;
+		p {
+			font-size: 1.3rem;
+			.bg-dark &, .bg-primary &, .bg-secondary & {
+				color: $white;
+			}
+			@include media-breakpoint-up(xs){
+				font-size: 1rem;
+			}
+			@include media-breakpoint-up(sm){
+				font-size: 1.1rem;
+			}
+			@include media-breakpoint-up(md){
+				font-size: 1.2rem;
+			}
+		}
+	}
+	&__logo {
+		&.p-5 {
+			@include media-breakpoint-up(xs){
+				padding: 0 !important;
+			}
+			@include media-breakpoint-up(sm){
+				padding: 15px !important;
+			}
+			@include media-breakpoint-up(md){
+				padding: 15px !important;
+			}
+			@include media-breakpoint-up(lg){
+				padding: 30px !important;
+			}
+		}
+	}
+}

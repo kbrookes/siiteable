@@ -1,0 +1,125 @@
+.case-studies {
+	.page-header {
+		h1 {
+			color: $brand-primary;
+			font-size: 1.8rem;
+			margin-bottom: 30px;
+			text-transform: uppercase;
+		}
+	}
+	.case_study {
+		.post-item {
+			padding: 0;
+		}
+		h2.entry-title {
+			@include media-breakpoint-up(xs){
+				font-size: 1.4rem;
+			}
+			@include media-breakpoint-up(sm){
+				font-size: 1.5rem;
+			}
+			@include media-breakpoint-up(xl){
+				font-size: 1.6rem;
+			}
+			a {
+				color: $brand-primary;
+				transition: 0.3s ease all;
+				&:hover {
+					color: $dark;
+				}
+			}
+		}
+	}
+	.entry-meta {
+		margin: 0.75rem 0;
+	}
+	.entry-footer {
+		margin-bottom: 0;
+		a.btn {
+			svg {
+				color: $red;
+			}
+			&:hover {
+				svg {
+					color: $white;
+				}
+			}
+		}
+	}
+}
+
+.case_study-template-default {
+	.hero-header__separator {
+		@include angled-edge('inside bottom', 'upper right', $brand-primary);
+		z-index: 0;
+	}
+	.testimonial {
+		background-color: $brand-primary;
+		blockquote {
+			p {
+				color: $white;
+				font-family: $headings-font-family;
+				font-size: 1.3rem;
+			}
+			footer {
+				cite {
+					color: $white;
+				}
+			}
+		}
+		&-logo {
+			display: flex;
+			align-items: center;
+			&__inner {
+				background-color: $white;
+				border-radius: 4px;
+				padding: 10px;
+			}
+		}
+	}
+	.challenge {
+		padding: 30px 0 60px;
+		.container {
+			max-width: 767px;
+		}
+		h2 {
+			color: $brand-primary;
+		}
+		@include angled-edge('inside bottom', 'upper left', $brand-secondary);
+	}
+	.outcomes {
+		padding: 0 0 30px 0;
+		background-color: $brand-secondary;
+		color: $white;
+		&-intro {
+			.container-sm {
+				@include make-container();
+				max-width: 767px;
+				text-align: right;
+			}
+		}
+		&-metrics {
+			font-family: $headings-font-family;
+			&__icon {
+				text-align: center;
+				img {
+					max-width: 100px;
+				}
+			}
+			&__content {
+				font-size: 1.1rem;
+				text-align: center;
+				padding: 0 30px;
+			}
+		}
+	}
+	.case-study__main {
+		padding: 60px;
+		h2 {
+			color: $brand-primary;
+		}
+		.container {
+			max-width: 767px;
+		}
+	}
+}

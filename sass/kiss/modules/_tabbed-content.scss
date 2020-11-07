@@ -1,0 +1,229 @@
+.tabbed-content {
+	padding: 15px 0 30px 0;
+	.container {
+		max-width: 960px;
+	}
+	.nav-tabs {
+		.nav-link {
+			border: none;
+			transition: 0.3s ease all;
+			font-family: $headings-font-family;
+			text-transform: uppercase;
+			transition: 0.3s ease all;
+		}
+		.nav-link.active,
+		.nav-item.show .nav-link {
+		}
+		.nav-link:hover,
+		.nav-link:focus {
+		}
+	}
+	.tab-content {
+		.tab-pane {
+			&.active {
+				border-top-left-radius: 0;
+			}
+		}
+		@include media-breakpoint-up(xs){
+			padding: 0;
+		}
+		ul {
+			padding-left: 1.1rem;
+			li {
+				line-height: 1.2rem;
+				margin-bottom: 0.3rem;
+			}
+		}
+	}
+	&__icon {
+		text-align: center;
+		width: 100%;
+	}
+	&__copy {
+		.colCount-2 & {
+			-webkit-column-count: 2;
+		     -moz-column-count: 2;
+		          column-count: 2;
+		}
+		.colCount-3 & {
+			-webkit-column-count: 3;
+			 -moz-column-count: 3;
+				  column-count: 3;
+		}
+	}
+}
+
+.tabbed-content__icon {
+	.iconColor-primary & {color: $primary;}
+	.iconColor-secondary & {color: $secondary;}
+	.iconColor-dark & {color: $dark;}
+	.iconColor-light & {color: $light;}
+	.iconColor-alternate & {color: $alternate;}
+	.iconS-xs & {font-size: 3rem;}
+	.iconS-sm & {font-size: 5rem;}
+	.iconS-md & {font-size: 8rem;}
+	.iconS-lg & {font-size: 10rem;}
+	.iconS-xl & {font-size: 15rem;}
+}
+
+.nav-tabs {
+	.nav-link {
+		.inActiveBG-primary & {background: $primary;}
+		.inActiveBG-secondary & {background: $secondary;}
+		.inActiveBG-dark & {background: $dark;}
+		.inActiveBG-light & {background: $light;}
+		.inActiveBG-alternate & {background: $alternate;}
+		
+		.fontInactive-primary & {color: $primary;}
+		.fontInactive-secondary & {color: $secondary;}
+		.fontInactive-dark & {color: $dark;}
+		.fontInactive-light & {color: $light;}
+		.fontInactive-alternate & {color: $alternate;}
+	}
+	.nav-link.active,
+	.nav-item.show .nav-link {
+		.activeBG-primary & {background: $primary;}
+		.activeBG-secondary & {background: $secondary;}
+		.activeBG-dark & {background: $dark;}
+		.activeBG-light & {background: $light;}
+		.activeBG-alternate & {background: $alternate;}
+		
+		.fontActive-primary & {color: $primary;}
+		.fontActive-secondary & {color: $secondary;}
+		.fontActive-dark & {color: $dark;}
+		.fontActive-light & {color: $light;}
+		.fontActive-alternate & {color: $alternate;}
+	}
+	.nav-link:hover,
+	.nav-link:focus {
+	}
+}
+
+.card {
+	border: none;
+	&-header {
+		border-bottom: 4px solid $dark;
+		h4 {
+			@include media-breakpoint-up(xs){
+				margin: 0.2rem 0;
+			}
+		}
+		a {
+			transition: 0.3s ease all;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		.collapsed & {
+			.fa-chevron-right {
+				transform: rotate(90deg);
+			}
+		}
+	}
+	&-body {
+		
+	}
+	[class^="col-"]{
+		align-items: center;
+		display: flex;
+	}
+	/// COLOURS
+	.activeBG-primary & {background: $primary;}
+	.activeBG-secondary & {background: $secondary;}
+	.activeBG-dark & {background: $dark;}
+	.activeBG-light & {background: $light;}
+	.activeBG-alternate & {background: $alternate;}
+	
+	.fontActive-primary & {color: $primary;}
+	.fontActive-secondary & {color: $secondary;}
+	.fontActive-dark & {color: $dark;}
+	.fontActive-light & {color: $light;}
+	.fontActive-alternate & {color: $alternate;}
+	
+	/// FONT SIZE
+	.cardFontS-xs & {font-size: 0.9rem;}
+	.cardFontS-sm & {font-size: 1rem;}
+	.cardFontS-md & {font-size: 1.2rem;}
+	.cardFontS-lg & {font-size: 2rem;}
+	.cardFontS-xl & {font-size: 3rem;}
+}
+
+/// TAB FONT SIZES
+.tabFontS {
+	&-xs {
+		.tabbed-content & {
+			.nav-tabs {
+				.nav-link {
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+	&-sm {
+		.tabbed-content & {
+			.nav-tabs {
+				.nav-link {
+					font-size: 0.9rem;
+				}
+			}
+		}
+	}
+	&-md {
+		.tabbed-content & {
+			.nav-tabs {
+				.nav-link {
+					font-size: 1.1rem;
+				}
+			}
+		}
+	}
+	&-lg {
+		.tabbed-content & {
+			.nav-tabs {
+				.nav-link {
+					font-size: 1.8rem;
+				}
+			}
+		}
+	}
+	&-xl {
+		.tabbed-content & {
+			.nav-tabs {
+				.nav-link {
+					font-size: 2.5rem;
+				}
+			}
+		}
+	}
+}
+
+/// TAB FONT WEIGHTS
+.tabFontW {
+	&-light {
+		.tabbed-content & {
+			.nav-tabs {
+				.nav-link {
+					font-weight: $headings-font-weight-light;
+				}
+			}
+		}
+	}
+	&-normal {
+		.tabbed-content & {
+			.nav-tabs {
+				.nav-link {
+					font-weight: $headings-font-weight;
+				}
+			}
+		}
+	}
+	&-bold {
+		.tabbed-content & {
+			.nav-tabs {
+				.nav-link {
+					font-weight: $headings-font-weight-bold;
+				}
+			}
+		}
+	}
+}

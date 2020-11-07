@@ -1,0 +1,31 @@
+/// FIX EVEREST FORMS
+.everest-forms {
+	.form-row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.evf-field-container {
+		margin-bottom: 0;
+		.evf-frontend-row .evf-frontend-grid {
+			margin-bottom: 0;
+			.evf-field {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+
+/// ARCHIVE POSTS
+.blog-posts {
+	.post {
+		margin-bottom: 0;
+	}
+	.post-item {
+		background: $white;
+		border-radius: 8px;
+		margin-bottom: 15px;
+		padding: 30px;
+	}
+}
+

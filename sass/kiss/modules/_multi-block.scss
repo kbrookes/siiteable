@@ -1,0 +1,218 @@
+.multi-block {
+	padding-bottom: 30px;
+	h3 {
+		font-size: 1.4rem;
+		margin-bottom: 1em;
+		text-transform: uppercase;
+	}
+	&__wrap {
+		h2 {
+			margin: 30px 0 45px 0;
+			text-align: center;
+			.bg-light &,
+			.bg-white & {
+				color: $primary;
+			}
+			.bg-dark &,
+			.bg-primary &,
+			.bg-secondary & {
+				color: $white;
+			}
+		}
+		&-inner {
+			&.horizontal {
+				margin-bottom: 60px;
+			}
+		}
+		.container {
+			border: 1px solid transparent;
+		}
+	}
+	&__simple {
+		@include media-breakpoint-up(xs){
+			margin-bottom: 30px;
+		}
+		@include media-breakpoint-up(md){
+			margin-bottom: 0;
+		}
+		&-content {
+			position: relative;
+			z-index: 100;
+		}
+		a {
+			color: $white;
+			&:hover {
+				color: $white;
+			}
+		}
+		.style-square & {
+			padding-bottom: 100%;
+		}
+		.style-widescreen & {
+			padding-bottom: 56.25%
+		}
+		.style-traditional & {
+			padding-bottom: 75%;
+		}
+	}
+	&__horizontal {
+		&-excerpt {
+			margin-bottom: 2rem;
+			p {
+				//font-size: 1.3rem;
+			}
+		}
+		&-content {
+			h3 {
+				margin-bottom: 0.5em;
+				.bg-light &,
+				.bg-white & {
+					color: $primary;
+				}
+				.bg-dark &,
+				.bg-primary &,
+				.bg-secondary & {
+					color: $white;
+				}
+			}
+			h4 {
+				font-size: 1.3rem;
+				.bg-light &,
+				.bg-white & {
+					color: $secondary;
+				}
+				.bg-dark &,
+				.bg-primary &,
+				.bg-secondary & {
+					color: $light;
+				}
+			}
+			p {
+				.bg-light &,
+				.bg-white & {
+					color: $dark;
+				}
+				.bg-dark &,
+				.bg-primary &,
+				.bg-secondary & {
+					color: $white;
+				}
+			}
+		}
+
+	}
+	&__vertical {
+		margin-bottom: 30px;
+		&-image {
+			margin-bottom: 30px;
+		}
+		&-content {
+			h3 {
+				margin-bottom: 0.5em;
+				.bg-light &,
+				.bg-white & {
+					color: $primary;
+				}
+				.bg-dark &,
+				.bg-primary &,
+				.bg-secondary & {
+					color: $white;
+				}
+			}
+			h4 {
+				font-size: 1.3rem;
+				.bg-light &,
+				.bg-white & {
+					color: $secondary;
+				}
+				.bg-dark &,
+				.bg-primary &,
+				.bg-secondary & {
+					color: $light;
+				}
+			}
+			p {
+				.bg-light &,
+				.bg-white & {
+					color: $dark;
+				}
+				.bg-dark &,
+				.bg-primary &,
+				.bg-secondary & {
+					color: $white;
+				}
+			}
+		}
+	}
+	&__text {
+		&-content {
+			h3 {
+				margin-bottom: 0.5em;
+				.bg-light &,
+				.bg-white & {
+					color: $primary;
+				}
+				.bg-dark &,
+				.bg-primary &,
+				.bg-secondary & {
+					color: $white;
+				}
+			}
+			h4 {
+				font-size: 1.3rem;
+				.bg-light &,
+				.bg-white & {
+					color: $secondary;
+				}
+				.bg-dark &,
+				.bg-primary &,
+				.bg-secondary & {
+					color: $light;
+				}
+			}
+			p {
+				.bg-light &,
+				.bg-white & {
+					color: $dark;
+				}
+				.bg-dark &,
+				.bg-primary &,
+				.bg-secondary & {
+					color: $white;
+				}
+			}
+		}
+	}
+	&__column {
+		.orderColAlternating & {
+			&:nth-child(even) {
+				.horizontal {
+					& > .row {
+						flex-direction: row-reverse;
+					}
+				}
+			}
+		}
+		&:last-child {
+			.horizontal {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.bg-primary & {
+		h2 {
+			color: $alternate;
+		}
+		h3, h4, p, a {
+			color: $white;
+		}
+		a:hover {
+			color: $alternate;
+		}
+	}
+	.list-icons__actions {
+		margin-top: 30px;
+		text-align: center;
+	}
+}
+
