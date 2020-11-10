@@ -41,9 +41,12 @@
 		endif;
 	endif;
 	
+	/// DIRECTION
+	$containerDirection = 'text-' . get_sub_field($sepPrefix . '_container_direction');
+	
 	?>
 
-<div id="testimonialLoader" class="testimonial  <?php echo $bgcolour . ' ' . $separatorClasses; ?> <?php if(get_sub_field('background_image')):?> hasBg<?php endif; ?>" <?php if($bg_image): ?>style="background-image: url(<?php echo $bg_image; ?>);"<?php endif; ?>>
+<div id="testimonialLoader" class="testimonial  <?php echo $bgcolour . ' ' . $separatorClasses . ' ' . $containerDirection; ?> <?php if(get_sub_field('background_image')):?> hasBg<?php endif; ?>" <?php if($bg_image): ?>style="background-image: url(<?php echo $bg_image; ?>);"<?php endif; ?>>
 	<?php if($addSeparatorUpper == true):
 		include $pathUpper;
 	endif; ?>

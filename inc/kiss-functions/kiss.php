@@ -162,6 +162,32 @@ Kirki::add_panel( 'general_settings', array(
     'description' => esc_html__( 'Sitewide modifications', 'kirki' ),
 ) );
 
+/// Create Fontawesome Options Section
+Kirki::add_section( 'fa_options', array(
+	'title'          => esc_html__( 'Fontawesome Options', 'kirki' ),
+	'description'    => esc_html__( 'Setup which library to use for Fontawesome.', 'kirki' ),
+	'panel'          => 'general_settings',
+	'priority'       => 150,
+) );
+
+// Create Button Styles Dropdown
+Kirki::add_field( 'kiss_theme', [
+	'type'        => 'select',
+	'settings'    => 'fa_styles',
+	'label'       => esc_html__( 'Select a FontAwesome style', 'kirki' ),
+	'section'     => 'fa_options',
+	'default'     => 'option-1',
+	'placeholder' => esc_html__( 'Select an icon style', 'kirki' ),
+	'priority'    => 10,
+	'multiple'    => 1,
+	'choices'     => [
+		'far' => esc_html__( 'Regular', 'kirki' ),
+		'fas' => esc_html__( 'Solid', 'kirki' ),
+		'fal' => esc_html__( 'Light', 'kirki' ),
+		'fad' => esc_html__( 'Duotone', 'kirki' ),
+	],
+] );
+
 /// Create Button Options Section
 Kirki::add_section( 'button_options', array(
     'title'          => esc_html__( 'Button Options', 'kirki' ),

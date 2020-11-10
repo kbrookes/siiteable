@@ -36,6 +36,15 @@
 				$linkContent = '';
 				$dataTarget = $buttonData['button_popup'];
 				break;
+			case "file":
+				$setLink = 'file';
+				$linkContent = $buttonData['button_file'];
+				$externalLink = true;
+			break;
+			case "video":
+				$setLink = 'video';
+				$linkContent = $buttonData['button_video_id'];
+			break;
 		}
 		
 	endif;

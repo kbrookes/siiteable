@@ -212,3 +212,7 @@ require get_template_directory() . '/inc/kiss-functions/cta-widget.php';
  
 /// Sidebars
 require get_template_directory() . '/inc/kiss-functions/sidebars.php';
+
+///// CUSTOM POST TYPES
+
+require get_template_directory() . '/inc/kiss-functions/cpt-testimonials.php';

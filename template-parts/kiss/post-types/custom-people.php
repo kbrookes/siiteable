@@ -18,6 +18,9 @@ $phoneNumber = $contactDetails['team_phone_number'];
 $emailAddress = $contactDetails['team_email_address'];
 $vCard = $contactDetails['team_upload_vcard']; 
 
+// GET FONTAWESOME LIBRARY
+$faType = get_theme_mod( 'fa_styles');
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('team-page team-single'); ?>>
@@ -50,19 +53,19 @@ $vCard = $contactDetails['team_upload_vcard'];
 						<div class="team-single__contact">
 							<?php if(!empty($phoneNumber)): ?>
 							<div class="team-single__contact-single team-single__contact-phone">
-								<i class="far fa-phone"></i> <?php if(!empty($firstName)):?><strong>Call <?php echo $firstName; ?></strong> <?php endif; ?>+61 2 <?php echo $phoneNumber; ?>
+								<i class="<?= $faType; ?> fa-phone"></i> <?php if(!empty($firstName)):?><strong>Call <?php echo $firstName; ?></strong> <?php endif; ?>+61 2 <?php echo $phoneNumber; ?>
 							</div>
 							<?php endif; ?>
 							<?php if(!empty($emailAddress)): ?>
 							<div class="team-single__contact-single team-single__contact-email">
-								<a href="mailto:<?php echo $emailAddress; ?>"><i class="far fa-envelope"></i> <?php if(!empty($firstName)):?><strong>Email <?php echo $firstName; ?></strong> <?php endif; ?></a>
+								<a href="mailto:<?php echo $emailAddress; ?>"><i class="<?= $faType; ?> fa-envelope"></i> <?php if(!empty($firstName)):?><strong>Email <?php echo $firstName; ?></strong> <?php endif; ?></a>
 							</div>
 							<?php endif; ?>
 							<div class="team-single__contact-single team-single__contact-vcard">
 								<?php
 								global $post;
 								$vcfname = $post->post_name;?>
-								<a href="<?php echo get_template_directory_uri(); ?>/vcard/<?php echo $vcfname; ?>.vcf"><i class="far fa-address-card"></i> <strong>Download Vcard</strong></a>
+								<a href="<?php echo get_template_directory_uri(); ?>/vcard/<?php echo $vcfname; ?>.vcf"><i class="<?= $faType; ?> fa-address-card"></i> <strong>Download Vcard</strong></a>
 							</div>
 						</div>
 					</div>
@@ -102,7 +105,7 @@ $vCard = $contactDetails['team_upload_vcard'];
 				<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#experience" aria-labelledby="headerExperience" data-parent="#teamAccordion">
 					<div class="container d-flex justify-content-between align-items-center">
 						<h3>Experience</h3>
-						<span class="card-closed"><i class="far fa-chevron-up"></i></span>
+						<span class="card-closed"><i class="<?= $faType; ?> fa-chevron-up"></i></span>
 					</div>
 				</a>
 			</div>
@@ -125,7 +128,7 @@ $vCard = $contactDetails['team_upload_vcard'];
 				<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#practice" aria-labelledby="headerPractice" data-parent="#teamAccordion">
 					<div class="container d-flex justify-content-between align-items-center">
 						<h3>Practice areas and other information</h3>
-						<span class="card-closed"><i class="far fa-chevron-up"></i></span>
+						<span class="card-closed"><i class="<?= $faType; ?> fa-chevron-up"></i></span>
 					</div>
 				</a>
 			</div>
@@ -354,7 +357,7 @@ $vCard = $contactDetails['team_upload_vcard'];
 					</div>
 					<footer class="entry-footer">
 						<?php if ( ! is_single() ) : ?>
-						<a href="<?php the_permalink(); ?>" class="btn-custom primary ">READ MORE <i class="fas fa-chevron-right"></i></a>
+						<a href="<?php the_permalink(); ?>" class="btn-custom primary ">READ MORE <i class="<?= $faType; ?> fa-chevron-right"></i></a>
 						<?php endif; ?>
 						<?php strappress_entry_footer(); ?>
 					</footer><!-- .entry-footer -->

@@ -5,15 +5,11 @@
 function strappress_scripts() {
 	wp_enqueue_style( 'strappress-style', get_stylesheet_directory_uri() . '/style.css', array(), '4.2.3' );
 	
-	//wp_enqueue_style( 'strappress-fonts', '//fonts.googleapis.com/css?family=Arvo:400,700|Roboto:300,400,700&display=swap', array());
-	
-	wp_enqueue_style('strappress-fonts', '//fonts.googleapis.com/css?family=Lato:wght@300;400;700;900&display=swap', array());
+	wp_enqueue_style('strappress-fonts', '//fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Teko:wght@300;400;600&display=swap', array());
 
 	wp_enqueue_script( 'strappress-js', get_template_directory_uri() . '/js/dist/scripts.min.js', array('jquery'), ' ', true );
 	
-	wp_enqueue_script( 'site-js', get_template_directory_uri() . '/js/src/site.js', array('jquery'), ' ', true );
-
-	wp_enqueue_script( 'strappress-fa', 'https://kit.fontawesome.com/bf9e7e2c24.js', array(), '5.6.3' );
+	wp_enqueue_script( 'site-js', get_template_directory_uri() . '/js/dist/site-min.js', array('jquery'), ' ', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

@@ -99,6 +99,9 @@
 	endif;	
 
 	$postID = get_the_id();
+	
+	// GET FONTAWESOME LIBRARY
+	$faType = get_theme_mod( 'fa_styles');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -180,7 +183,7 @@
 	
 		<footer class="entry-footer">
 			<?php if ( ! is_single() ) : ?>
-			<a href="<?php the_permalink(); ?>" class="btn-custom primary ">READ MORE <i class="fas fa-chevron-right"></i></a>
+			<a href="<?php the_permalink(); ?>" class="btn-custom primary ">READ MORE <i class="<?= $faType; ?> fa-chevron-right"></i></a>
 			<?php endif; ?>
 			<?php strappress_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
@@ -216,7 +219,7 @@
 					</div>
 					<footer class="entry-footer">
 						<?php if ( ! is_single() ) : ?>
-						<a href="<?php the_permalink(); ?>" class="btn-custom primary ">READ MORE <i class="fas fa-chevron-right"></i></a>
+						<a href="<?php the_permalink(); ?>" class="btn-custom primary ">READ MORE <i class="<?= $faType; ?> fa-chevron-right"></i></a>
 						<?php endif; ?>
 						<?php strappress_entry_footer(); ?>
 					</footer><!-- .entry-footer -->

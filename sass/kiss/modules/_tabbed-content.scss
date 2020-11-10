@@ -58,6 +58,7 @@
 	.iconColor-secondary & {color: $secondary;}
 	.iconColor-dark & {color: $dark;}
 	.iconColor-light & {color: $light;}
+	.iconColor-white & {color: $white;}
 	.iconColor-alternate & {color: $alternate;}
 	.iconS-xs & {font-size: 3rem;}
 	.iconS-sm & {font-size: 5rem;}
@@ -72,12 +73,14 @@
 		.inActiveBG-secondary & {background: $secondary;}
 		.inActiveBG-dark & {background: $dark;}
 		.inActiveBG-light & {background: $light;}
+		.inActiveBG-white & {background: $white;}
 		.inActiveBG-alternate & {background: $alternate;}
 		
 		.fontInactive-primary & {color: $primary;}
 		.fontInactive-secondary & {color: $secondary;}
 		.fontInactive-dark & {color: $dark;}
 		.fontInactive-light & {color: $light;}
+		.fontInactive-white & {color: $white;}
 		.fontInactive-alternate & {color: $alternate;}
 	}
 	.nav-link.active,
@@ -86,12 +89,14 @@
 		.activeBG-secondary & {background: $secondary;}
 		.activeBG-dark & {background: $dark;}
 		.activeBG-light & {background: $light;}
+		.activeBG-white & {background: $white;}
 		.activeBG-alternate & {background: $alternate;}
 		
 		.fontActive-primary & {color: $primary;}
 		.fontActive-secondary & {color: $secondary;}
 		.fontActive-dark & {color: $dark;}
 		.fontActive-light & {color: $light;}
+		.fontActive-white & {color: $white;}
 		.fontActive-alternate & {color: $alternate;}
 	}
 	.nav-link:hover,
@@ -132,12 +137,14 @@
 	.activeBG-secondary & {background: $secondary;}
 	.activeBG-dark & {background: $dark;}
 	.activeBG-light & {background: $light;}
+	.activeBG-white & {background: $white;}
 	.activeBG-alternate & {background: $alternate;}
 	
 	.fontActive-primary & {color: $primary;}
 	.fontActive-secondary & {color: $secondary;}
 	.fontActive-dark & {color: $dark;}
 	.fontActive-light & {color: $light;}
+	.fontActive-white & {color: $white;}
 	.fontActive-alternate & {color: $alternate;}
 	
 	/// FONT SIZE

@@ -76,7 +76,7 @@
 	endif;
 	
 ?>
-<section id="videoBlock" class="video-block <?php echo $bgcolour . ' ' . $separatorClasses; ?>">
+<section id="videoBlock" class="video-block <?php echo $bgcolour . ' ' . $separatorClasses . ' ' . $containerDirection; ?>">
 	<?php if($addSeparatorUpper == true):
 		include $pathUpper;
 	endif; ?>

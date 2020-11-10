@@ -40,9 +40,13 @@
 	
 	$btnColour = 'light';
 	
+	/// DIRECTION
+	$containerDirection = 'text-' . get_sub_field($sepPrefix . '_container_direction');
+	
+	
 	?>
 
-<section class="cards-layout <?php echo $bgcolour . ' ' . $separatorClasses . ' ' . $customClass; ?>">
+<section class="cards-layout <?php echo $bgcolour . ' ' . $separatorClasses . ' ' . $containerDirection . ' ' . $customClass; ?>">
 	<div class="cards-layout__inner">
 		<div class="<?php echo $containerSize; ?>">
 			<?php if(!empty($blockTitle)){

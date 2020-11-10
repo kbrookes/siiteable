@@ -16,8 +16,24 @@
 	/// LOGO PADDING VARIABLE
 	$logoPadding = 'p-' . get_sub_field('logos_padding');
 	
+	/// GET CUSTOM CLASS
+	$customClass = '';
+	if(get_sub_field($sepPrefix . '_class')){
+		$customClass = (get_sub_field($sepPrefix . '_class'));
+	}
+	
+	// GET BUTTONS
+	$addButton = false;
+	if(get_sub_field($sepPrefix . '_button_add_button') == true):
+		$addButton = true;
+		include $templatePath . "/template-parts/kiss/static-partials/buttons.php";
+	endif;
+	
+	/// DIRECTION
+	$containerDirection = 'text-' . get_sub_field($sepPrefix . '_container_direction');
+	
 	?>
-<section class="client-logos <?php echo $bgcolour . ' ' . $separatorClasses; ?> <?php if(get_sub_field('background_image')):?> hasBg<?php endif; ?>">
+<section class="client-logos <?php echo $bgcolour . ' ' . $separatorClasses . ' ' . $containerDirection . ' ' . $customClass; ?> <?php if(get_sub_field('background_image')):?> hasBg<?php endif; ?>">
 	<?php if($addSeparatorUpper == true):
 		include $pathUpper;
 	endif; ?>

@@ -78,6 +78,11 @@
 		}
 	}
 	
+	// GET FONTAWESOME LIBRARY
+	$faType = get_theme_mod( 'fa_styles');
+	
+	/// DIRECTION
+	$containerDirection = 'text-' . get_sub_field($sepPrefix . '_container_direction');
 	
 	?>
 
@@ -85,7 +90,7 @@
 	<?php if($addSeparatorUpper == true):
 		include $pathUpper;
 	endif; ?>
-	<div class="tabbed-content__inner flexi-inner <?php echo $tabColourSetup . ' ' . $tabFontSetup . ' ' . $colCount; ?>">
+	<div class="tabbed-content__inner flexi-inner <?php echo $tabColourSetup . ' ' . $tabFontSetup . ' ' . $colCount . ' ' . $containerDirection; ?>">
 		<div class="container">
 			<?php if(!empty($tabTitle)) {
 				echo '<h2 class="tabbed-content__title">' . $tabTitle . '</h2>';
@@ -115,7 +120,7 @@
 				?>
 				<div class="card tab-pane fade <?php if($tabCount == '0'): echo 'show active'; endif; ?>" id="tabID-<?php echo $tabCount; ?>" role="tabpanel" aria-labelledby="<?php the_sub_field('tab_title'); ?>">
 					<div class="card-header" role="tab" id="heading-<?php echo $tabCount; ?>">
-						<h4><a data-toggle="collapse" href="#collapse-<?php echo $tabCount; ?>" aria-expanded="true" aria-controls="collapse-<?php echo $tabCount; ?>" ><i class="fas fa-chevron-right"></i> <?php echo $tabTitle; ?></a></h4>
+						<h4><a data-toggle="collapse" href="#collapse-<?php echo $tabCount; ?>" aria-expanded="true" aria-controls="collapse-<?php echo $tabCount; ?>" ><i class="<?= $faType; ?> fa-chevron-right"></i> <?php echo $tabTitle; ?></a></h4>
 					</div>
 					<div id="collapse-<?php echo $tabCount; ?>" class="collapse <?php if($tabCount == '0'): ?>show<?php endif; ?>" data-parent="#content" role="tabpanel" aria-labelledby="heading-<?php echo $tabCount; ?>">
 						<div class="card-body">

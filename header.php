@@ -53,6 +53,9 @@ $extraBodyClasses = 'noHero ' . $buttonClass;
 
 $headerType = get_field('header_colour', $post->ID);
 
+// GET FONTAWESOME LIBRARY
+$faType = get_theme_mod( 'fa_styles');
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
