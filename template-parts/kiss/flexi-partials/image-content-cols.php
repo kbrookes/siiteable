@@ -63,8 +63,11 @@
 	
 	$btnColour = 'light';
 	
+	/// DIRECTION
+	$containerDirection = 'text-' . get_sub_field($sepPrefix . '_container_direction');
+	
 	?>
-<section class="image-content  <?php echo $bgcolour . ' ' . $separatorClasses . ' ' . $customClass; ?>">
+<section class="image-content  <?php echo $bgcolour . ' ' . $separatorClasses . ' ' . $containerDirection . ' ' . $customClass; ?>">
 	<?php if($addSeparatorUpper == true):
 		include $pathUpper;
 	endif; ?>

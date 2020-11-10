@@ -125,9 +125,11 @@
 	        break;
 	}
 	
+	/// DIRECTION
+	$containerDirection = 'text-' . get_sub_field($sepPrefix . '_container_direction');
 	
 ?>
-<section id="multiBlock" class="multi-block <?php echo $bgcolour . ' ' . $separatorClasses . ' style-' . $blockAR . ' ' . $colOrder; ?> <?php if(get_sub_field('cta_background_image')):?>hasBgImg<?php endif; ?>" style="<?php if(get_sub_field('cta_background_image')):?>background-image:url(<?php  the_sub_field('cta_background_image'); ?>)<?php endif; ?>;">
+<section id="multiBlock" class="multi-block <?php echo $bgcolour . ' ' . $separatorClasses . ' style-' . $blockAR . ' ' . $colOrder . ' ' . $containerDirection; ?> <?php if(get_sub_field('cta_background_image')):?>hasBgImg<?php endif; ?>" style="<?php if(get_sub_field('cta_background_image')):?>background-image:url(<?php  the_sub_field('cta_background_image'); ?>)<?php endif; ?>;">
 	<?php if($addSeparatorUpper == true):
 		include $pathUpper;
 	endif; ?>

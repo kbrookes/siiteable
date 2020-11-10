@@ -104,14 +104,17 @@
 	
 	$ctaClass = get_sub_field('cta_class');
 	
+	/// DIRECTION
+	$containerDirection = 'text-' . get_sub_field($sepPrefix . '_container_direction');
+	
 ?>
-<section id="ctaHome" class="cta <?php echo $bgcolour . ' ' . $separatorClasses . ' ' . $overlayClass . ' ' . $ctaClass; ?> <?php if(get_sub_field('cta_background_image')):?>hasBgImg<?php endif; ?>" <?php if(get_sub_field('cta_background_image')):?>style="background-image:url(<?php  the_sub_field('cta_background_image'); ?>)"<?php endif; ?>>
+<section id="ctaHome" class="cta <?php echo $bgcolour . ' ' . $separatorClasses . ' ' . $overlayClass . ' ' . $containerDirection . ' ' . $ctaClass; ?> <?php if(get_sub_field('cta_background_image')):?>hasBgImg<?php endif; ?>" <?php if(get_sub_field('cta_background_image')):?>style="background-image:url(<?php  the_sub_field('cta_background_image'); ?>)"<?php endif; ?>>
 	<?php if($addSeparatorUpper == true):
 		include $pathUpper;
 	endif; ?>
 	<div class="cta-wrap flexi-inner">
 		<div class="container">
-			<div class="cta-wrap__inner text-center">
+			<div class="cta-wrap__inner">
 				<?php if(get_sub_field('cta_title')):?>
 					<h2><?php the_sub_field('cta_title'); ?></h2>
 				<?php endif; ?>

@@ -59,9 +59,11 @@
 		$iconSize = $blockIconSize;
 	}
 	
+	/// DIRECTION
+	$containerDirection = 'text-' . get_sub_field($sepPrefix . '_container_direction');
 
 	?>
-<section class="list-icons <?php echo $bgcolour . ' ' . $separatorClasses . ' ' . $customClass . ' style-' . $blockAR . ' icon-' . $iconSize; ?>">
+<section class="list-icons <?php echo $bgcolour . ' ' . $separatorClasses . ' ' . $containerDirection . ' ' . $customClass . ' style-' . $blockAR . ' icon-' . $iconSize; ?>">
 	<?php if($addSeparatorUpper == true):
 		include $pathUpper;
 	endif; ?>
@@ -121,7 +123,7 @@
 									<div class="multi-block__simple-content  image-box__content text-center">
 										<h3><?php the_sub_field('list_item_title'); ?></h3>
 										<?php if(get_sub_field('list_item_subtitle')):?>
-										<h4><?php strip_tags( the_sub_field('list_item_subtitle') ); ?></h4>
+										<h4><?php strip_tags( the_sub_field('list_item_subtitle') ); ?></h4>
 										<?php endif; ?>
 										<?php if(!empty($blockLink)): ?>
 										<p class="<?php echo $blockLinkClass; ?>"><?php echo $blockLinkText; ?> <?php if(!empty($blockLinkIcon)):?><i class="<?php echo $blockLinkIcon; ?>"></i><?php endif; ?></p>
@@ -140,7 +142,7 @@
 							<div class="list-icons__row-content">
 								<h4><?php if($blockLink){?><a href="<?php echo $blockLink; ?>"><?php } ?><?php the_sub_field('list_item_title'); ?><?php if($blockLink){?></a><?php } ?></h4>
 								<?php if(get_sub_field('list_item_subtitle')):?>
-								<p><?php strip_tags( the_sub_field('list_item_subtitle') ); ?></p>
+								<p><?php strip_tags( the_sub_field('list_item_subtitle') ); ?></p>
 								<?php endif; ?>
 								<?php if(!empty($blockLink)): ?>
 								<a href="<?php echo $blockLink; ?>" class="<?php echo $blockLinkClass; ?>"><?php echo $blockLinkText; ?> <?php if(!empty($blockLinkIcon)):?><i class="<?php echo $blockLinkIcon; ?>"></i><?php endif; ?></a>

@@ -46,10 +46,11 @@
 	
 	include $separatorLayout;
 	
-	
+	/// DIRECTION
+	$containerDirection = 'text-' . get_sub_field($sepPrefix . '_container_direction');
 	
 	?>
-<section class="contenttype-content <?php echo $bgcolour . ' ' . $separatorClasses; ?> <?php if(get_sub_field('background_image')):?> hasBg<?php endif; ?>" <?php if($bg_image): ?>style="background-image: url(<?php echo $bg_image; ?>);"<?php endif; ?>>
+<section class="contenttype-content <?php echo $bgcolour . ' ' . $separatorClasses .' ' . $containerDirection; ?> <?php if(get_sub_field('background_image')):?> hasBg<?php endif; ?>" <?php if($bg_image): ?>style="background-image: url(<?php echo $bg_image; ?>);"<?php endif; ?>>
 	<?php if($addSeparatorUpper == true):
 		include $pathUpper;
 	endif; ?>

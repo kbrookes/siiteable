@@ -22252,6 +22252,9 @@ article .section-separator__lower {
 .iconColor-light .tabbed-content__icon {
   color: #EDF2F4;
 }
+.iconColor-white .tabbed-content__icon {
+  color: #fff;
+}
 .iconColor-alternate .tabbed-content__icon {
   color: #8D99AE;
 }
@@ -22283,6 +22286,9 @@ article .section-separator__lower {
 .inActiveBG-light .nav-tabs .nav-link {
   background: #EDF2F4;
 }
+.inActiveBG-white .nav-tabs .nav-link {
+  background: #fff;
+}
 .inActiveBG-alternate .nav-tabs .nav-link {
   background: #8D99AE;
 }
@@ -22297,6 +22303,9 @@ article .section-separator__lower {
 }
 .fontInactive-light .nav-tabs .nav-link {
   color: #EDF2F4;
+}
+.fontInactive-white .nav-tabs .nav-link {
+  color: #fff;
 }
 .fontInactive-alternate .nav-tabs .nav-link {
   color: #8D99AE;
@@ -22317,6 +22326,10 @@ article .section-separator__lower {
 .activeBG-light .nav-tabs .nav-item.show .nav-link {
   background: #EDF2F4;
 }
+.activeBG-white .nav-tabs .nav-link.active,
+.activeBG-white .nav-tabs .nav-item.show .nav-link {
+  background: #fff;
+}
 .activeBG-alternate .nav-tabs .nav-link.active,
 .activeBG-alternate .nav-tabs .nav-item.show .nav-link {
   background: #8D99AE;
@@ -22336,6 +22349,10 @@ article .section-separator__lower {
 .fontActive-light .nav-tabs .nav-link.active,
 .fontActive-light .nav-tabs .nav-item.show .nav-link {
   color: #EDF2F4;
+}
+.fontActive-white .nav-tabs .nav-link.active,
+.fontActive-white .nav-tabs .nav-item.show .nav-link {
+  color: #fff;
 }
 .fontActive-alternate .nav-tabs .nav-link.active,
 .fontActive-alternate .nav-tabs .nav-item.show .nav-link {
@@ -22375,6 +22392,9 @@ article .section-separator__lower {
 .activeBG-light .card {
   background: #EDF2F4;
 }
+.activeBG-white .card {
+  background: #fff;
+}
 .activeBG-alternate .card {
   background: #8D99AE;
 }
@@ -22389,6 +22409,9 @@ article .section-separator__lower {
 }
 .fontActive-light .card {
   color: #EDF2F4;
+}
+.fontActive-white .card {
+  color: #fff;
 }
 .fontActive-alternate .card {
   color: #8D99AE;

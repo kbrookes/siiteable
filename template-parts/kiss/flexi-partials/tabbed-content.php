@@ -81,13 +81,16 @@
 	// GET FONTAWESOME LIBRARY
 	$faType = get_theme_mod( 'fa_styles');
 	
+	/// DIRECTION
+	$containerDirection = 'text-' . get_sub_field($sepPrefix . '_container_direction');
+	
 	?>
 
 <section class="tabbed-content  <?php echo $separatorClasses; ?>">
 	<?php if($addSeparatorUpper == true):
 		include $pathUpper;
 	endif; ?>
-	<div class="tabbed-content__inner flexi-inner <?php echo $tabColourSetup . ' ' . $tabFontSetup . ' ' . $colCount; ?>">
+	<div class="tabbed-content__inner flexi-inner <?php echo $tabColourSetup . ' ' . $tabFontSetup . ' ' . $colCount . ' ' . $containerDirection; ?>">
 		<div class="container">
 			<?php if(!empty($tabTitle)) {
 				echo '<h2 class="tabbed-content__title">' . $tabTitle . '</h2>';
