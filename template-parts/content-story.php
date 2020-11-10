@@ -7,11 +7,11 @@
  * @package StrapPress
  */
 
-?>
+// GET FONTAWESOME LIBRARY
+$faType = get_theme_mod( 'fa_styles');
 
-<?php
-	$full_img = get_the_post_thumbnail_url();
-	//
+$full_img = get_the_post_thumbnail_url();
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -35,13 +35,13 @@
 					</div>
 					<?php if(get_field('file_upload')){?>
 					<div class="mt-3 mb-3">
-						<a class="btn-custom primary" href="<?php echo get_field('file_upload'); ?>"><i class="fa fa-chevron-down"></i> Download Now</a>
+						<a class="btn-custom primary" href="<?php echo get_field('file_upload'); ?>"><i class="<?= $faType; ?> fa-chevron-down"></i> Download Now</a>
 					</div>
 					<?php } ?>
 					<?php if(get_field('hide_readmore') != true){?>
 					<footer class="entry-footer">
 						<?php if ( ! is_single() ) : ?>
-						<a href="<?php the_permalink(); ?>" class="btn-custom primary ">READ MORE <i class="fas fa-chevron-right"></i></a>
+						<a href="<?php the_permalink(); ?>" class="btn-custom primary ">READ MORE <i class="<?= $faType; ?> fa-chevron-right"></i></a>
 						<?php endif; ?>
 						<?php strappress_entry_footer(); ?>
 					</footer><!-- .entry-footer -->

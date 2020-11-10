@@ -28,6 +28,11 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "bootstrap/bootstrap";
 
 /*--------------------------------------------------------------
+# FontAwesome 5 Pro (NOTE - only import required
+--------------------------------------------------------------*/
+@import "./fontawesome/fontawesome.scss";
+
+/*--------------------------------------------------------------
 # Theme Styles and Layout
 --------------------------------------------------------------*/
 @import "site/site";
