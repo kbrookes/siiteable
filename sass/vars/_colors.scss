@@ -28,17 +28,24 @@ $navy: #002149 !default;
 $sky: #E0FBFC !default;
 $brown: #D9A848 !default;
 $slate: #3D5A80 !default;
-$red-2: #EF233C !default;
+
+/// IGNORE DEFAULT PALETTE ABOVE
+
+$primary: #D90429 !default;
+$secondary: #EF233C !default;
+$dark: #2B2D42 !default;
+$light: #EDF2F4 !default;
+$alternate: #8D99AE !default;
 
 $theme-colors: (
-  primary: $red,
-  secondary: $red-2,
+  primary: $primary,
+  secondary: $secondary,
   success: $green,
   info: $cyan,
   warning: $yellow,
   danger: $red,
-  light: $gray-100,
-  dark: $gray-900,
+  light: $light,
+  dark: $dark,
   white: $white
 );
 
@@ -52,11 +59,6 @@ $theme-colors: (
     color: $value;
   }
 }
-
-$primary:       $red !default;
-$secondary:     $red-2 !default;
-$light:         $gray-100 !default;
-$dark:          $gray-900 !default;
 
 $navbar-dark-active-color: $primary;
 $navbar-dark-hover-color: $primary;
