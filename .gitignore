@@ -3,8 +3,6 @@ sass/kiss/_customiser.scss
 
 ## IGNORE CONFIG/BUILD FILES
 sftp-config.json
-//package.json
-//package-lock.json
 config.codekit3
 !.nova/
 node_modules
