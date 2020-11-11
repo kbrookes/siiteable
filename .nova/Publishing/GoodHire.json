@@ -1,5 +1,8 @@
 {
   "identifier" : "B95BF3BC-D114-4B17-8695-CAA1DE429D8F",
+  "ignoredFilePatterns" : [
+    "node_modules"
+  ],
   "remotePath" : "\/public_html\/wp-content\/themes\/siiteable-theme",
   "server" : "GoodHire",
   "usesPublishing" : true

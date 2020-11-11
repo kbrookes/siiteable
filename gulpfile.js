@@ -1,43 +1,49 @@
-var gulp = require('gulp'),
-plumber = require('gulp-plumber'),
-rename = require('gulp-rename');
-var autoprefixer = require('gulp-autoprefixer');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var minifycss = require('gulp-minify-css');
-var sass = require('gulp-sass');
+var gulp = require("gulp"),
+	sass = require("gulp-sass"),
+	postcss = require("gulp-postcss"),
+	autoprefixer = require("autoprefixer"),
+	cssnano = require("cssnano"),
+	sourcemaps = require("gulp-sourcemaps");
 
+var paths = {
+	styles: {
+		// By using styles/**/*.sass we're telling gulp to check all folders for any sass file
+		src: "sass/**/*.scss",
+		style: "sass/style.scss",
+		// Compiled files will end up in whichever folder it's found in (partials are not compiled)
+		dest: "../siiteable-theme/"
+	}
+ 
+	// Easily add additional paths
+	// ,html: {
+	//  src: '...',
+	//  dest: '...'
+	// }
+};
 
-gulp.task('styles', function(){
-gulp.src(['scss/style.scss/**/*.scss'])
-.pipe(plumber({
-  errorHandler: function (error) {
-	console.log(error.message);
-	this.emit('end');
-}}))
-.pipe(sass())
-.pipe(autoprefixer('last 2 versions'))
-.pipe(gulp.dest('style.scss/'))
-.pipe(rename({suffix: '.min'}))
-.pipe(minifycss())
-.pipe(gulp.dest('style.scss/'))
-});
+function watch(){
+	style();
+	gulp.watch(paths.styles.src, style);
+}
+	
+// Don't forget to expose the task!
+exports.watch = watch
 
-gulp.task('scripts', function(){
-return gulp.src('js/dist/**/*.js')
-.pipe(plumber({
-  errorHandler: function (error) {
-	console.log(error.message);
-	this.emit('end');
-}}))
-.pipe(concat('main.js'))
-.pipe(gulp.dest('js/src/'))
-.pipe(rename({suffix: '.min'}))
-.pipe(uglify())
-.pipe(gulp.dest('js/src/'))
-});
-
-gulp.task('default', function(){
-gulp.watch("scss/style.scss/**/*.scss", ['styles']);
-gulp.watch("js/dist/**/*.js", ['scripts']);
-});
+// Define tasks after requiring dependencies
+function style() {
+	return (
+		gulp
+			.src(paths.styles.style)
+			.pipe(sourcemaps.init())
+			.pipe(sass())
+			.on("error", sass.logError)
+			.pipe(postcss([autoprefixer(), cssnano()]))
+			.pipe(sourcemaps.write('../siiteable-theme/'))
+			.pipe(gulp.dest(paths.styles.dest))
+	);
+}
+ 
+// Expose the task by exporting it
+// This allows you to run it from the commandline using
+// $ gulp style
+exports.style = style;

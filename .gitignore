@@ -7,3 +7,4 @@ sftp-config.json
 //package-lock.json
 config.codekit3
 !.nova/
+node_modules
