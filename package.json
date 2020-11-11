@@ -8,17 +8,12 @@
     "keywords": "gulp",
     "devDependencies": {
         "gulp": "*",
-        "gulp-plumber": "*",
-        "gulp-rename": "*",
-        "gulp-sourcemaps": "*",
         "gulp-sass": "*",
-        "gulp-autoprefixer": "*",
-        "es6-promise": "*",
-        "gulp-csscomb": "*",
-        "gulp-merge-media-queries": "*",
-        "gulp-clean-css": "*",
-        "gulp-uglify": "*",
         "gulp-postcss": "*",
-        "cssnano": "*"
+        "gulp-autoprefixer": "*",
+        "cssnano": "*",
+        "gulp-sourcemaps": "*",
+        "gulp-plumber": "*",
+        "es6-promise": "*"
     }
 }
