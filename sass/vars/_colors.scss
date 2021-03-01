@@ -1,6 +1,8 @@
 /*--------------------------------------------------------------
 # Default Bootstrap Colors
 --------------------------------------------------------------*/
+
+/// SET DEFAULT COLOR PALETTE
 $white: #fff !default;
 $gray-100: #EDF2F4 !default;
 $gray-200: #c8c8c8 !default;
@@ -17,7 +19,7 @@ $blue: #00ffff !default;
 $indigo: #6610f2 !default;
 $purple: #45003b !default;
 $pink: #CC3852 !default;
-$red: #D90429 !default;
+$red: #e51937 !default;
 $orange: #EE6C4D !default;
 $yellow: #FAF33E !default;
 $green: #00ff00 !default;
@@ -29,13 +31,15 @@ $sky: #E0FBFC !default;
 $brown: #D9A848 !default;
 $slate: #3D5A80 !default;
 
-/// IGNORE DEFAULT PALETTE ABOVE
+/// ASSIGN COLOURS TO VARIABLES
 
-$primary: #D90429 !default;
-$secondary: #EF233C !default;
-$dark: #2B2D42 !default;
-$light: #EDF2F4 !default;
-$alternate: #8D99AE !default;
+$primary: $red !default;
+$secondary: #af0d25 !default;
+$dark: #313131 !default;
+$light: #8f8f8f !default;
+$alternate: #0564cb !default;
+
+/// ASSIGN COLOURS TO THEME
 
 $theme-colors: (
   primary: $primary,
@@ -64,6 +68,5 @@ $brand-primary: $primary;
 $brand-secondary: $secondary;
 $background-dark: $dark;
 $background-light: $light;
-$alternate: $gray-500;
 
 $bg-secondary: $secondary;

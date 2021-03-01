@@ -11,7 +11,7 @@ var paths = {
 		src: "sass/**/*.scss",
 		style: "sass/style.scss",
 		// Compiled files will end up in whichever folder it's found in (partials are not compiled)
-		dest: "../siiteable-theme/"
+		dest: "."
 	}
  
 	// Easily add additional paths
@@ -38,7 +38,7 @@ function style() {
 			.pipe(sass())
 			.on("error", sass.logError)
 			.pipe(postcss([autoprefixer(), cssnano()]))
-			.pipe(sourcemaps.write('../siiteable-theme/'))
+			.pipe(sourcemaps.write('.'))
 			.pipe(gulp.dest(paths.styles.dest))
 	);
 }
