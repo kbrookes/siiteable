@@ -1,0 +1,35 @@
+.logo {
+    &-fill {
+        &__dark {
+            fill: $dark;
+            transition: 0.3s ease all;
+            .navScrolled.bg-dark & {
+                fill: $white;
+            }
+        }
+        &__light {
+            fill: $light;
+            transition: 0.3s ease all;
+        }
+        &__primary {
+            fill: $primary;
+            transition: 0.3s ease all;
+        }
+        &__secondary {
+            fill: $secondary;
+            transition: 0.3s ease all;
+        }
+        &__alternate {
+            fill: $alternate;
+            transition: 0.3s ease all;
+        }
+        &__white {
+            fill: $white;
+            transition: 0.3s ease all;
+        }
+        &__transparent {
+            fill: transparent;
+            transition: 0.3s ease all;
+        }
+    }
+}

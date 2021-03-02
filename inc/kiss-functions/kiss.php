@@ -113,6 +113,8 @@ function lll_customizer_settings( $wp_customize ) {
 		'choices' => array(
 			'navbar-light' => 'Dark',
 			'navbar-dark' => 'Light',
+			'text-white' => 'White',
+			'text-primary' => 'Primary',
 		),
 	));
 	
@@ -129,6 +131,8 @@ function lll_customizer_settings( $wp_customize ) {
 		'choices' => array(
 			'navbar-light' => 'Dark',
 			'navbar-dark' => 'Light',
+			'text-white' => 'White',
+			'text-primary' => 'Primary',
 		),
 	));
 	

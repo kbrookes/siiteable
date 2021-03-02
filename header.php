@@ -79,7 +79,7 @@ $faType = get_theme_mod( 'fa_styles');
 						   $custom_logo_id = get_theme_mod( 'custom_logo' );
 						   $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 							  ?>
-						<img class="img-fluid" src="<?php echo $image[0]; ?>" alt="">
+						<img class="img-fluid style-svg" src="<?php echo $image[0]; ?>" alt="">
 					</a>
 				</div>
 				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

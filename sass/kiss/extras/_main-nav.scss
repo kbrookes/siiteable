@@ -24,6 +24,7 @@
 		}
 	}
 	.navbar-brand {
+		width: 100%;
 		svg {
 			width: 100%;
 		}
@@ -119,6 +120,26 @@
 		.logo-fill {
 			fill: $primary;
 			transition: 0.3s ease all;
+		}
+	}
+	&.text-white {
+		.navbar-nav {
+			.nav-link {
+				color: $white;
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+	}
+	&.text-primary {
+		.navbar-nav {
+			.nav-link {
+				color: $primary;
+				&:hover {
+					color: darken($primary, 20%);
+				}
+			}
 		}
 	}
 }
