@@ -63,11 +63,11 @@ function footer_sidebar() {
 	register_sidebar($args);
 	
 	$args = array(
-		'name'          => __( 'CTA on Success Story', 'textdomain' ),
+		'name'          => __( 'CTA on Case Study', 'textdomain' ),
 		'id'			=> 'success_cta',
-		'description'   => __( 'Adds a common call to action for all success stories', 'textdomain' ),
+		'description'   => __( 'Adds a common call to action for all case studies', 'textdomain' ),
 		'class'         => 'success-story__cta',
-		'before_widget' => '<div id="%1$s" class="success-story__cta">',
+		'before_widget' => '<div id="%1$s" class="case-study__cta">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widgettitle">',
 		'after_title'   => '</h3>',

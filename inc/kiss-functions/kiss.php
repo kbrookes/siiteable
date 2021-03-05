@@ -150,7 +150,52 @@ function lll_customizer_settings( $wp_customize ) {
 			'true' => 'Yes, make transparent',
 		),
 	));
+	$wp_customize->add_panel('footer_panel',array(
+		'title'=>'Footer Settings',
+		'description'=> 'Modify footer behaviour',
+		'priority'=> 25,
+	));
 	
+	
+	$wp_customize->add_section('footer_col_section',array(
+		'title'=>'Column Layouts',
+		'priority'=>10,
+		'panel'=>'footer_panel',
+	));
+	
+	
+	$wp_customize->add_setting('footer_col_num',array(
+		'default'=>'4',
+	));
+	
+	$wp_customize->add_control('footer_col_ctrl',array(
+		'label'=>'Columns in lower footer',
+		'type'=>'select',
+		'section'=>'footer_col_section',
+		'settings'=>'footer_col_num',
+		'choices' => array(
+			'1' => '1',
+			'2' => '2',
+			'3' => '3',
+			'4' => '4',
+		),
+	));
+	
+	$wp_customize->add_setting('footer_col_layout',array(
+		'default'=>'equal',
+	));
+	
+	$wp_customize->add_control('footer_logo_ctrl',array(
+		'label'=>'Column options',
+		'type'=>'select',
+		'section'=>'footer_col_section',
+		'settings'=>'footer_col_layout',
+		'choices' => array(
+			'equal' => 'Columns are equal',
+			'wide-first' => 'First column is wider',
+			'wide-last' => 'Last column is wider',
+		),
+	));
 }
 
 ///// SETUP THE KIRKI FRAMEWORK
@@ -232,6 +277,58 @@ Kirki::add_field( 'kiss_theme', [
 	],
 ] );
 
+/// Create Analytics Options Section
+Kirki::add_section( 'analytics_options', array(
+	'title'          => esc_html__( 'Analytics Options', 'kirki' ),
+	'description'    => esc_html__( 'Setup Google Analytics.', 'kirki' ),
+	'panel'          => 'general_settings',
+	'priority'       => 160,
+) );
+
+Kirki::add_field( 'kiss_theme', [
+	'type'        => 'select',
+	'settings'    => 'select_tag_type',
+	'label'       => esc_html__( 'Select analytics type', 'kirki' ),
+	'section'     => 'analytics_options',
+	'default'     => 'option-1',
+	'placeholder' => esc_html__( 'Select an option...', 'kirki' ),
+	'priority'    => 10,
+	'multiple'    => 1,
+	'choices'     => [
+		'standard' => esc_html__( 'Standard analytics', 'kirki' ),
+		'tagmanager' => esc_html__( 'Google Tag Manager', 'kirki' ),
+	],
+] );
+
+// Standard Analytics
+Kirki::add_field( 'kiss_theme', [
+	'type'        => 'textarea',
+	'settings'    => 'analytics_standard',
+	'label'       => esc_html__( 'Standard analytics code', 'kirki' ),
+	'section'     => 'analytics_options',
+] );
+
+// Tag Manager Analytics
+Kirki::add_field( 'kiss_theme', [
+	'type'        => 'textarea',
+	'settings'    => 'tagman_top',
+	'label'       => esc_html__( 'Tagmanager code in HEAD', 'kirki' ),
+	'section'     => 'analytics_options',
+] );
+
+// Tag Manager Analytics
+Kirki::add_field( 'kiss_theme', [
+	'type'        => 'textarea',
+	'settings'    => 'tagman_bottom',
+	'label'       => esc_html__( 'Tagmanager code in BODY', 'kirki' ),
+	'section'     => 'analytics_options',
+] );
+
+
+/// ANALYTICS CONDITIONALS
+
+
+
 /// Create Footer Options Section
 Kirki::add_section( 'footer_options', array(
     'title'          => esc_html__( 'Footer Options', 'kirki' ),
@@ -248,6 +345,8 @@ Kirki::add_field( 'kiss_theme', [
 	'section'     => 'footer_options',
 	'default'     => '',
 ] );
+
+
 
 
 /// FILTER YOUTUBE URLS TO ADD BOOTSTRAP RESPONSIVE PARAMETERS
