@@ -49,29 +49,30 @@
 	endif;
 	
 	$columnGroup = get_field('hero_columns_group');
-	$col1Content = $columnGroup['col_1_content'];
-	$col1Align = 'text-' . $columnGroup['col_1_align'];
-	$col2Content = $columnGroup['col_2_content'];
-	$col2Align = 'text-' . $columnGroup['col_2_align'];
-	
-	$columnPadding = '';
-	$columnPadding = get_field('column_padding');
-	if($columnPadding > 0){
-		$columnPadding = 'p-' . $columnPadding;
-	}
-	
-	/// TITLE POSITION
-	$titleCol = 1;
-	if($columnGroup['col_1_title'] == true){
+	if(!empty($columnGroup)) {
+		$col1Content = $columnGroup['col_1_content'];
+		$col1Align = 'text-' . $columnGroup['col_1_align'];
+		$col2Content = $columnGroup['col_2_content'];
+		$col2Align = 'text-' . $columnGroup['col_2_align'];
+		
+		$columnPadding = '';
+		$columnPadding = get_field('column_padding');
+		if($columnPadding > 0){
+			$columnPadding = 'p-' . $columnPadding;
+		}
+		
+		/// TITLE POSITION
 		$titleCol = 1;
-	} elseif($columnGroup['col_1_title'] == false){
-		$titleCol = 2;
+		if($columnGroup['col_1_title'] == true){
+			$titleCol = 1;
+		} elseif($columnGroup['col_1_title'] == false){
+			$titleCol = 2;
+		}
+		
+		if(($columnGroup['col_1_title'] == false) && ($columnGroup['col_2_title'] == false)){
+			$titleCol = 0;
+		}
 	}
-	
-	if(($columnGroup['col_1_title'] == false) && ($columnGroup['col_2_title'] == false)){
-		$titleCol = 0;
-	}
-	
 	/// OVERLAY SETUP
 	$hasOverlay = false;
 	$overlayColor = null;
