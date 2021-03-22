@@ -1,7 +1,7 @@
 //// GENERAL STYLES
 
 .site {
-	/*padding-top: 85px;
+  /*padding-top: 85px;
 	@include media-breakpoint-up(xs){
 		padding-top: 63px;
 	}
@@ -18,48 +18,47 @@
 
 /// Control content area margins
 .content-area + .cta {
-	margin-top: 5rem;
+  margin-top: 5rem;
 }
 
 .pagination {
-	padding-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 /// COLOURS
 .bg {
-	&-black {
-		background-color: $black;
-		color: $gray-200;
-		h2 {
-			color: $white;
-		}
-		h3 {
-			color: $primary;
-			font-weight: $headings-font-weight-bold;
-		}
-	}
+  &-black {
+    background-color: $black;
+    color: $gray-200;
+    h2 {
+      color: $white;
+    }
+    h3 {
+      color: $primary;
+      font-weight: $headings-font-weight-bold;
+    }
+  }
 }
 
 /// FONTS
 
-
 .navbar-brand {
-	@include media-breakpoint-up(xs) {
-		max-width: 180px;
-	}
-	@include media-breakpoint-up(sm) {
-		max-width: 220px;
-	}
-	@include media-breakpoint-up(md) {
-		max-width: 280px;
-	}
-	.navbar-dark & {
-		a {
-			color: $white;
-			font-family: $headings-font-family;
-			font-weight: 700;
-		}
-	}
+  @include media-breakpoint-up(xs) {
+    max-width: 180px;
+  }
+  @include media-breakpoint-up(sm) {
+    max-width: 220px;
+  }
+  @include media-breakpoint-up(md) {
+    max-width: 280px;
+  }
+  .navbar-dark & {
+    a {
+      color: $white;
+      font-family: $headings-font-family;
+      font-weight: 700;
+    }
+  }
 }
 
 //// MIXINS
@@ -70,152 +69,148 @@
 
 $basefontsize: 16 !default;
 
-
 @mixin rem($property, $px: $basefontsize) {
+  $pxvalues: null;
+  $remvalues: null;
 
-	$pxvalues: null;
-	$remvalues: null;
+  @each $pxvalue in $px {
+    $pxvalues: append($pxvalues, ($pxvalue) + px);
+    $remvalues: append($remvalues, ($pxvalue/$basefontsize) + rem);
+  }
 
-	@each $pxvalue in $px {
-		$pxvalues: append($pxvalues, ($pxvalue)+px);
-	$remvalues: append($remvalues, ($pxvalue/$basefontsize)+rem);
-	}
-
-	#{$property}: $pxvalues;
-	#{$property}: $remvalues;
-
+  #{$property}: $pxvalues;
+  #{$property}: $remvalues;
 }
 
 /// DEFAULT MARGINS
 .m {
-	&-v {
-		&__xs {
-			margin-top: 8px;
-			margin-bottom: 8px;
-		}
-		&__sm {
-			margin-top: 15px;
-			margin-bottom: 15px;
-		}
-		&__md {
-			margin-top: 30px;
-			margin-bottom: 30px;
-		}
-		&__lg {
-			margin-top: 60px;
-			margin-bottom: 60px;
-		}
-		&__xl {
-			margin-top: 90px;
-			margin-bottom: 90px;
-		}
-	}
-	&-t {
-		&__xs {
-			margin-top: 8px;
-		}
-		&__sm {
-			margin-top: 15px;
-		}
-		&__md {
-			margin-top: 30px;
-		}
-		&__lg {
-			margin-top: 60px;
-		}
-		&__xl {
-			margin-top: 90px;
-		}
-	}
-	&-b {
-		&__xs {
-			margin-bottom: 8px;
-		}
-		&__sm {
-			margin-bottom: 15px;
-		}
-		&__md {
-			margin-bottom: 30px;
-		}
-		&__lg {
-			margin-bottom: 60px;
-		}
-		&__xl {
-			margin-bottom: 90px;
-		}
-	}
+  &-v {
+    &__xs {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+    &__sm {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    &__md {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    &__lg {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+    &__xl {
+      margin-top: 90px;
+      margin-bottom: 90px;
+    }
+  }
+  &-t {
+    &__xs {
+      margin-top: 8px;
+    }
+    &__sm {
+      margin-top: 15px;
+    }
+    &__md {
+      margin-top: 30px;
+    }
+    &__lg {
+      margin-top: 60px;
+    }
+    &__xl {
+      margin-top: 90px;
+    }
+  }
+  &-b {
+    &__xs {
+      margin-bottom: 8px;
+    }
+    &__sm {
+      margin-bottom: 15px;
+    }
+    &__md {
+      margin-bottom: 30px;
+    }
+    &__lg {
+      margin-bottom: 60px;
+    }
+    &__xl {
+      margin-bottom: 90px;
+    }
+  }
 }
 
 //// SEPARATOR COLOURS
 .fill {
-	&-body {
-		fill: $white;
-	}
-	&-border {
-		fill: $light;
-	}
+  &-body {
+    fill: $white;
+  }
+  &-border {
+    fill: $light;
+  }
 }
 
 /// FIXING STUPID EVEREST BUTTONS
 .everest-forms .everest-forms-part-button,
-.everest-forms button[type=submit],
-.everest-forms input[type=submit] {
-	&.btn-primary {
-		color: $white;
-		background-color: $brand-primary;
-		border-color: $brand-primary;
-		&:hover {
-			color: $white;
-			background-color: lighten($brand-primary, 10%);
-			border-color: lighten($brand-primary, 10%);
-		}
-	}
-	&.btn-success {
-		color: $white;
-		background-color: $green;
-		border-color: $green;
-		&:hover {
-			color: $white;
-			background-color: darken($green, 10%);
-			border-color: darken($green, 10%);
-		}
-	}
+.everest-forms button[type="submit"],
+.everest-forms input[type="submit"] {
+  &.btn-primary {
+    color: $white;
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+    &:hover {
+      color: $white;
+      background-color: lighten($brand-primary, 10%);
+      border-color: lighten($brand-primary, 10%);
+    }
+  }
+  &.btn-success {
+    color: $white;
+    background-color: $green;
+    border-color: $green;
+    &:hover {
+      color: $white;
+      background-color: darken($green, 10%);
+      border-color: darken($green, 10%);
+    }
+  }
 }
 
 /// FIX TABS ON MOBILE TO MAKE ACCORDION
 .nav-tabs {
-	display:none;
+  display: none;
 }
 
-@include media-breakpoint-up(md){
-	.nav-tabs {
-		display: flex;
-	}
-	
-	.card {
-		border: none;
-	}
+@include media-breakpoint-up(md) {
+  .nav-tabs {
+    display: flex;
+  }
 
-	.card .card-header {
-		display:none;
-	}  
+  .card {
+    border: none;
+  }
 
-	.card .collapse{
-		display:block;
-	}
+  .card .card-header {
+    display: none;
+  }
+
+  .card .collapse {
+    display: block;
+  }
 }
 
-@include media-breakpoint-down(sm){
-	.tab-content > .tab-pane {
-		display: block !important;
-		opacity: 1;
-	}
+@include media-breakpoint-down(sm) {
+  .tab-content > .tab-pane {
+    display: block !important;
+    opacity: 1;
+  }
 }
-
 
 /// Make first para big
 .hasHero {
-	/*.content-area article {
+  /*.content-area article {
 		p:first-child {
 			color: $brand-primary;
 			font-family: $headings-font-family;
@@ -238,216 +233,229 @@ $basefontsize: 16 !default;
 
 /// SETUP STANDARD IMAGE BLOCKS {
 .image-box {
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	//box-shadow: 6px 6px 0 $dark;
-	position: relative;
-	&__inner {
-		align-items: center;
-		cursor: hand;
-		display: flex;
-		height: 100%;
-		justify-content: center;
-		left: 0;
-		opacity: 1;
-		padding: 15px;
-		position: absolute;
-		top: 0;
-		transition: 0.3s ease all;
-		width: 100%;
-		&:before {
-			background-color: transparent;
-			content: '';
-			height: 100%;
-			position: absolute;
-			transition: 0.3s ease all;
-			width: 100%;
-			z-index: 99;
-		}
-		&:hover {
-			&:before {
-				background-color: rgba($dark, 0.5);
-			}
-		}
-		span {
-			position: relative;
-			z-index: 100;
-		}
-	}
-	.style-square & {
-		padding-bottom: 100%;
-	}
-	.style-widescreen & {
-		padding-bottom: 56.25%
-	}
-	.style-traditional & {
-		padding-bottom: 75%;
-	}
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  //box-shadow: 6px 6px 0 $dark;
+  position: relative;
+  &__inner {
+    align-items: center;
+    cursor: hand;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    opacity: 1;
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    transition: 0.3s ease all;
+    width: 100%;
+    &-overlay {
+      transition: 0.3s ease all;
+    }
+    &:before {
+      background-color: transparent;
+      content: "";
+      height: 100%;
+      position: absolute;
+      transition: 0.3s ease all;
+      width: 100%;
+      z-index: 99;
+    }
+    &:hover {
+      &:before {
+        background-color: rgba($dark, 0.5);
+      }
+    }
+    &.hasOverlay {
+      &:hover {
+        &:before {
+          background-color: transparent;
+        }
+        .image-box__inner-overlay {
+          opacity: 100;
+        }
+      }
+    }
+    span {
+      position: relative;
+      z-index: 100;
+    }
+  }
+  .style-square & {
+    padding-bottom: 100%;
+  }
+  .style-widescreen & {
+    padding-bottom: 56.25%;
+  }
+  .style-traditional & {
+    padding-bottom: 75%;
+  }
 }
 
 /// SVG FILLS
 .fill-primary {
-	fill:$primary;
+  fill: $primary;
 }
 .fill-secondary {
-	fill:$secondary;
+  fill: $secondary;
 }
 .fill-dark {
-	fill:$dark;
+  fill: $dark;
 }
 .fill-white {
-	fill:$white;
+  fill: $white;
 }
 .fill-light {
-	fill:$light;
+  fill: $light;
 }
 .fill-alternate {
-	fill:$alternate;
+  fill: $alternate;
 }
 
 /// OPACITIES
 .opacity {
-	&-75 {
-		opacity: 0.75;
-	}
-	&-50 {
-		opacity: 0.50;
-	}
-	&-25 {
-		opacity: 0.25;
-	}
+  &-75 {
+    opacity: 0.75;
+  }
+  &-50 {
+    opacity: 0.5;
+  }
+  &-25 {
+    opacity: 0.25;
+  }
 }
 
 /// DARKENING HEROS
-@mixin hero-darken($property){
-	content: '';
-	position: absolute;
-	width: 100%;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	background-color: rgba($background-dark, $property);
+@mixin hero-darken($property) {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba($background-dark, $property);
 }
 
-@mixin hero-lighten($property){
-	content: '';
-	position: absolute;
-	width: 100%;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	background-color: rgba($white, $property);
+@mixin hero-lighten($property) {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba($white, $property);
 }
 
-@mixin hero-primary($property){
-	content: '';
-	position: absolute;
-	width: 100%;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	background-color: rgba($brand-primary, $property);
+@mixin hero-primary($property) {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba($brand-primary, $property);
 }
 
 //// HAMBURGER NAV
 .icon-bar {
-	width: 22px; 
-	height: 2px;
-	background-color: #B6B6B6;
-	display: block;
-	transition: all 0.2s;
-	margin-top: 4px
+  width: 22px;
+  height: 2px;
+  background-color: #b6b6b6;
+  display: block;
+  transition: all 0.2s;
+  margin-top: 4px;
 }
- 
+
 .navbar-toggler {
   border: none;
   background: transparent !important;
 }
- 
+
 .navbar-toggler .top-bar {
   transform: rotate(45deg);
   transform-origin: 10% 10%;
 }
- 
+
 .navbar-toggler .middle-bar {
   opacity: 0;
 }
- 
+
 .navbar-toggler .bottom-bar {
   transform: rotate(-45deg);
   transform-origin: 10% 90%;
 }
- 
+
 .navbar-toggler.collapsed .top-bar {
   transform: rotate(0);
 }
- 
+
 .navbar-toggler.collapsed .middle-bar {
   opacity: 1;
 }
- 
+
 .navbar-toggler.collapsed .bottom-bar {
   transform: rotate(0);
 }
 
 //// BLOG PAGES
 body.blog {
-	.site-main {
-		background-color: $dark;
-	}
-	.type-post {
-		.post-list {
-			h2.entry-title {
-				font-size: 1.4rem;
-			}
-			.entry-content {
-				p,
-				p:first-child {
-					color: $light;
-					font-size: 1.1rem;
-				}
-			}
-		}
-	}
+  .site-main {
+    background-color: $dark;
+  }
+  .type-post {
+    .post-list {
+      h2.entry-title {
+        font-size: 1.4rem;
+      }
+      .entry-content {
+        p,
+        p:first-child {
+          color: $light;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
 }
 .single-post {
-	.content-area .container {
-		max-width: 580px;
-	}
-	.entry-content {
-		p {
-			color: $gray-200;
-		}
-		&__date {
-			color: $gray-600;
-			text-transform: uppercase;
-		}
-		p#breadcrumbs {
-			font-size: 0.9rem;
-			margin: 0.5rem 0;
-		}
-	}
+  .content-area .container {
+    max-width: 580px;
+  }
+  .entry-content {
+    p {
+      color: $gray-200;
+    }
+    &__date {
+      color: $gray-600;
+      text-transform: uppercase;
+    }
+    p#breadcrumbs {
+      font-size: 0.9rem;
+      margin: 0.5rem 0;
+    }
+  }
 }
 
 /// HERO HEADER ADJUSTMENTS
 .hero-header {
-	&__wrap {
-		h3 {
-			color: $white;
-			font-size: 1.3rem;
-			font-weight: 500;
-			margin-bottom: 1.6rem;
-		}
-	}
+  &__wrap {
+    h3 {
+      color: $white;
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 1.6rem;
+    }
+  }
 }
 
 .footer-nav {
-	ul.menu {
-		padding: 0 0 0 1.1rem;
-	}
+  ul.menu {
+    padding: 0 0 0 1.1rem;
+  }
 }
 
 p strong {
-	font-weight: $font-weight-bold;
+  font-weight: $font-weight-bold;
 }
