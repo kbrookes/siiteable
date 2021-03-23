@@ -79,6 +79,12 @@ $boxShadow = get_sub_field($sepPrefix . "_box_shadow");
 
 /// PADDING
 $boxPadding = get_sub_field($sepPrefix . "_box_padding");
+
+/// MARGINS
+$marginSize = get_sub_field($sepPrefix . "_margin_size");
+$marginSides = get_sub_field($sepPrefix . "_margin_sides");
+
+$marginClass = $marginSides . "-" . $marginSize;
 ?>
 <section class="image-content  <?php echo $bgcolour .
   " " .
@@ -90,7 +96,9 @@ $boxPadding = get_sub_field($sepPrefix . "_box_padding");
   " " .
   $boxShadow .
   " " .
-  $boxPadding; ?>">
+  $boxPadding .
+  " " .
+  $marginClass; ?>">
 	<?php if ($addSeparatorUpper == true):
    include $pathUpper;
  endif; ?>

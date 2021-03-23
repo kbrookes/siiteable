@@ -12,7 +12,56 @@
 ?>
 
 	</div><!-- #content -->
-
+	<?
+	$showLogos = get_field('logos_show', 'options');
+	$showIcons = get_field('icons_show', 'options');
+	
+	$logosTitle = get_field('logos_section_title', 'option'); 
+	$iconsTitle = get_field('icons_section_title', 'option'); 
+	
+	if($showLogos || $showIcons):
+	?>
+	<section class="container">
+		<div class="row">
+			<? if($showLogos):?>
+			<div class="col-12 col-md-6 col-lg-8 col-xl-9 client-logos">
+				<h3><?= $logosTitle; ?></h3>
+				<?php if( have_rows('logos_repeater', 'option') ): ?>
+				<div class="d-flex align-items-center">
+					<?php while( have_rows('logos_repeater', 'option') ): the_row(); ?>
+					<div class="<?= get_field('logos_padding', 'option'); ?>">
+						<img src="<?php the_sub_field('logo_image'); ?>" class="img-fluid" alt="" />
+					</div>
+					<?php endwhile; ?>
+				</div>
+				<?php endif; ?>
+			</div>
+			<? endif; ?>
+			<? if($showIcons): ?>
+			<div class="col-12 col-md-6 col-lg-4 col-xl-3 social-icons d-flex flex-column">
+				<h3><?= $iconsTitle; ?></h3>
+				<?php if( have_rows('icons_list', 'option') ): ?>
+				<div class="d-flex align-items-center flex-grow-1">
+					<?php while( have_rows('icons_list', 'option') ): the_row(); 
+						$iconLink = get_sub_field('icon_link');
+					?>
+					<div class="<?= get_field('icons_padding', 'option'); ?>">
+						<? if(!empty($iconLink)):?>
+						<a href="<?= $iconLink; ?>" target="_blank">
+						<? endif; ?>
+						<img src="<?php the_sub_field('icon_add'); ?>" class="img-fluid" alt="" />
+						<? if(!empty($iconLink)):?>
+						</a>
+						<? endif; ?>
+					</div>
+					<?php endwhile; ?>
+				</div>
+				<?php endif; ?>
+			</div>
+			<? endif; ?>
+		</div>
+	</section>
+	<? endif; ?>
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">			
 			<?php if ( function_exists('footer_sidebar')) : ?>

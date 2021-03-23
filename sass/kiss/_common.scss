@@ -459,3 +459,45 @@ body.blog {
 p strong {
   font-weight: $font-weight-bold;
 }
+
+/// ICONS & IMAGES IN ROWS WITH PADDING
+.social-icons,
+.client-logos {
+  .d-flex {
+    div:first-child {
+      padding-left: 0 !important;
+    }
+    div:last-child {
+      padding-right: 0 !important;
+    }
+  }
+}
+
+span.wpcf7-list-item {
+  margin: 0.2em 0;
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+  border-color: $secondary;
+  background-color: $secondary;
+  color: $dark;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 1rem;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output {
+  background-color: $red; 
+  border: 1px $red solid;
+  color: $white;
+  padding: 1rem;
+}
+
+.list-icons {
+  &.list-reduce-height {
+    .list-icons__main .list-icons__row {
+      padding: 10px 30px;
+    }
+  }
+}

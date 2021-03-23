@@ -8,7 +8,7 @@ function strappress_scripts()
     "strappress-style",
     get_stylesheet_directory_uri() . "/style.css",
     [],
-    "4.3.9"
+    "4.4.1"
   );
 
   wp_enqueue_script(
