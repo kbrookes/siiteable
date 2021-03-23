@@ -62,6 +62,13 @@ endif;
 
 $btnColour = "light";
 
+// Button Options
+$btnAddLinks = false;
+$btnAddLinks = get_sub_field($sepPrefix . "_links");
+
+$btnHide = false;
+$btnHide = get_sub_field($sepPrefix . "_hide_button");
+
 /// DIRECTION
 $containerDirection =
   "text-" . get_sub_field($sepPrefix . "_container_direction");
@@ -93,22 +100,42 @@ $boxPadding = get_sub_field($sepPrefix . "_box_padding");
 				<?php if (!empty($colImage)) { ?>
 				<div class="<?php echo $classImageCol . " " . $colOrder; ?>">
 					<div class="image-content__inner-image <?php echo $imageColClass; ?>">
+						<? if($btnAddLinks = true):?>
+						<a href="<?php
+      if ($setLink == "email"): ?>mailto:<?php endif;
+      echo $linkContent;
+      ?>">
+						<? endif; ?>
 						<?php if ($imageType == "image"): ?>
 						<img src="<?php echo $colImage; ?>" class="img-fluid <?= $imgShadow ?>" />
 						<?php elseif ($imageType == "icon"): ?>
 						<?php echo $colImage; ?>
 						<?php endif; ?>
+						<? if($btnAddLinks = true):?>
+						</a>
+						<? endif; ?>
 					</div>
 				</div>
 				<?php } ?>
 				<div class="<?php echo $classContentCol; ?>">
 					<div class="image-content__inner-content">
+						<? if(!empty(get_sub_field("col_title"))):?>
+						<? if($btnAddLinks = true):?>
+						<a href="<?php
+      if ($setLink == "email"): ?>mailto:<?php endif;
+      echo $linkContent;
+      ?>">
+						<? endif; ?>
+						<h3><?= get_sub_field("col_title") ?></h3>
+						<? if($btnAddLinks = true):?>
+						</a>
+						<? endif; ?>
+						<? endif; ?>
 						<?php echo get_sub_field("content_column"); ?>
-						<?php if ($addButton) { ?>
+						<?php if ($addButton == true && $btnHide == false) { ?>
 						<div class="image-content__actions">
-							<a class="btn-custom btn-sm <?php echo $btnColour; ?> <?php if (
-   $setLink == "form"
- ):
+							<a class="btn-custom btn-sm 
+							<?php echo $btnColour; ?> <?php if ($setLink == "form"):
    echo $linkClass;
  endif; ?>" href="<?php
 if ($setLink == "email"): ?>mailto:<?php endif;
