@@ -21,7 +21,7 @@
 	
 	if($showLogos || $showIcons):
 	?>
-	<section class="container">
+	<section class="container logos-icons">
 		<div class="row">
 			<? if($showLogos):?>
 			<div class="col-12 col-md-6 col-lg-8 col-xl-9 client-logos">

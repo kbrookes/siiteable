@@ -137,3 +137,24 @@
     @include make-col(12);
   }
 }
+
+/// LATEST NEWS
+.posts-latest {
+  &__post {
+    &-date {
+      color: $light;
+      font-size: 0.75rem;
+      font-weight: bold;
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+    &-title {
+      color: $primary;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+    a:hover {
+      color: $primary;
+    }
+  }
+}

@@ -1,3 +1,27 @@
+.logos-icons {
+	border-top: 1px solid lighten($light, 20%);
+	padding-top: 3rem;
+	margin-bottom: 2rem;
+	h3 {
+		font-size: 0.8rem;
+		font-weight: bold;
+		text-transform: uppercase
+	}
+}
 
+.archive-control-area {
+	h2 {
+		font-weight: $font-weight-light;
+	}
+}
 
-
+.case-studies {
+	margin: 60px auto;
+	div[class^='case-study'] {
+		h3 {
+			border-bottom: 1px solid $primary;
+			font-weight: $font-weight-light;
+			margin-bottom: 2rem;
+		}
+	}
+}
