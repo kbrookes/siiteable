@@ -1,26 +1,26 @@
 /// GENERAL PADDING SETTINGS
 .flexi-inner {
-	padding-top: 30px;
-	padding-bottom: 30px;
-	.paddingUpper-xl & {
-		padding-top: 120px;
-	}
-	.paddingUpper-lg & {
-		padding-top: 90px;
-	}
-	.paddingUpper-md & {
-		padding-top: 60px;
-	}
-	.paddingLower-xl & {
-		padding-bottom: 120px;
-	}
-	.paddingLower-lg & {
-		padding-bottom: 90px;
-	}
-	.paddingLower-md & {
-		padding-bottom: 60px;
-	}
-	/*.hasUpper.upperPaddingDouble & {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  .paddingUpper-xl & {
+    padding-top: 120px;
+  }
+  .paddingUpper-lg & {
+    padding-top: 90px;
+  }
+  .paddingUpper-md & {
+    padding-top: 60px;
+  }
+  .paddingLower-xl & {
+    padding-bottom: 120px;
+  }
+  .paddingLower-lg & {
+    padding-bottom: 90px;
+  }
+  .paddingLower-md & {
+    padding-bottom: 60px;
+  }
+  /*.hasUpper.upperPaddingDouble & {
 		padding-top: 90px;
 	}
 	.hasUpper.upperDown & {
@@ -43,46 +43,45 @@
 	}*/
 }
 
-/// EXTRA CONTAINERS 
+/// EXTRA CONTAINERS
 .container {
-	&-sm {
-		@include make-container();
-		width: 920px;
-		max-width: 100%;
-	}
+  &-sm {
+    @include make-container();
+    width: 920px;
+    max-width: 100%;
+  }
 }
 
 /// GENERAL PAGE HANDLING
 .site {
-	&-content {
-		.noHero & {
-			padding-top: 120px;
-		}
-	}
-	&-main {
-		padding: 60px 0;
-	}
+  &-content {
+    .noHero & {
+      padding-top: 120px;
+    }
+  }
+  &-main {
+    padding: 60px 0 0;
+  }
 }
-
 
 /// FOOTER HANDLING
 .site-info {
-	display: flex;
-	justify-content: space-between;
-	.footer-nav__flat {
-		.menu {
-			display: flex;
-			padding: 0;
-			list-style-type: none;
-			li.menu-item {
-				margin: 0 15px;
-				&:first-child {
-					margin-left: 0;
-				}
-				&:last-child {
-					margin-right: 0;
-				}
-			}
-		}
-	}
+  display: flex;
+  justify-content: space-between;
+  .footer-nav__flat {
+    .menu {
+      display: flex;
+      padding: 0;
+      list-style-type: none;
+      li.menu-item {
+        margin: 0 15px;
+        &:first-child {
+          margin-left: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
 }

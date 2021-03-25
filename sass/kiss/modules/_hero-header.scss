@@ -180,7 +180,6 @@
 		}
 	}
 	&__content {
-		background-color: rgba($dark, 0.5);
 		@include media-breakpoint-up(xs){
 			width: 100%;
 			margin-bottom: 15px;

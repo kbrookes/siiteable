@@ -1,12 +1,11 @@
 .post-type-archive {
 	.hero-header {
-		margin-bottom: 60px;
+		//margin-bottom: 60px;
 	}
 	.archive-control-area-inside {
 		@include make-container();
 		max-width: 992px;
 		h2 {
-			color: $white;
 			font-weight: $headings-font-weight-light;
 			margin-bottom: 60px;
 			text-align: center;
@@ -21,5 +20,11 @@
 				}
 			}
 		}
+	}
+}
+
+.archive-control-area {
+	h2 {
+		color: $primary;
 	}
 }

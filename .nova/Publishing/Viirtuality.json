@@ -1,0 +1,10 @@
+{
+  "identifier" : "C51C2D80-CAF3-4268-9401-D0E17464B77B",
+  "ignoredFilePatterns" : [
+    "package-lock.json"
+  ],
+  "localPath" : ".",
+  "remotePath" : "\/wp-content\/themes\/mastercom",
+  "server" : "Viirtuality",
+  "usesPublishing" : true
+}

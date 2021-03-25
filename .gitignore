@@ -5,4 +5,7 @@
 sftp-config.json
 config.codekit3
 !.nova/
+!.nova/*
 node_modules
+package-lock.json
+.DS_Store

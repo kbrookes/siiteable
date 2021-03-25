@@ -1,4 +1,5 @@
 {
   "editor.default_syntax" : "php",
-  "php.validate" : "onSave"
+  "php.validate" : "onSave",
+  "workspace.color" : 0
 }

@@ -38,19 +38,14 @@ get_header(); ?>
 <?php endif; ?>
 
 
-
-<?php get_template_part( 'template-parts/kiss/static-partials/featured-blog' ); ?>
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		if ( have_posts() ) : ?>
-
-			<?php
-			/* Start the Loop */
+		if ( have_posts() ) : 
 			$featureCount = 0;
 			while ( have_posts() ) : the_post(); 
+				$postType = get_post_type( get_the_ID() );
 				$featured = get_post_meta( get_the_ID(), 'featured_post', true ); 	
 				if($featured == true):
 					$featureCount++;
@@ -60,12 +55,13 @@ get_header(); ?>
 						get_template_part( 'template-parts/content', get_post_format() ); 
 					endif;
 				else:
-					get_template_part( 'template-parts/content', get_post_format() ); 
+					if($postType == "case-studies"):
+						get_template_part( 'template-parts/content-case-studies', get_post_format() ); 	
+					else:
+						get_template_part( 'template-parts/content', get_post_format() ); 
+					endif;
 				endif;
-					?>	
-				
-				
-			<?php endwhile;
+			endwhile;
 
 			the_posts_pagination( array(
 				'prev_text' => '<i class="fa fa-arrow-left" aria-hidden="true"></i><span class="screen-reader-text">' . __( 'Previous Page', 'pool' ) . '</span>',
@@ -75,7 +71,6 @@ get_header(); ?>
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
-
 		endif; ?>
 
 		</main><!-- #main -->

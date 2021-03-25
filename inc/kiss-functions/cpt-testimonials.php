@@ -47,7 +47,7 @@ function lll_testimonial_posts() {
 		'public'                => true,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
-		'menu_position'         => 20,
+		'menu_position'         => 23,
 		'menu_icon'             => 'dashicons-format-quote',
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,

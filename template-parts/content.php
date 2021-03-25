@@ -7,28 +7,26 @@
  * @package StrapPress
  */
 
-// GET FONTAWESOME LIBRARY
-$faType = get_theme_mod( 'fa_styles');
-
 	$full_img = get_the_post_thumbnail_url();
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if(is_single()):?>
+	<?php if(is_single()):
+	// GET FONTAWESOME LIBRARY
+	$faType = get_theme_mod( 'fa_styles');
+	?>
 		
 		<div class="container">
 			<header class="entry-header text-center">
 				<?php
-				if ( is_single() && get_field('hide_title') == false && !(has_post_thumbnail())) :
+				if ( is_single() && get_field('hide_title') == false && !(has_post_thumbnail())) :
 					the_title( '<h1 class="entry-title">', '</h1>' );
-				elseif ( is_single() && get_field('hide_title') == false && (has_post_thumbnail())) :
+				elseif ( is_single() && get_field('hide_title') == false && (has_post_thumbnail())) :
 				else :
 					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 				endif; ?>
 			</header><!-- .entry-header -->
-			
-		
 			
 				<div class="entry-content">
 					<div class="entry-content__date">
@@ -67,7 +65,10 @@ $faType = get_theme_mod( 'fa_styles');
 			</footer><!-- .entry-footer -->
 		</div>
 		
-	<?php else: ?>
+	<?php else: 
+		// GET FONTAWESOME LIBRARY
+		$faType = get_theme_mod( 'fa_styles');
+	?>
 	<div class="container post-list">
 		<div class="row justify-content-center">
 			<?php if(has_post_thumbnail()):?>

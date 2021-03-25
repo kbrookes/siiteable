@@ -12,23 +12,20 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php
-		while ( have_posts() ) : the_post();
-			
-		get_template_part( 'template-parts/content', get_post_format() );
+		<?php 
+			while ( have_posts() ) : the_post();	
+			get_template_part( 'template-parts/content-case-studies', get_post_format() );
 		?>
-			
-			<div class="container-sm pt-5">
-			<?php the_post_navigation( array(
-		            'prev_text'                  => __( '< PREVIOUS: %title' ),
-		            'next_text'                  => __( '%title: NEXT >' ),
-		            'in_same_term'               => true,
-		            'taxonomy'                   => __( 'post_tag' ),
-		            'screen_reader_text' => __( 'Continue Reading' ),
-		        ) ); ?>
-			</div>
 
-			
+		<div class="container-sm pt-5">
+		<?php the_post_navigation( array(
+	            'prev_text'                  => __( '< PREVIOUS: %title' ),
+	            'next_text'                  => __( '%title: NEXT >' ),
+	            'in_same_term'               => true,
+	            'taxonomy'                   => __( 'post_tag' ),
+	            'screen_reader_text' => __( 'Continue Reading' ),
+	        ) ); ?>
+		</div>
 
 		<?php endwhile; // End of the loop.
 		// GET FONTAWESOME LIBRARY

@@ -61,7 +61,35 @@
 	
 	/// DIRECTION
 	$containerDirection = 'text-' . get_sub_field($sepPrefix . '_container_direction');
-
+	
+	/// STYLES
+	// Overlays
+	$hasOverlay = $blockLayout['icon_box_overlay'];
+	if($hasOverlay){
+		$overlayColour = $blockLayout['icon_box_overlay_colour'];
+	} else {
+		$overlayColour = null;
+	}
+	
+	$overlayOpacity = null;
+	$overlayOpacity = $blockLayout['icon_box_overlay_opacity'];
+	
+	// Backgrounds
+	$hasBackground = $blockLayout['icon_box_background'];
+	if($hasBackground) {
+		$backgroundColour = $blockLayout['icon_box_background_colour'];
+	} else {
+		$backgroundColour = null;
+	}
+	
+	// Padding
+	$boxPadding = "p-0";
+	$boxPadding = $blockLayout['icon_box_padding'];
+	
+	// Font Weight
+	$fontWeight = 'font-weight-normal';
+	$fontWeight = $blockLayout['icon_box_font_weight'];
+	
 	?>
 <section class="list-icons <?php echo $bgcolour . ' ' . $separatorClasses . ' ' . $containerDirection . ' ' . $customClass . ' style-' . $blockAR . ' icon-' . $iconSize; ?>">
 	<?php if($addSeparatorUpper == true):
@@ -119,9 +147,12 @@
 						<?php if($blockBG){ ?>
 						<div class="multi-block__simple image-box" style="background-image: url(<?php echo $imageURL; ?>);">
 							<a href="<?php echo $blockLink; ?>">
-								<div class="multi-block__simple-inner  image-box__inner">
+								<div class="multi-block__simple-inner  image-box__inner <? echo $boxPadding; ?> <? if($hasOverlay):?>hasOverlay<? endif; ?>">
+									<? if($hasOverlay):?>
+									<div class="image-box__inner-overlay position-absolute w-100 h-100 <? echo $overlayColour . ' opacity-' . $overlayOpacity; ?>"></div>
+									<? endif; ?>
 									<div class="multi-block__simple-content  image-box__content text-center">
-										<h3><?php the_sub_field('list_item_title'); ?></h3>
+										<h3 class="<?= $fontWeight; ?>"><?php the_sub_field('list_item_title'); ?></h3>
 										<?php if(get_sub_field('list_item_subtitle')):?>
 										<h4><?php strip_tags( the_sub_field('list_item_subtitle') ); ?></h4>
 										<?php endif; ?>
@@ -133,7 +164,7 @@
 							</a>
 						</div>
 						<?php } else { ?>
-						<div class="list-icons__row <?php if($blockDirection == "column"):?>d-flex<?php else:?>list-icons__horizontal<?php endif; ?> <?php echo $blockBackgroundColour; ?> <?php echo $blockAlignment; ?>">
+						<div class="list-icons__row <?php if($blockDirection == "column"):?>d-flex<?php else:?>list-icons__horizontal<?php endif; ?> <?php echo $blockBackgroundColour . ' ' . $blockAlignment . ' ' . $backgroundColour . ' ' . $boxPadding; ?>">
 							<?php if(!empty($imageType)): ?>
 							<div class="list-icons__row-image">
 								<?php echo $image; ?>

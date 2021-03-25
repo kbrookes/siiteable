@@ -216,3 +216,9 @@ require get_template_directory() . '/inc/kiss-functions/sidebars.php';
 ///// CUSTOM POST TYPES
 
 require get_template_directory() . '/inc/kiss-functions/cpt-testimonials.php';
+
+require get_template_directory() . '/inc/kiss-functions/cpt-products.php';
+
+require get_template_directory() . '/inc/kiss-functions/cpt-case-studies.php';
+
+require get_template_directory() . '/inc/kiss-functions/widgets.php';

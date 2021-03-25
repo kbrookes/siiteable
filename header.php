@@ -74,16 +74,12 @@ $faType = get_theme_mod( 'fa_styles');
 	    <nav id="main-nav" class="navbar navbar-expand-lg <?php echo $headerColor . ' ' . $headerBg . ' ' . $headerPosition . ' ' . $transparentForHero . ' ' . $headerType; ?> notScrolled">
 	    	<div class="container">
 				<div class="navbar-brand mb-0">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="wpsvg-inline">
-						<svg height='100px' width='100px'  fill="#445c6d" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;" viewBox="0 0 333 333" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd">
-						  <g>
-							<g>
-							  <path class="logo-fill" d="M196 105l-17 30 34 0 19 32 0 0 15 26 -92 -1 -34 -59 46 -79 29 51zm-13 0l-16 -28 -33 56 28 48 65 1 -20 -36 -48 0 24 -41z"></path>
-							  <path class="logo-fill" d="M232 279l14 -24 -56 -1 -33 -58 92 1 48 82 -65 0zm20 -11l25 0 -13 -22 -12 22zm11 -25l-21 -35 -66 0 21 35 66 0z"></path>
-							  <polygon class="logo-fill" points="118,138 200,279 167,279 134,279 114,245 94,279 37,279 102,167 102,167 "></polygon>
-							</g>
-						  </g>
-						</svg>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="style-svg">
+						<?php 
+						   $custom_logo_id = get_theme_mod( 'custom_logo' );
+						   $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+							  ?>
+						<img class="img-fluid style-svg" src="<?php echo $image[0]; ?>" alt="">
 					</a>
 				</div>
 				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -141,8 +137,13 @@ $faType = get_theme_mod( 'fa_styles');
 		</script>
 	</header><!-- #masthead -->
 
-	<?php if(get_field('hero_title') || get_field('hero_image') || get_the_post_thumbnail_url($page_id) || get_field('hero_content') || get_field('hero-button')):
-		get_template_part( 'template-parts/kiss/static-partials/hero-header' );
-	endif; ?>
+	<?php 
+	if(is_archive()){
+		
+	} else {
+		if(get_field('hero_title') || get_field('hero_image') || get_the_post_thumbnail_url($page_id) || get_field('hero_content') || get_field('hero-button')):
+			get_template_part( 'template-parts/kiss/static-partials/hero-header' );
+		endif;
+	} ?>
 
 	<div id="content" class="site-content">

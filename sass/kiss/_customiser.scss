@@ -1,104 +1,27 @@
-.logo-fill {
-	.navbar-brand & {
-		fill: $primary;
-	}
-}
-
-.footer-nav {
-	&__icon {
-		color: $light;
-	}
-	&__content {
-		a {
-			color: $light;
-			&:hover {
-				color: $primary;
-			}
-		}
-	}
-	&__disclaimer {
-		img {
-			max-width: 70% !important; 
-		}
-	}
-	.logo-fill__dark {
-		fill: $gray-200;
-	}
-	.logo-fill__light {
-		fill: $white;
-	}
-}
-
-.site-footer {
+.logos-icons {
+	border-top: 1px solid lighten($light, 20%);
+	padding-top: 3rem;
+	margin-bottom: 2rem;
 	h3 {
-		color: $gray-400;
-		font-size: 1.4rem;
+		font-size: 0.8rem;
+		font-weight: bold;
+		text-transform: uppercase
 	}
 }
 
-#main-nav {
-	.navbar {
-		&-nav {
-			li {
-				align-items: center;
-				display: flex;
-				justify-content: space-around;
-				@include media-breakpoint-down(md){
-						
-				}
-				&:after {
-					content: '|';
-					line-height: 1em;
-					margin-top: 0.1rem;
-					@include media-breakpoint-down(md){
-						content: none;	
-					}
-				}
-				a {
-					padding-left: 1rem;
-					padding-right: 1rem;
-				}
-				&:last-child {
-					&:after {
-						content: none;
-					}
-				}
-			}
-		}
-		&-collapse {
-			@include media-breakpoint-down(md){
-				border-radius: 15px;
-				margin-top: 0;
-			}
-		}
+.archive-control-area {
+	h2 {
+		font-weight: $font-weight-light;
 	}
 }
 
-span.wpcf7-list-item {
-	margin: 0.2em 0;
-}
-
-.wpcf7 form.sent .wpcf7-response-output {
-	border-color: $secondary;
-	background-color: $secondary;
-	color: $dark;
-	font-size: 1.1rem;
-	font-weight: 500;
-	padding: 1rem;
-}
-
-.wpcf7 form.invalid .wpcf7-response-output,
-.wpcf7 form.unaccepted .wpcf7-response-output {
-	background-color: $red; 
-	border: 1px $red solid;
-	color: $white;
-	padding: 1rem;
-}
-
-.list-icons {
-	&.list-reduce-height {
-		.list-icons__main .list-icons__row {
-			padding: 10px 30px;
+.case-studies {
+	margin: 60px auto;
+	div[class^='case-study'] {
+		h3 {
+			border-bottom: 1px solid $primary;
+			font-weight: $font-weight-light;
+			margin-bottom: 2rem;
 		}
 	}
 }

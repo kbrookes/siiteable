@@ -15,31 +15,39 @@
 get_header(); ?>
 
 	<?php
-	// check if the flexible content field has rows of data
-	if(get_field('hide_content_area') == false): ?>
+ // check if the flexible content field has rows of data
+ if (get_field("hide_content_area") == false): ?>
 		    	
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<?php
-			while ( have_posts() ) : the_post();
+			<?php while (have_posts()):
+     the_post();
 
-				get_template_part( 'template-parts/content', 'page' );
+     get_template_part("template-parts/content", "page");
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-
-			endwhile; // End of the loop.
-			?>
+     // If comments are open or we have at least one comment, load up the comment template.
+     if (comments_open() || get_comments_number()):
+       comments_template();
+     endif;
+   endwhile;
+   // End of the loop.
+   ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	
 	<?php endif;
 
-	get_template_part( 'template-parts/kiss/flexible-content' );
-	
+ get_template_part("template-parts/kiss/flexible-content");
 
-get_footer();
+ if (is_active_sidebar("below_content")):
+   dynamic_sidebar("below_content");
+ endif;
+
+ if (is_active_sidebar("about_footer")):
+   dynamic_sidebar("about_footer");
+ endif;
+
+ get_footer();
+

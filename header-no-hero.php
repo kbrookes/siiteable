@@ -60,7 +60,7 @@ $extraBodyClasses = 'noHero ' . $buttonClass;
 	    <nav id="main-nav" class="navbar navbar-expand-lg <?php echo $headerColor . ' ' . $headerBg . ' ' . $headerPosition . ' ' . $transparentForHero; ?> notScrolled">
 	    	<div class="container">
 				<div class="navbar-brand mb-0">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="wpsvg-inline">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="style-svg">
 						<?php 
 						   $custom_logo_id = get_theme_mod( 'custom_logo' );
 						   $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
