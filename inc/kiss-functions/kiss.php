@@ -196,6 +196,60 @@ function lll_customizer_settings( $wp_customize ) {
 			'wide-last' => 'Last column is wider',
 		),
 	));
+	
+	$wp_customize->add_setting('footer_header_normal',array(
+		'default'=>'fs-3',
+	));
+	
+	$wp_customize->add_control('footer_header_fs',array(
+		'label'=>'Menu Header Font Size',
+		'type'=>'select',
+		'section'=>'footer_col_section',
+		'settings'=>'footer_header_normal',
+		'choices' => array(
+			'fs-1' => 'XS',
+			'fs-2' => 'SM',
+			'fs-3' => 'MD',
+			'fs-4' => 'LG',
+			'fs-5' => 'XL',
+		),
+	));
+	
+	// FOOTER INFO SECTION
+	
+	$wp_customize->add_section('footer_info',array(
+		'title'=>'Privacy, Terms & Copyright',
+		'priority'=>11,
+		'panel'=>'footer_panel',
+	));
+	
+	/// COPYRIGHT TEXT
+	$wp_customize->add_setting( 'siiteable_sitename_setting_id', array(
+	  'capability' => 'edit_theme_options',
+	  'default' => 'Lorem Ipsum',
+	  'sanitize_callback' => 'sanitize_text_field',
+	) );
+	
+	$wp_customize->add_control( 'siiteable_sitename_setting_id', array(
+	  'type' => 'text',
+	  'section' => 'footer_info', // Add a default or your own section
+	  'label' => __( 'Site or business name' ),
+	  'description' => __( 'Add your site or business name to the copyright section.' ),
+	) );
+	
+	
+	$wp_customize->add_setting( 'siiteable_textarea_setting_id', array(
+		  'capability' => 'edit_theme_options',
+		  //'default' => 'Lorem Ipsum Dolor Sit amet',
+		  'sanitize_callback' => 'sanitize_textarea_field',
+		) );
+		
+		$wp_customize->add_control( 'siiteable_textarea_setting_id', array(
+		  'type' => 'textarea',
+		  'section' => 'footer_info', // // Add a default or your own section
+		  'label' => __( 'Long statement' ),
+		  'description' => __( 'Use this to place a longer statement below the copyright/privacy/terms section' ),
+		) );
 }
 
 ///// SETUP THE KIRKI FRAMEWORK
@@ -326,25 +380,6 @@ Kirki::add_field( 'kiss_theme', [
 
 
 /// ANALYTICS CONDITIONALS
-
-
-
-/// Create Footer Options Section
-Kirki::add_section( 'footer_options', array(
-    'title'          => esc_html__( 'Footer Options', 'kirki' ),
-    'description'    => esc_html__( 'Setup the footer.', 'kirki' ),
-    'panel'          => 'general_settings',
-    'priority'       => 160,
-) );
-
-Kirki::add_field( 'kiss_theme', [
-	'type'        => 'editor',
-	'settings'    => 'text_long_corporate',
-	'label'       => esc_html__( 'Long corporate info block', 'kirki' ),
-	//'description' => esc_html__( 'This is an editor control.', 'kirki' ),
-	'section'     => 'footer_options',
-	'default'     => '',
-] );
 
 
 

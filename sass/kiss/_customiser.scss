@@ -25,3 +25,19 @@
 		}
 	}
 }
+
+.footer-nav {
+	h3.widgettitle {
+		font-weight: $font-weight-bold;
+		&::after {
+			font-family: 'Font Awesome 5 Pro';
+			content: '\f067';
+			margin-left: 1rem;
+		}
+	}
+	ul {
+		li {
+			font-size: 0.75rem;
+		}
+	}
+}
