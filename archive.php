@@ -7,7 +7,11 @@
  * @package StrapPress
  */
 
-get_header(); ?>
+get_header(); 
+
+$faType = get_theme_mod( 'fa_styles');
+
+?>
 
 
 
@@ -64,8 +68,8 @@ get_header(); ?>
 			endwhile;
 
 			the_posts_pagination( array(
-				'prev_text' => '<i class="fa fa-arrow-left" aria-hidden="true"></i><span class="screen-reader-text">' . __( 'Previous Page', 'pool' ) . '</span>',
-				'next_text' => '<span class="screen-reader-text">' . __( 'Next Page', 'pool' ) . '</span><i class="fa fa-arrow-right" aria-hidden="true"></i>',
+				'prev_text' => '<i class="' . $faType . ' fa-arrow-left" aria-hidden="true"></i><span class="screen-reader-text">' . __( 'Previous Page', 'pool' ) . '</span>',
+				'next_text' => '<span class="screen-reader-text">' . __( 'Next Page', 'pool' ) . '</span><i class="' . $faType . ' fa-arrow-right" aria-hidden="true"></i>',
 			) ); 
 
 		else :

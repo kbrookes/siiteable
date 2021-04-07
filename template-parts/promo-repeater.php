@@ -7,7 +7,7 @@
         // Load sub field value.
         $postID = get_sub_field('promo_set_id', 'options'); 
         $post = get_post($postID);
-        $postImage = get_the_post_thumbnail( $postID, 'medium_large', array( 'class' => 'img-fluid' ) );  
+        $postImage = get_the_post_thumbnail( $postID, 'medium_large', array( 'class' => 'img-fluid w-100' ) );  
         ?>
         <div class="promo">
             <a href="<?php echo get_permalink($post) ?>">

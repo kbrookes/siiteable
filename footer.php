@@ -29,7 +29,7 @@
 				<?php if( have_rows('logos_repeater', 'option') ): ?>
 				<div class="d-flex align-items-center">
 					<?php while( have_rows('logos_repeater', 'option') ): the_row(); ?>
-					<div class="<?= get_field('logos_padding', 'option'); ?>">
+					<div class="<?= get_field('logos_padding_XS', 'option'); ?> <?= get_field('logos_padding_MD', 'option'); ?> <?= get_field('logos_padding_LG', 'option'); ?> client-logos__icon">
 						<img src="<?php the_sub_field('logo_image'); ?>" class="img-fluid" alt="" />
 					</div>
 					<?php endwhile; ?>

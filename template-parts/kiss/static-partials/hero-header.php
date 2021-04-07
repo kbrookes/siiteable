@@ -341,6 +341,18 @@
 				<?php endif; ?>
 			</div>
 		</div>
+		<div class="hero-header__icon">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.1 57.2">
+			  <g data-name="Layer 2">
+				<g data-name="Layer 1">
+				  <path d="M62 39.5A35 35 0 0113.1 9.3L0 15a48.6 48.6 0 0067.5 37l1.2-.6L63.2 39l-1.2.6z" class="fill-dark opacity-40"/>
+				  <path d="M35 11.2A16.4 16.4 0 0134.3 0L21.7 5.5A28.3 28.3 0 0024 16a28.4 28.4 0 0035.9 15.3l-4.8-11A16.5 16.5 0 0135 11.2z" class="fill-white opacity-30" />
+				  <path d="M75.4 40.6a35 35 0 01-48.9-30.2L13.4 16a48.6 48.6 0 0067.5 37l1.2-.6L76.7 40z" class="fill-dark opacity-10" />
+				  <path d="M48.4 12.3a16.4 16.4 0 01-.7-11.2L35 6.6a28.3 28.3 0 002.4 10.5 28.4 28.4 0 0035.9 15.3l-4.8-11a16.5 16.5 0 01-20.1-9.1z" class="fill-white opacity-15" />
+				</g>
+			  </g>
+			</svg>
+		</div>
 	</div>
 	<?php if($addSeparatorLower == true):
 		include $pathLower;
