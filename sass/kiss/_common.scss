@@ -238,6 +238,9 @@ $basefontsize: 16 !default;
   background-size: cover;
   //box-shadow: 6px 6px 0 $dark;
   position: relative;
+  &__content {
+    position: relative;
+  }
   &__inner {
     align-items: center;
     cursor: hand;
