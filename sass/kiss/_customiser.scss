@@ -25,3 +25,91 @@
 		}
 	}
 }
+
+.footer-nav {
+	border-bottom: 1px solid lighten($dark, 20%);
+	margin-bottom: 1rem;
+	h3.widgettitle {
+		font-weight: $font-weight-bold;
+		&::after {
+			font-family: 'Font Awesome 5 Pro';
+			content: '\f067';
+			margin-left: 1rem;
+		}
+	}
+	ul {
+		li {
+			font-size: 0.75rem;
+		}
+	}
+}
+
+.image-box {
+	&__inner {
+		&-icon {
+			bottom: -1rem !important;
+			right: -1.5rem !important;
+			.fill-primary,
+			.fill-white {
+				transition: 0.3s ease all;
+			}
+		}
+	}
+	&:hover {
+	  .image-box__inner-icon {
+		  .fill-primary {
+			  fill: $dark;
+		  }
+	  }
+	}
+}
+
+.dropdown-menu {
+	background-color: $primary;
+	.dropdown-item {
+		color: $white;
+		&:hover {
+			background-color: darken($primary, 20%);
+		}
+	}
+}
+
+.menu-sidebar {
+	&.widget {
+		ul {
+			list-style: none;
+			padding: 0;
+			li {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
+
+.hero-header {
+	&__icon {
+		//display: none;
+		position: absolute;
+		top: -9rem;
+		right: -14rem;
+		z-index: 50;
+		width: 43%;
+	}
+}
+
+.mastercom-phone {
+	.textwidget {
+		padding: 0;
+		p {
+			font-size: 1.4rem;
+			margin: 0;
+			a {
+				color: $dark;
+				&:hover {
+					color: $primary;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}

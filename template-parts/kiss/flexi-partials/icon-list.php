@@ -150,6 +150,16 @@
 								<div class="multi-block__simple-inner  image-box__inner <? echo $boxPadding; ?> <? if($hasOverlay):?>hasOverlay<? endif; ?>">
 									<? if($hasOverlay):?>
 									<div class="image-box__inner-overlay position-absolute w-100 h-100 <? echo $overlayColour . ' opacity-' . $overlayOpacity; ?>"></div>
+									<div class="image-box__inner-icon position-absolute w-50 h-auto">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.9 50">
+										  <g data-name="Layer 2">
+											<g data-name="Layer 1">
+											  <path d="M13.6 48.6A35 35 0 0161 15.9V1.6A48.6 48.6 0 000 48.6V50h13.7v-1.4z" class="fill-white opacity-50" />
+											  <path d="M50.4 35.1A16.4 16.4 0 0160.9 39V25.2A28.4 28.4 0 0022 50h12a16.5 16.5 0 0116.4-14.9z" class="fill-primary opacity-50" />
+											</g>
+										  </g>
+										</svg>
+									</div>
 									<? endif; ?>
 									<div class="multi-block__simple-content  image-box__content text-center">
 										<h3 class="<?= $fontWeight; ?>"><?php the_sub_field('list_item_title'); ?></h3>

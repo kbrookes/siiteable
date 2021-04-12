@@ -238,6 +238,9 @@ $basefontsize: 16 !default;
   background-size: cover;
   //box-shadow: 6px 6px 0 $dark;
   position: relative;
+  &__content {
+    position: relative;
+  }
   &__inner {
     align-items: center;
     cursor: hand;
@@ -246,12 +249,19 @@ $basefontsize: 16 !default;
     justify-content: center;
     left: 0;
     opacity: 1;
+    overflow: hidden;
     padding: 15px;
     position: absolute;
     top: 0;
     transition: 0.3s ease all;
     width: 100%;
     &-overlay {
+      transition: 0.3s ease all;
+    }
+    &-icon {
+      bottom: 0;
+      right: 0;
+      z-index: 50;
       transition: 0.3s ease all;
     }
     &:before {
@@ -316,14 +326,59 @@ $basefontsize: 16 !default;
 
 /// OPACITIES
 .opacity {
+  &-95 {
+    opacity: 0.95;
+  }
+  &-90 {
+    opacity: 0.90;
+  }
+  &-80 {
+    opacity: 0.8;
+  }
   &-75 {
     opacity: 0.75;
+  }
+  &-70 {
+    opacity: 0.70;
+  }
+  &-65 {
+    opacity: 0.65;
+  }
+  &-60 {
+    opacity: 0.60;
+  }
+  &-55 {
+    opacity: 0.55;
   }
   &-50 {
     opacity: 0.5;
   }
+  &-45 {
+    opacity: 0.45;
+  }
+  &-40 {
+    opacity: 0.40;
+  }
+  &-35 {
+    opacity: 0.35;
+  }
+  &-30 {
+    opacity: 0.30;
+  }
   &-25 {
     opacity: 0.25;
+  }
+  &-20 {
+    opacity: 0.20;
+  }
+  &-15 {
+    opacity: 0.15;
+  }
+  &-10 {
+    opacity: 0.10;
+  }
+  &-05 {
+    opacity: 0.05;
   }
 }
 
@@ -401,9 +456,6 @@ $basefontsize: 16 !default;
 
 //// BLOG PAGES
 body.blog {
-  .site-main {
-    background-color: $dark;
-  }
   .type-post {
     .post-list {
       h2.entry-title {
@@ -447,12 +499,6 @@ body.blog {
       font-weight: 500;
       margin-bottom: 1.6rem;
     }
-  }
-}
-
-.footer-nav {
-  ul.menu {
-    padding: 0 0 0 1.1rem;
   }
 }
 

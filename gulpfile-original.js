@@ -3,7 +3,6 @@ var gulp = require("gulp"),
 	postcss = require("gulp-postcss"),
 	autoprefixer = require("autoprefixer"),
 	cssnano = require("cssnano"),
-	critical = require("critical"),
 	sourcemaps = require("gulp-sourcemaps");
 
 var paths = {
@@ -21,31 +20,6 @@ var paths = {
 	//  dest: '...'
 	// }
 };
-
-// Generate & Inline Critical-path CSS
-gulp.task("critical", function(cb) {
-  critical.generate({
-	base: "./",
-	src: "http://viirtuality.com.au/",
-	dest: "home.min.css",
-	ignore: ["@font-face"],
-	dimensions: [
-	  {
-		width: 320,
-		height: 480
-	  },
-	  {
-		width: 768,
-		height: 1024
-	  },
-	  {
-		width: 1280,
-		height: 960
-	  }
-	],
-	minify: true
-  });
-});
 
 function watch(){
 	style();

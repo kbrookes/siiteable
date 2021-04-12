@@ -1,5 +1,9 @@
 {
   "editor.default_syntax" : "php",
+  "index.ignored_file_patterns" : [
+    ".\/node_modules",
+    "node_modules\/*"
+  ],
   "php.validate" : "onSave",
   "workspace.color" : 0
 }

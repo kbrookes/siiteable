@@ -29,7 +29,7 @@
 				<?php if( have_rows('logos_repeater', 'option') ): ?>
 				<div class="d-flex align-items-center">
 					<?php while( have_rows('logos_repeater', 'option') ): the_row(); ?>
-					<div class="<?= get_field('logos_padding', 'option'); ?>">
+					<div class="<?= get_field('logos_padding_XS', 'option'); ?> <?= get_field('logos_padding_MD', 'option'); ?> <?= get_field('logos_padding_LG', 'option'); ?> client-logos__icon">
 						<img src="<?php the_sub_field('logo_image'); ?>" class="img-fluid" alt="" />
 					</div>
 					<?php endwhile; ?>
@@ -62,34 +62,79 @@
 		</div>
 	</section>
 	<? endif; ?>
+	<? 
+	$footerCols = 4;
+	$footerCols = "col-12 col-sm-6 col-md-3";
+	$footerColSm = "col-12 col-sm-6 col-md-2";
+	$footerColLg = "col-12 col-sm-6 col-md-5";
+	if( get_theme_mod( 'footer_col_num', '' ) != '' ):
+		$footerCols = get_theme_mod( 'footer_col_num', 0 );
+		switch($footerCols){
+			case 4:
+				$footerCols = "col-12 col-sm-6 col-md-3";
+				break;
+			case 3:
+				$footerCols = "col-12 col-sm-6 col-md-4";
+				break;
+			case 2:
+				$footerCols = "col-12 col-sm-6";
+				break;
+			case 1:
+				$footerCols = "col-12";
+				break;
+		}
+	endif;
+	$footerColFirst = $footerCols;
+	$footerColLast = $footerCols;
+	if( get_theme_mod( 'footer_col_layout', '' ) != '' ):
+		$colLayout = get_theme_mod( 'footer_col_layout', '' );
+		switch($colLayout){
+			case "equal":
+				break;
+			case "wide-first":
+				$footerColFirst = $footerColLg;
+				$footerCols = $footerColSm;
+				break;
+			case "wide-last":
+				$footerColLast = $footerColLg;
+				$footerCols = $footerColSm;
+				break;
+		}
+	endif;
+	
+	$headerSize = "fs-1";
+	if( get_theme_mod( 'footer_header_normal', '' ) != '' ):
+		$headerSize = get_theme_mod( 'footer_header_normal', '' );
+	endif;
+	?>
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">			
 			<?php if ( function_exists('footer_sidebar')) : ?>
 			<div class="footer-nav">
-				<div class="row justify-content-center mb-3">
+				<div class="row justify-content-center mb-3 header-<?= $headerSize; ?>">
 					<?php if ( is_active_sidebar( 'footer_logo' ) ) : ?>
-					<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+					<div class="<?= $footerColFirst; ?>">
 						<div class="footer-nav__inner">
 						<?php dynamic_sidebar('footer_logo');?>
 						</div>
 					</div>
 					<?php endif; ?>
 					<?php if ( is_active_sidebar( 'footer_nav' ) ) : ?>
-					<div class="col-12 col-sm-6 col-md-6 col-lg-2 offset-lg-1 col-xl-2">
+					<div class="<?= $footerCols; ?>">
 						<div class="footer-nav__inner">
 						<?php dynamic_sidebar('footer_nav');?>
 						</div>
 					</div>
 					<?php endif; ?>
 					<?php if ( is_active_sidebar( 'footer_disclaimer' ) ) : ?>
-					<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+					<div class="<?= $footerCols; ?>">
 						<div class="footer-nav__inner">
 						<?php dynamic_sidebar('footer_disclaimer');?>
 						</div>
 					</div>
 					<?php endif; ?>
 					<?php if ( is_active_sidebar( 'footer_form' ) ) : ?>
-					<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+					<div class="<?= $footerColLast; ?>">
 						<div class="footer-nav__inner">
 						<?php dynamic_sidebar('footer_form');?>
 						</div>
@@ -105,17 +150,22 @@
 				<?php echo $footerCorpText; ?>
 			</div>
 			<?php } ?>
-			<div class="site-info">
-				<div class="site-info__copyright text-center">
-					&copy; <?php bloginfo( 'name' );
-							echo ' - ';
-							echo date("Y"); ?>
-				</div>
+			<div class="site-info d-flex justify-content-between">
 				<?php if ( is_active_sidebar( 'footer_flat' ) ) : ?>
 				<div class="site-info__flatmenu">
 					<?php dynamic_sidebar('footer_flat');?>
 				</div>
 				<?php endif; ?>
+				<div class="site-info__copyright text-center">
+					<? 
+					$siteName = get_bloginfo( 'name' );
+					if( get_theme_mod( 'siiteable_sitename_setting_id', '' ) != '' ):
+						$siteName = get_theme_mod( 'siiteable_sitename_setting_id', '' );
+					endif; ?>
+					&copy; <?= $siteName;
+							echo ' ';
+							echo date("Y"); ?>
+				</div>
 			</div><!-- .site-info -->
 		</div><!--  .container -->
 	</footer><!-- #colophon -->
