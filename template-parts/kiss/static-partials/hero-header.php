@@ -232,6 +232,7 @@
 		$heroTitle = $pageTitle;
 	endif;
 	
+	$faType = get_theme_mod( 'fa_styles');
 	
 	if(get_field('hero_title') || $heroImage || get_field('hero_content'))	:?>
 <section id="heroHeader" class="hero-header  <?php echo $separatorClasses . ' ' . $heroHeight; ?> <?php if($heroType == 'video'):?>video-hero video-type__<?php echo $videoType; ?><?php endif; ?>" <?php if($heroBG): echo $heroBG; endif; ?>>
@@ -263,11 +264,6 @@
 						<div class="<?= $heroTextColor; ?>">
 						<?php echo get_field('hero_content'); ?>
 						</div>
-						
-						<?php if( have_rows('header_multi_buttons') ): 
-							$counter = 1;
-						?>
-						<?php endif; ?>
 					</div>
 				<?php else:?>
 				<div class="row">
@@ -294,6 +290,10 @@
 				</div>
 				<?php endif; ?>
 				<div class="hero_header__content-actions">
+					<?php if( have_rows('header_multi_buttons') ): 
+						$counter = 1;
+					?>
+					<?php endif; ?>
 					<?php while( have_rows('header_multi_buttons') ): the_row();
 						// vars
 						$linkType = '';

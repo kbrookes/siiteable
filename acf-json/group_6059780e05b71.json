@@ -377,8 +377,8 @@
         },
         {
             "key": "field_6059787b5630d",
-            "label": "Logos Padding",
-            "name": "logos_padding",
+            "label": "Logos Padding XS",
+            "name": "logos_padding_XS",
             "type": "button_group",
             "instructions": "",
             "required": 0,
@@ -392,7 +392,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "",
+                "width": "30",
                 "class": "",
                 "id": ""
             },
@@ -403,6 +403,74 @@
                 "p-3": "MD",
                 "p-4": "LG",
                 "p-5": "XL"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_6063a9f3f7256",
+            "label": "Logos Padding MD",
+            "name": "logos_padding_MD",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60597a5c05bce",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "p-md-0": "None",
+                "p-md-1": "XS",
+                "p-md-2": "SM",
+                "p-md-3": "MD",
+                "p-md-4": "LG",
+                "p-md-5": "XL"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_6063aa14f7257",
+            "label": "Logos Padding LG",
+            "name": "logos_padding_LG",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60597a5c05bce",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "p-lg-0": "None",
+                "p-lg-1": "XS",
+                "p-lg-2": "SM",
+                "p-lg-3": "MD",
+                "p-lg-4": "LG",
+                "p-lg-5": "XL"
             },
             "allow_null": 0,
             "default_value": "",
@@ -592,5 +660,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1616545247
+    "modified": 1617144367
 }
