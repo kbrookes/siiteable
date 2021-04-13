@@ -1,0 +1,699 @@
+{
+    "key": "group_606e3c21d3488",
+    "title": "Widget Block Repeater",
+    "fields": [
+        {
+            "key": "field_606e3d0141d89",
+            "label": "Heading",
+            "name": "rptblock_heading",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_606e3d1e41d8a",
+            "label": "Add Blocks",
+            "name": "rptblock_repeater",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_606e3d3941d8b",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Block",
+            "sub_fields": [
+                {
+                    "key": "field_6074d3f66f9e3",
+                    "label": "Content",
+                    "name": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_606e3d3941d8b",
+                    "label": "Title",
+                    "name": "rptblock_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_606e410712a25",
+                    "label": "Title Color",
+                    "name": "rptblock_title_color",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "text-primary": "Primary",
+                        "text-secondary": "Secondary",
+                        "text-dark": "Dark",
+                        "text-light": "Light",
+                        "text-white": "White",
+                        "text-alternate": "Alternate"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6074d4b7fa77b",
+                    "label": "Add image",
+                    "name": "rptblock_content_image",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "logos-sm",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_6074d4e3fa77c",
+                    "label": "Hide title?",
+                    "name": "rptblock_title_hide",
+                    "type": "true_false",
+                    "instructions": "This hides the title in favour of showing just the image. Title becomes the alt attribute for the image.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_6074d480babe6",
+                    "label": "Links",
+                    "name": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_606e3d4441d8c",
+                    "label": "Link Type",
+                    "name": "rptblock_link",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "linkURL": "URL",
+                        "linkPage": "Page",
+                        "linkEmail": "Email"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_606e3de241d8d",
+                    "label": "URL",
+                    "name": "rptblock_link_url",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_606e3d4441d8c",
+                                "operator": "==",
+                                "value": "linkURL"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_606e3df941d8e",
+                    "label": "Page",
+                    "name": "rptblock_link_page",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_606e3d4441d8c",
+                                "operator": "==",
+                                "value": "linkPage"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "id",
+                    "ui": 1
+                },
+                {
+                    "key": "field_606e3e1041d8f",
+                    "label": "Email",
+                    "name": "rptblock_link_email",
+                    "type": "email",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_606e3d4441d8c",
+                                "operator": "==",
+                                "value": "linkEmail"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_606e3e2c41d90",
+                    "label": "Open in new window?",
+                    "name": "rptblock_link_external",
+                    "type": "checkbox",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_606e3d4441d8c",
+                                "operator": "==",
+                                "value": "linkURL"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_606e3d4441d8c",
+                                "operator": "==",
+                                "value": "linkPage"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "label-hide",
+                        "id": ""
+                    },
+                    "choices": {
+                        "true": "Open in new window?"
+                    },
+                    "allow_custom": 0,
+                    "default_value": [],
+                    "layout": "vertical",
+                    "toggle": 0,
+                    "return_format": "value",
+                    "save_custom": 0
+                },
+                {
+                    "key": "field_6074d4046f9e4",
+                    "label": "Block Style",
+                    "name": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_606e3eb541d92",
+                    "label": "Background Type",
+                    "name": "rptblock_background",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "bg-image": "Image",
+                        "bg-color": "Color"
+                    },
+                    "default_value": false,
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_606e3f1041d93",
+                    "label": "Get image from",
+                    "name": "rptblock_image_src",
+                    "type": "select",
+                    "instructions": "Select either the page you've linked to OR upload a new image.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_606e3eb541d92",
+                                "operator": "==",
+                                "value": "bg-image"
+                            },
+                            {
+                                "field": "field_606e3d4441d8c",
+                                "operator": "==",
+                                "value": "linkPage"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "bg-post": "Page or Post",
+                        "bg-media": "Upload"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_606e3f5741d94",
+                    "label": "Upload Image",
+                    "name": "rptblock_image_upload",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_606e3eb541d92",
+                                "operator": "==",
+                                "value": "bg-image"
+                            },
+                            {
+                                "field": "field_606e3f1041d93",
+                                "operator": "!=",
+                                "value": "bg-post"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "medium_large",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_606e402812a21",
+                    "label": "Background Color",
+                    "name": "rptblock_bg_color",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_606e3eb541d92",
+                                "operator": "==",
+                                "value": "bg-color"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "bg-primary": "Primary",
+                        "bg-secondary": "Secondary",
+                        "bg-dark": "Dark",
+                        "bg-light": "Light",
+                        "bg-white": "White",
+                        "bg-alternate": "Alternate"
+                    },
+                    "default_value": false,
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_606e407c12a22",
+                    "label": "Add background overlay",
+                    "name": "rptblock_overlay",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_606e3eb541d92",
+                                "operator": "==",
+                                "value": "bg-image"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_606e40b012a23",
+                    "label": "Overlay Color",
+                    "name": "rptblock_overlay_color",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_606e407c12a22",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "null": "None",
+                        "bg-primary": "Primary",
+                        "bg-secondary": "Secondary",
+                        "bg-dark": "Dark",
+                        "bg-light": "Light",
+                        "bg-white": "White",
+                        "bg-alternate": "Alternate"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6074ce9cf756f",
+                    "label": "Hover-to Color",
+                    "name": "rptblock_overlay_hover",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_606e40b012a23",
+                                "operator": "!=empty"
+                            },
+                            {
+                                "field": "field_606e40b012a23",
+                                "operator": "!=",
+                                "value": "null"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_606e402812a21",
+                                "operator": "!=empty"
+                            },
+                            {
+                                "field": "field_606e402812a21",
+                                "operator": "!=",
+                                "value": ""
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "null": "None",
+                        "hover-primary": "Primary",
+                        "hover-secondary": "Secondary",
+                        "hover-dark": "Dark",
+                        "hover-light": "Light",
+                        "hover-white": "White",
+                        "hover-alternate": "Alternate"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_606e40e412a24",
+                    "label": "Overlay Opacity",
+                    "name": "rptblock_overlay_opacity",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_606e407c12a22",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "05": "5%",
+                        "15": "15%",
+                        "25": "25%",
+                        "35": "35%",
+                        "50": "50%",
+                        "65": "65%",
+                        "75": "75%",
+                        "85": "85%",
+                        "95": "95%"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_606e470a058f5",
+            "label": "Space below each block",
+            "name": "rptblock_margin",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "mb-0": "None",
+                "mb-1": "XS",
+                "mb-2": "SM",
+                "mb-3": "MD",
+                "mb-4": "LG",
+                "mb-5": "XL"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_606e4f7df8152",
+            "label": "Block Aspect Ratio",
+            "name": "rptblock_aspect_ratio",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "square": "Square",
+                "widescreen": "16 x 9",
+                "traditional": "4 x 3",
+                "narrow": "narrow"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "widget",
+                "operator": "==",
+                "value": "blockrepeater_widget"
+            }
+        ]
+    ],
+    "menu_order": 51,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1618271286
+}
