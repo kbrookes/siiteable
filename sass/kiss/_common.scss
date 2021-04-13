@@ -440,6 +440,33 @@ $basefontsize: 16 !default;
   background-color: rgba($brand-primary, $property);
 }
 
+/// ADDITIONAL RESPONSIVE SIZES
+
+.w {
+  &-lg {
+    &-25 {
+      @include media-breakpoint-up(lg){
+        max-width: 25%;
+      }
+    }
+    &-50 {
+      @include media-breakpoint-up(lg){
+        max-width: 50%;
+      }
+    }
+    &-75 {
+      @include media-breakpoint-up(lg){
+        max-width: 75%;
+      }
+    }
+    &-100 {
+      @include media-breakpoint-up(lg){
+        max-width: 100%;
+      }
+    }
+  }
+}
+
 //// HAMBURGER NAV
 .icon-bar {
   width: 22px;

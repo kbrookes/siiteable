@@ -241,21 +241,6 @@
 		}
 	}
 	&__content {
-		@include media-breakpoint-up(xs){
-			width: 100%;
-		}
-		@include media-breakpoint-up(sm){
-			width: 85%;
-		}
-		@include media-breakpoint-up(md){
-			width: 75%;
-		}
-		@include media-breakpoint-up(lg){
-			width: 65%;
-		}
-		@include media-breakpoint-up(xl){
-			width: 50%;
-		}
 	}
 	&__separator {
 		position: absolute;
@@ -265,24 +250,23 @@
 	}
 		
 	h1 {
-		color: $white;
-		margin: 0 0 0.1em;
-		//text-shadow: 1px 1px 4px $background-dark;
-		@include media-breakpoint-up(xs){
-			margin-bottom: 0.5rem;
-			font-size: 1.1rem;
-		}
-		@include media-breakpoint-up(sm){
-			font-size: 1.8rem;
-			margin-bottom: 0.6rem;
-		}
-		@include media-breakpoint-up(lg){
-			font-size: 2.2rem;
-			margin-bottom: 0.8rem;
-		}
-		@include media-breakpoint-up(xl){
-			font-size: 2.5rem;
-			margin-bottom: 1rem;
+		margin-bottom: 0.5em;
+		&.font {
+			&-xs {
+				@include font-size(1.4rem);
+			}
+			&-sm {
+				@include font-size(2rem);
+			}
+			&-md {
+				@include font-size(2.5rem);
+			}
+			&-lg {
+				@include font-size(3.5rem);
+			}
+			&-xl {
+				@include font-size(5rem);
+			}
 		}
 	}
 	h2 {

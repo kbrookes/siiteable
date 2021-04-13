@@ -8,6 +8,15 @@
 	$heroAlignment = 'align-items-center';
 	$heroAlignment = get_theme_mod( 'hero_vertical_alignment', 0 );
 	
+	$heroTextColor = 'text-white';
+	$heroTextColor = get_theme_mod( 'hero_text_color', 0 );
+	
+	$heroH1Size = 'font-md';
+	$heroH1Size = get_theme_mod( 'hero_h1_size', 0 );
+	
+	$colWidth = 'w-75';
+	$colWidth = get_theme_mod('header_content_width', 0 );
+	
 	//// HERO TYPE OPTIONS
 	
 	$heroType = '';
@@ -216,7 +225,12 @@
 		$heroImage = get_the_post_thumbnail_url($page_id);
 	}
 	
-	$page_title = single_post_title('', FALSE);
+	$pageTitle = single_post_title('', FALSE);
+	if(get_field('hero_title')):
+		$heroTitle = get_field('hero_title');
+	else:
+		$heroTitle = $pageTitle;
+	endif;
 	
 	
 	if(get_field('hero_title') || $heroImage || get_field('hero_content'))	:?>
@@ -244,76 +258,15 @@
 		<div class="container <?= $heroAlignment; ?>">
 			<div class="hero-header__wrap-inner">
 				<?php if($columnCount == 1):?>
-					<div class="hero-header__content">
-						<?php if(get_field('hero_title')):?>
-							<h1><?php echo get_field('hero_title'); ?></h1>
-						<?php else: ?>
-							<h1><?php echo $page_title; ?></h1>
-						<?php endif; ?>
+					<div class="hero-header__content <?= $colWidth; ?>">
+						<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
+						<div class="<?= $heroTextColor; ?>">
 						<?php echo get_field('hero_content'); ?>
-						
+						</div>
 						
 						<?php if( have_rows('header_multi_buttons') ): 
 							$counter = 1;
 						?>
-						<div class="hero_header__content-actions">
-							<?php while( have_rows('header_multi_buttons') ): the_row();
-								// vars
-								$linkType = '';
-								$externalLink = false;
-								$mailto = false;
-								$setLink = 'internal';
-								$linkClass = '';
-								$buttonCopy = 'LEARN HOW';
-								$butPrefix = 'hero-button';
-								$videoIDButton = '';
-								$buttonOptions = get_sub_field($butPrefix . '_button_options');
-								if(get_sub_field($butPrefix . '_add_button') == true):
-									
-									//$linkType = get_field($butPrefix . '_hero_link_type');
-									$linkType = $buttonOptions['button_link_type'];
-									$buttonCopy = $buttonOptions['button_text_copy'];
-									switch ($linkType) {
-										case "None":
-											$setLink = null;
-											$linkContent = null;
-											break;
-										case "page":
-											$setLink = 'internal';
-											$linkContent = $buttonOptions['button_page_link'];
-											break;
-										case "external":
-											$setLink = 'external';
-											$linkContent = $buttonOptions['button_external_link'];
-											$externalLink = true;
-											break;
-										case "email":
-											$setLink = 'email';
-											$linkContent = $buttonOptions['button_email_address'];
-											$mailto = true;
-											break;
-										case "form":
-											$setLink = 'form';
-											$linkContent = '';
-											$linkClass = $buttonOptions['button_popup'];
-											break;
-										case "video":
-											$setLink = 'video-popup';
-											$linkContent = '';
-											$linkClass = $buttonOptions['button_popup'];
-											$videoIDButton = $buttonOptions['button_video_id'];
-											break;
-									}
-								endif; ?>
-								
-								
-							<?php if($setLink){ ?>
-								<a class="btn btn-outline-primary <?php if($counter > 1):?>ml-4<?php endif; ?> <?php if($setLink=='form'): echo $linkClass; endif; ?>" href="<?php if($setLink=='email'):?>mailto:<?php endif; ?><?php echo $linkContent; ?>" <?php if($setLink=='external'):?>target="_blank"<?php endif; ?> <?php if($linkType == 'video'):?>data-toggle="modal" data-target="#videoModal<?php echo $counter;?>" data-youtubeid="<?php echo $videoIDButton; ?>"<?php endif; ?>><?php echo $buttonCopy; ?></a>
-							<?php } ?>
-							<?php 
-								$counter++;
-								endwhile; ?>
-						</div>
 						<?php endif; ?>
 					</div>
 				<?php else:?>
@@ -321,29 +274,83 @@
 					<div class="col-12 col-md-6 <?php echo $col1Align; ?>">
 						<div class="hero-header__column <?php echo $columnPadding; ?>">
 							<?php if($titleCol == 1){ ?>
-								<?php if(get_field('hero_title')):?>
-								<h1><?php echo get_field('hero_title'); ?></h1>
-								<?php else: ?>
-								<h1><?php echo $page_title; ?></h1>
-								<?php endif; ?>
+								<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
 							<?php } ?>
-							<?php echo $col1Content; ?>
+							<div class="<?= $heroTextColor; ?>">
+								<?php echo $col1Content; ?>
+							</div>
 						</div>
 					</div>
 					<div class="col-12 col-md-6 <?php echo $col2Align; ?>">
 						<div class="hero-header__column <?php echo $columnPadding; ?>">
 							<?php if($titleCol == 2){ ?>
-								<?php if(get_field('hero_title')):?>
-								<h1><?php echo get_field('hero_title'); ?></h1>
-								<?php else: ?>
-								<h1><?php echo $page_title; ?></h1>
-								<?php endif; ?>
+								<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
 							<?php } ?>
-							<?php echo $col2Content; ?>
+							<div class="<?= $heroTextColor; ?>">
+								<?php echo $col2Content; ?>
+							</div>
 						</div>
 					</div>
 				</div>
 				<?php endif; ?>
+				<div class="hero_header__content-actions">
+					<?php while( have_rows('header_multi_buttons') ): the_row();
+						// vars
+						$linkType = '';
+						$externalLink = false;
+						$mailto = false;
+						$setLink = 'internal';
+						$linkClass = '';
+						$buttonCopy = 'LEARN HOW';
+						$butPrefix = 'hero-button';
+						$videoIDButton = '';
+						$buttonOptions = get_sub_field($butPrefix . '_button_options');
+						if(get_sub_field($butPrefix . '_add_button') == true):
+							
+							//$linkType = get_field($butPrefix . '_hero_link_type');
+							$linkType = $buttonOptions['button_link_type'];
+							$buttonCopy = $buttonOptions['button_text_copy'];
+							switch ($linkType) {
+								case "None":
+									$setLink = null;
+									$linkContent = null;
+									break;
+								case "page":
+									$setLink = 'internal';
+									$linkContent = $buttonOptions['button_page_link'];
+									break;
+								case "external":
+									$setLink = 'external';
+									$linkContent = $buttonOptions['button_external_link'];
+									$externalLink = true;
+									break;
+								case "email":
+									$setLink = 'email';
+									$linkContent = $buttonOptions['button_email_address'];
+									$mailto = true;
+									break;
+								case "form":
+									$setLink = 'form';
+									$linkContent = '';
+									$linkClass = $buttonOptions['button_popup'];
+									break;
+								case "video":
+									$setLink = 'video-popup';
+									$linkContent = '';
+									$linkClass = $buttonOptions['button_popup'];
+									$videoIDButton = $buttonOptions['button_video_id'];
+									break;
+							}
+						endif; ?>
+						
+						
+					<?php if($setLink){ ?>
+						<a class="btn btn-outline-primary <?php if($counter > 1):?>ml-4<?php endif; ?> <?php if($setLink=='form'): echo $linkClass; endif; ?>" href="<?php if($setLink=='email'):?>mailto:<?php endif; ?><?php echo $linkContent; ?>" <?php if($setLink=='external'):?>target="_blank"<?php endif; ?> <?php if($linkType == 'video'):?>data-toggle="modal" data-target="#videoModal<?php echo $counter;?>" data-youtubeid="<?php echo $videoIDButton; ?>"<?php endif; ?>><?php echo $buttonCopy; ?></a>
+					<?php } ?>
+					<?php 
+						$counter++;
+						endwhile; ?>
+				</div>
 			</div>
 		</div>
 		<div class="hero-header__icon">

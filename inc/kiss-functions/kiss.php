@@ -199,6 +199,63 @@ function lll_customizer_settings( $wp_customize ) {
 	) );
 	
 	
+	$wp_customize->add_setting( 'hero_text_color' , array(
+		'type'          => 'theme_mod',
+		'transport'     => 'refresh',
+	) );
+	$wp_customize->add_control( 'hero_text_color_control', array(
+		'label'      => 'Hero Text Color',
+		'section'    => 'hero_header_settings',
+		'settings'   => 'hero_text_color',
+		'type'       => 'select',
+			'choices'    => array( 
+			  'text-white' => 'White',
+			  'text-dark' => 'Dark',
+			  'text-light' => 'Light',
+			  'text-primary' => 'Primary',
+			  'text-secondary' => 'Secondary',
+			  'text-alternate' => 'Alternate',
+			),
+	) );
+	
+	$wp_customize->add_setting( 'hero_h1_size' , array(
+		'default'		=> 'font-md',
+		'type'          => 'theme_mod',
+		'transport'     => 'refresh',
+	) );
+	$wp_customize->add_control( 'hero_h1_size_control', array(
+		'label'      => 'Heading 1 Font Size',
+		'section'    => 'hero_header_settings',
+		'settings'   => 'hero_h1_size',
+		'type'       => 'select',
+			'choices'    => array( 
+			  'font-xs' => 'XS',
+			  'font-sm' => 'SM',
+			  'font-md' => 'MD',
+			  'font-lg' => 'LG',
+			  'font-xl' => 'XL',
+			),
+	) );
+	
+	$wp_customize->add_setting( 'header_content_width' , array(
+		'default'		=> '75',
+		'type'          => 'theme_mod',
+		'transport'     => 'refresh',
+	) );
+	$wp_customize->add_control( 'header_content_width_control', array(
+		'label'      => 'Single Column Max Width',
+		'description'=> 'When using single-column settings in hero headers this controls the width of the header at sizes LG and above At MD and below the column size will be 100',
+		'section'    => 'hero_header_settings',
+		'settings'   => 'header_content_width',
+		'type'       => 'radio',
+			'choices'    => array( 
+			  'w-lg-50' => '50%',
+			  'w-lg-75' => '75%',
+			  'w-lg-100' => '100%',
+			),
+	) );
+	
+	
 	//// FOOTER SETTINGS
 	/// PANEL - FOOTER
 	$wp_customize->add_panel('footer_panel',array(
