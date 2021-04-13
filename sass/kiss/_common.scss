@@ -242,6 +242,7 @@ $basefontsize: 16 !default;
     position: relative;
     z-index: 100;
     h4 {
+      @include font-size(1.3rem);
       margin-bottom: 0;
     }
   }
