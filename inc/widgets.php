@@ -46,8 +46,9 @@ class Blockrepeater_Widget extends WP_Widget {
 		$wHeader = get_field('rptblock_heading', 'widget_' . $widget_id);
 		$blockMargin = get_field('rptblock_margin', 'widget_' . $widget_id);
 		$blockAspect = 'style-' . get_field('rptblock_aspect_ratio', 'widget_' . $widget_id);
-		
-		echo '<h2>' . $wHeader . '</h2>';
+		if($wHeader !=  ""):
+			echo '<h2>' . $wHeader. '</h2>';
+		endif;
 		
 		if( have_rows('rptblock_repeater', 'widget_' . $widget_id) ): ?>
 		<div class="block-repeater">
@@ -58,6 +59,16 @@ class Blockrepeater_Widget extends WP_Widget {
 				
 				$titleColor = 'text-white';
 				$titleColor = get_sub_field('rptblock_title_color');
+				
+				$contentImage = '';
+				$contentImage = get_sub_field('rptblock_content_image');
+				
+				$titleHide = false;
+				$contentImageAlt = '';
+				if(get_sub_field('rptblock_title_hide') == true):
+					$titleHide = true;
+					$contentImageAlt = $title;
+				endif;
 			
 				$linkVal = '';
 				$linkType = get_sub_field('rptblock_link');
@@ -114,10 +125,23 @@ class Blockrepeater_Widget extends WP_Widget {
 					$overlayColorClass = $overlayColor;
 				endif;
 				
+				$hoverColor = get_sub_field('rptblock_overlay_hover');
+				$hoverColorClass = '';
+				if($hoverColor):
+					$overlayHoverClass = $hoverColor;
+				endif;
+				
 				$overlayOpacity = get_sub_field('rptblock_overlay_opacity');
 				$overlayOpacityClass = '';
 				if(!empty($overlayOpacity)):
 					$overlayOpacityClass = 'opacity-' . $overlayOpacity;
+				endif;
+				
+				if(($bgClass == 'hasBGColor') && (!empty($overlayHoverClass))):
+					$hasOverlay = true;
+					$hasOverlayClass = 'hasOverlay';
+					$overlayColor = $bgColor;
+					$overlayColorClass = $overlayColor;
 				endif;
 			?>
 			<div class="block-repeater__block <?= $bgColor . ' ' . $blockMargin . ' ' . $blockAspect; ?>">
@@ -125,10 +149,15 @@ class Blockrepeater_Widget extends WP_Widget {
 					<a class="block-repeater__link" href="<?= $linkVal; ?>">
 						<div class="block-repeater__wrap image-box__inner <?= $bgClass . ' ' . $hasOverlayClass; ?>">
 							<? if($hasOverlay):?>
-							<div class="image-box__inner-overlay position-absolute w-100 h-100 <?= $overlayColorClass . ' ' . $overlayOpacityClass; ?>"></div>
+							<div class="image-box__inner-overlay position-absolute w-100 h-100 <?= $overlayColorClass . ' ' . $overlayHoverClass . ' ' .$overlayOpacityClass; ?>"></div>
 							<? endif; ?>
 							<div class="image-box__content text-center">
+								<? if($titleHide == false):?>
 								<h4 class="<?= $titleColor; ?>"><?= $title; ?></h4>
+								<? endif; ?>
+								<? if(!empty($contentImage)):?>
+								<img src="<?= $contentImage; ?>" class="img-fluid" alt="<?= $title; ?>" />
+								<? endif; ?>
 							</div>
 						</div>
 					</a>

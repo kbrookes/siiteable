@@ -13,27 +13,12 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		display: flex;
-		min-height: 430px;
+		//min-height: 430px;
 		overflow: hidden;
 		position: relative;
 		width: 100%;
-		@include media-breakpoint-up(xs){
-			min-height: 520px;
-		}
-		@include media-breakpoint-up(sm){
-			min-height: 480px;
-		}
-		@include media-breakpoint-up(md){
-			min-height: 500px;
-		}
-		@include media-breakpoint-up(lg){
-			min-height: 590px;
-		}
-		@include media-breakpoint-up(xl){
-			min-height: 620px;
-		}
 		.container {
-			align-items: flex-end;
+			//align-items: flex-end;
 			display: flex;
 			justify-content: flex-start;
 			position: relative;
@@ -43,6 +28,82 @@
 			.btn + .btn {
 				margin-left: 15px;
 			}
+		}
+		.header_xs & {
+			@include media-breakpoint-up(xs){
+				min-height: 180px;
+			}
+			@include media-breakpoint-up(sm){
+				min-height: 260px;
+			}
+		}
+		.header_sm & {
+			@include media-breakpoint-up(xs){
+				min-height: 220px;
+			}
+			@include media-breakpoint-up(sm){
+				min-height: 300px;
+			}	
+			@include media-breakpoint-up(lg){
+				min-height: 320px;
+			}
+			@include media-breakpoint-up(xl){
+				min-height: 380px;
+			}	
+		}
+		.header_md & {
+			@include media-breakpoint-up(xs){
+				min-height: 240px;
+			}
+			@include media-breakpoint-up(sm){
+				min-height: 300px;
+			}
+			@include media-breakpoint-up(md){
+				min-height: 320px;
+			}	
+			@include media-breakpoint-up(lg){
+				min-height: 380px;
+			}
+			@include media-breakpoint-up(xl){
+				min-height: 400px;
+			}	
+		}
+		.header_lg & {
+			@include media-breakpoint-up(xs){
+				min-height: 260px;
+			}
+			@include media-breakpoint-up(sm){
+				min-height: 340px;
+			}
+			@include media-breakpoint-up(md){
+				min-height: 420px;
+			}	
+			@include media-breakpoint-up(lg){
+				min-height: 480px;
+			}
+			@include media-breakpoint-up(xl){
+				min-height: 560px;
+			}	
+		}
+		.header_xl & {
+			@include media-breakpoint-up(xs){
+				min-height: 330px;
+			}
+			@include media-breakpoint-up(sm){
+				min-height: 380px;
+			}
+			@include media-breakpoint-up(md){
+				min-height: 460px;
+			}	
+			@include media-breakpoint-up(lg){
+				min-height: 580px;
+			}
+			@include media-breakpoint-up(xl){
+				min-height: 680px;
+			}	
+		}
+		.full_height & {
+			height: 100vh;
 		}
 		&.hasOverlay {
 			&:before {
@@ -180,29 +241,6 @@
 		}
 	}
 	&__content {
-		@include media-breakpoint-up(xs){
-			width: 100%;
-			margin-bottom: 15px;
-			padding: 20px;
-		}
-		@include media-breakpoint-up(sm){
-			width: 85%;
-			margin-bottom: 30px;
-		}
-		@include media-breakpoint-up(md){
-			width: 75%;
-			margin-bottom: 30px;
-			padding: 30px;
-		}
-		@include media-breakpoint-up(lg){
-			width: 65%;
-			margin-bottom: 45px;
-			padding: 40px;
-		}
-		@include media-breakpoint-up(xl){
-			width: 70%;
-			margin-bottom: 60px;
-		}
 	}
 	&__separator {
 		position: absolute;
@@ -212,32 +250,22 @@
 	}
 		
 	h1 {
-		color: $white;
-		margin: 0 0 0.1em;
-		//text-shadow: 1px 1px 4px $background-dark;
-		@include media-breakpoint-up(xs){
-			margin-bottom: 0.5rem;
-			font-size: 1.1rem;
-		}
-		@include media-breakpoint-up(sm){
-			font-size: 1.8rem;
-			margin-bottom: 0.6rem;
-			.home & {
-				font-size: 1.1rem;;
+		margin-bottom: 0.5em;
+		&.font {
+			&-xs {
+				@include font-size(1.4rem);
 			}
-		}
-		@include media-breakpoint-up(lg){
-			font-size: 2.2rem;
-			margin-bottom: 0.8rem;
-			.home & {
-				font-size: 1.5rem;;
+			&-sm {
+				@include font-size(2rem);
 			}
-		}
-		@include media-breakpoint-up(xl){
-			font-size: 2.5rem;
-			margin-bottom: 1rem;
-			.home & {
-				font-size: 2rem;;
+			&-md {
+				@include font-size(2.5rem);
+			}
+			&-lg {
+				@include font-size(3.5rem);
+			}
+			&-xl {
+				@include font-size(5rem);
 			}
 		}
 	}
