@@ -7025,6 +7025,12 @@ return Popper;
 //# sourceMappingURL=bootstrap.js.map
 
 jQuery(document).ready(function($) {
-  // Add your custom jQuery here
+  $(window).on("load resize", function (event) {
+    var $navbar = $("#main-nav");
+    var $heroHeader = $(".hero-header__wrap");
+
+    $heroHeader.css("padding-top", $navbar.outerHeight());
+  });
+  
 });
 

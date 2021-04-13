@@ -8,7 +8,7 @@ function strappress_scripts()
     "strappress-style",
     get_stylesheet_directory_uri() . "/style.css",
     [],
-    "4.4.79"
+    "4.4.82"
   );
 
   wp_enqueue_style(
@@ -30,7 +30,7 @@ function strappress_scripts()
 
   wp_enqueue_script(
     "strappress-js",
-    get_template_directory_uri() . "/js/dist/scripts.min.js",
+    get_template_directory_uri() . "/js/dist/scripts.js",
     ["jquery"],
     " ",
     true

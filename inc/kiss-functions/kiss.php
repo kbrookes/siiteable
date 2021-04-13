@@ -150,24 +150,73 @@ function lll_customizer_settings( $wp_customize ) {
 			'true' => 'Yes, make transparent',
 		),
 	));
+	
+	//// HERO SETTINGS
+	// Create our sections
+	
+	$wp_customize->add_section( 'hero_header_settings' , array(
+		'title'             => 'Hero Header Settings',
+		'priority'          => 21,
+	) );
+			
+	// Create our settings
+	
+	$wp_customize->add_setting( 'hero_header_height' , array(
+		'default'       => 'header_md',
+		'type'          => 'theme_mod',
+		'transport'     => 'refresh',
+	) );
+	$wp_customize->add_control( 'hero_header_height_control', array(
+		'label'      => 'Hero Height',
+		'section'    => 'hero_header_settings',
+		'settings'   => 'hero_header_height',
+		'type'       => 'select',
+			'choices'    => array( 
+			  'header_xs' => 'XS',
+			  'header_sm' => 'SM',
+			  'header_md' => 'MD',
+			  'header_lg' => 'LG',
+			  'header_xl' => 'XL',
+			  'full_height' => 'Full Height',
+			),
+	) );
+	
+	$wp_customize->add_setting( 'hero_vertical_alignment' , array(
+		'default'       => 'align-items-center',
+		'type'          => 'theme_mod',
+		'transport'     => 'refresh',
+	) );
+	$wp_customize->add_control( 'hero_vertical_alignment_control', array(
+		'label'      => 'Vertical Alignement',
+		'section'    => 'hero_header_settings',
+		'settings'   => 'hero_vertical_alignment',
+		'type'       => 'select',
+			'choices'    => array( 
+			  'align-items-start' => 'Align Top',
+			  'align-items-center' => 'Align Center',
+			  'align-items-end' => 'Align Bottom',
+			),
+	) );
+	
+	
+	//// FOOTER SETTINGS
+	/// PANEL - FOOTER
 	$wp_customize->add_panel('footer_panel',array(
 		'title'=>'Footer Settings',
 		'description'=> 'Modify footer behaviour',
 		'priority'=> 25,
 	));
-	
-	
+	/// SECTION - FOOTER
 	$wp_customize->add_section('footer_col_section',array(
 		'title'=>'Column Layouts',
 		'priority'=>10,
 		'panel'=>'footer_panel',
 	));
-	
-	
+	/// SECTION - FOOTER
 	$wp_customize->add_setting('footer_col_num',array(
 		'default'=>'4',
 	));
-	
+	/// SECTION - FOOTER
 	$wp_customize->add_control('footer_col_ctrl',array(
 		'label'=>'Columns in lower footer',
 		'type'=>'select',
@@ -180,11 +229,11 @@ function lll_customizer_settings( $wp_customize ) {
 			'4' => '4',
 		),
 	));
-	
+	/// SECTION - FOOTER
 	$wp_customize->add_setting('footer_col_layout',array(
 		'default'=>'equal',
 	));
-	
+	/// SECTION - FOOTER
 	$wp_customize->add_control('footer_logo_ctrl',array(
 		'label'=>'Column options',
 		'type'=>'select',
@@ -196,11 +245,11 @@ function lll_customizer_settings( $wp_customize ) {
 			'wide-last' => 'Last column is wider',
 		),
 	));
-	
+	/// SECTION - FOOTER
 	$wp_customize->add_setting('footer_header_normal',array(
 		'default'=>'fs-3',
 	));
-	
+	/// SECTION - FOOTER
 	$wp_customize->add_control('footer_header_fs',array(
 		'label'=>'Menu Header Font Size',
 		'type'=>'select',
@@ -216,7 +265,6 @@ function lll_customizer_settings( $wp_customize ) {
 	));
 	
 	// FOOTER INFO SECTION
-	
 	$wp_customize->add_section('footer_info',array(
 		'title'=>'Privacy, Terms & Copyright',
 		'priority'=>11,
@@ -239,17 +287,18 @@ function lll_customizer_settings( $wp_customize ) {
 	
 	
 	$wp_customize->add_setting( 'siiteable_textarea_setting_id', array(
-		  'capability' => 'edit_theme_options',
-		  //'default' => 'Lorem Ipsum Dolor Sit amet',
-		  'sanitize_callback' => 'sanitize_textarea_field',
-		) );
-		
-		$wp_customize->add_control( 'siiteable_textarea_setting_id', array(
-		  'type' => 'textarea',
-		  'section' => 'footer_info', // // Add a default or your own section
-		  'label' => __( 'Long statement' ),
-		  'description' => __( 'Use this to place a longer statement below the copyright/privacy/terms section' ),
-		) );
+	  'capability' => 'edit_theme_options',
+	  //'default' => 'Lorem Ipsum Dolor Sit amet',
+	  'sanitize_callback' => 'sanitize_textarea_field',
+	) );
+	
+	$wp_customize->add_control( 'siiteable_textarea_setting_id', array(
+	  'type' => 'textarea',
+	  'section' => 'footer_info', // // Add a default or your own section
+	  'label' => __( 'Long statement' ),
+	  'description' => __( 'Use this to place a longer statement below the copyright/privacy/terms section' ),
+	) );
+	
 }
 
 ///// SETUP THE KIRKI FRAMEWORK

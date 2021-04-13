@@ -2,6 +2,11 @@
 	
 	$page_id = get_queried_object_id();
 	
+	//// CUSTOMIZER OPTIONS
+	$heroHeight = get_theme_mod( 'hero_header_height', 0 );
+	
+	$heroAlignment = 'align-items-center';
+	$heroAlignment = get_theme_mod( 'hero_vertical_alignment', 0 );
 	
 	//// HERO TYPE OPTIONS
 	
@@ -215,7 +220,7 @@
 	
 	
 	if(get_field('hero_title') || $heroImage || get_field('hero_content'))	:?>
-<section id="heroHeader" class="hero-header  <?php echo $separatorClasses; ?> <?php if($heroType == 'video'):?>video-hero video-type__<?php echo $videoType; ?><?php endif; ?>" <?php if($heroBG): echo $heroBG; endif; ?>>
+<section id="heroHeader" class="hero-header  <?php echo $separatorClasses . ' ' . $heroHeight; ?> <?php if($heroType == 'video'):?>video-hero video-type__<?php echo $videoType; ?><?php endif; ?>" <?php if($heroBG): echo $heroBG; endif; ?>>
 	<div class="hero-header__wrap <?php echo $overlayClass; ?>" <?php if($heroImage):?>style="background-image:url(<?php echo $heroImage; ?>)"<?php endif; ?>>
 		<?php if($heroType == 'video'):
 			if($videoType == 'local'):?>
@@ -236,7 +241,7 @@
 		</div>
 			<?php endif; ?>
 		<?php endif; ?>
-		<div class="container">
+		<div class="container <?= $heroAlignment; ?>">
 			<div class="hero-header__wrap-inner">
 				<?php if($columnCount == 1):?>
 					<div class="hero-header__content">
