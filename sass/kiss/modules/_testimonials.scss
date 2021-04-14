@@ -12,21 +12,75 @@
 	blockquote {
 		margin-bottom: 0;
 		margin-top: 0;
-		p {
-			@include rem(font-size, 20);
+		&.text {
+			&-xs {
+				p {
+					@include font-size(0.8rem);
+				}
+			}
+			&-sm {
+				p {
+					@include font-size(1.2rem);
+				}
+			}
+			&-md {
+				p {
+					@include font-size(1.4rem);
+				}
+			}
+			&-lg {
+				p {
+					@include font-size(2rem);
+				}
+			}
+			&-xl {
+				p {
+					@include font-size(2.4rem);
+				}
+			}
 		}
 		footer {
 			color: $brand-secondary;
 			font-weight: light;
 			text-transform: uppercase;
-			@include rem(font-size, 12);
 			cite {
 				color: $brand-primary;
 				display: block;
 				font-style: normal;
 				font-weight: bold;
-				@include rem(font-size, 16);
 				text-transform: none;
+			}
+			&.text {
+				&-xs {
+					@include font-size(0.8rem);
+					cite {
+						@include font-size(1.2rem);
+					}
+				}
+				&-sm {
+					@include font-size(1.2rem);
+					cite {
+						@include font-size(1.3rem);
+					}
+				}
+				&-md {
+					@include font-size(1.4rem);
+					cite {
+						@include font-size(1.6rem);
+					}
+				}
+				&-lg {
+					@include font-size(2rem);
+					cite {
+						@include font-size(2.3rem);
+					}
+				}
+				&-xl {
+					@include font-size(2.4rem);
+					cite {
+						@include font-size(2.8rem);
+					}
+				}
 			}
 		}
 	}

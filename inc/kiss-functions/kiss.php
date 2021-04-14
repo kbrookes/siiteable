@@ -237,6 +237,25 @@ function lll_customizer_settings( $wp_customize ) {
 			),
 	) );
 	
+	$wp_customize->add_setting( 'hero_header_content_size' , array(
+		'default'       => 'text-md',
+		'type'          => 'theme_mod',
+		'transport'     => 'refresh',
+	) );
+	$wp_customize->add_control( 'hero_header_content_size_control', array(
+		'label'      => 'Content Font Size',
+		'section'    => 'hero_header_settings',
+		'settings'   => 'hero_header_content_size',
+		'type'       => 'select',
+			'choices'    => array( 
+			  'text-xs' => 'XS',
+			  'text-sm' => 'SM',
+			  'text-md' => 'MD',
+			  'text-lg' => 'LG',
+			  'text-xl' => 'XL',
+			),
+	) );
+	
 	$wp_customize->add_setting( 'header_content_width' , array(
 		'default'		=> '75',
 		'type'          => 'theme_mod',
