@@ -17,6 +17,9 @@
 	$colWidth = 'w-75';
 	$colWidth = get_theme_mod('header_content_width', 0 );
 	
+	$contentSize = 'text-md';
+	$contentSize = get_theme_mod('hero_header_content_size', 0);
+	
 	//// HERO TYPE OPTIONS
 	
 	$heroType = '';
@@ -261,7 +264,7 @@
 				<?php if($columnCount == 1):?>
 					<div class="hero-header__content <?= $colWidth; ?>">
 						<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
-						<div class="<?= $heroTextColor; ?>">
+						<div class="<?= $heroTextColor . ' ' .  $contentSize; ?>">
 						<?php echo get_field('hero_content'); ?>
 						</div>
 					</div>
@@ -272,7 +275,7 @@
 							<?php if($titleCol == 1){ ?>
 								<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
 							<?php } ?>
-							<div class="<?= $heroTextColor; ?>">
+							<div class="<?= $heroTextColor . ' ' .  $contentSize; ?>">
 								<?php echo $col1Content; ?>
 							</div>
 						</div>
@@ -282,7 +285,7 @@
 							<?php if($titleCol == 2){ ?>
 								<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
 							<?php } ?>
-							<div class="<?= $heroTextColor; ?>">
+							<div class="<?= $heroTextColor . ' ' .  $contentSize; ?>">
 								<?php echo $col2Content; ?>
 							</div>
 						</div>
