@@ -1,6 +1,9 @@
 #main-nav {
 	transition: 0.3s ease all;
 	.navbar-nav {
+		@include media-breakpoint-down(sm){
+			padding: 15px;
+		}
 		.nav-link {
 			font-weight: bold;
 			font-family: $headings-font-family;
@@ -54,7 +57,6 @@
 			&.collapsing,
 			&.show {
 				background-color: $dark;
-				padding: 15px;
 			}
 		}
 	}

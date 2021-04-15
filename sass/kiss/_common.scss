@@ -294,28 +294,6 @@ $basefontsize: 16 !default;
   }
 }
 
-/// Make first para big
-.hasHero {
-  /*.content-area article {
-		p:first-child {
-			color: $brand-primary;
-			font-family: $headings-font-family;
-			margin-bottom: 1rem;
-			@include media-breakpoint-up(xs) {
-				font-size: 1.5rem;
-			}
-			@include media-breakpoint-up(sm) {
-				font-size: 1.6rem;
-			}
-			@include media-breakpoint-up(md) {
-				font-size: 1.7rem;
-			}
-			@include media-breakpoint-up(lg) {
-				font-size: 1.8rem;
-			}
-		}
-	}*/
-}
 
 /// SETUP STANDARD IMAGE BLOCKS {
 .image-box {
@@ -555,44 +533,66 @@ $basefontsize: 16 !default;
 }
 
 //// HAMBURGER NAV
-.icon-bar {
-  width: 22px;
-  height: 2px;
-  background-color: #b6b6b6;
-  display: block;
-  transition: all 0.2s;
-  margin-top: 4px;
-}
-
-.navbar-toggler {
+.hamburger {
+  background-color: transparent;
   border: none;
-  background: transparent !important;
-}
-
-.navbar-toggler .top-bar {
-  transform: rotate(45deg);
-  transform-origin: 10% 10%;
-}
-
-.navbar-toggler .middle-bar {
-  opacity: 0;
-}
-
-.navbar-toggler .bottom-bar {
-  transform: rotate(-45deg);
-  transform-origin: 10% 90%;
-}
-
-.navbar-toggler.collapsed .top-bar {
-  transform: rotate(0);
-}
-
-.navbar-toggler.collapsed .middle-bar {
-  opacity: 1;
-}
-
-.navbar-toggler.collapsed .bottom-bar {
-  transform: rotate(0);
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+  &-icon {
+    width: 50px;
+  }
+  .line {
+    fill: none;
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    &-1 {
+      stroke-dasharray: 60 207;
+      
+    }
+    &-2 {
+      stroke-dasharray: 60 60;
+    }
+    &-3 {
+      stroke-dasharray: 60 207;
+    }
+    .navbar.text-primary & {
+      stroke: $primary;
+    }
+    .navbar.text-secondary & {
+      stroke: $secondary;
+    }
+    .navbar.text-dark & {
+      stroke: $dark;
+    }
+    .navbar.text-light & {
+      stroke: $light;
+    }
+    .navbar.text-white & {
+      stroke: $white;
+    }
+    .navbar.text-alternate & {
+      stroke: $alternate;
+    }
+  }
+  &.opened {
+    .line {
+      stroke-width: 6;
+      &-1 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+      }
+      &-2 {
+        stroke-dasharray: 1 60;
+        stroke-dashoffset: -30;
+      }
+      &-3 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+      }
+    }
+  }
 }
 
 //// BLOG PAGES
