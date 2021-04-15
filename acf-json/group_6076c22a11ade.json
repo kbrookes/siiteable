@@ -1,0 +1,345 @@
+{
+    "key": "group_6076c22a11ade",
+    "title": "Spacing Controls",
+    "fields": [
+        {
+            "key": "field_6076c27a8a3d0",
+            "label": "Choose Padding Type",
+            "name": "padding_type",
+            "type": "button_group",
+            "instructions": "Choose which padding group to control",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "All Sides": "All Sides",
+                "Y-Axis": "Y-Axis",
+                "X-Axis": "X-Axis",
+                "Individual Sides": "Individual Sides"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_6076c2388a3cf",
+            "label": "Padding All - Mobile\/Tablets",
+            "name": "padding_all_xs",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6076c27a8a3d0",
+                        "operator": "==",
+                        "value": "All Sides"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "p-1": "XS",
+                "p-2": "SM",
+                "p-3": "MD",
+                "p-4": "LG",
+                "p-5": "XL"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_6076c33c8a3d1",
+            "label": "Padding All - Laptops",
+            "name": "padding_all_md",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6076c27a8a3d0",
+                        "operator": "==",
+                        "value": "All Sides"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "p-md-1": "XS",
+                "p-md-2": "SM",
+                "p-md-3": "MD",
+                "p-md-4": "LG",
+                "p-md-5": "XL"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_6076c3658a3d2",
+            "label": "Padding All - Desktops",
+            "name": "padding_all_lg",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6076c27a8a3d0",
+                        "operator": "==",
+                        "value": "All Sides"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "p-lg-1": "XS",
+                "p-lg-2": "SM",
+                "p-lg-3": "MD",
+                "p-lg-4": "LG",
+                "p-lg-5": "XL"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_6076cd11069a9",
+            "label": "Padding Y - Mobile\/Tablets",
+            "name": "padding_y_xs",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6076c27a8a3d0",
+                        "operator": "==",
+                        "value": "Y-Axis"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "py-1": "XS",
+                "py-2": "SM",
+                "py-3": "MD",
+                "py-4": "LG",
+                "py-5": "XL"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_6076cd5d069aa",
+            "label": "Padding Y - Laptops",
+            "name": "padding_y_md",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6076c27a8a3d0",
+                        "operator": "==",
+                        "value": "Y-Axis"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "py-md-1": "XS",
+                "py-md-2": "SM",
+                "py-md-3": "MD",
+                "py-md-4": "LG",
+                "py-md-5": "XL"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_6076cd89069ab",
+            "label": "Padding Y - Desktops",
+            "name": "padding_y_lg",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6076c27a8a3d0",
+                        "operator": "==",
+                        "value": "Y-Axis"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "py-lg-1": "XS",
+                "py-lg-2": "SM",
+                "py-lg-3": "MD",
+                "py-lg-4": "LG",
+                "py-lg-5": "XL"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_6076cdab069ac",
+            "label": "Padding X - Mobile\/Tablets",
+            "name": "padding_x_xs",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6076c27a8a3d0",
+                        "operator": "==",
+                        "value": "X-Axis"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "px-1": "XS",
+                "px-2": "SM",
+                "px-3": "MD",
+                "px-4": "LG",
+                "px-5": "XL"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_6076cdc5069ad",
+            "label": "Padding X - Laptops",
+            "name": "padding_x_md",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6076c27a8a3d0",
+                        "operator": "==",
+                        "value": "X-Axis"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "px-md-1": "XS",
+                "px-md-2": "SM",
+                "px-md-3": "MD",
+                "px-md-4": "LG",
+                "px-md-5": "XL"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_6076cded069ae",
+            "label": "Padding X - Desktops",
+            "name": "padding_x_lg",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6076c27a8a3d0",
+                        "operator": "==",
+                        "value": "X-Axis"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "px-lg-1": "XS",
+                "px-lg-2": "SM",
+                "px-lg-3": "MD",
+                "px-lg-4": "LG",
+                "px-lg-5": "XL"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "happyforms-poll"
+            }
+        ]
+    ],
+    "menu_order": 101,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1618398774
+}

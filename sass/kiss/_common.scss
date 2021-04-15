@@ -61,6 +61,92 @@
   }
 }
 
+.text-xs {
+  h1 {
+    @include font-size(1.4rem);
+  }
+  h2 {
+    @include font-size(1.2rem);
+  }
+  h3 {
+    @include font-size(1.1rem);
+  }
+  h4 {
+    @include font-size(1rem);
+  }
+  p {
+    @include font-size(0.8rem);
+  }
+}
+.text-sm {
+  h1 {
+    @include font-size(2rem);
+  }
+  h2 {
+    @include font-size(1.8rem);
+  }
+  h3 {
+    @include font-size(1.6rem);
+  }
+  h4 {
+    @include font-size(1.4rem);
+  }
+  p {
+    @include font-size(1.2rem);
+  }
+}
+.text-md {
+  h1 {
+    @include font-size(2.5rem);
+  }
+  h2 {
+    @include font-size(2.2rem);
+  }
+  h3 {
+    @include font-size(1.8rem);
+  }
+  h4 {
+    @include font-size(1.6rem);
+  }
+  p {
+    @include font-size(1.4rem);
+  }
+}
+.text-lg {
+  h1 {
+    @include font-size(3.5rem);
+  }
+  h2 {
+    @include font-size(3rem);
+  }
+  h3 {
+    @include font-size(2.5rem);
+  }
+  h4 {
+    @include font-size(2.2rem);
+  }
+  p {
+    @include font-size(2rem);
+  }
+}
+.text-xl {
+  h1 {
+    @include font-size(5rem);
+  }
+  h2 {
+    @include font-size(4rem);
+  }
+  h3 {
+    @include font-size(3rem);
+  }
+  h4 {
+    @include font-size(2.8rem);
+  }
+  p {
+    @include font-size(2.4rem);
+  }
+}
+
 //// MIXINS
 // input pixel value unitless: 8 vs 8px
 // ex. @include rem(padding, 8 12 16 24)
