@@ -1076,6 +1076,27 @@
                             "endpoint": 0
                         },
                         {
+                            "key": "field_6076c4616cf33",
+                            "label": "Font Controls",
+                            "name": "cta",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6076c01d3fc68"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 1
+                        },
+                        {
                             "key": "field_5d48fda641f91",
                             "label": "Add a button",
                             "name": "cta_button",
@@ -2196,6 +2217,27 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_6076cbca1501a",
+                            "label": "Image Column Padding",
+                            "name": "col_image",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6076c22a11ade"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 1
+                        },
+                        {
                             "key": "field_60592dc8acd17",
                             "label": "Image shadow",
                             "name": "col_image_shadow",
@@ -3045,6 +3087,86 @@
                             },
                             "placement": "top",
                             "endpoint": 0
+                        },
+                        {
+                            "key": "field_60768edf8d4da",
+                            "label": "Testimonial Font Size",
+                            "name": "testimonial_font_size",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "text-xs": "XS",
+                                "text-sm": "SM",
+                                "text-md": "MD",
+                                "text-lg": "LG",
+                                "text-xl": "XL"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_60768f4e8d4db",
+                            "label": "Citation Font Size",
+                            "name": "citation_font_size",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "text-xs": "XS",
+                                "text-sm": "SM",
+                                "text-md": "MD",
+                                "text-lg": "LG",
+                                "text-xl": "XL"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_60768fa58d4dc",
+                            "label": "Testimonial device",
+                            "name": "testimonial_device",
+                            "type": "image",
+                            "instructions": "This should be an SVG, and we need to work out what how path and stroke colours are set.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "preview_size": "full",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
                         },
                         {
                             "key": "field_5ea0d7874e5ab",
@@ -5405,7 +5527,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "product"
+                "value": "post"
             }
         ]
     ],
@@ -5417,5 +5539,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1616568803
+    "modified": 1618398214
 }

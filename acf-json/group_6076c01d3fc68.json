@@ -1,0 +1,107 @@
+{
+    "key": "group_6076c01d3fc68",
+    "title": "Font Controls",
+    "fields": [
+        {
+            "key": "field_6076c024c55e9",
+            "label": "Font Size",
+            "name": "font_size",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "text-xs": "XS",
+                "text-sm": "SM",
+                "text-md": "MD",
+                "text-lg": "LG",
+                "text-xl": "XL"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6076c0cbc55ea",
+            "label": "Font Color",
+            "name": "font_color",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "text-white": "White",
+                "text-dark": "Dark",
+                "text-light": "Light",
+                "text-primary": "Primary",
+                "text-secondary": "Secondary",
+                "text-alternate": "Alternate"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6076c11dc55eb",
+            "label": "Font Weight",
+            "name": "font_weight",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "font-weight-normal": "Normal",
+                "font-weight-light": "Light",
+                "font-weight-bold": "Bold"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "happyforms-poll"
+            }
+        ]
+    ],
+    "menu_order": 100,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1618396521
+}
