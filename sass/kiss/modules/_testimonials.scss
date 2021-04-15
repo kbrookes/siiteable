@@ -14,29 +14,19 @@
 		margin-top: 0;
 		&.text {
 			&-xs {
-				p {
-					@include font-size(0.8rem);
-				}
+				
 			}
 			&-sm {
-				p {
-					@include font-size(1.2rem);
-				}
+				
 			}
 			&-md {
-				p {
-					@include font-size(1.4rem);
-				}
+				
 			}
 			&-lg {
-				p {
-					@include font-size(2rem);
-				}
+				
 			}
 			&-xl {
-				p {
-					@include font-size(2.4rem);
-				}
+				
 			}
 		}
 		footer {
@@ -54,31 +44,31 @@
 				&-xs {
 					@include font-size(0.8rem);
 					cite {
-						@include font-size(1.2rem);
+						@include font-size(1rem);
 					}
 				}
 				&-sm {
-					@include font-size(1.2rem);
+					@include font-size(1rem);
 					cite {
-						@include font-size(1.3rem);
+						@include font-size(1.2rem);
 					}
 				}
 				&-md {
-					@include font-size(1.4rem);
+					@include font-size(1.2em);
 					cite {
-						@include font-size(1.6rem);
+						@include font-size(1.4rem);
 					}
 				}
 				&-lg {
-					@include font-size(2rem);
+					@include font-size(1.4rem);
 					cite {
-						@include font-size(2.3rem);
+						@include font-size(1.8rem);
 					}
 				}
 				&-xl {
-					@include font-size(2.4rem);
+					@include font-size(1.8rem);
 					cite {
-						@include font-size(2.8rem);
+						@include font-size(2.2rem);
 					}
 				}
 			}

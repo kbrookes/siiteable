@@ -28,6 +28,12 @@
 	/// CUSTOM CLASS
 	$customClass = get_sub_field($sepPrefix.'_class');
 	
+	/// BOX TITLE CONTROLS
+	$boxTitleSize = get_sub_field('font_size');
+	$boxTitleColor = get_sub_field('font_color');
+	$boxTitleWeight = get_sub_field('font_weight');
+	$boxTitleAlignment = get_sub_field('text_alignment');
+	$boxTitleClass = $boxTitleSize . ' ' . $boxTitleColor . ' ' . $boxTitleWeight;
 	
 	/// BLOCK SPECIFIC 
 	$blockLayout = get_sub_field('list_icon_layout');	
@@ -98,8 +104,8 @@
 	<div class="list-icons__inner flexi-inner">
 		<div class="<?php echo $blockContainer; ?>">
 			<?php if(get_sub_field('list_title')) { ?>
-			<header class="list-icons__header section-title">
-				<h2><?php the_sub_field('list_title'); ?></h2>
+			<header class="list-icons__header section-title <?= $boxTitleAlignment; ?>">
+				<h2 class="<?= $boxTitleClass; ?>"><?php the_sub_field('list_title'); ?></h2>
 			</header>
 			<?php } ?>
 			<?php if( have_rows('list_icons') ): ?>

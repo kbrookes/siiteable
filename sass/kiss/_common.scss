@@ -75,7 +75,7 @@
     @include font-size(1rem);
   }
   p {
-    @include font-size(0.8rem);
+    @include font-size(1rem);
   }
 }
 .text-sm {
@@ -126,7 +126,7 @@
     @include font-size(2.2rem);
   }
   p {
-    @include font-size(2rem);
+    @include font-size(1.8rem);
   }
 }
 .text-xl {
@@ -143,7 +143,7 @@
     @include font-size(2.8rem);
   }
   p {
-    @include font-size(2.4rem);
+    @include font-size(2.2rem);
   }
 }
 
