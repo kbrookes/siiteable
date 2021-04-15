@@ -1,5 +1,8 @@
 ## IGNORE CUSTOMIZER FILE
 //sass/kiss/_customiser.scss
+style.css
+style.css.map
+
 
 ## IGNORE CONFIG/BUILD FILES
 sftp-config.json
