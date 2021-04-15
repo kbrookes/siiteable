@@ -13,6 +13,30 @@
 	$templatePath = get_template_directory();
 	$separatorLayout = $templatePath . "/template-parts/kiss/static-partials/separators.php";
 	
+	/// TITLE CONTROLS
+	$titleTextSize = get_sub_field('card_title_font_size');
+	$titleTextColor = get_sub_field('card_title_font_color');
+	$titleTextWeight = get_sub_field('card_title_font_weight');
+	$titleTextAlignment = get_sub_field('card_title_text_alignment');
+	$titleTextClass = $titleTextSize . ' ' . $titleTextColor . ' ' . $titleTextWeight . ' ' . $titleTextAlignment;
+	
+	/// TITLEs CONTROLS
+	$titlesTextSize = get_sub_field('card_titles_font_size');
+	$titlesTextColor = get_sub_field('card_titles_font_color');
+	$titlesTextWeight = get_sub_field('card_titles_font_weight');
+	$titlesTextAlignment = get_sub_field('card_titles_text_alignment');
+	$titlesTextClass = $titlesTextSize . ' ' . $titlesTextColor . ' ' . $titlesTextWeight . ' ' . $titlesTextAlignment;
+	
+	/// CONTENT CONTROLS
+	$contentTextSize = get_sub_field('card_contents_font_size');
+	$contentTextColor = get_sub_field('card_contents_font_color');
+	$contentTextWeight = get_sub_field('card_contents_font_weight');
+	$contentTextAlignment = get_sub_field('card_contents_text_alignment');
+	$contentTextClass = $contentTextSize . ' ' . $contentTextColor . ' ' . $contentTextWeight . ' ' . $contentTextAlignment;
+	
+	$cardBackgroundColor = get_sub_field('card_background_colour');
+	$cardShadow = get_sub_field('card_background_shadow');
+	
 	/// GET GENERAL
 	$blockTitle = get_sub_field($sepPrefix . '_block_title');
 	$colCount = get_sub_field($sepPrefix . '_columns');
@@ -50,7 +74,7 @@
 	<div class="cards-layout__inner">
 		<div class="<?php echo $containerSize; ?>">
 			<?php if(!empty($blockTitle)){
-				echo '<h2>' . $blockTitle . '</h2>';
+				echo '<h2 class="' . $titleTextClass . '">' . $blockTitle . '</h2>';
 			} ?>
 			<?php if(have_rows($sepPrefix . '_add_cards'))	{?>
 			<div class="row">
@@ -69,7 +93,7 @@
 					endif;	
 				?>
 				<div class="<?php echo $colCount; ?>">
-					<div class="cards-card">
+					<div class="cards-card <?= $cardBackgroundColor . ' ' . $cardShadow; ?>">
 						<?php if(!empty($cardImage)): ?>
 						<?php if($addButton){ ?><a class="<?php if($setLink=='form'): echo $linkClass; endif; ?>" href="<?php if($setLink=='email'):?>mailto:<?php endif; ?><?php echo $linkContent; ?>" <?php if($setLink=='link'):?>target="_blank"<?php endif; ?>><?php } ?>
 							<div class="cards-card__header">
@@ -79,10 +103,12 @@
 						<?php endif; ?>
 						<div class="cards-card__content">
 							<div class="cards-card__copy">
-								<?php if(!empty($cardTitle)){ echo '<h3>' . $cardTitle . '</h3>';} ?>
-								<?php if(!empty($cardContent)){
-									echo '<p>' . $cardContent . '</p>'; 
-								} ?> 
+								<?php if(!empty($cardTitle)){ echo '<h3 class="' . $titlesTextClass . '">' . $cardTitle . '</h3>';} ?>
+								<?php if(!empty($cardContent)){?>
+								<div class="<?= $contentTextClass; ?>">
+									<p> <?= $cardContent; ?></p>
+								</div>
+								<? } ?> 
 							</div>
 							<?php if($addButton){ ?>
 							<div class="cards-card__actions">
