@@ -257,7 +257,7 @@ function lll_customizer_settings( $wp_customize ) {
 	) );
 	
 	$wp_customize->add_setting( 'header_content_width' , array(
-		'default'		=> '75',
+		'default'		=> '75%',
 		'type'          => 'theme_mod',
 		'transport'     => 'refresh',
 	) );
@@ -271,6 +271,27 @@ function lll_customizer_settings( $wp_customize ) {
 			  'w-lg-50' => '50%',
 			  'w-lg-75' => '75%',
 			  'w-lg-100' => '100%',
+			),
+	) );
+	
+	$wp_customize->add_setting( 'hero_padding' , array(
+		'default'		=> 'None',
+		'type'          => 'theme_mod',
+		'transport'     => 'refresh',
+	) );
+	$wp_customize->add_control( 'hero_padding_control', array(
+		'label'      => 'Hero Padding',
+		'description'=> 'Adjust the top  bottom padding of the hero content section',
+		'section'    => 'hero_header_settings',
+		'settings'   => 'hero_padding',
+		'type'       => 'select',
+			'choices'    => array( 
+			  'py-0' => 'None',
+			  'py-1' => 'XS',
+			  'py-2' => 'SM',
+			  'py-3' => 'MD',
+			  'py-4' => 'LG',
+			  'py-5' => 'XL',
 			),
 	) );
 	
