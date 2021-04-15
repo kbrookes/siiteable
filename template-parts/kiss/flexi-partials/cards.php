@@ -82,9 +82,9 @@
 								<?php if(!empty($cardTitle)){ echo '<h3>' . $cardTitle . '</h3>';} ?>
 								<?php if(!empty($cardContent)){
 									echo '<p>' . $cardContent . '</p>'; 
-								} ?>
-								<?php if($addButton){ ?>
+								} ?> 
 							</div>
+							<?php if($addButton){ ?>
 							<div class="cards-card__actions">
 								<a class="btn-custom btn-sm <?php echo $btnColour; ?> <?php if($setLink=='form'): echo $linkClass; endif; ?>" href="<?php if($setLink=='email'):?>mailto:<?php endif; ?><?php echo $linkContent; ?>" <?php if($setLink=='link'):?>target="_blank"<?php endif; ?>><?php if($linkText){ echo $linkText; } else { ?>LEARN HOW<?php } ?></a>
 							</div>
