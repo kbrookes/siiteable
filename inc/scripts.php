@@ -10,7 +10,7 @@ function siiteable_scripts()
     "strappress-style",
     get_stylesheet_directory_uri() . "/style.css",
     [],
-    "4.5.2"
+    "4.5.10"
   );
 
   wp_enqueue_style("strappress-font-regular", get_stylesheet_directory_uri() . "/fonts/open-sans-v18-latin-regular.woff2", array(), null);
