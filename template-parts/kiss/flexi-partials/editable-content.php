@@ -7,6 +7,21 @@
 	// GET THE BOX BACKGROUND COLOUR
 	include $templatePath . "/template-parts/kiss/static-partials/box-background-color.php";
 	
+	
+	/// TITLE CONTROLS
+	$titleTextSize = get_sub_field('title_controls_font_size');
+	$titleTextColor = get_sub_field('title_controls_font_color');
+	$titleTextWeight = get_sub_field('title_controls_font_weight');
+	$titleTextAlignment = get_sub_field('title_controls_text_alignment');
+	$titleTextClass = $titleTextSize . ' ' . $titleTextColor . ' ' . $titleTextWeight;
+	
+	/// CONTENT CONTROLS
+	$contentTextSize = get_sub_field('content_controls_font_size');
+	$contentTextColor = get_sub_field('content_controls_font_color');
+	$contentTextWeight = get_sub_field('content_controls_font_weight');
+	$contentTextAlignment = get_sub_field('content_controls_text_alignment');
+	$contentTextClass = $contentTextSize . ' ' . $contentTextColor . ' ' . $contentTextWeight . ' ' . $contentTextAlignment;
+	
 	// GET BACKGROUND IMAGE
 	$bg_image = get_sub_field('background_image');
 	
@@ -37,9 +52,9 @@
 	<div class="editable-content__inner flexi-inner">
 		<div class="container">
 			<?php if(get_sub_field('editable_title')):?>
-			<h3><?php the_sub_field('editable_title'); ?></h3>
+			<h3 class="<?= $titleTextClass . ' ' . $titleTextAlignment; ?>" ><?php the_sub_field('editable_title'); ?></h3>
 			<?php endif; ?>
-			<div class="content-wrap">
+			<div class="content-wrap <?= $contentTextClass; ?>">
 				<?php if(the_sub_field('content_editor')) { ?>
 		    			<?php the_sub_field('content_editor'); ?>
 				<?php } ?>

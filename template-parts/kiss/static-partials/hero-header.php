@@ -20,6 +20,9 @@
 	$contentSize = 'text-md';
 	$contentSize = get_theme_mod('hero_header_content_size', 0);
 	
+	$paddingY = 'py-0';
+	$paddingY = get_theme_mod('hero_padding', 0);
+	
 	//// HERO TYPE OPTIONS
 	
 	$heroType = '';
@@ -259,7 +262,7 @@
 		</div>
 			<?php endif; ?>
 		<?php endif; ?>
-		<div class="container <?= $heroAlignment; ?>">
+		<div class="container <?= $heroAlignment . ' ' . $paddingY; ?>">
 			<div class="hero-header__wrap-inner">
 				<?php if($columnCount == 1):?>
 					<div class="hero-header__content <?= $colWidth; ?>">

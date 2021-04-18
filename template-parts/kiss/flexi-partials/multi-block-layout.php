@@ -6,6 +6,42 @@
 	// GET THE BOX BACKGROUND COLOUR
 	include $templatePath . "/template-parts/kiss/static-partials/box-background-color.php";
 	
+	/// TITLE CONTROLS
+	$titleTextSize = get_sub_field('block_title_controls_font_size');
+	$titleTextColor = get_sub_field('block_title_controls_font_color');
+	$titleTextWeight = get_sub_field('block_title_controls_font_weight');
+	$titleTextAlignment = get_sub_field('block_title_controls_text_alignment');
+	$titleTextClass = $titleTextSize . ' ' . $titleTextColor . ' ' . $titleTextWeight . ' ' . $titleTextAlignment;
+	
+	/// INTRO CONTROLS
+	$introTextSize = get_sub_field('block_intro_controls_font_size');
+	$introTextColor = get_sub_field('block_intro_controls_font_color');
+	$introTextWeight = get_sub_field('block_intro_controls_font_weight');
+	$introTextAlignment = get_sub_field('block_intro_controls_text_alignment');
+	$introTextClass = $introTextSize . ' ' . $introTextColor . ' ' . $introTextWeight . ' ' . $introTextAlignment;
+	
+	$blockBGColor = get_sub_field('block_bg_color');
+	
+	$blockShadow = get_sub_field('block_shadow');
+	
+	$blockButtonColor = get_sub_field('block_button_color');
+	$blockButtonSize = get_sub_field('block_button_size');
+	
+	/// TITLES CONTROLS (Individual Cards)
+	$titlesTextSize = get_sub_field('block_titles_controls_font_size');
+	$titlesTextColor = get_sub_field('block_titles_controls_font_color');
+	$titlesTextWeight = get_sub_field('block_titles_controls_font_weight');
+	$titlesTextAlignment = get_sub_field('block_titles_controls_text_alignment');
+	$titlesTextClass = $titlesTextSize . ' ' . $titlesTextColor . ' ' . $titlesTextWeight . ' ' . $titlesTextAlignment;
+	
+	/// CONTENT TEXT CONTROLS (Individual Cards)
+	$contentTextSize = get_sub_field('content_text_controls_font_size');
+	$contentTextColor = get_sub_field('content_text_controls_font_color');
+	$contentTextWeight = get_sub_field('content_text_controls_font_weight');
+	$contentTextAlignment = get_sub_field('content_text_controls_text_alignment');
+	$contentTextClass = $contentTextSize . ' ' . $contentTextColor . ' ' . $contentTextWeight . ' ' . $contentTextAlignment;
+	
+	
 	
 	$addButton = false;
 	if(get_sub_field($sepPrefix . '_button_add_button') == true):
@@ -95,35 +131,6 @@
 	/// NUMBER OF POSTS
 	$blockCount = get_sub_field('block_category_posts_num');
 	
-	/// GET BLOCK ALIGNMENT
-	$blockAlign = 'text-center';
-	$blockAlign = $blockSettings['block_text_alignment'];
-	
-	/// SET BUTTON COLOUR
-	$btnColour = 'secondary';
-	switch ($bgcolour) {
-		case "Default":
-	        $btnColour = "secondary";
-	        break;
-	    case "Primary":
-	        $btnColour = "alternate";
-	        break;
-	    case "Secondary":
-	        $btnColour = "primary";
-	        break;
-	    case "Dark":
-	        $btnColour = "secondary";
-	        break;
-		case "Light":
-	        $btnColour = "secondary";
-	        break;
-		case "White":
-	        $btnColour = "secondary";
-	        break;
-		case "Alternate":
-	        $btnColour = "secondary";
-	        break;
-	}
 	
 	/// DIRECTION
 	$containerDirection = 'text-' . get_sub_field($sepPrefix . '_container_direction');
@@ -135,9 +142,9 @@
 	endif; ?>
 	<div class="multi-block__wrap flexi-inner">
 		<?php if($blockContainer):?><div class="container"><?php endif; ?>
-			<?php if(!empty($blockTitle)):?><h2><?php echo $blockTitle; ?></h2><?php endif; ?>
+			<?php if(!empty($blockTitle)):?><h2 class="<?= $titleTextClass; ?>"><?php echo $blockTitle; ?></h2><?php endif; ?>
 			<?php if(!empty($blockIntro)):?>
-				<div class="multi-block__intro"><?php echo blockIntro; ?></div>
+				<div class="multi-block__intro <?= $introTextClass; ?>"><?php echo $blockIntro; ?></div>
 			<?php endif; ?>
 			
 			<?php if($blockType == 'manual'){ ?>
@@ -147,7 +154,7 @@
 					$selectedItem  = get_sub_field('block_page_select');
 				?>
 				<div class="col-12 col-md-<?php echo $blockColumns; ?> multi-block__column">
-					<div class="multi-block__wrap-inner <?php echo $blockStyle; ?> <?php echo $blockAlign; ?>">
+					<div class="multi-block__wrap-inner <?php echo $blockStyle . ' ' . $blockBGColor; ?>">
 						<?php include $templatePath . '/template-parts/kiss/flexi-partials/multi-block-layouts/block-' . $blockStyle . '.php'; ?>
 					</div>
 				</div>
@@ -180,7 +187,7 @@
 				        $selectedItem = get_post($postID);
 				        ?>
 				        <div class="col-12 col-md-<?php echo $blockColumns; ?> multi-block__column">
-							<div class="multi-block__wrap-inner <?php echo $blockStyle; ?>">
+							<div class="multi-block__wrap-inner <?php echo $blockStyle . ' ' . $blockBGColor; ?>">
 								<?php include $templatePath . '/template-parts/kiss/flexi-partials/multi-block-layouts/block-' . $blockStyle . '.php'; ?>
 							</div>
 						</div>
@@ -204,7 +211,7 @@
 					    $selectedItem = get_post($postID);
 				        ?>
 				        <div class="col-12 col-md-<?php echo $blockColumns; ?> multi-block__column">
-							<div class="multi-block__wrap-inner <?php echo $blockStyle; ?>">
+							<div class="multi-block__wrap-inner <?php echo $blockStyle . ' ' . $blockBGColor; ?>">
 								<?php include $templatePath . '/template-parts/kiss/flexi-partials/multi-block-layouts/block-' . $blockStyle . '.php'; ?>
 							</div>
 						</div>

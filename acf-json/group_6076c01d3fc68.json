@@ -11,11 +11,12 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "30",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
             "choices": {
+                "default": "Default",
                 "text-xs": "XS",
                 "text-sm": "SM",
                 "text-md": "MD",
@@ -39,11 +40,12 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "30",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
             "choices": {
+                "default": "Default",
                 "text-white": "White",
                 "text-dark": "Dark",
                 "text-light": "Light",
@@ -68,11 +70,12 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "30",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
             "choices": {
+                "default": "Default",
                 "font-weight-normal": "Normal",
                 "font-weight-light": "Light",
                 "font-weight-bold": "Bold"
@@ -84,6 +87,29 @@
             "return_format": "value",
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_60779fddf0e9e",
+            "label": "Text Alignment",
+            "name": "text_alignment",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "text-left": "Left",
+                "text-center": "Center",
+                "text-right": "Right"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
         }
     ],
     "location": [
@@ -91,7 +117,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "happyforms-poll"
+                "value": "post"
             }
         ]
     ],
@@ -103,5 +129,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1618396521
+    "modified": 1618454998
 }

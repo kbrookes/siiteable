@@ -60,6 +60,25 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_6078dd17c6d02",
+            "label": "Hide Hero Title",
+            "name": "hide_hero_title",
+            "type": "true_false",
+            "instructions": "Hides title on hero header",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5df0b92b53345",
             "label": "Hide Readmore",
             "name": "hide_readmore",
@@ -140,5 +159,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1614653270
+    "modified": 1618533691
 }

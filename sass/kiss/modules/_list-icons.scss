@@ -10,21 +10,6 @@
       .bg-secondary & {
         color: $white;
       }
-      @include media-breakpoint-up(xs) {
-        font-size: 1.2rem;
-      }
-      @include media-breakpoint-up(sm) {
-        font-size: 1.4rem;
-      }
-      @include media-breakpoint-up(md) {
-        font-size: 1.6rem;
-      }
-      @include media-breakpoint-up(lg) {
-        font-size: 1.8rem;
-      }
-      @include media-breakpoint-up(xl) {
-        font-size: 2rem;
-      }
     }
   }
   &__main {
