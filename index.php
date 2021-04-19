@@ -26,6 +26,7 @@ $faType = get_theme_mod( 'fa_styles');
 				the_archive_title( '<h1 class="page-title text-center mt-5">', '</h1>' );
 				the_archive_top_content();
 			?>
+			<h1>HOWDY</h1>
 			</div>
 		</div>
 	</div>
@@ -42,7 +43,6 @@ $faType = get_theme_mod( 'fa_styles');
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
 		<?php
 		if ( have_posts() ) : 
 			$featureCount = 0;

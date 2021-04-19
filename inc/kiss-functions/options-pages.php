@@ -13,5 +13,12 @@ function my_acf_op_init() {
             'redirect'    => false,
             'menu_slug' => 'theme-options',
         ));
+        
+        // Add sub page.
+        $child = acf_add_options_sub_page(array(
+            'page_title'  => __('Archive Page Settings'),
+            'menu_title'  => __('Archive Pages'),
+            'parent_slug' => $parent['menu_slug'],
+        ));
     }
 }

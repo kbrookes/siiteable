@@ -19,15 +19,110 @@ $faType = get_theme_mod( 'fa_styles');
 	$getArchiveThumbnail = '';
 	$getArchiveThumbnail = get_archive_thumbnail_src();
 	if(!empty($getArchiveThumbnail)):
+		//// CUSTOMIZER OPTIONS
+		$heroHeight = get_theme_mod( 'hero_header_height', 0 );
+		
+		$heroAlignment = 'align-items-center';
+		$heroAlignment = get_theme_mod( 'hero_vertical_alignment', 0 );
+		
+		$heroTextColor = 'text-white';
+		$heroTextColor = get_theme_mod( 'hero_text_color', 0 );
+		
+		$heroH1Size = 'font-md';
+		$heroH1Size = get_theme_mod( 'hero_h1_size', 0 );
+		
+		$colWidth = 'w-75';
+		$colWidth = get_theme_mod('header_content_width', 0 );
+		
+		$contentSize = 'text-md';
+		$contentSize = get_theme_mod('hero_header_content_size', 0);
+		
+		$paddingY = 'py-0';
+		$paddingY = get_theme_mod('hero_padding', 0);
+		
+		$heroDevice = '';
+		if( get_theme_mod( 'siiteable_device_hero', '' ) != '' ):
+			$heroDevice = get_theme_mod( 'siiteable_device_hero', 0 );
+		endif;
+		
+		/// OVERLAY SETUP
+		$hasOverlay = false;
+		$overlayColor = null;
+		$overlayOpacity = null;
+		$colorClass = '';
+		$opacityClass = '';
+		$overlayClass = '';
+		
+		if(get_field('clone_add_overlay', 'options') == true):
+			$hasOverlay = true;
+			$overlayColor = get_field('archive_overlay_color', 'options');
+			switch ($overlayColor) {
+				case "None":
+					$colorClass = 'overlay-dark';
+					break;
+				case "primary":
+					$colorClass = 'overlay-primary';
+					break;
+				case "secondary":
+					$colorClass = 'overlay-secondary';
+					break;
+				case "dark":
+					$colorClass = 'overlay-dark';
+					break;
+				case "light":
+					$colorClass = 'overlay-light';
+					break;
+				case "white":
+					$colorClass = 'overlay-white';
+					break;
+				case "alternate":
+					$colorClass = 'overlay-alternate';
+					break;
+			}
+			$overlayOpacity = get_field('archive_overlay_opacity', 'options');
+			switch ($overlayOpacity) {
+				case "None":
+					$opacityClass = 'overlay-90';
+					break;
+				case "05":
+					$opacityClass = 'overlay-05';
+					break;
+				case "15":
+					$opacityClass = 'overlay-15';
+					break;
+				case "25":
+					$opacityClass = 'overlay-25';
+					break;
+				case "35":
+					$opacityClass = 'overlay-35';
+					break;
+				case "50":
+					$opacityClass = 'overlay-50';
+					break;
+				case "65":
+					$opacityClass = 'overlay-65';
+					break;
+				case "75":
+					$opacityClass = 'overlay-75';
+					break;
+				case "85":
+					$opacityClass = 'overlay-85';
+					break;
+				case "95":
+					$opacityClass = 'overlay-95';
+					break;
+			}
+			$overlayClass = 'hasOverlay ' . $colorClass . ' ' . $opacityClass;
+		endif;
 	 ?>
-<section id="heroHeader" class="hero-header">
-	<div class="hero-header__wrap" style="background-image:url(<?php echo $getArchiveThumbnail; ?>)">
-		<div class="container">
+<section id="heroHeader" class="hero-header <?= $heroHeight; ?>">
+	<div class="hero-header__wrap <?= $overlayClass; ?>" style="background-image:url(<?php echo $getArchiveThumbnail; ?>)">
+		<div class="container <?= $heroAlignment . ' ' . $paddingY; ?>">
 			<div class="hero-header__wrap-inner">
-				<?php
-				the_archive_title( '<h1 class="page-title text-center mt-5">', '</h1>' );
-				the_archive_top_content();
-			?>
+				<?php the_archive_title( '<h1 class="' . $heroH1Size . ' ' . $heroTextColor . '">', '</h1>' ); ?>
+				<div class="<?= $heroTextColor . ' ' .  $contentSize; ?>">
+					<? the_archive_top_content(); ?>
+				</div>
 			</div>
 		</div>
 	</div>

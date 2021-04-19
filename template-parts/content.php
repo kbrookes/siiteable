@@ -15,17 +15,21 @@
 	<?php if(is_single()):
 	// GET FONTAWESOME LIBRARY
 	$faType = get_theme_mod( 'fa_styles');
+	$titleLocation = get_field('post_title_location', 'options');	
 	?>
 		
 		<div class="container">
 			<header class="entry-header text-center">
 				<?php
-				if ( is_single() && get_field('hide_title') == false && !(has_post_thumbnail())) :
-					the_title( '<h1 class="entry-title">', '</h1>' );
-				elseif ( is_single() && get_field('hide_title') == false && (has_post_thumbnail())) :
-				else :
-					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-				endif; ?>
+				if($titleLocation == 'post'):
+					if ( is_single() && get_field('hide_title') == false && !(has_post_thumbnail())) :
+						the_title( '<h1 class="entry-title">', '</h1>' );
+					elseif ( is_single() && get_field('hide_title') == false && (has_post_thumbnail())) :
+					else :
+						the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+					endif; 
+				endif;	
+				?>
 			</header><!-- .entry-header -->
 			
 				<div class="entry-content">

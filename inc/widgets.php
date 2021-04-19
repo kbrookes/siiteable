@@ -50,6 +50,9 @@ class Blockrepeater_Widget extends WP_Widget {
 			echo '<h2>' . $wHeader. '</h2>';
 		endif;
 		
+		//$addDeviceAll = false;
+		$addDeviceAll = get_field('rptblock_device_small', 'widget_' . $widget_id);
+		
 		if( have_rows('rptblock_repeater', 'widget_' . $widget_id) ): ?>
 		<div class="block-repeater">
 			<?php while ( have_rows('rptblock_repeater', 'widget_' . $widget_id) ) : the_row(); 
@@ -69,6 +72,11 @@ class Blockrepeater_Widget extends WP_Widget {
 					$titleHide = true;
 					$contentImageAlt = $title;
 				endif;
+				
+				
+				
+				$removeDevice = false;
+				$removeDevice = get_sub_field('rptblock_device_remove');
 			
 				$linkVal = '';
 				$linkType = get_sub_field('rptblock_link');
@@ -84,6 +92,11 @@ class Blockrepeater_Widget extends WP_Widget {
 				$target = '';
 				if(get_sub_field('rptblock_link_external') == 'true'):
 					$target = 'target="_blank"';
+				endif;
+				
+				$deviceSmall = '';
+				if( get_theme_mod( 'siiteable_device_small', '' ) != '' ):
+					$deviceSmall = get_theme_mod( 'siiteable_device_small', 0 );
 				endif;
 				
 				$bgType = get_sub_field('rptblock_background');
@@ -151,6 +164,11 @@ class Blockrepeater_Widget extends WP_Widget {
 							<? if($hasOverlay):?>
 							<div class="image-box__inner-overlay position-absolute w-100 h-100 <?= $overlayColorClass . ' ' . $overlayHoverClass . ' ' .$overlayOpacityClass; ?>"></div>
 							<? endif; ?>
+							<? if(!empty($deviceSmall) && $addDeviceAll == true && $removeDevice == false){?>
+							<div class="image-box__inner-icon position-absolute w-50 h-auto">
+								<img src="<?= $deviceSmall; ?>" class="style-svg img-fluid" alt="small brand device" />
+							</div>
+							<? } ?>
 							<div class="image-box__content text-center">
 								<? if($titleHide == false):?>
 								<h4 class="<?= $titleColor; ?>"><?= $title; ?></h4>
@@ -163,6 +181,7 @@ class Blockrepeater_Widget extends WP_Widget {
 					</a>
 				</div>
 			</div>
+			
 			<?php endwhile; ?>
 		</div>
 		<?php endif;
