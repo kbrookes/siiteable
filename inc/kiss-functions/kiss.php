@@ -17,10 +17,10 @@ add_action( 'init', 'lll_nav_menus' );
 /// GET RID OF 'CATEGORY' in blog list
 
 function prefix_category_title( $title ) {
-    if ( is_category() ) {
-        $title = single_cat_title( '', false );
-    }
-    return $title;
+	if ( is_category() ) {
+		$title = single_cat_title( '', false );
+	}
+	return $title;
 }
 add_filter( 'get_the_archive_title', 'prefix_category_title' );
 
@@ -38,6 +38,44 @@ function theme_prefix_the_custom_logo() {
 /// ADD HEADER SECTION TO CUSTOMIZER
 add_action( 'customize_register', 'lll_customizer_settings' );
 function lll_customizer_settings( $wp_customize ) {
+	
+	/// ADD DEVICE OPTIONS TO SITE IDENTITY
+	$wp_customize->add_setting( 'siiteable_device_hero', array(
+		//'default' => get_theme_file_uri('assets/image/logo.jpg'), // Add Default Image URL 
+		'sanitize_callback' => 'esc_url_raw'
+	));
+ 
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'siiteable_device_hero_control', array(
+		'label' => 'Upload Hero Device',
+		'priority' => 20,
+		'section' => 'title_tagline',
+		'settings' => 'siiteable_device_hero',
+		'button_labels' => array(
+			// All These labels are optional
+			'select' => 'Select Device',
+			'remove' => 'Remove Device',
+			'change' => 'Change Device',
+			)
+	)));	
+	
+	/// ADD DEVICE OPTIONS TO SITE IDENTITY
+	$wp_customize->add_setting( 'siiteable_device_small', array(
+		//'default' => get_theme_file_uri('assets/image/logo.jpg'), // Add Default Image URL 
+		'sanitize_callback' => 'esc_url_raw'
+	));
+ 
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'siiteable_device_small_control', array(
+		'label' => 'Upload Small Device',
+		'priority' => 20,
+		'section' => 'title_tagline',
+		'settings' => 'siiteable_device_small',
+		'button_labels' => array(
+			// All These labels are optional
+			'select' => 'Select Device',
+			'remove' => 'Remove Device',
+			'change' => 'Change Device',
+			)
+	)));	
 		
 	$wp_customize->add_section( 'lll_header_settings' , array(
 	  'title'      => 'Header settings',
@@ -295,7 +333,6 @@ function lll_customizer_settings( $wp_customize ) {
 			),
 	) );
 	
-	
 	//// FOOTER SETTINGS
 	/// PANEL - FOOTER
 	$wp_customize->add_panel('footer_panel',array(
@@ -406,9 +443,9 @@ Kirki::add_config( 'kiss_theme', array(
 
 //// Create General Settings Panel
 Kirki::add_panel( 'general_settings', array(
-    'priority'    => 10,
-    'title'       => esc_html__( 'General Settings', 'kirki' ),
-    'description' => esc_html__( 'Sitewide modifications', 'kirki' ),
+	'priority'    => 10,
+	'title'       => esc_html__( 'General Settings', 'kirki' ),
+	'description' => esc_html__( 'Sitewide modifications', 'kirki' ),
 ) );
 
 /// Create Fontawesome Options Section
@@ -439,10 +476,10 @@ Kirki::add_field( 'kiss_theme', [
 
 /// Create Button Options Section
 Kirki::add_section( 'button_options', array(
-    'title'          => esc_html__( 'Button Options', 'kirki' ),
-    'description'    => esc_html__( 'Setup how buttons will appear.', 'kirki' ),
-    'panel'          => 'general_settings',
-    'priority'       => 160,
+	'title'          => esc_html__( 'Button Options', 'kirki' ),
+	'description'    => esc_html__( 'Setup how buttons will appear.', 'kirki' ),
+	'panel'          => 'general_settings',
+	'priority'       => 160,
 ) );
 
 // Create Button Styles Dropdown
@@ -537,7 +574,7 @@ add_filter('the_content', function($content) {
 
 add_filter('embed_oembed_html', function ($html, $url, $attr, $post_id) {
 	if(strpos($html, 'youtube.com') !== false || strpos($html, 'youtu.be') !== false){
-  		return '<div class="embed-responsive embed-responsive-16by9">' . $html . '</div>';
+		  return '<div class="embed-responsive embed-responsive-16by9">' . $html . '</div>';
 	} else {
 	 return $html;
 	}
@@ -551,9 +588,9 @@ add_filter('embed_oembed_html', function($code) {
 
 //// FILTER CHECKBOXES & RADIOS FOR CONTACT FORM 7
 add_filter('wpcf7_form_elements', function ($content) {
-    $content = preg_replace('/<label><input type="(checkbox|radio)" name="(.*?)" value="(.*?)" \/><span class="wpcf7-list-item-label">/i', '<label class="custom-control custom-\1"><input type="\1" name="\2" value="\3" class="custom-control-input"><span class="wpcf7-list-item-label custom-control-label">', $content);
+	$content = preg_replace('/<label><input type="(checkbox|radio)" name="(.*?)" value="(.*?)" \/><span class="wpcf7-list-item-label">/i', '<label class="custom-control custom-\1"><input type="\1" name="\2" value="\3" class="custom-control-input"><span class="wpcf7-list-item-label custom-control-label">', $content);
 
-    return $content;
+	return $content;
 });
 
 // Register new image sizes
