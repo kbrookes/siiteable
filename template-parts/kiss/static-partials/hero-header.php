@@ -23,6 +23,11 @@
 	$paddingY = 'py-0';
 	$paddingY = get_theme_mod('hero_padding', 0);
 	
+	$heroDevice = '';
+	if( get_theme_mod( 'siiteable_device_hero', '' ) != '' ):
+		$heroDevice = get_theme_mod( 'siiteable_device_hero', 0 );
+	endif;
+	
 	//// HERO TYPE OPTIONS
 	
 	$heroType = '';
@@ -100,10 +105,23 @@
 	$colorClass = '';
 	$opacityClass = '';
 	$overlayClass = '';
+	$postType = get_post_type();
 	
-	if(get_field('add_image_overlay') == true):
-		$hasOverlay = true;
-		$overlayColor = get_field('overlay_colour');
+	if($postType == 'post'):
+		if(get_field('clone_add_overlay', 'options') == true):
+			$hasOverlay = true;
+			$overlayColor = get_field('archive_overlay_color', 'options');
+			$overlayOpacity = get_field('archive_overlay_opacity', 'options');
+		endif;
+	else:
+		if(get_field('add_image_overlay') == true):
+			$hasOverlay = true;
+			$overlayColor = get_field('overlay_colour');
+			$overlayOpacity = get_field('overlay_opacity');
+		endif;
+	endif;
+	
+	if($hasOverlay):
 		switch ($overlayColor) {
 			case "None":
 				$colorClass = 'overlay-dark';
@@ -127,7 +145,6 @@
 				$colorClass = 'overlay-alternate';
 				break;
 		}
-		$overlayOpacity = get_field('overlay_opacity');
 		switch ($overlayOpacity) {
 			case "None":
 				$opacityClass = 'overlay-90';
@@ -225,7 +242,14 @@
 	endif;	
 	
 	$heroImage = '';
-	if(get_field('hero_image')){
+	if(get_the_archive_title() == 'Archives'):
+		$isArchives = true;
+	endif;
+	
+	
+	if($postType == 'post' && $isArchives == true && (is_singular() != true)) {
+		$heroImage = get_field('hero_image_news', 'options');
+	} elseif(get_field('hero_image')){
 		$heroImage = get_field('hero_image');
 	} elseif(get_the_post_thumbnail_url($page_id) != '') { 
 		$heroImage = get_the_post_thumbnail_url($page_id);
@@ -237,6 +261,12 @@
 	else:
 		$heroTitle = $pageTitle;
 	endif;
+	
+	$titleLocation = 'hero';
+	if($postType == 'post' && $isArchives == true && (is_singular() == true)) {
+		$titleLocation = get_field('post_title_location', 'options');	
+	}
+	
 	
 	$faType = get_theme_mod( 'fa_styles');
 	
@@ -266,7 +296,9 @@
 			<div class="hero-header__wrap-inner">
 				<?php if($columnCount == 1):?>
 					<div class="hero-header__content <?= $colWidth; ?>">
+						<? if($titleLocation == 'hero'): ?>
 						<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
+						<? endif; ?>
 						<div class="<?= $heroTextColor . ' ' .  $contentSize; ?>">
 						<?php echo get_field('hero_content'); ?>
 						</div>
@@ -275,7 +307,7 @@
 				<div class="row">
 					<div class="col-12 col-md-6 <?php echo $col1Align; ?>">
 						<div class="hero-header__column <?php echo $columnPadding; ?>">
-							<?php if($titleCol == 1){ ?>
+							<?php if($titleCol == 1 && $titleLocation == 'hero'){ ?>
 								<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
 							<?php } ?>
 							<div class="<?= $heroTextColor . ' ' .  $contentSize; ?>">
@@ -285,7 +317,7 @@
 					</div>
 					<div class="col-12 col-md-6 <?php echo $col2Align; ?>">
 						<div class="hero-header__column <?php echo $columnPadding; ?>">
-							<?php if($titleCol == 2){ ?>
+							<?php if($titleCol == 2 && $titleLocation == 'hero'){ ?>
 								<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
 							<?php } ?>
 							<div class="<?= $heroTextColor . ' ' .  $contentSize; ?>">
@@ -359,18 +391,11 @@
 				</div>
 			</div>
 		</div>
+		<? if(!empty($heroDevice)){?>
 		<div class="hero-header__icon">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.1 57.2">
-			  <g data-name="Layer 2">
-				<g data-name="Layer 1">
-				  <path d="M62 39.5A35 35 0 0113.1 9.3L0 15a48.6 48.6 0 0067.5 37l1.2-.6L63.2 39l-1.2.6z" class="fill-dark opacity-40"/>
-				  <path d="M35 11.2A16.4 16.4 0 0134.3 0L21.7 5.5A28.3 28.3 0 0024 16a28.4 28.4 0 0035.9 15.3l-4.8-11A16.5 16.5 0 0135 11.2z" class="fill-white opacity-30" />
-				  <path d="M75.4 40.6a35 35 0 01-48.9-30.2L13.4 16a48.6 48.6 0 0067.5 37l1.2-.6L76.7 40z" class="fill-dark opacity-10" />
-				  <path d="M48.4 12.3a16.4 16.4 0 01-.7-11.2L35 6.6a28.3 28.3 0 002.4 10.5 28.4 28.4 0 0035.9 15.3l-4.8-11a16.5 16.5 0 01-20.1-9.1z" class="fill-white opacity-15" />
-				</g>
-			  </g>
-			</svg>
+			<img src="<?= $heroDevice; ?>" class="style-svg img-fluid" alt="hero brand device" />
 		</div>
+		<? } ?>
 	</div>
 	<?php if($addSeparatorLower == true):
 		include $pathLower;
