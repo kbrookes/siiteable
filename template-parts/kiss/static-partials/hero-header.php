@@ -1,4 +1,4 @@
-<?php 
+<? 
 	
 	$page_id = get_queried_object_id();
 	
@@ -271,68 +271,68 @@
 	$faType = get_theme_mod( 'fa_styles');
 	
 	if(get_field('hero_title') || $heroImage || get_field('hero_content'))	:?>
-<section id="heroHeader" class="hero-header  <?php echo $separatorClasses . ' ' . $heroHeight; ?> <?php if($heroType == 'video'):?>video-hero video-type__<?php echo $videoType; ?><?php endif; ?>" <?php if($heroBG): echo $heroBG; endif; ?>>
-	<div class="hero-header__wrap <?php echo $overlayClass; ?>" <?php if($heroImage):?>style="background-image:url(<?php echo $heroImage; ?>)"<?php endif; ?>>
-		<?php if($heroType == 'video'):
+<section id="heroHeader" class="hero-header  <? echo $separatorClasses . ' ' . $heroHeight; ?> <? if($heroType == 'video'):?>video-hero video-type__<? echo $videoType; ?><? endif; ?>" <? if($heroBG): echo $heroBG; endif; ?>>
+	<div class="hero-header__wrap <? echo $overlayClass; ?>" <? if($heroImage):?>style="background-image:url(<? echo $heroImage; ?>)"<? endif; ?>>
+		<? if($heroType == 'video'):
 			if($videoType == 'local'):?>
-		<video class="video-hero__background lazy" poster="<?php echo $heroVideoPoster; ?>" autoplay loop muted playsinline type="video/mpeg">
-			<source src="<?php echo $videoURL; ?>" type="video/mp4" />
+		<video class="video-hero__background lazy" poster="<? echo $heroVideoPoster; ?>" autoplay loop muted playsinline type="video/mpeg">
+			<source src="<? echo $videoURL; ?>" type="video/mp4" />
 		</video>
-			<?php endif; ?>
-			<?php if($videoType == 'youtube'):?>
+			<? endif; ?>
+			<? if($videoType == 'youtube'):?>
 		<div class="video-background">
 			<div class="video-foreground" id="YouTubeBackgroundVideoPlayer">
 		    </div>
 		</div>
-			<?php endif; ?>
-			<?php if($videoType == 'vimeo'):?>
+			<? endif; ?>
+			<? if($videoType == 'vimeo'):?>
 		<div class="video-hero__background">
-			<iframe class="video-hero__foreground" width="x" height="y" src="<?php echo $videoURL; ?>" frameborder="0">
+			<iframe class="video-hero__foreground" width="x" height="y" src="<? echo $videoURL; ?>" frameborder="0">
 			</iframe>
 		</div>
-			<?php endif; ?>
-		<?php endif; ?>
+			<? endif; ?>
+		<? endif; ?>
 		<div class="container <?= $heroAlignment . ' ' . $paddingY; ?>">
 			<div class="hero-header__wrap-inner">
-				<?php if($columnCount == 1):?>
+				<? if($columnCount == 1):?>
 					<div class="hero-header__content <?= $colWidth; ?>">
 						<? if($titleLocation == 'hero'): ?>
 						<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
 						<? endif; ?>
 						<div class="<?= $heroTextColor . ' ' .  $contentSize; ?>">
-						<?php echo get_field('hero_content'); ?>
+						<? echo get_field('hero_content'); ?>
 						</div>
 					</div>
-				<?php else:?>
+				<? else:?>
 				<div class="row">
-					<div class="col-12 col-md-6 <?php echo $col1Align; ?>">
-						<div class="hero-header__column <?php echo $columnPadding; ?>">
-							<?php if($titleCol == 1 && $titleLocation == 'hero'){ ?>
+					<div class="col-12 col-md-6 <? echo $col1Align; ?>">
+						<div class="hero-header__column <? echo $columnPadding; ?>">
+							<? if($titleCol == 1 && $titleLocation == 'hero'){ ?>
 								<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
-							<?php } ?>
+							<? } ?>
 							<div class="<?= $heroTextColor . ' ' .  $contentSize; ?>">
-								<?php echo $col1Content; ?>
+								<? echo $col1Content; ?>
 							</div>
 						</div>
 					</div>
-					<div class="col-12 col-md-6 <?php echo $col2Align; ?>">
-						<div class="hero-header__column <?php echo $columnPadding; ?>">
-							<?php if($titleCol == 2 && $titleLocation == 'hero'){ ?>
+					<div class="col-12 col-md-6 <? echo $col2Align; ?>">
+						<div class="hero-header__column <? echo $columnPadding; ?>">
+							<? if($titleCol == 2 && $titleLocation == 'hero'){ ?>
 								<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
-							<?php } ?>
+							<? } ?>
 							<div class="<?= $heroTextColor . ' ' .  $contentSize; ?>">
-								<?php echo $col2Content; ?>
+								<? echo $col2Content; ?>
 							</div>
 						</div>
 					</div>
 				</div>
-				<?php endif; ?>
+				<? endif; ?>
 				<div class="hero_header__content-actions">
-					<?php if( have_rows('header_multi_buttons') ): 
+					<? if( have_rows('header_multi_buttons') ): 
 						$counter = 1;
 					?>
-					<?php endif; ?>
-					<?php while( have_rows('header_multi_buttons') ): the_row();
+					<? endif; ?>
+					<? while( have_rows('header_multi_buttons') ): the_row();
 						// vars
 						$linkType = '';
 						$externalLink = false;
@@ -346,6 +346,7 @@
 						if(get_sub_field($butPrefix . '_add_button') == true):
 							
 							//$linkType = get_field($butPrefix . '_hero_link_type');
+							$btnColor = $buttonOptions['btn_color'];
 							$linkType = $buttonOptions['button_link_type'];
 							$buttonCopy = $buttonOptions['button_text_copy'];
 							switch ($linkType) {
@@ -382,10 +383,9 @@
 						endif; ?>
 						
 						
-					<?php if($setLink){ ?>
-						<a class="btn btn-outline-primary <?php if($counter > 1):?>ml-4<?php endif; ?> <?php if($setLink=='form'): echo $linkClass; endif; ?>" href="<?php if($setLink=='email'):?>mailto:<?php endif; ?><?php echo $linkContent; ?>" <?php if($setLink=='external'):?>target="_blank"<?php endif; ?> <?php if($linkType == 'video'):?>data-toggle="modal" data-target="#videoModal<?php echo $counter;?>" data-youtubeid="<?php echo $videoIDButton; ?>"<?php endif; ?>><?php echo $buttonCopy; ?></a>
-					<?php } ?>
-					<?php 
+					<? if($setLink){ ?>
+						<a class="btn-custom <?= $btnColor; ?> <? if($counter > 1):?>ml-4<? endif; ?> <? if($setLink=='form'): echo $linkClass; endif; ?>" href="<? if($setLink=='email'):?>mailto:<? endif; ?><? echo $linkContent; ?>" <? if($setLink=='external'):?>target="_blank"<? endif; ?> <? if($linkType == 'video'):?>data-toggle="modal" data-target="#videoModal<? echo $counter;?>" data-youtubeid="<? echo $videoIDButton; ?>"<? endif; ?>><? echo $buttonCopy; ?></a>
+					<? } 
 						$counter++;
 						endwhile; ?>
 				</div>
@@ -397,11 +397,11 @@
 		</div>
 		<? } ?>
 	</div>
-	<?php if($addSeparatorLower == true):
+	<? if($addSeparatorLower == true):
 		include $pathLower;
 	endif; ?>
 </section>
-<?php endif; ?>
+<? endif; ?>
 <script>
     /// ADD HERO CLASS TO BODY TO DYNAMICALLY CHANGE PADDING
     (function($) {
@@ -409,16 +409,16 @@
 	    $('body').removeClass('noHero');
 	})(jQuery);
 	
-	<?php if($heroType == 'video' && $videoType == 'youtube'):?>
+	<? if($heroType == 'video' && $videoType == 'youtube'):?>
 	/// IF USING YOUTUBE, USE THE API
 	function onYouTubeIframeAPIReady() {
 	  var player;
 	  player = new YT.Player('YouTubeBackgroundVideoPlayer', {
-	      videoId: '<?php echo $videoID; ?>', // YouTube Video ID
+	      videoId: '<? echo $videoID; ?>', // YouTube Video ID
 	      width: 1280,               // Player width (in px)
 	      height: 720,              // Player height (in px)
 	      playerVars: {
-	        playlist: '<?php echo $videoID; ?>',
+	        playlist: '<? echo $videoID; ?>',
 	          autoplay: 1,        // Auto-play the video on load
 	          autohide: 1,
 	          disablekb: 1, 
@@ -449,13 +449,13 @@
 	      }
 	  });
 	}
-	<?php endif; ?>
+	<? endif; ?>
 </script>
-<?php if($heroType == 'video' && $videoType == 'youtube'):?>
+<? if($heroType == 'video' && $videoType == 'youtube'):?>
 <script async src="https://www.youtube.com/iframe_api"></script>
-<?php endif; ?>
+<? endif; ?>
 
-<?php if( have_rows('header_multi_buttons') ): 
+<? if( have_rows('header_multi_buttons') ): 
 	$counterModal = 1;
 	while( have_rows('header_multi_buttons') ): the_row();
 		$linkType = ''; 
@@ -474,7 +474,7 @@
 		
 		if($linkType == 'video'):
 	?>
-<div class="modal fade" id="videoModal<?php echo $counterModal; ?>" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+<div class="modal fade" id="videoModal<? echo $counterModal; ?>" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-body bg-dark">
@@ -492,7 +492,7 @@
 <script>
 jQuery(document).ready(function ($) {
 	var $midlayer  = $('.modal-body .embed-responsive'); 
-	$('#videoModal<?php echo $counterModal; ?>').on('show.bs.modal', function (event) {
+	$('#videoModal<? echo $counterModal; ?>').on('show.bs.modal', function (event) {
 		var $video  = $('a.video');
 		var button  = $(event.relatedTarget);   // Button that triggered the modal
 		var vid  = button.data('youtubeid');  // Extract info from data-youtubeid attributes
@@ -513,12 +513,12 @@ jQuery(document).ready(function ($) {
 		    allowfullscreen: true
 		}).appendTo($midlayer);
 	});
-	$('#videoModal<?php echo $counterModal; ?>').on('hide.bs.modal', function (e) {
+	$('#videoModal<? echo $counterModal; ?>').on('hide.bs.modal', function (e) {
 		$('div.modal-body .embed-responsive').html('');
 	});
 });
 </script>
-<?php 
+<? 
 	
 	
 		endif;
