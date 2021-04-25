@@ -13,6 +13,8 @@
 	$templatePath = get_template_directory();
 	$separatorLayout = $templatePath . "/template-parts/kiss/static-partials/separators.php";
 	
+	include $separatorLayout;
+	
 	/// TITLE CONTROLS
 	$titleTextSize = get_sub_field('card_title_font_size');
 	$titleTextColor = get_sub_field('card_title_font_color');
@@ -47,7 +49,7 @@
 		$containerSize = 'container';
 	}
 	
-	include $separatorLayout;
+	
 	
 	/// GET CUSTOM CLASS
 	$customClass = '';
@@ -71,6 +73,9 @@
 	?>
 
 <section class="cards-layout <?php echo $bgcolour . ' ' . $separatorClasses . ' ' . $containerDirection . ' ' . $customClass; ?>">
+	<? if($addSeparatorUpper == true):
+		include $pathUpper;
+	endif; ?>
 	<div class="cards-layout__inner">
 		<div class="<?php echo $containerSize; ?>">
 			<?php if(!empty($blockTitle)){
@@ -123,4 +128,7 @@
 			<?php } ?>
 		</div>
 	</div>
+	<? if($addSeparatorLower == true):
+		include $pathLower;
+	endif; ?>
 </section>

@@ -1,4 +1,4 @@
-<?php
+<?
 	//$bg_colour = get_sub_field('cta_background_colour');
 	
 	// GENERAL INIT
@@ -108,30 +108,30 @@
 	$containerDirection = 'text-' . get_sub_field($sepPrefix . '_container_direction');
 	
 ?>
-<section id="ctaHome" class="cta <?php echo $bgcolour . ' ' . $separatorClasses . ' ' . $overlayClass . ' ' . $containerDirection . ' ' . $ctaClass; ?> <?php if(get_sub_field('cta_background_image')):?>hasBgImg<?php endif; ?>" <?php if(get_sub_field('cta_background_image')):?>style="background-image:url(<?php  the_sub_field('cta_background_image'); ?>)"<?php endif; ?>>
-	<?php if($addSeparatorUpper == true):
+<section id="ctaHome" class="cta <? echo $bgcolour . ' ' . $separatorClasses . ' ' . $overlayClass . ' ' . $containerDirection . ' ' . $ctaClass; ?> <? if(get_sub_field('cta_background_image')):?>hasBgImg<? endif; ?>" <? if(get_sub_field('cta_background_image')):?>style="background-image:url(<?  the_sub_field('cta_background_image'); ?>)"<? endif; ?>>
+	<? if($addSeparatorUpper == true):
 		include $pathUpper;
 	endif; ?>
 	<div class="cta-wrap flexi-inner">
 		<div class="container">
 			<div class="cta-wrap__inner">
-				<?php if(get_sub_field('cta_title')):?>
-					<h2><?php the_sub_field('cta_title'); ?></h2>
-				<?php endif; ?>
-				<?php if(get_sub_field('cta_content')):?>
+				<? if(get_sub_field('cta_title')):?>
+					<h2><? the_sub_field('cta_title'); ?></h2>
+				<? endif; ?>
+				<? if(get_sub_field('cta_content')):?>
 				<div class="cta-wrap__content m-t__sm">
-					<?php the_sub_field('cta_content'); ?>
+					<? the_sub_field('cta_content'); ?>
 				</div>
-				<?php endif; ?>
-				<?php if($addButton){ ?>
+				<? endif; ?>
+				<? if($addButton){ ?>
 			<div class="list-icons__actions">
-				<a class="btn-custom <?php echo $btnColour; ?>" <?php if($setLink=='form'):?>data-target="#<?php echo $dataTarget; ?>" data-toggle="modal"<? endif; ?> <?php if($setLink != 'form'): ?>href="<?php if($setLink=='email'):?>mailto:<?php endif; ?><?php echo $linkContent; ?>"<?php endif; ?> <?php if($setLink=='link'):?>target="_blank"<?php endif; ?>><?php if($linkText){ echo $linkText; } else { ?>LEARN HOW<?php } ?></a>
+				<a class="btn-custom <? echo $btnColour; ?>" <? if($setLink=='form'):?>data-target="#<? echo $dataTarget; ?>" data-toggle="modal"<? endif; ?> <? if($setLink != 'form'): ?>href="<? if($setLink=='email'):?>mailto:<? endif; ?><? echo $linkContent; ?>"<? endif; ?> <? if($setLink=='link'):?>target="_blank"<? endif; ?>><? if($linkText){ echo $linkText; } else { ?>LEARN HOW<? } ?></a>
 			</div>
-			<?php } ?>	
+			<? } ?>	
 			</div>
 		</div>
 	</div>
-	<?php if($addSeparatorLower == true):
+	<? if($addSeparatorLower == true):
 		include $pathLower;
 	endif; ?>
 </section>
