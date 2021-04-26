@@ -52,7 +52,7 @@
 	<div class="editable-content__inner flexi-inner">
 		<div class="container">
 			<?php if(get_sub_field('editable_title')):?>
-			<h3 class="<?= $titleTextClass . ' ' . $titleTextAlignment; ?>" ><?php the_sub_field('editable_title'); ?></h3>
+			<h2 class="<?= $titleTextClass . ' ' . $titleTextAlignment; ?>" ><?php the_sub_field('editable_title'); ?></h2>
 			<?php endif; ?>
 			<div class="content-wrap <?= $contentTextClass; ?>">
 				<?php if(the_sub_field('content_editor')) { ?>
