@@ -107,6 +107,8 @@
 	$overlayClass = '';
 	$postType = get_post_type();
 	
+	
+	
 	if($postType == 'post'):
 		if(get_field('clone_add_overlay', 'options') == true):
 			$hasOverlay = true;
@@ -114,10 +116,10 @@
 			$overlayOpacity = get_field('archive_overlay_opacity', 'options');
 		endif;
 	else:
-		if(get_field('add_image_overlay') == true):
+		if(get_post_meta( get_the_ID(), 'add_image_overlay', true )):
 			$hasOverlay = true;
-			$overlayColor = get_field('overlay_colour');
-			$overlayOpacity = get_field('overlay_opacity');
+			$overlayColor = get_post_meta( get_the_ID(), 'overlay_colour', true );
+			$overlayOpacity = get_post_meta( get_the_ID(), 'overlay_opacity', true );
 		endif;
 	endif;
 	
@@ -256,8 +258,8 @@
 	}
 	
 	$pageTitle = single_post_title('', FALSE);
-	if(get_field('hero_title')):
-		$heroTitle = get_field('hero_title');
+	if(get_post_meta( get_the_ID(), 'hero_title', true )):
+		$heroTitle = get_post_meta( get_the_ID(), 'hero_title', true );
 	else:
 		$heroTitle = $pageTitle;
 	endif;
@@ -267,10 +269,11 @@
 		$titleLocation = get_field('post_title_location', 'options');	
 	}
 	
+	$heroContent = get_post_meta( get_the_ID(), 'hero_content', true );
 	
 	$faType = get_theme_mod( 'fa_styles');
 	
-	if(get_field('hero_title') || $heroImage || get_field('hero_content'))	:?>
+	if($heroTitle || $heroImage || $heroContent)	:?>
 <section id="heroHeader" class="hero-header  <? echo $separatorClasses . ' ' . $heroHeight; ?> <? if($heroType == 'video'):?>video-hero video-type__<? echo $videoType; ?><? endif; ?>" <? if($heroBG): echo $heroBG; endif; ?>>
 	<div class="hero-header__wrap <? echo $overlayClass; ?>" <? if($heroImage):?>style="background-image:url(<? echo $heroImage; ?>)"<? endif; ?>>
 		<? if($heroType == 'video'):
@@ -300,7 +303,7 @@
 						<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
 						<? endif; ?>
 						<div class="<?= $heroTextColor . ' ' .  $contentSize; ?>">
-						<? echo get_field('hero_content'); ?>
+						<?= $heroContent; ?>
 						</div>
 					</div>
 				<? else:?>
