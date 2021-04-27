@@ -6,6 +6,7 @@
 	$linkType = '';
 	$externalLink = false;
 	$mailto = false;
+	$linkText = 'VIEW MORE';
 	$setLink = 'internal';
 	$linkClass = '';
 	$linkSubject = '';
@@ -50,5 +51,5 @@
 				$linkContent = $buttonData['button_video_id'];
 			break;
 		}
-		
+		$btnClass = $btnSize . ' ' . $btnColor . ' ' . $linkClass;
 	endif;

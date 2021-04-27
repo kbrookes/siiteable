@@ -13,7 +13,6 @@
 		$linkText = $buttonData['button_text_copy'];
 		$btnColor = $buttonData['btn_color'];
 		$btnSize = $buttonData['button_size'];
-		$btnClass = $btnSize . ' ' . $btnColor;
 		//$linkType = $linkType['cta_button_link'];
 		switch ($linkType) {
 			case "page":
@@ -49,5 +48,5 @@
 				$linkContent = $buttonData['button_video_id'];
 			break;
 		}
-		
+		$btnClass = $btnSize . ' ' . $btnColor . ' ' . $linkClass;
 	endif;

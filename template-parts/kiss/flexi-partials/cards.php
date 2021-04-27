@@ -80,7 +80,11 @@
 							</div>
 							<? if($showButton == true){ ?>
 							<div class="cards-card__actions <?= $buttonAlign; ?>">
-								<a class="btn-custom <?= $btnClass; ?> <? if($setLink=='form'): echo $linkClass; endif; ?>" href="<? if($setLink=='email'):?>mailto:<? endif; ?><?= $linkContent; ?>" <? if($setLink=='link'):?>target="_blank"<? endif; ?>><? if($linkText){ echo $linkText; } else { ?>LEARN HOW<? } ?></a>
+								<a class="btn-custom <?= $btnClass; ?>" 
+								href="<? if($setLink=='email'):?>mailto:<? endif; ?><?= $linkContent; ?>" 
+								<? if($setLink=='link'):?>target="_blank"<? endif; ?>>
+									<?= $linkText; ?>
+								</a>
 							</div>
 							<? } ?>
 						</div>
