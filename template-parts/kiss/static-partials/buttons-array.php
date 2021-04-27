@@ -1,7 +1,5 @@
 <?php 
-	$addButton = true;
-	$buttonAlign = 'text-left';
-	$buttonAlign = 'text-' . get_sub_field($sepPrefix . '_button_alignment');
+	
 	$linkContent = '';
 	$linkType = '';
 	$externalLink = false;
@@ -9,12 +7,13 @@
 	$setLink = 'internal';
 	$linkClass = '';
 	$linkSubject = '';
-	if(get_sub_field($sepPrefix . '_button_button_options')):
-		$buttonData = get_sub_field($sepPrefix . '_button_button_options');
+	if($addButton['button_options']):
+		$buttonData = $addButton['button_options'];
 		$linkType = $buttonData['button_link_type'];
 		$linkText = $buttonData['button_text_copy'];
 		$btnColor = $buttonData['btn_color'];
 		$btnSize = $buttonData['button_size'];
+		$btnClass = $btnSize . ' ' . $btnColor;
 		//$linkType = $linkType['cta_button_link'];
 		switch ($linkType) {
 			case "page":
