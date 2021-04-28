@@ -21,3 +21,4 @@ $blockTitle = get_sub_field($sepPrefix . '_block_title');
 
 /// CONTAINER BACKGROUND COLOUR
 $bgcolour = get_sub_field('box_background_colour');
+$bg_colour = get_sub_field($sepPrefix . '_box_background_colour');

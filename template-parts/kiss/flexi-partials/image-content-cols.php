@@ -1,4 +1,18 @@
-<?php
+<?
+
+/// GENERAL INIT
+$sepPrefix = "col";
+$templatePath = get_template_directory();
+$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
+
+
+$separatorLayout = $templatePartials . "separators.php";
+include $separatorLayout;
+
+// Custom classes, container direction & size, title, text
+include $templatePartials . 'general-partials.php';
+$bgcolour = $bg_colour;
+
 $colOrder = "order-first";
 if (get_sub_field("image_left_or_right")) {
   if (get_sub_field("image_left_or_right") == "Left") {
@@ -8,19 +22,6 @@ if (get_sub_field("image_left_or_right")) {
   }
 }
 
-$bg_colour = get_sub_field("col_box_background_colour");
-
-/// SET BG COLOUR
-$bgcolour = $bg_colour;
-
-/// SEPARATORS INIT
-
-$sepPrefix = "col";
-$templatePath = get_template_directory();
-$separatorLayout =
-  $templatePath . "/template-parts/kiss/static-partials/separators.php";
-
-include $separatorLayout;
 
 /// IMAGE OR ICON?
 $colImage = "";
@@ -47,31 +48,13 @@ elseif ($imageType == "image"):
   $colImage = get_sub_field("image_column");
 endif;
 
-/// GET CUSTOM CLASS
-$customClass = "";
-if (get_sub_field($sepPrefix . "_class")) {
-  $customClass = get_sub_field($sepPrefix . "_class");
-}
 
 // GET BUTTONS
 $addButton = false;
 if (get_sub_field($sepPrefix . "_button_add_button") == true):
-  $addButton = true;
-  include $templatePath . "/template-parts/kiss/static-partials/buttons.php";
+  include $templatePartials . "buttons.php";
 endif;
 
-$btnColour = "light";
-
-// Button Options
-$btnAddLinks = false;
-$btnAddLinks = get_sub_field($sepPrefix . "_links");
-
-$btnHide = false;
-$btnHide = get_sub_field($sepPrefix . "_hide_button");
-
-/// DIRECTION
-$containerDirection =
-  "text-" . get_sub_field($sepPrefix . "_container_direction");
 
 /// SHADOWS
 $imgShadow = get_sub_field($sepPrefix . "_image_shadow");
@@ -86,7 +69,7 @@ $marginSides = get_sub_field($sepPrefix . "_margin_sides");
 
 $marginClass = $marginSides . "-" . $marginSize;
 ?>
-<section class="image-content  <?php echo $bgcolour .
+<section class="image-content  <?= $bgcolour .
   " " .
   $separatorClasses .
   " " .
@@ -99,70 +82,42 @@ $marginClass = $marginSides . "-" . $marginSize;
   $boxPadding .
   " " .
   $marginClass; ?>">
-	<?php if ($addSeparatorUpper == true):
+	<? if ($addSeparatorUpper == true):
    include $pathUpper;
  endif; ?>
 	<div class="image-content__inner">
 		<div class="container">
 			<div class="row">
-				<?php if (!empty($colImage)) { ?>
-				<div class="<?php echo $classImageCol . " " . $colOrder; ?>">
-					<div class="image-content__inner-image <?php echo $imageColClass; ?>">
-						<? if($btnAddLinks = true):?>
-						<a href="<?php
-      if ($setLink == "email"): ?>mailto:<?php endif;
-      echo $linkContent;
-      ?>">
+				<? if (!empty($colImage)) { ?>
+				<div class="<?= $classImageCol . " " . $colOrder; ?>">
+					<div class="image-content__inner-image <?= $imageColClass; ?>">
+						<?= $btnLinkOpen; ?>
+						<? if ($imageType == "image"): ?>
+						<img src="<?= $colImage; ?>" class="img-fluid <?= $imgShadow ?>" />
+						<? elseif ($imageType == "icon"): ?>
+						<?= $colImage; ?>
 						<? endif; ?>
-						<?php if ($imageType == "image"): ?>
-						<img src="<?php echo $colImage; ?>" class="img-fluid <?= $imgShadow ?>" />
-						<?php elseif ($imageType == "icon"): ?>
-						<?php echo $colImage; ?>
-						<?php endif; ?>
-						<? if($btnAddLinks = true):?>
-						</a>
-						<? endif; ?>
+						<?= $btnLinkClose; ?>
 					</div>
 				</div>
-				<?php } ?>
-				<div class="<?php echo $classContentCol; ?>">
+				<? } ?>
+				<div class="<?= $classContentCol; ?>">
 					<div class="image-content__inner-content">
 						<? if(!empty(get_sub_field("col_title"))):?>
-						<? if($btnAddLinks = true):?>
-						<a href="<?php
-      if ($setLink == "email"): ?>mailto:<?php endif;
-      echo $linkContent;
-      ?>">
-						<? endif; ?>
+						<?= $btnLinkOpen; ?>
 						<h3><?= get_sub_field("col_title") ?></h3>
-						<? if($btnAddLinks = true):?>
-						</a>
+						<?= $btnLinkClose; ?>
 						<? endif; ?>
-						<? endif; ?>
-						<?php echo get_sub_field("content_column"); ?>
-						<?php if ($addButton == true && $btnHide == false) { ?>
-						<div class="image-content__actions">
-							<a class="btn-custom btn-sm 
-							<?php echo $btnColour; ?> <?php if ($setLink == "form"):
-   echo $linkClass;
- endif; ?>" href="<?php
-if ($setLink == "email"): ?>mailto:<?php endif;
-echo $linkContent;
-?>" <?php if ($setLink == "link"): ?>target="_blank"<?php endif; ?>><?php if (
-  $linkText
-) {
-  echo $linkText;
-} else {
-   ?>LEARN HOW<?php
-} ?></a>
-						</div>
-						<?php } ?>
+						<?= wpautop(get_sub_field("content_column")); ?>
+						<? if ($btnHide == false) { ?>
+						<? include $templatePartials . "add-button.php"; ?>
+						<? } ?>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<?php if ($addSeparatorLower == true):
+	<? if ($addSeparatorLower == true):
    include $pathLower;
  endif; ?>
 </section>

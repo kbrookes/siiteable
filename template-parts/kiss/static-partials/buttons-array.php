@@ -29,7 +29,7 @@
 				$linkContent = $buttonData['button_email_address'];
 				$linkSubject = $buttonData['button_subject_line'];
 				if(!empty($linkSubject)) {
-					$linkContent = $linkContent . '?subject=' . $linkSubject;
+					$linkContent = 'mailto:' . $linkContent . '?subject=' . $linkSubject;
 				}
 				$mailto = true;
 				break;
@@ -50,3 +50,17 @@
 		}
 		$btnClass = $btnSize . ' ' . $btnColor . ' ' . $linkClass;
 	endif;
+	
+// Button Options
+$btnAddLinks = false;
+$btnAddLinks = get_sub_field($sepPrefix . "_links");
+if($btnAddLinks = true):
+	$btnLinkOpen = '<a href=' . $linkContent . '>';
+	$btnLinkClose = '</a>';
+else:
+	$btnLinkOpen = null;
+	$btnLinkClose = null;
+endif;
+
+$btnHide = false;
+$btnHide = get_sub_field($sepPrefix . "_hide_button");
