@@ -47,10 +47,14 @@
 				</div>
 				<? endif; ?>
 				<? if($addButton){ ?>
-			<div class="list-icons__actions <?= $buttonAlign; ?>">
-				<a class="btn-custom <?= $btnColor; ?>" <? if($setLink=='form'):?>data-target="#<?= $dataTarget; ?>" data-toggle="modal"<? endif; ?> <? if($setLink != 'form'): ?>href="<? if($setLink=='email'):?>mailto:<? endif; ?><?= $linkContent; ?>"<? endif; ?> <? if($setLink=='link'):?>target="_blank"<? endif; ?>><? if($linkText){ echo $linkText; } else { ?>LEARN HOW<? } ?></a>
-			</div>
-			<? } ?>	
+				<div class="cards-card__actions <?= $buttonAlign; ?>">
+					<a class="btn-custom <?= $btnClass; ?>" 
+					href="<? if($setLink=='email'):?>mailto:<? endif; ?><?= $linkContent; ?>" 
+					<? if($setLink=='link'):?>target="_blank"<? endif; ?>>
+						<?= $linkText; ?>
+					</a>
+				</div>
+				<? } ?>
 			</div>
 		</div>
 	</div>

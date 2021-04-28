@@ -74,7 +74,7 @@
 								</div>
 								<? } ?> 
 							</div>
-							<? if($showButton == true){ ?>
+							<? if($addButton){ ?>
 							<div class="cards-card__actions <?= $buttonAlign; ?>">
 								<a class="btn-custom <?= $btnClass; ?>" 
 								href="<? if($setLink=='email'):?>mailto:<? endif; ?><?= $linkContent; ?>" 
