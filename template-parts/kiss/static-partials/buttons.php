@@ -1,7 +1,7 @@
 <?php 
 	$addButton = true;
 	$buttonAlign = 'text-left';
-	$buttonAlign = 'text-' . get_sub_field($sepPrefix . '_button_alignment');
+	$buttonAlign = 'text-' . get_sub_field($sepPrefix . '_button_button_alignment');
 	$linkContent = '';
 	$linkType = '';
 	$externalLink = false;

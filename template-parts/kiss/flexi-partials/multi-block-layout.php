@@ -2,23 +2,16 @@
 	// GENERAL INIT
 	$templatePath = get_template_directory();
 	$sepPrefix = 'block';
+	$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
+	// Custom classes, container direction & size, title, text
+	include $templatePartials . 'general-partials.php';
 	
 	// GET THE BOX BACKGROUND COLOUR
-	include $templatePath . "/template-parts/kiss/static-partials/box-background-color.php";
+	include $templatePartials . "box-background-color.php";
 	
-	/// TITLE CONTROLS
-	$titleTextSize = get_sub_field('block_title_controls_font_size');
-	$titleTextColor = get_sub_field('block_title_controls_font_color');
-	$titleTextWeight = get_sub_field('block_title_controls_font_weight');
-	$titleTextAlignment = get_sub_field('block_title_controls_text_alignment');
-	$titleTextClass = $titleTextSize . ' ' . $titleTextColor . ' ' . $titleTextWeight . ' ' . $titleTextAlignment;
+	/// TEXT CONTROLS
+	include $templatePartials . 'text-controls.php';
 	
-	/// INTRO CONTROLS
-	$introTextSize = get_sub_field('block_intro_controls_font_size');
-	$introTextColor = get_sub_field('block_intro_controls_font_color');
-	$introTextWeight = get_sub_field('block_intro_controls_font_weight');
-	$introTextAlignment = get_sub_field('block_intro_controls_text_alignment');
-	$introTextClass = $introTextSize . ' ' . $introTextColor . ' ' . $introTextWeight . ' ' . $introTextAlignment;
 	
 	$blockBGColor = get_sub_field('block_bg_color');
 	

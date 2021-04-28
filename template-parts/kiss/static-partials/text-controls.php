@@ -6,6 +6,13 @@ $titleTextWeight = get_sub_field($sepPrefix . '_title_font_weight');
 $titleTextAlignment = get_sub_field($sepPrefix . '_title_text_alignment');
 $titleTextClass = $titleTextSize . ' ' . $titleTextColor . ' ' . $titleTextWeight . ' ' . $titleTextAlignment;
 
+/// INTRO CONTROLS - for single-content blocks that have seprate title & content controls
+$introTextSize = get_sub_field($sepPrefix . '_intro_font_size');
+$introTextColor = get_sub_field($sepPrefix . '_intro_font_color');
+$introTextWeight = get_sub_field($sepPrefix . '_intro_font_weight');
+$introTextAlignment = get_sub_field($sepPrefix . '_intro_text_alignment');
+$introTextClass = $introTextSize . ' ' . $introTextColor . ' ' . $introTextWeight . ' ' . $introTextAlignment;
+
 /// TITLES CONTROLS - For multiple titles inside blocks/repeaters/groups
 $titlesTextSize = get_sub_field($sepPrefix . '_titles_font_size');
 $titlesTextColor = get_sub_field($sepPrefix . '_titles_font_color');
