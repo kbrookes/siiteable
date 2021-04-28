@@ -74,15 +74,7 @@
 								</div>
 								<? } ?> 
 							</div>
-							<? if($addButton){ ?>
-							<div class="cards-card__actions <?= $buttonAlign; ?>">
-								<a class="btn-custom <?= $btnClass; ?>" 
-								href="<? if($setLink=='email'):?>mailto:<? endif; ?><?= $linkContent; ?>" 
-								<? if($setLink=='link'):?>target="_blank"<? endif; ?>>
-									<?= $linkText; ?>
-								</a>
-							</div>
-							<? } ?>
+							<? include $templatePartials . "add-button.php"; ?>
 						</div>
 					</div>
 				</div>

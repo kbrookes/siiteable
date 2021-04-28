@@ -2,31 +2,21 @@
 	/// GENERAL INIT
 	$sepPrefix = 'licons';
 	$templatePath = get_template_directory();
-	
+	$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
 	
 	// GET THE BOX BACKGROUND COLOUR
-	include $templatePath . "/template-parts/kiss/static-partials/box-background-color.php";
-	
+	include $templatePartials . "box-background-color.php";
 	
 	// GET BUTTONS
 	$addButton = false;
 	if(get_sub_field($sepPrefix . '_button_add_button') == true):
-		$addButton = true;
-		include $templatePath . "/template-parts/kiss/static-partials/buttons.php";
+		include $templatePartials . "buttons.php";
 	endif;	
 	
-	/// SEPARATORS INIT
-	$separatorLayout = $templatePath . "/template-parts/kiss/static-partials/separators.php";
-	
+	/// SEPARATORS
+	$separatorLayout = $templatePartials . "separators.php";
 	include $separatorLayout;
 	
-	
-	/// SEPARATORS INIT
-	$separatorLayout = $templatePath . "/template-parts/kiss/static-partials/separators.php";
-	include $separatorLayout;
-	
-	/// CUSTOM CLASS
-	$customClass = get_sub_field($sepPrefix.'_class');
 	
 	/// BOX TITLE CONTROLS
 	$boxTitleSize = get_sub_field('font_size');
@@ -65,8 +55,7 @@
 		$iconSize = $blockIconSize;
 	}
 	
-	/// DIRECTION
-	$containerDirection = 'text-' . get_sub_field($sepPrefix . '_container_direction');
+	
 	
 	/// STYLES
 	// Overlays
@@ -202,11 +191,7 @@
 				<?php endwhile ?>
 				</div>
 			<?php endif ?>
-			<?php if($addButton){ ?>
-			<div class="list-icons__actions">
-				<a class="btn-custom <?php echo $btnColour; ?>" <?php if($setLink=='form'):?>data-target="#<?php echo $dataTarget; ?>" data-toggle="modal"<? endif; ?> <?php if($setLink != 'form'): ?>href="<?php if($setLink=='email'):?>mailto:<?php endif; ?><?php echo $linkContent; ?>"<?php endif; ?> <?php if($setLink=='link'):?>target="_blank"<?php endif; ?>><?php if($linkText){ echo $linkText; } else { ?>LEARN HOW<?php } ?></a>
-			</div>
-			<?php } ?>	
+			<? include $templatePartials . "add-button.php"; ?>
 		</div>			
 	</div>
 	<?php if($addSeparatorLower == true):
