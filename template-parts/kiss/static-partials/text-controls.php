@@ -19,3 +19,10 @@ $contentTextColor = get_sub_field($sepPrefix . '_contents_font_color');
 $contentTextWeight = get_sub_field($sepPrefix . '_contents_font_weight');
 $contentTextAlignment = get_sub_field($sepPrefix . '_contents_text_alignment');
 $contentTextClass = $contentTextSize . ' ' . $contentTextColor . ' ' . $contentTextWeight . ' ' . $contentTextAlignment;
+
+/// TEXT CONTROL FOR SINGLE CONTROLLER ELEMENTS - CTA
+$textSize = get_sub_field('font_size');
+$textColor = get_sub_field('font_color');
+$textWeight = get_sub_field('font_weight');
+$textAlignment = get_sub_field('text_alignment');
+$textClass = $textSize . ' ' . $textColor . ' ' . $textWeight . ' ' . $textAlignment;

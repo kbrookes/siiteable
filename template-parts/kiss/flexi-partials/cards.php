@@ -5,10 +5,6 @@
 	$templatePath = get_template_directory();
 	$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
 	
-	/// CONTAINER SETTINGS
-	// SET BG COLOUR
-	$bgcolour = get_sub_field('box_background_colour');
-	
 	/// SEPARATORS
 	$separatorLayout = $templatePartials . 'separators.php';
 	include $separatorLayout;

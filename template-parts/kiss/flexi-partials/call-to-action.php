@@ -3,56 +3,35 @@
 	// GENERAL INIT
 	$sepPrefix = 'cta';
 	$templatePath = get_template_directory();
+	$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
 	
 	// GET THE BOX BACKGROUND COLOUR
-	include $templatePath . "/template-parts/kiss/static-partials/box-background-color.php";
+	include $templatePartials . "box-background-color.php";
 		
 	// GET BUTTONS
 	$addButton = false;
-	$buttonAlign = 'text-left';
-	//$repeater_value = get_post_meta( get_the_ID(), 'available_boxes', true);
-	
 	if(get_sub_field($sepPrefix . '_button_add_button') == true):
-		$addButton = true;
-		$buttonAlign = 'text-' . get_sub_field($sepPrefix . '_button_alignment');
-		include $templatePath . "/template-parts/kiss/static-partials/buttons.php";
+		include $templatePartials . "buttons.php";
 	endif;	
 	
-	/// SEPARATORS INIT
-	$separatorLayout = $templatePath . "/template-parts/kiss/static-partials/separators.php";
-	
+	/// SEPARATORS
+	$separatorLayout = $templatePartials . "separators.php";
 	include $separatorLayout;
 	
 	/// OVERLAY SETUP
 	$hasOverlay = false;
-	$overlayColor = null;
-	$overlayOpacity = null;
-	
 	if(get_sub_field($sepPrefix . '_add_image_overlay') == true):
-		$hasOverlay = true;
-		$overlayColor = get_sub_field($sepPrefix . '_overlay_colour');
-		$overlayOpacity = get_sub_field($sepPrefix . '_overlay_opacity');	
-		include $templatePath . "/template-parts/kiss/static-partials/overlay-partial.php";
-		$overlayClass = 'hasOverlay ' . $colorClass . ' ' . $opacityClass;
+		include $templatePartials . "overlay-partial.php";
 	endif;
 	
+	// Custom classes, container direction & size, title, text
+	include $templatePartials . 'general-partials.php';
 	
-	$bgcolour = get_sub_field('box_background_colour');
-	
-	$ctaClass = get_sub_field('cta_class');
-	
-	/// DIRECTION
-	$containerDirection = 'text-' . get_sub_field($sepPrefix . '_container_direction');
-	
-	/// TEXT CONTROL
-	$textSize = get_sub_field('font_size');
-	$textColor = get_sub_field('font_color');
-	$textWeight = get_sub_field('font_weight');
-	$textAlignment = get_sub_field('text_alignment');
-	$textClass = $textSize . ' ' . $textColor . ' ' . $textWeight . ' ' . $textAlignment;
+	/// TEXT CONTROLS
+	include $templatePartials . 'text-controls.php';
 	
 ?>
-<section id="ctaHome" class="cta <?= $bgcolour . ' ' . $separatorClasses . ' ' . $overlayClass . ' ' . $containerDirection . ' ' . $ctaClass; ?> <? if(get_sub_field('cta_background_image')):?>hasBgImg<? endif; ?>" <? if(get_sub_field('cta_background_image')):?>style="background-image:url(<?  the_sub_field('cta_background_image'); ?>)"<? endif; ?>>
+<section id="ctaHome" class="cta <?= $bgcolour . ' ' . $separatorClasses . ' ' . $overlayClass . ' ' . $containerDirection . ' ' . $customClass; ?> <? if(get_sub_field('cta_background_image')):?>hasBgImg<? endif; ?>" <? if(get_sub_field('cta_background_image')):?>style="background-image:url(<?  the_sub_field('cta_background_image'); ?>)"<? endif; ?>>
 	<? if($addSeparatorUpper == true):
 		include $pathUpper;
 	endif; ?>

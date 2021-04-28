@@ -1,4 +1,9 @@
 <?
+$hasOverlay = true;
+$overlayColor = null;
+$overlayOpacity = null;
+$overlayColor = get_sub_field($sepPrefix . '_overlay_colour');
+$overlayOpacity = get_sub_field($sepPrefix . '_overlay_opacity');	
 $colorClass = '';
 $opacityClass = '';
 $overlayClass = '';
@@ -65,3 +70,4 @@ switch ($overlayOpacity) {
         $opacityClass = 'overlay-95';
         break;
 }
+$overlayClass = 'hasOverlay ' . $colorClass . ' ' . $opacityClass;
