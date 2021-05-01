@@ -14,7 +14,6 @@
 	include $templatePartials . 'text-controls.php';
 	
 	$cardBackgroundColor = get_sub_field($sepPrefix . '_background_colour');
-	$cardShadow = get_sub_field($sepPrefix . '_background_shadow');
 	
 	/// GET GENERAL
 	$colCount = get_sub_field($sepPrefix . '_columns');
@@ -59,22 +58,33 @@
 							$cardImage = get_sub_field($sepPrefix . '_image_icon');
 							$imageEl = '<i class="' . $faType . ' ' . $cardImage . '"></i>';
 							break;
+						case 'bg-image':
+							$cardImage = get_sub_field($sepPrefix . '_image');
+							$image = $cardImage['url'];
 					}
-					$cardTitle = get_sub_field($sepPrefix . '_title');
+					if(!empty(get_sub_field($sepPrefix . '_title'))):
+						$title = '<h3 class="' . $titlesTextClass . '">' . get_sub_field($sepPrefix . '_title') . '</h3>';
+					endif;
+					if(!empty(get_sub_field($sepPrefix . '_sub_title'))):
+						$subTitle = '<h4 class="' . $titlesTextClass . '">' . get_sub_field($sepPrefix . '_sub_title') . '</h4>';
+					endif;
+					$titlePos = get_sub_field($sepPrefix . '_title_position');
 					$cardContent = get_sub_field($sepPrefix . '_content');
 					
 					// GET BUTTONS
 					$addButton = get_sub_field($sepPrefix . '_button');
 					$showButton = $addButton['add_button'];
 					if($showButton != false):
-						include $templatePath . "/template-parts/kiss/static-partials/buttons-array.php";
+						include $templatePartials . "/buttons-array.php";
 					endif;	
 					
 					$field = get_field_object('field_5f2cc020856fd');
 				?>
 				<div class="<?= $colCount; ?>">
-					<div class="cards-card <?= $cardBackgroundColor . ' ' . $cardShadow; ?>">
-						<? if(!empty($cardImage)): ?>
+					<div class="cards-card <?= $cardBackgroundColor . ' ' . $shadow; ?>">
+						<? if($imageType == 'bg-image'):
+							include $templatePartials . "image-ratio-box.php";
+						elseif(!empty($cardImage)): ?>
 						<?= $btnLinkOpen; ?>
 							<div class="cards-card__header">
 								<?= $imageEl; ?>
@@ -83,7 +93,10 @@
 						<? endif; ?>
 						<div class="cards-card__content">
 							<div class="cards-card__copy">
-								<? if(!empty($cardTitle)){ echo '<h3 class="' . $titlesTextClass . '">' . $cardTitle . '</h3>';} ?>
+								<? if($titlePos == false):
+									echo $title;
+									echo $subTitle;
+								endif; ?>
 								<? if(!empty($cardContent)){?>
 								<div class="<?= $contentTextClass; ?>">
 									<?= wpautop($cardContent); ?>

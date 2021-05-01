@@ -400,16 +400,20 @@ $basefontsize: 16 !default;
       z-index: 100;
     }
   }
-  .style-square & {
+  .style-square &,
+  &.style-square {
     padding-bottom: 100%;
   }
-  .style-widescreen & {
+  .style-widescreen &,
+  &.style-widescreen {
     padding-bottom: 56.25%;
   }
-  .style-traditional & {
+  .style-traditional &,
+  &.style-traditional {
     padding-bottom: 75%;
   }
-  .style-narrow & {
+  .style-narrow &,
+  &.style-narrow {
     padding-bottom: 35%;
   }
 }
