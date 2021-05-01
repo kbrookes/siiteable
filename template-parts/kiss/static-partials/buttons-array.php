@@ -1,5 +1,6 @@
 <?php 
-	
+	$buttonAlign = 'justify-content-start';
+	$buttonAlign = $addButton['button_alignment'];
 	$linkContent = '';
 	$linkType = '';
 	$externalLink = false;

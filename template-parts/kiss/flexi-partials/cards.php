@@ -49,7 +49,6 @@
 					// GET BUTTONS
 					$addButton = get_sub_field($sepPrefix . '_button');
 					$showButton = $addButton['add_button'];
-					$buttonAlign = 'text-' . $addButton['button_alignment'];
 					if($showButton != false):
 						include $templatePath . "/template-parts/kiss/static-partials/buttons-array.php";
 					endif;	
