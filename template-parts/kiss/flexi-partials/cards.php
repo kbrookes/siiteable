@@ -4,6 +4,7 @@
 	$sepPrefix = 'card';
 	$templatePath = get_template_directory();
 	$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
+	$faType = get_theme_mod( 'fa_styles');
 	
 	/// SEPARATORS
 	$separatorLayout = $templatePartials . 'separators.php';
@@ -42,7 +43,23 @@
 			<div class="row">
 				<? while (have_rows($sepPrefix . '_add_cards')) : the_row(); 
 					
-					$cardImage = get_sub_field($sepPrefix . '_image');
+					$imageType = get_sub_field($sepPrefix . '_image_type');
+					$imageClass = 'w-full';
+					switch($imageType){
+						case 'image':
+							$cardImage = get_sub_field($sepPrefix . '_image');
+							$imageEl = '<img src="' . esc_url($cardImage['url']) .'" alt="' . esc_attr($cardImage['alt']) . '" class="' . $imageClass . '" />';
+							break;
+						case 'svg':
+							$cardImage = get_sub_field($sepPrefix . '_image_svg');
+							$imageClass = $imageClass . ' style-svg';
+							$imageEl = '<img src="' . esc_url($cardImage['url']) .'" class="' . $imageClass . '" />';
+							break;
+						case 'icon':
+							$cardImage = get_sub_field($sepPrefix . '_image_icon');
+							$imageEl = '<i class="' . $faType . ' ' . $cardImage . '"></i>';
+							break;
+					}
 					$cardTitle = get_sub_field($sepPrefix . '_title');
 					$cardContent = get_sub_field($sepPrefix . '_content');
 					
@@ -58,11 +75,11 @@
 				<div class="<?= $colCount; ?>">
 					<div class="cards-card <?= $cardBackgroundColor . ' ' . $cardShadow; ?>">
 						<? if(!empty($cardImage)): ?>
-						<? if($addButton){ ?><a class="<? if($setLink=='form'): echo $linkClass; endif; ?>" href="<? if($setLink=='email'):?>mailto:<? endif; ?><?= $linkContent; ?>" <? if($setLink=='link'):?>target="_blank"<? endif; ?>><? } ?>
+						<?= $btnLinkOpen; ?>
 							<div class="cards-card__header">
-								<img src="<?= esc_url($cardImage['url']); ?>" alt="<?= esc_attr($cardImage['alt']); ?>" />
+								<?= $imageEl; ?>
 							</div>
-							<? if($addButton){ ?></a><? } ?>
+						<?= $btnLinkClose; ?>
 						<? endif; ?>
 						<div class="cards-card__content">
 							<div class="cards-card__copy">
