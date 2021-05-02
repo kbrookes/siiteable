@@ -26,7 +26,6 @@
 		include $templatePartials . "buttons.php";
 	endif;
 	
-	
 	?>
 
 <section class="cards-layout <?= $bgcolour . ' ' . $separatorClasses . ' ' . $containerDirection . ' ' . $customClass; ?>">
@@ -78,7 +77,13 @@
 						include $templatePartials . "/buttons-array.php";
 					endif;	
 					
-					$field = get_field_object('field_5f2cc020856fd');
+					//$field = get_field_object('field_5f2cc020856fd');
+					
+					$hasOverlay = false;
+					if(get_sub_field($sepPrefix . '_overlay_add_overlay') == true):
+						include $templatePartials . "overlay-partial.php";
+					endif;
+					
 				?>
 				<div class="<?= $colCount; ?>">
 					<div class="cards-card <?= $cardBackgroundColor . ' ' . $shadow; ?>">

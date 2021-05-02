@@ -71,3 +71,4 @@ switch ($overlayOpacity) {
         break;
 }
 $overlayClass = 'hasOverlay ' . $colorClass . ' ' . $opacityClass;
+$hasOverlayClass = 'hasOverlay';

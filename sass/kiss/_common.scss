@@ -351,20 +351,6 @@ $basefontsize: 16 !default;
       z-index: 50;
       transition: 0.3s ease all;
     }
-    &:before {
-      background-color: transparent;
-      content: "";
-      height: 100%;
-      position: absolute;
-      transition: 0.3s ease all;
-      width: 100%;
-      z-index: 99;
-    }
-    &:hover {
-      &:before {
-        background-color: rgba($dark, 0.5);
-      }
-    }
     &.hasOverlay {
       &:hover {
         &:before {
