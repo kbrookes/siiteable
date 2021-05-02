@@ -1,0 +1,399 @@
+{
+    "key": "group_6087a8b356f15",
+    "title": "Button Wizard (Simple)",
+    "fields": [
+        {
+            "key": "field_6087a8b3592c5",
+            "label": "Add a button?",
+            "name": "add_button",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_6087a8b3592fb",
+            "label": "Open in new window?",
+            "name": "button_target",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6087a8b3592c5",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5d48eccc19328",
+                        "operator": "==",
+                        "value": "link"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_6087a8b3592c5",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5d48eccc19328",
+                        "operator": "==",
+                        "value": "file"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_6087a8b359368",
+            "label": "Button options",
+            "name": "button_options",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6087a8b3592c5",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6087a8b35c0dd",
+                    "label": "Link Type",
+                    "name": "button_link_type",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "page": "Page on site",
+                        "link": "External link",
+                        "email": "Email",
+                        "form": "Form popup",
+                        "file": "File download",
+                        "video": "Video popup"
+                    },
+                    "default_value": false,
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6087a8b35c14a",
+                    "label": "Button Text",
+                    "name": "button_text_copy",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "VIEW NOW",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_6087a8b35c1b5",
+                    "label": "Page link",
+                    "name": "button_page_link",
+                    "type": "page_link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6087a8b35c0dd",
+                                "operator": "==",
+                                "value": "page"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "allow_archives": 1,
+                    "multiple": 0
+                },
+                {
+                    "key": "field_6087a8b35c1eb",
+                    "label": "External link",
+                    "name": "button_external_link",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6087a8b35c0dd",
+                                "operator": "==",
+                                "value": "link"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_6087a8b35c222",
+                    "label": "Email address",
+                    "name": "button_email_address",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6087a8b35c0dd",
+                                "operator": "==",
+                                "value": "email"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_6087a8b35c258",
+                    "label": "Subject Line (optional)",
+                    "name": "button_subject_line",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6087a8b3592c5",
+                                "operator": "==",
+                                "value": "1"
+                            },
+                            {
+                                "field": "field_6087a8b35c0dd",
+                                "operator": "==",
+                                "value": "email"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_6087a8b35c28e",
+                    "label": "Popup Form",
+                    "name": "button_popup",
+                    "type": "text",
+                    "instructions": "If you're using a form popup tool, add the class here.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6087a8b35c0dd",
+                                "operator": "==",
+                                "value": "form"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_6087a8b35c2c4",
+                    "label": "File\/Document",
+                    "name": "button_file",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6087a8b35c0dd",
+                                "operator": "==",
+                                "value": "file"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_6087a8b35c2fa",
+                    "label": "Video Type",
+                    "name": "button_video_type",
+                    "type": "button_group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6087a8b35c0dd",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "youtube": "YouTube",
+                        "vimeo": "Vimeo"
+                    },
+                    "allow_null": 0,
+                    "default_value": "",
+                    "layout": "horizontal",
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_6087a8b35c331",
+                    "label": "Video ID",
+                    "name": "button_video_id",
+                    "type": "text",
+                    "instructions": "Insert the YouTube or Vimeo video ID here, not the full URL",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6087a8b35c0dd",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_status",
+                "operator": "==",
+                "value": "request-failed"
+            }
+        ]
+    ],
+    "menu_order": 102,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "modified": 1619503353
+}

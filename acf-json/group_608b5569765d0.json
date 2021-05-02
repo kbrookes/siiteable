@@ -1,0 +1,51 @@
+{
+    "key": "group_608b5569765d0",
+    "title": "Shadows",
+    "fields": [
+        {
+            "key": "field_608b557024156",
+            "label": "Select Shadow Size",
+            "name": "shadow_select",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "shadow-none": "None",
+                "shadow-sm": "Small",
+                "shadow": "Regular",
+                "shadow-lg": "Large"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 206,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1619849793
+}

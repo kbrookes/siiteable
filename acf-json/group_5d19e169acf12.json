@@ -23,6 +23,22 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_6085ecec117e7",
+                            "label": "List Title",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
                             "key": "field_5d19e37e80f0b",
                             "label": "List Title",
                             "name": "list_title",
@@ -44,7 +60,7 @@
                         {
                             "key": "field_6077a09eeae72",
                             "label": "Box Title Font Styles",
-                            "name": "licons_box_title",
+                            "name": "licons_title",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -60,7 +76,7 @@
                             "display": "seamless",
                             "layout": "block",
                             "prefix_label": 0,
-                            "prefix_name": 0
+                            "prefix_name": 1
                         },
                         {
                             "key": "field_5e5884a29b74c",
@@ -1028,7 +1044,7 @@
                     "sub_fields": [
                         {
                             "key": "field_5edb67fe590b2",
-                            "label": "CTA Content",
+                            "label": "Content",
                             "name": "",
                             "type": "tab",
                             "instructions": "",
@@ -1082,7 +1098,7 @@
                         },
                         {
                             "key": "field_5edb680e590b3",
-                            "label": "CTA Options",
+                            "label": "Fonts",
                             "name": "",
                             "type": "tab",
                             "instructions": "",
@@ -1118,6 +1134,22 @@
                             "prefix_name": 0
                         },
                         {
+                            "key": "field_608b57ca0ded3",
+                            "label": "Buttons",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
                             "key": "field_5d48fda641f91",
                             "label": "Add a button",
                             "name": "cta_button",
@@ -1137,6 +1169,22 @@
                             "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 1
+                        },
+                        {
+                            "key": "field_608b57692a706",
+                            "label": "Image & Colour",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_5d19e7b24edb4",
@@ -1171,7 +1219,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -1198,7 +1246,7 @@
                                 ]
                             ],
                             "wrapper": {
-                                "width": "",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -1235,7 +1283,7 @@
                                 ]
                             ],
                             "wrapper": {
-                                "width": "",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -1257,7 +1305,7 @@
                         },
                         {
                             "key": "field_5edb6831590b4",
-                            "label": "CTA Container Style",
+                            "label": "Container Style",
                             "name": "",
                             "type": "tab",
                             "instructions": "",
@@ -1280,7 +1328,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -1302,6 +1350,25 @@
                             "placeholder": ""
                         },
                         {
+                            "key": "field_5e40ef47ec040",
+                            "label": "Custom Class",
+                            "name": "cta_class",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5d4ab135693f9",
                             "label": "Add separators",
                             "name": "cta_separators",
@@ -1310,7 +1377,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -1418,25 +1485,6 @@
                                     "prefix_name": 1
                                 }
                             ]
-                        },
-                        {
-                            "key": "field_5e40ef47ec040",
-                            "label": "Custom Class",
-                            "name": "cta_class",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -2781,7 +2829,7 @@
                         {
                             "key": "field_6077bbf3ea0a4",
                             "label": "Title Controls",
-                            "name": "title_controls",
+                            "name": "editable_title",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -2821,7 +2869,7 @@
                         {
                             "key": "field_6077bcc3ea0a5",
                             "label": "Content Controls",
-                            "name": "content_controls",
+                            "name": "editable_contents",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -4066,7 +4114,7 @@
                         {
                             "key": "field_5d919ee6c87a1",
                             "label": "Block Title",
-                            "name": "block_title",
+                            "name": "block_title_text",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -4084,8 +4132,8 @@
                         },
                         {
                             "key": "field_6077cd6e96a65",
-                            "label": "Block Title",
-                            "name": "block_title_controls",
+                            "label": "Block Title Controls",
+                            "name": "block_title",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -4106,7 +4154,7 @@
                         {
                             "key": "field_5d919ef8c87a2",
                             "label": "Block Intro",
-                            "name": "block_intro",
+                            "name": "block_intro_text",
                             "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
@@ -4124,8 +4172,8 @@
                         },
                         {
                             "key": "field_6077cdd496a66",
-                            "label": "Block Intro",
-                            "name": "block_intro_controls",
+                            "label": "Block Intro Text",
+                            "name": "block_intro",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -4529,7 +4577,7 @@
                         {
                             "key": "field_6077ceba96a68",
                             "label": "Block Titles",
-                            "name": "block_titles_controls",
+                            "name": "block_titles",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -4550,7 +4598,7 @@
                         {
                             "key": "field_6078ce8406c43",
                             "label": "Content Text",
-                            "name": "content_text_controls",
+                            "name": "block_contents",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -4739,7 +4787,7 @@
                             "clone": [
                                 "group_5d48ec70c0c85"
                             ],
-                            "display": "seamless",
+                            "display": "group",
                             "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 1
@@ -5322,9 +5370,236 @@
                             "collapsed": "field_5f2cc02d856fe",
                             "min": 0,
                             "max": 0,
-                            "layout": "table",
-                            "button_label": "",
+                            "layout": "block",
+                            "button_label": "Add Card",
                             "sub_fields": [
+                                {
+                                    "key": "field_608d13051a537",
+                                    "label": "Card Type",
+                                    "name": "",
+                                    "type": "tab",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "placement": "top",
+                                    "endpoint": 0
+                                },
+                                {
+                                    "key": "field_608d12801a536",
+                                    "label": "Card Type",
+                                    "name": "card_type",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "manual": "Custom content",
+                                        "get-post": "Get a Post",
+                                        "multi-post": "Get Multiple Posts"
+                                    },
+                                    "default_value": false,
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "return_format": "value",
+                                    "ajax": 0,
+                                    "placeholder": ""
+                                },
+                                {
+                                    "key": "field_608e06617f244",
+                                    "label": "Post Options",
+                                    "name": "",
+                                    "type": "tab",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608d12801a536",
+                                                "operator": "==",
+                                                "value": "get-post"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "placement": "top",
+                                    "endpoint": 0
+                                },
+                                {
+                                    "key": "field_608e068b7f245",
+                                    "label": "Post Type",
+                                    "name": "card_post_type",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608d12801a536",
+                                                "operator": "==",
+                                                "value": "get-post"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "single": "Single Post",
+                                        "featured": "Featured Post (from specific category)",
+                                        "latest": "Latest Post (from specific category)"
+                                    },
+                                    "default_value": false,
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "return_format": "value",
+                                    "ajax": 0,
+                                    "placeholder": ""
+                                },
+                                {
+                                    "key": "field_608e07477f246",
+                                    "label": "Choose Post",
+                                    "name": "card_post_select",
+                                    "type": "post_object",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608e068b7f245",
+                                                "operator": "==",
+                                                "value": "single"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": "",
+                                    "taxonomy": "",
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "return_format": "object",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_608e07ad7f247",
+                                    "label": "Image Options",
+                                    "name": "card_post_image",
+                                    "type": "button_group",
+                                    "instructions": "Where should the image be sourced from?",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608d12801a536",
+                                                "operator": "==",
+                                                "value": "get-post"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "post_image": "From post",
+                                        "select_image": "Manual selection",
+                                        "null": "No image"
+                                    },
+                                    "allow_null": 0,
+                                    "default_value": "",
+                                    "layout": "horizontal",
+                                    "return_format": "value"
+                                },
+                                {
+                                    "key": "field_608d13171a538",
+                                    "label": "Image",
+                                    "name": "",
+                                    "type": "tab",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "placement": "top",
+                                    "endpoint": 0
+                                },
+                                {
+                                    "key": "field_608d13e2b63fd",
+                                    "label": "Image Type",
+                                    "name": "card_image_type",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608d12801a536",
+                                                "operator": "==",
+                                                "value": "manual"
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                "field": "field_608d12801a536",
+                                                "operator": "==",
+                                                "value": "get-post"
+                                            },
+                                            {
+                                                "field": "field_608e068b7f245",
+                                                "operator": "==",
+                                                "value": "single"
+                                            },
+                                            {
+                                                "field": "field_608e07ad7f247",
+                                                "operator": "==",
+                                                "value": "select_image"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "image": "Image",
+                                        "bg-image": "Background Image",
+                                        "svg": "SVG",
+                                        "icon": "Icon"
+                                    },
+                                    "default_value": false,
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "return_format": "value",
+                                    "ajax": 0,
+                                    "placeholder": ""
+                                },
                                 {
                                     "key": "field_5f2cc07b85701",
                                     "label": "Card Image",
@@ -5332,9 +5607,24 @@
                                     "type": "image",
                                     "instructions": "",
                                     "required": 0,
-                                    "conditional_logic": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608d13e2b63fd",
+                                                "operator": "==",
+                                                "value": "image"
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                "field": "field_608d13e2b63fd",
+                                                "operator": "==",
+                                                "value": "bg-image"
+                                            }
+                                        ]
+                                    ],
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -5350,6 +5640,206 @@
                                     "mime_types": ""
                                 },
                                 {
+                                    "key": "field_608d1425b63fe",
+                                    "label": "SVG Image",
+                                    "name": "card_svg",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608d13e2b63fd",
+                                                "operator": "==",
+                                                "value": "svg"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "url",
+                                    "preview_size": "full",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_608d148cb6400",
+                                    "label": "Icon",
+                                    "name": "card_icon",
+                                    "type": "text",
+                                    "instructions": "Add Fontawesome class, not including prefix",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608d13e2b63fd",
+                                                "operator": "==",
+                                                "value": "icon"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_608d1cba56704",
+                                    "label": "Image Aspect Ratio",
+                                    "name": "card_image_ar",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608d13e2b63fd",
+                                                "operator": "==",
+                                                "value": "bg-image"
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                "field": "field_608d12801a536",
+                                                "operator": "==",
+                                                "value": "get-post"
+                                            },
+                                            {
+                                                "field": "field_608e068b7f245",
+                                                "operator": "==",
+                                                "value": "single"
+                                            },
+                                            {
+                                                "field": "field_608e07ad7f247",
+                                                "operator": "==",
+                                                "value": "post_image"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "style-square": "Square",
+                                        "style-widescreen": "16 x 9",
+                                        "style-traditional": "4 x 3",
+                                        "style-narrow": "21 X 5"
+                                    },
+                                    "default_value": false,
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "return_format": "value",
+                                    "ajax": 0,
+                                    "placeholder": ""
+                                },
+                                {
+                                    "key": "field_608d1dc356707",
+                                    "label": "Add title and\/or subtitle over image?",
+                                    "name": "card_title_position",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608d13e2b63fd",
+                                                "operator": "==",
+                                                "value": "bg-image"
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                "field": "field_608d12801a536",
+                                                "operator": "==",
+                                                "value": "get-post"
+                                            },
+                                            {
+                                                "field": "field_608e068b7f245",
+                                                "operator": "==",
+                                                "value": "single"
+                                            },
+                                            {
+                                                "field": "field_608e07ad7f247",
+                                                "operator": "==",
+                                                "value": "post_image"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "ui": 1,
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
+                                },
+                                {
+                                    "key": "field_608d1e3456708",
+                                    "label": "Image Overlay",
+                                    "name": "card_overlay",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608d13e2b63fd",
+                                                "operator": "==",
+                                                "value": "bg-image"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "group_608e0bddd4232"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 1
+                                },
+                                {
+                                    "key": "field_608d1343e2cb2",
+                                    "label": "Content",
+                                    "name": "",
+                                    "type": "tab",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "placement": "top",
+                                    "endpoint": 0
+                                },
+                                {
                                     "key": "field_5f2cc02d856fe",
                                     "label": "Card title",
                                     "name": "card_title",
@@ -5357,6 +5847,33 @@
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_608d1d6256706",
+                                    "label": "Sub Title",
+                                    "name": "card_sub_title",
+                                    "type": "text",
+                                    "instructions": "Used in conjunction with background image blocks",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608d13e2b63fd",
+                                                "operator": "==",
+                                                "value": "bg-image"
+                                            }
+                                        ]
+                                    ],
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
@@ -5388,6 +5905,22 @@
                                     "new_lines": ""
                                 },
                                 {
+                                    "key": "field_608d13d3b63fc",
+                                    "label": "Buttons",
+                                    "name": "",
+                                    "type": "tab",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "placement": "top",
+                                    "endpoint": 0
+                                },
+                                {
                                     "key": "field_5f2cc1398570b",
                                     "label": "Add a button",
                                     "name": "card_button",
@@ -5403,7 +5936,7 @@
                                     "clone": [
                                         "group_5d48ec70c0c85"
                                     ],
-                                    "display": "seamless",
+                                    "display": "group",
                                     "layout": "block",
                                     "prefix_label": 0,
                                     "prefix_name": 1
@@ -5500,7 +6033,7 @@
                         {
                             "key": "field_6077c5cb4847a",
                             "label": "Card Background Shadow",
-                            "name": "card_background_shadow",
+                            "name": "card_shadow",
                             "type": "button_group",
                             "instructions": "",
                             "required": 0,
@@ -5935,5 +6468,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1619388697
+    "modified": 1619922373
 }
