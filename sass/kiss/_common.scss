@@ -386,6 +386,31 @@ $basefontsize: 16 !default;
       z-index: 100;
     }
   }
+  &.hasOverlay {
+    .image-box__inner-overlay {
+      transition: 0.3s ease all;
+      &.overlay {
+        &-primary {
+          background-color: $primary;
+        }
+        &-secondary {
+          background-color: $secondary;
+        }
+        &-dark {
+          background-color: $dark;
+        }
+        &-light {
+          background-color: $light;
+        }
+        &-white {
+          background-color: $white;
+        }
+        &-alternate {
+          background-color: $alternate;
+        }
+      }
+    }
+  }
   .style-square &,
   &.style-square {
     padding-bottom: 100%;
@@ -431,6 +456,9 @@ $basefontsize: 16 !default;
   }
   &-90 {
     opacity: 0.90;
+  }
+  &-85 {
+    opacity: 0.85;
   }
   &-80 {
     opacity: 0.8;

@@ -5305,7 +5305,7 @@
                         },
                         {
                             "key": "field_5f2cc015856fc",
-                            "label": "Cards Content",
+                            "label": "Content",
                             "name": "",
                             "type": "tab",
                             "instructions": "",
@@ -5318,41 +5318,6 @@
                             },
                             "placement": "top",
                             "endpoint": 0
-                        },
-                        {
-                            "key": "field_5f2ccd05f077e",
-                            "label": "Columns",
-                            "name": "card_columns",
-                            "type": "select",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_5da53f0403be3",
-                                        "operator": "==",
-                                        "value": "row"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "48",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "col-12": "1",
-                                "col-12 col-md-6": "2",
-                                "col-12 col-md-4": "3",
-                                "col-12 col-sm-6 col-md-3": "4"
-                            },
-                            "default_value": false,
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "return_format": "value",
-                            "ajax": 0,
-                            "placeholder": ""
                         },
                         {
                             "key": "field_5f2cc020856fd",
@@ -5840,13 +5805,60 @@
                                     "endpoint": 0
                                 },
                                 {
+                                    "key": "field_6090f4647e561",
+                                    "label": "Get Content from Post?",
+                                    "name": "card_post_content",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608d12801a536",
+                                                "operator": "==",
+                                                "value": "get-post"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 1,
+                                    "ui": 1,
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
+                                },
+                                {
                                     "key": "field_5f2cc02d856fe",
                                     "label": "Card title",
                                     "name": "card_title",
                                     "type": "text",
                                     "instructions": "",
                                     "required": 0,
-                                    "conditional_logic": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608d12801a536",
+                                                "operator": "==",
+                                                "value": "manual"
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                "field": "field_608d12801a536",
+                                                "operator": "==",
+                                                "value": "get-post"
+                                            },
+                                            {
+                                                "field": "field_6090f4647e561",
+                                                "operator": "!=",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
@@ -5872,6 +5884,18 @@
                                                 "operator": "==",
                                                 "value": "bg-image"
                                             }
+                                        ],
+                                        [
+                                            {
+                                                "field": "field_608d12801a536",
+                                                "operator": "==",
+                                                "value": "get-post"
+                                            },
+                                            {
+                                                "field": "field_6090f4647e561",
+                                                "operator": "!=",
+                                                "value": "1"
+                                            }
                                         ]
                                     ],
                                     "wrapper": {
@@ -5892,7 +5916,27 @@
                                     "type": "textarea",
                                     "instructions": "",
                                     "required": 0,
-                                    "conditional_logic": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608d12801a536",
+                                                "operator": "==",
+                                                "value": "manual"
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                "field": "field_608d12801a536",
+                                                "operator": "==",
+                                                "value": "get-post"
+                                            },
+                                            {
+                                                "field": "field_6090f4647e561",
+                                                "operator": "!=",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
@@ -5944,8 +5988,85 @@
                             ]
                         },
                         {
+                            "key": "field_60913598372ee",
+                            "label": "Cards Layout",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5f2ccd05f077e",
+                            "label": "Columns",
+                            "name": "card_columns",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5da53f0403be3",
+                                        "operator": "==",
+                                        "value": "row"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "48",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "col-12": "1",
+                                "col-12 col-md-6": "2",
+                                "col-12 col-md-4": "3",
+                                "col-12 col-sm-6 col-md-3": "4"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_609135ec372ef",
+                            "label": "Design",
+                            "name": "card_design",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "simple": "Hover Boxes",
+                                "card": "Vertical Cards",
+                                "row": "Horizontal Rows"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
                             "key": "field_6077c1678b1d3",
-                            "label": "Card Styles",
+                            "label": "Fonts & Backgrounds",
                             "name": "",
                             "type": "tab",
                             "instructions": "",
@@ -6056,7 +6177,7 @@
                         },
                         {
                             "key": "field_5f2cc09785702",
-                            "label": "Card Container Options",
+                            "label": "Container Style",
                             "name": "",
                             "type": "tab",
                             "instructions": "",
@@ -6468,5 +6589,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1619922373
+    "modified": 1620129384
 }

@@ -48,6 +48,10 @@
 				$setLink = 'video';
 				$linkContent = $buttonData['button_video_id'];
 			break;
+			case "post":
+				$setLink = 'post';
+				$linkContent = get_permalink($pageID);
+			break;
 		}
 		$btnClass = $btnSize . ' ' . $btnColor . ' ' . $linkClass;
 	endif;

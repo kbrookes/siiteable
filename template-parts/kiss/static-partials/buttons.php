@@ -53,6 +53,10 @@ if(get_sub_field($sepPrefix . '_button_button_options')):
 			$setLink = 'video';
 			$linkContent = $buttonData['button_video_id'];
 		break;
+		case "post":
+			$setLink = 'post';
+			$linkContent = get_permalink($pageID);
+		break;
 	}
 	$btnClass = $btnSize . ' ' . $btnColor . ' ' . $linkClass . ' ' . $buttonShadow;
 endif;

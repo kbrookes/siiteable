@@ -182,7 +182,8 @@
                         "email": "Email",
                         "form": "Form popup",
                         "file": "File download",
-                        "video": "Video popup"
+                        "video": "Video popup",
+                        "post": "Get from post selection"
                     },
                     "default_value": false,
                     "allow_null": 1,
@@ -967,5 +968,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1619849929
+    "modified": 1620117031
 }
