@@ -1,3 +1,8 @@
+.btn {
+	&-actions {
+		display: flex;
+	}
+}
 .btnType-solid .btn-custom {
 	border-radius: 0.3rem;
 	display: inline-block;
