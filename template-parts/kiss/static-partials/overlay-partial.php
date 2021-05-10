@@ -2,11 +2,36 @@
 $hasOverlay = true;
 $overlayColor = null;
 $overlayOpacity = null;
-$overlayColor = get_sub_field($sepPrefix . '_overlay_colour');
-$overlayOpacity = get_sub_field($sepPrefix . '_overlay_opacity');	
+
+if(!empty(get_sub_field($sepPrefix . '_overlay_colour'))):
+    $overlayColor = get_sub_field($sepPrefix . '_overlay_colour');
+elseif(!empty(get_field($sepPrefix . '_overlay_colour'))):
+    $overlayColor = get_field($sepPrefix . '_overlay_colour');
+endif;
+if(!empty(get_sub_field($sepPrefix . '_overlay_opacity'))):
+    $overlayOpacity = get_sub_field($sepPrefix . '_overlay_opacity');
+elseif(!empty(get_field($sepPrefix . '_overlay_opacity'))):
+    $overlayOpacity = get_field($sepPrefix . '_overlay_opacity');
+endif;
 $colorClass = '';
 $opacityClass = '';
 $overlayClass = '';
+
+/*if($postType == 'post'):
+    if(get_field('clone_add_overlay', 'options') == true):
+        $hasOverlay = true;
+        $overlayColor = get_field('archive_overlay_color', 'options');
+        $overlayOpacity = get_field('archive_overlay_opacity', 'options');
+    endif;
+else:
+    if(get_post_meta( get_the_ID(), 'add_image_overlay', true )):
+        $hasOverlay = true;
+        $overlayColor = get_post_meta( get_the_ID(), 'overlay_colour', true );
+        $overlayOpacity = get_post_meta( get_the_ID(), 'overlay_opacity', true );
+    endif;
+endif;*/
+
+
 switch ($overlayColor) {
     case "None":
         $colorClass = 'overlay-dark';

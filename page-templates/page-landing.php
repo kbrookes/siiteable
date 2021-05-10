@@ -4,7 +4,7 @@
  * @package StrapPress
  */
 
-get_header('simple'); ?>
+get_header('landing'); ?>
 
 	
 	<?php

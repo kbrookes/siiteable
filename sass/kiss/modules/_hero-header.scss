@@ -103,7 +103,7 @@
 			}	
 		}
 		.full_height & {
-			height: 100vh;
+			min-height: 100vh;
 		}
 		&.hasOverlay {
 			&:before {
