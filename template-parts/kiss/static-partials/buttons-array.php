@@ -60,7 +60,7 @@
 $btnAddLinks = false;
 $btnAddLinks = get_sub_field($sepPrefix . "_links");
 if($btnAddLinks = true):
-	$btnLinkOpen = '<a href=' . $linkContent . '>';
+	$btnLinkOpen = '<a class="d-block w-100" href=' . $linkContent . '>';
 	$btnLinkClose = '</a>';
 else:
 	$btnLinkOpen = null;

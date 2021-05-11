@@ -10,7 +10,7 @@ function siiteable_scripts()
     "strappress-style",
     get_stylesheet_directory_uri() . "/style.css",
     [],
-    "4.5.1"
+    "4.5.8"
   );
 
   wp_enqueue_style("strappress-font-regular", get_stylesheet_directory_uri() . "/fonts/lato-v17-latin-regular.woff2", array(), null);
@@ -26,23 +26,21 @@ function siiteable_scripts()
       //wp_enqueue_style("strappress-fontawesome", get_stylesheet_directory_uri() . "/fonts/fa-regular-400.woff2", array(), null); 
       wp_enqueue_style("strappress-fontawesome-regular", get_stylesheet_directory_uri() . "/css/regular.min.css", array(), null);
       break;
-    case "fab":
-      //wp_enqueue_style("strappress-fontawesome", get_stylesheet_directory_uri() . "/fonts/fa-brands-400.woff2", array(), null);
-      wp_enqueue_style("strappress-fontawesome-regular", get_stylesheet_directory_uri() . "/css/brands.min.css", array(), null);
-      break;
     case "fal":
       //wp_enqueue_style("strappress-fontawesome", get_stylesheet_directory_uri() . "/fonts/fa-light-300.woff2", array(), null);
-      wp_enqueue_style("strappress-fontawesome-regular", get_stylesheet_directory_uri() . "/css/light.min.css", array(), null);
+      wp_enqueue_style("strappress-fontawesome-light", get_stylesheet_directory_uri() . "/css/light.min.css", array(), null);
       break;
     case "fad":
       //wp_enqueue_style("strappress-fontawesome", get_stylesheet_directory_uri() . "/fonts/fa-duotone-900.woff2", array(), null);
-      wp_enqueue_style("strappress-fontawesome-regular", get_stylesheet_directory_uri() . "/css/duotone.min.css", array(), null);
+      wp_enqueue_style("strappress-fontawesome-duotone", get_stylesheet_directory_uri() . "/css/duotone.min.css", array(), null);
       break;
     case "fas":
       //wp_enqueue_style("strappress-fontawesome", get_stylesheet_directory_uri() . "/fonts/fa-solid-900.woff2", array(), null);
-      wp_enqueue_style("strappress-fontawesome-regular", get_stylesheet_directory_uri() . "/css/solid.min.css", array(), null);
+      wp_enqueue_style("strappress-fontawesome-solid", get_stylesheet_directory_uri() . "/css/solid.min.css", array(), null);
       break;
   }
+  
+  wp_enqueue_style("strappress-fontawesome-brands", get_stylesheet_directory_uri() . "/css/brands.min.css", array(), null);
 
   /// FILTER FOR PRELOADING FONTS
   add_filter( 'style_loader_tag','siiteable_preload_styles', 10, 4 );

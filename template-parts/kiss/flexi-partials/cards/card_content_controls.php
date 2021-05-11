@@ -10,6 +10,8 @@ $postSubTitle = get_field('post_subtitle', $selectedPost->ID);
 $pageData = get_post( $pageID );
 $the_excerpt = $pageData->post_excerpt;
 
+$fieldSubTitle = '';
+
 if(!empty(get_sub_field($sepPrefix . '_title'))):
     $fieldTitle = get_sub_field($sepPrefix . '_title');
 endif;

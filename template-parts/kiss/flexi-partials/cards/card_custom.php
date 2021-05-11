@@ -17,9 +17,9 @@ endif;
 
 ?>
 <div class="<?= $colCount; ?>">
-<div class="cards-card <?= $cardBackgroundColor . ' ' . $shadow; ?>">
+<div class="cards-card <?= $cardBackgroundColor . ' ' . $shadow . ' ' . $cardCssRow; ?>">
     <? include $cardPartials . "card_image_custom.php"; ?>
-    <div class="cards-card__content">
+    <div class="cards-card__content <?= $cardCssContent . ' ' . $cardDirection; ?>">
         <div class="cards-card__copy">
             <? include $cardPartials . "card_content.php"; ?>
         </div>

@@ -33,3 +33,18 @@ $textColor = get_sub_field('font_color');
 $textWeight = get_sub_field('font_weight');
 $textAlignment = get_sub_field('text_alignment');
 $textClass = $textSize . ' ' . $textColor . ' ' . $textWeight . ' ' . $textAlignment;
+
+/// OPTIONS PAGES
+/// TITLE CONTROLS - For primary titles on options pages
+$optionsTitleTextSize = get_field($sepPrefix . '_title_font_size', 'options');
+$optionsTitleTextColor = get_field($sepPrefix . '_title_font_color', 'options');
+$optionsTitleTextWeight = get_field($sepPrefix . '_title_font_weight', 'options');
+$optionsTitleTextAlignment = get_field($sepPrefix . '_title_text_alignment', 'options');
+$optionsTitleTextClass = $optionsTitleTextSize . ' ' . $optionsTitleTextColor . ' ' . $optionsTitleTextWeight . ' ' . $optionsTitleTextAlignment;
+
+/// CONTENT CONTROLS - For content on options pages
+$optionsContentTextSize = get_field($sepPrefix . '_contents_font_size', 'options');
+$optionsContentTextColor = get_field($sepPrefix . '_contents_font_color', 'options');
+$optionsContentTextWeight = get_field($sepPrefix . '_contents_font_weight', 'options');
+$optionsContentTextAlignment = get_field($sepPrefix . '_contents_text_alignment', 'options');
+$optionsContentTextClass = $optionsContentTextSize . ' ' . $optionsContentTextColor . ' ' . $optionsContentTextWeight . ' ' . $optionsContentTextAlignment;

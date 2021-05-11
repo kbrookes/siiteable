@@ -60,8 +60,8 @@ endif;
 $imgShadow = get_sub_field($sepPrefix . "_image_shadow");
 $boxShadow = get_sub_field($sepPrefix . "_box_shadow");
 
-/// PADDING
-$boxPadding = get_sub_field($sepPrefix . "_box_padding");
+// Custom classes, container directionp & size, title, text
+include $templatePartials . 'general-partials.php';
 
 /// MARGINS
 $marginSize = get_sub_field($sepPrefix . "_margin_size");

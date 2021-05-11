@@ -16,9 +16,9 @@ if(($cardType == "multi-post") || (($cardType == "get-post") && ($imageSource ==
             $imageEl = '<img src="' . esc_url($cardImage['url']) .'" alt="' . esc_attr($cardImage['alt']) . '" class="' . $imageClass . '" />';
             break;
         case 'svg':
-            $cardImage = get_sub_field($sepPrefix . '_image_svg');
+            $cardImage = get_sub_field($sepPrefix . '_svg');
             $imageClass = $imageClass . ' style-svg';
-            $imageEl = '<img src="' . esc_url($cardImage['url']) .'" class="' . $imageClass . '" />';
+            $imageEl = '<img src="' . esc_url($cardImage) .'" class="' . $imageClass . '" />';
             break;
         case 'icon':
             $cardImage = get_sub_field($sepPrefix . '_image_icon');
@@ -33,15 +33,15 @@ if(($cardType == "multi-post") || (($cardType == "get-post") && ($imageSource ==
     // NO image
 }
 
-echo $btnLinkOpen;
-
 if($imageType == 'bg-image'):
     include $templatePartials . "image-ratio-box.php";
 elseif(!empty($cardImage)):?>
-<div class="cards-card__header">
-    <?= $imageEl; ?>
+<div class="cards-card__header <?= $cardCssImage; ?>">
+    <?
+    echo $btnLinkOpen;
+    echo $imageEl; 
+    echo $btnLinkClose;?>
 </div>
 <? 
-endif; 
-echo $btnLinkClose;
+endif;
 ?>

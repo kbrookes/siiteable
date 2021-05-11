@@ -9,6 +9,9 @@
  * @package StrapPress
  */
 
+$templatePath = get_template_directory();
+$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
+
 ?>
 
 	</div><!-- #content -->
@@ -20,6 +23,10 @@
 	$iconsTitle = get_field('icons_section_title', 'option'); 
 	
 	if($showLogos || $showIcons):
+	$iconType = get_field('icons-type', 'options');
+	$imageEl = '';
+	
+	
 	?>
 	<section class="container logos-icons">
 		<div class="row">
@@ -37,20 +44,29 @@
 				<?php endif; ?>
 			</div>
 			<? endif; ?>
-			<? if($showIcons): ?>
-			<div class="col-12 col-md-6 col-lg-4 col-xl-3 social-icons d-flex flex-column">
-				<h3><?= $iconsTitle; ?></h3>
+			<? if($showIcons): 
+			/// TEXT CONTROLS
+			$sepPrefix = 'icons';
+			include $templatePartials . 'text-controls.php';
+			?>
+			<div class="col-12 social-icons">
+				<h3 class="<?= $optionsTitleTextClass; ?>"><?= $iconsTitle; ?></h3>
 				<?php if( have_rows('icons_list', 'option') ): ?>
-				<div class="d-flex align-items-center flex-grow-1">
+				<div class="d-flex align-items-center flex-grow-1 <?= $optionsContentTextClass; ?>">
 					<?php while( have_rows('icons_list', 'option') ): the_row(); 
 						$iconLink = get_sub_field('icon_link');
+						if($iconType == 0):
+							$imageEl = '<i class="' . get_sub_field('icon_fa', 'option') . '"></i>';
+						else:
+							$imageEl = '<img src="'. the_sub_field('logo_image') .'" class="img-fluid" alt="" />';
+						endif;
 					?>
 					<div class="<?= get_field('icons_padding', 'option'); ?>">
 						<? if(!empty($iconLink)):?>
 						<a href="<?= $iconLink; ?>" target="_blank">
-						<? endif; ?>
-						<img src="<?php the_sub_field('icon_add'); ?>" class="img-fluid" alt="" />
-						<? if(!empty($iconLink)):?>
+						<? endif;
+							echo $imageEl;
+						if(!empty($iconLink)):?>
 						</a>
 						<? endif; ?>
 					</div>
