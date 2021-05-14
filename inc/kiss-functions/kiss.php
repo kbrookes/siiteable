@@ -539,9 +539,9 @@ Kirki::add_field( 'kiss_theme', [
 
 // Standard Analytics
 Kirki::add_field( 'kiss_theme', [
-	'type'        => 'textarea',
+	'type'        => 'text',
 	'settings'    => 'analytics_standard',
-	'label'       => esc_html__( 'Standard analytics code', 'kirki' ),
+	'label'       => esc_html__( 'Standard analytics ID', 'kirki' ),
 	'section'     => 'analytics_options',
 ] );
 

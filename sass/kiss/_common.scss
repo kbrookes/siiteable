@@ -77,6 +77,14 @@
   p {
     @include font-size(1rem);
   }
+  i.fa,
+  i.fas,
+  i.fab,
+  i.far,
+  i.fad,
+  i.fal {
+    @include font-size(1.4rem);
+  }
 }
 .text-sm {
   h1 {
@@ -93,6 +101,14 @@
   }
   p {
     @include font-size(1.2rem);
+  }
+  i.fa,
+  i.fas,
+  i.fab,
+  i.far,
+  i.fad,
+  i.fal {
+    @include font-size(2rem);
   }
 }
 .text-md {
@@ -111,6 +127,14 @@
   p {
     @include font-size(1.4rem);
   }
+  i.fa,
+  i.fas,
+  i.fab,
+  i.far,
+  i.fad,
+  i.fal {
+    @include font-size(2.5rem);
+  }
 }
 .text-lg {
   h1 {
@@ -127,6 +151,14 @@
   }
   p {
     @include font-size(1.8rem);
+  }
+  i.fa,
+  i.fas,
+  i.fab,
+  i.far,
+  i.fad,
+  i.fal {
+    @include font-size(3.5rem);
   }
 }
 .text-xl {
@@ -145,6 +177,14 @@
   p {
     @include font-size(2.2rem);
   }
+  i.fa,
+  i.fas,
+  i.fab,
+  i.far,
+  i.fad,
+  i.fal {
+    @include font-size(5rem);
+  }
 }
 
 h2 {
@@ -162,6 +202,24 @@ h2 {
   }
   &.text-xl {
     @include font-size(4rem);
+  }
+}
+
+h3 {
+  &.text-xs {
+    @include font-size(1.1rem);
+  }
+  &.text-sm {
+    @include font-size(1.6rem);
+  }
+  &.text-md {
+    @include font-size(1.8rem);
+  }
+  &.text-lg {
+    @include font-size(2.5rem);
+  }
+  &.text-xl {
+    @include font-size(3rem);
   }
 }
 
@@ -449,6 +507,34 @@ $basefontsize: 16 !default;
   fill: $alternate;
 }
 
+.fill-none {
+  fill: none;
+}
+
+.stroke {
+  &-primary {
+    stroke: $primary;
+  }
+  &-secondary {
+    stroke: $secondary;
+  }
+  &-dark {
+    stroke: $dark;
+  }
+  &-light {
+    stroke: $light;
+  }
+  &-white {
+    stroke: $white;
+  }
+  &-alternate {
+    stroke: $alternate;
+  }
+  &-none {
+    stroke: none;
+  }
+}
+
 /// OPACITIES
 .opacity {
   &-95 {
@@ -716,6 +802,15 @@ span.wpcf7-list-item {
   color: $white;
   padding: 1rem;
 }
+
+.happyforms {
+  &-form {
+    &__title {
+      
+    }
+  }
+}
+
 
 .list-icons {
   &.list-reduce-height {

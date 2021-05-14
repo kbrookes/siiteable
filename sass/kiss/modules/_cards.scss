@@ -12,13 +12,10 @@
 		h2 {
 			color: $light;
 			font-weight: $headings-font-weight-light;
-			text-align: center;
-			text-transform: uppercase;
-			margin-bottom: 45px;
 		}
 		.col-12 {
 			@include media-breakpoint-down(sm){
-				margin-bottom: 30px;
+				//margin-bottom: 30px;
 			}
 		}
 	}
@@ -26,7 +23,6 @@
 		background-color: $gray-900;
 		//box-shadow: 0 0 30px rgba($dark, 0.4);
 		display: flex;
-		flex-direction: column;
 		height: 100%;
 		&__header {
 			img {
@@ -39,18 +35,14 @@
 			flex-direction: column;
 			height: 100%;
 			justify-content: space-between;
-			padding: 1.5rem;
-			@include media-breakpoint-up(xs){
-				padding: 1.5rem;
-			}
-			@include media-breakpoint-up(md){
-				padding: 1rem;
-			}
-			@include media-breakpoint-up(lg){
-				padding: 1.5rem;
-			}
+			padding: 1rem;
 			p {		
 				margin-bottom: 1.5rem;
+			}
+		}
+		&__momentum {
+			.cards-card__content {
+				padding: 0;
 			}
 		}
 	}

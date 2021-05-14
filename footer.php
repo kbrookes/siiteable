@@ -5,9 +5,12 @@
  * Contains the closing of the #content div and all content after.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
+ *Camping
  * @package StrapPress
  */
+
+$templatePath = get_template_directory();
+$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
 
 ?>
 
@@ -19,9 +22,18 @@
 	$logosTitle = get_field('logos_section_title', 'option'); 
 	$iconsTitle = get_field('icons_section_title', 'option'); 
 	
-	if($showLogos || $showIcons):
+	$newsletterTitle = get_field('newsletter_section_title', 'option');
+	
+	if($showLogos || $showIcons || $newsletterTitle):
+	$iconType = get_field('icons-type', 'options');
+	
+	$sepPrefix = 'connect';
+	include $templatePartials . 'general-partials.php';
+	
+	
+	
 	?>
-	<section class="container logos-icons">
+	<section class="<?= $optionsContainer; ?> logos-icons">
 		<div class="row">
 			<? if($showLogos):?>
 			<div class="col-12 col-md-6 col-lg-8 col-xl-9 client-logos">
@@ -37,20 +49,31 @@
 				<?php endif; ?>
 			</div>
 			<? endif; ?>
-			<? if($showIcons): ?>
-			<div class="col-12 col-md-6 col-lg-4 col-xl-3 social-icons d-flex flex-column">
-				<h3><?= $iconsTitle; ?></h3>
+			<? if($showIcons): 
+			/// TEXT CONTROLS
+			$sepPrefix = 'icons';
+			include $templatePartials . 'text-controls.php';
+			include $templatePartials . 'general-partials.php';
+			?>
+			<div class="social-icons <?= $columnsClass; ?>">
+				<h3 class="<?= $optionsTitleTextClass; ?>"><?= $iconsTitle; ?></h3>
 				<?php if( have_rows('icons_list', 'option') ): ?>
-				<div class="d-flex align-items-center flex-grow-1">
+				<div class="d-flex align-items-center <?= $optionsContentTextClass . ' ' . $optionsContentJustify; ?>">
 					<?php while( have_rows('icons_list', 'option') ): the_row(); 
 						$iconLink = get_sub_field('icon_link');
+						$imageEl = '';
+						if($iconType == 0):
+							$imageEl = '<i class="' . get_sub_field('icon_fa', 'option') . '"></i>';
+						else:
+							$imageEl = '<img src="'. the_sub_field('logo_image') .'" class="img-fluid" alt="" />';
+						endif;
 					?>
 					<div class="<?= get_field('icons_padding', 'option'); ?>">
 						<? if(!empty($iconLink)):?>
 						<a href="<?= $iconLink; ?>" target="_blank">
-						<? endif; ?>
-						<img src="<?php the_sub_field('icon_add'); ?>" class="img-fluid" alt="" />
-						<? if(!empty($iconLink)):?>
+						<? endif;
+							echo $imageEl;
+						if(!empty($iconLink)):?>
 						</a>
 						<? endif; ?>
 					</div>
@@ -58,6 +81,18 @@
 				</div>
 				<?php endif; ?>
 			</div>
+			<? endif; ?>
+			<? if($newsletterTitle):
+				$sepPrefix = 'newsletter';
+				include $templatePartials . 'text-controls.php';
+				include $templatePartials . 'general-partials.php';
+				
+				$shortcode = get_field($sepPrefix . '_shortcode', 'option');
+			?>
+				<div class=" <?= $columnsClass; ?> newsletter-section <?= $optionsTitleTextAlignment . ' '. $optionsTitleTextColor; ?>">
+					<h3 class="<?= $optionsTitleTextClass; ?>"><?= $newsletterTitle; ?></h3>
+					<?= apply_filters('the_content', $shortcode); ?>
+				</div>
 			<? endif; ?>
 		</div>
 	</section>
@@ -112,31 +147,31 @@
 			<?php if ( function_exists('footer_sidebar')) : ?>
 			<div class="footer-nav">
 				<div class="row justify-content-center mb-3 header-<?= $headerSize; ?>">
-					<?php if ( is_active_sidebar( 'footer_logo' ) ) : ?>
+					<?php if ( is_active_sidebar( 'footer_col_1' ) ) : ?>
 					<div class="<?= $footerColFirst; ?>">
 						<div class="footer-nav__inner">
-						<?php dynamic_sidebar('footer_logo');?>
+						<?php dynamic_sidebar('footer_col_1');?>
 						</div>
 					</div>
 					<?php endif; ?>
-					<?php if ( is_active_sidebar( 'footer_nav' ) ) : ?>
+					<?php if ( is_active_sidebar( 'footer_col_2' ) ) : ?>
 					<div class="<?= $footerCols; ?>">
 						<div class="footer-nav__inner">
-						<?php dynamic_sidebar('footer_nav');?>
+						<?php dynamic_sidebar('footer_col_2');?>
 						</div>
 					</div>
 					<?php endif; ?>
-					<?php if ( is_active_sidebar( 'footer_disclaimer' ) ) : ?>
+					<?php if ( is_active_sidebar( 'footer_col_3' ) ) : ?>
 					<div class="<?= $footerCols; ?>">
 						<div class="footer-nav__inner">
-						<?php dynamic_sidebar('footer_disclaimer');?>
+						<?php dynamic_sidebar('footer_col_3');?>
 						</div>
 					</div>
 					<?php endif; ?>
-					<?php if ( is_active_sidebar( 'footer_form' ) ) : ?>
+					<?php if ( is_active_sidebar( 'footer_col_4' ) ) : ?>
 					<div class="<?= $footerColLast; ?>">
 						<div class="footer-nav__inner">
-						<?php dynamic_sidebar('footer_form');?>
+						<?php dynamic_sidebar('footer_col_4');?>
 						</div>
 					</div>
 					<?php endif; ?>

@@ -2,8 +2,18 @@
 	
 	$page_id = get_queried_object_id();
 	
+	/// SEPARATORS INIT
+	$postType = get_post_type();
+	$sepPrefix = 'hero';
+	$templatePath = get_template_directory();
+	$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
+	
 	//// CUSTOMIZER OPTIONS
 	$heroHeight = get_theme_mod( 'hero_header_height', 0 );
+	// Override on a per-post basis
+	if(!empty(get_field($sepPrefix . '_override_height'))):
+		$heroHeight = get_field($sepPrefix . '_override_height');
+	endif;
 	
 	$heroAlignment = 'align-items-center';
 	$heroAlignment = get_theme_mod( 'hero_vertical_alignment', 0 );
@@ -29,6 +39,7 @@
 	endif;
 	
 	//// HERO TYPE OPTIONS
+	
 	
 	$heroType = '';
 	$videoType = '';
@@ -67,130 +78,13 @@
 		$heroBG = 'style="background-color: #' . get_field('hero_background_colour') . ';"';
 	endif;
 	
-	/// COLUMNS SETUP
-	$columnCount = 1;
-	if(!empty(get_field('hero_column_count'))):
-		$columnCount = get_field('hero_column_count');
-	endif;
 	
-	$columnGroup = get_field('hero_columns_group');
-	if(!empty($columnGroup)) {
-		$col1Content = $columnGroup['col_1_content'];
-		$col1Align = 'text-' . $columnGroup['col_1_align'];
-		$col2Content = $columnGroup['col_2_content'];
-		$col2Align = 'text-' . $columnGroup['col_2_align'];
-		
-		$columnPadding = '';
-		$columnPadding = get_field('column_padding');
-		if($columnPadding > 0){
-			$columnPadding = 'p-' . $columnPadding;
-		}
-		
-		/// TITLE POSITION
-		$titleCol = 1;
-		if($columnGroup['col_1_title'] == true){
-			$titleCol = 1;
-		} elseif($columnGroup['col_1_title'] == false){
-			$titleCol = 2;
-		}
-		
-		if(($columnGroup['col_1_title'] == false) && ($columnGroup['col_2_title'] == false)){
-			$titleCol = 0;
-		}
-	}
-	/// OVERLAY SETUP
 	$hasOverlay = false;
-	$overlayColor = null;
-	$overlayOpacity = null;
-	$colorClass = '';
-	$opacityClass = '';
-	$overlayClass = '';
-	$postType = get_post_type();
-	
-	
-	
-	if($postType == 'post'):
-		if(get_field('clone_add_overlay', 'options') == true):
-			$hasOverlay = true;
-			$overlayColor = get_field('archive_overlay_color', 'options');
-			$overlayOpacity = get_field('archive_overlay_opacity', 'options');
-		endif;
-	else:
-		if(get_post_meta( get_the_ID(), 'add_image_overlay', true )):
-			$hasOverlay = true;
-			$overlayColor = get_post_meta( get_the_ID(), 'overlay_colour', true );
-			$overlayOpacity = get_post_meta( get_the_ID(), 'overlay_opacity', true );
-		endif;
+	if(get_field($sepPrefix . '_overlay_add_overlay') == true):
+		include $templatePartials . "overlay-partial.php";
 	endif;
 	
-	if($hasOverlay):
-		switch ($overlayColor) {
-			case "None":
-				$colorClass = 'overlay-dark';
-				break;
-			case "primary":
-				$colorClass = 'overlay-primary';
-				break;
-			case "secondary":
-				$colorClass = 'overlay-secondary';
-				break;
-			case "dark":
-				$colorClass = 'overlay-dark';
-				break;
-			case "light":
-				$colorClass = 'overlay-light';
-				break;
-			case "white":
-				$colorClass = 'overlay-white';
-				break;
-			case "alternate":
-				$colorClass = 'overlay-alternate';
-				break;
-		}
-		switch ($overlayOpacity) {
-			case "None":
-				$opacityClass = 'overlay-90';
-				break;
-			case "05":
-				$opacityClass = 'overlay-05';
-				break;
-			case "15":
-				$opacityClass = 'overlay-15';
-				break;
-			case "25":
-				$opacityClass = 'overlay-25';
-				break;
-			case "35":
-				$opacityClass = 'overlay-35';
-				break;
-			case "50":
-				$opacityClass = 'overlay-50';
-				break;
-			case "65":
-				$opacityClass = 'overlay-65';
-				break;
-			case "75":
-				$opacityClass = 'overlay-75';
-				break;
-			case "85":
-				$opacityClass = 'overlay-85';
-				break;
-			case "95":
-				$opacityClass = 'overlay-95';
-				break;
-		}
-		$overlayClass = 'hasOverlay ' . $colorClass . ' ' . $opacityClass;
-	endif;
-	
-	
-	/// SEPARATORS INIT
-	
-	$testme = get_field('hero_separators');
-	
-	$sepPrefix = 'hero';
-	$templatePath = get_template_directory();
-	//$separatorLayout = $templatePath . "/template-parts/kiss/static-partials/separators.php";
-	
+	include $templatePartials . "column-selector.php";
 	/// GENERAL
 	$sepOptions = get_field($sepPrefix . '_sep_options');
 	$svgPath = $templatePath . "/template-parts/kiss/flexi-partials/separators/separator-";
@@ -271,6 +165,8 @@
 	
 	$heroContent = get_post_meta( get_the_ID(), 'hero_content', true );
 	
+	$heroTopImage = get_field('hero_content_image');
+	
 	$faType = get_theme_mod( 'fa_styles');
 	
 	if($heroTitle || $heroImage || $heroContent)	:?>
@@ -297,39 +193,23 @@
 		<? endif; ?>
 		<div class="container <?= $heroAlignment . ' ' . $paddingY; ?>">
 			<div class="hero-header__wrap-inner">
-				<? if($columnCount == 1):?>
-					<div class="hero-header__content <?= $colWidth; ?>">
-						<? if($titleLocation == 'hero'): ?>
-						<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
-						<? endif; ?>
-						<div class="<?= $heroTextColor . ' ' .  $contentSize; ?>">
-						<?= $heroContent; ?>
-						</div>
-					</div>
-				<? else:?>
-				<div class="row">
-					<div class="col-12 col-md-6 <? echo $col1Align; ?>">
-						<div class="hero-header__column <? echo $columnPadding; ?>">
-							<? if($titleCol == 1 && $titleLocation == 'hero'){ ?>
-								<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
-							<? } ?>
+				<div class="hero-header__content">
+					<div class="row">
+						<div class="<?= $colClassLeft; ?>">
+							<? if(!empty($heroTitle)): ?>
+							<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
+							<? endif; ?>
 							<div class="<?= $heroTextColor . ' ' .  $contentSize; ?>">
-								<? echo $col1Content; ?>
+							<?= apply_filters('the_content', $heroContent); ?>
 							</div>
 						</div>
-					</div>
-					<div class="col-12 col-md-6 <? echo $col2Align; ?>">
-						<div class="hero-header__column <? echo $columnPadding; ?>">
-							<? if($titleCol == 2 && $titleLocation == 'hero'){ ?>
-								<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
-							<? } ?>
-							<div class="<?= $heroTextColor . ' ' .  $contentSize; ?>">
-								<? echo $col2Content; ?>
-							</div>
+						<div class="<?= $colClassRight; ?>">
+							<? if(!empty($heroTopImage)): ?>
+							<img src="<?= $heroTopImage['url']; ?>" alt="<?= $heroTopImage['alt'];?>" class="w-full" />
+							<? endif; ?>
 						</div>
 					</div>
 				</div>
-				<? endif; ?>
 				<div class="hero_header__content-actions">
 					<? if( have_rows('header_multi_buttons') ): 
 						$counter = 1;

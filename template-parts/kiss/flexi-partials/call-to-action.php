@@ -31,7 +31,7 @@
 	include $templatePartials . 'text-controls.php';
 	
 ?>
-<section id="ctaHome" class="cta <?= $bgcolour . ' ' . $separatorClasses . ' ' . $overlayClass . ' ' . $containerDirection . ' ' . $customClass; ?> <? if(get_sub_field('cta_background_image')):?>hasBgImg<? endif; ?>" <? if(get_sub_field('cta_background_image')):?>style="background-image:url(<?  the_sub_field('cta_background_image'); ?>)"<? endif; ?>>
+<section id="ctaHome" class="cta <?= $bgcolour . ' ' . $separatorClasses . ' ' . $overlayClass . ' ' . $containerDirection . ' ' . $boxPaddingCss . ' ' . $customClass; ?> <? if(get_sub_field('cta_background_image')):?>hasBgImg<? endif; ?>" <? if(get_sub_field('cta_background_image')):?>style="background-image:url(<?  the_sub_field('cta_background_image'); ?>)"<? endif; ?>>
 	<? if($addSeparatorUpper == true):
 		include $pathUpper;
 	endif; ?>

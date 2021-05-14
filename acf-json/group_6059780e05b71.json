@@ -502,7 +502,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -511,6 +511,33 @@
             "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_6099f7b13f298",
+            "label": "Icons Type",
+            "name": "icons_type",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60598500feb5b",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Image\/SVG",
+            "ui_off_text": "Fontawesome"
         },
         {
             "key": "field_60598514feb5c",
@@ -540,6 +567,27 @@
             "maxlength": ""
         },
         {
+            "key": "field_6099fc48b128d",
+            "label": "Title",
+            "name": "icons_title",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_6076c01d3fc68"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 1,
+            "prefix_name": 1
+        },
+        {
             "key": "field_6059852efeb5d",
             "label": "Social Icons",
             "name": "icons_list",
@@ -564,7 +612,7 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Add Icon",
             "sub_fields": [
                 {
                     "key": "field_60598543feb5e",
@@ -573,7 +621,15 @@
                     "type": "image",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6099f7b13f298",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -589,6 +645,33 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": ""
+                },
+                {
+                    "key": "field_6099f7f03f299",
+                    "label": "Add Fontawesome Icon",
+                    "name": "icon_fa",
+                    "type": "text",
+                    "instructions": "Use the full fab fa-* identifier",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6099f7b13f298",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 },
                 {
                     "key": "field_60598563feb5f",
@@ -607,6 +690,27 @@
                     "placeholder": ""
                 }
             ]
+        },
+        {
+            "key": "field_609a0575f21fe",
+            "label": "Icon Controls",
+            "name": "icons_contents",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_6076c01d3fc68"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 1,
+            "prefix_name": 1
         },
         {
             "key": "field_60598582feb60",
@@ -660,5 +764,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1618806839
+    "modified": 1620706862
 }

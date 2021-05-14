@@ -3,14 +3,14 @@
 function footer_sidebar()
 {
   $args = [
-    "name" => __("Logo & Contact Section", "textdomain"),
-    "id" => "footer_logo",
+    "name" => __("Footer Column 1", "siiteable"),
+    "id" => "footer_col_1",
     "description" => __(
-      "Used to add a logo & contact details to the footer of your site",
-      "textdomain"
+      "First column in the footer nav order",
+      "siiteable"
     ),
-    "class" => "footer-nav__logo",
-    "before_widget" => '<div id="%1$s" class="footer-nav__logo">',
+    "class" => "footer-col__one",
+    "before_widget" => '<div id="%1$s" class="footer-col__one">',
     "after_widget" => "</div>",
     "before_title" => '<h3 class="widgettitle">',
     "after_title" => "</h3>",
@@ -18,11 +18,11 @@ function footer_sidebar()
   register_sidebar($args);
 
   $args = [
-    "name" => __("Footer Navigation", "textdomain"),
-    "id" => "footer_nav",
-    "description" => __("Add a menu to the footer", "textdomain"),
-    "class" => "footer-nav__nav",
-    "before_widget" => '<div id="%1$s" class="footer-nav__nav">',
+    "name" => __("Footer Column 2", "siiteable"),
+    "id" => "footer_col_2",
+    "description" => __("Second column in the footer nav order", "siiteable"),
+    "class" => "footer-col__two",
+    "before_widget" => '<div id="%1$s" class="footer-col__two">',
     "after_widget" => "</div>",
     "before_title" => '<h3 class="widgettitle">',
     "after_title" => "</h3>",
@@ -30,11 +30,11 @@ function footer_sidebar()
   register_sidebar($args);
 
   $args = [
-    "name" => __("Footer Disclaimer", "textdomain"),
-    "id" => "footer_disclaimer",
-    "description" => __("Add a disclaimer to the footer area", "textdomain"),
-    "class" => "footer-nav__disclaimer",
-    "before_widget" => '<div id="%1$s" class="footer-nav__disclaimer">',
+    "name" => __("Footer Column 3", "siiteable"),
+    "id" => "footer_col_3",
+    "description" => __("Third colun in the footer nav order", "siiteable"),
+    "class" => "footer-col__three",
+    "before_widget" => '<div id="%1$s" class="footer-col__three">',
     "after_widget" => "</div>",
     "before_title" => '<h3 class="widgettitle">',
     "after_title" => "</h3>",
@@ -42,11 +42,11 @@ function footer_sidebar()
   register_sidebar($args);
 
   $args = [
-    "name" => __("Footer Form", "textdomain"),
-    "id" => "footer_form",
-    "description" => __("Add a form to the footer area", "textdomain"),
-    "class" => "footer-nav__form",
-    "before_widget" => '<div id="%1$s" class="footer-nav__form">',
+    "name" => __("Footer Column 4", "siiteable"),
+    "id" => "footer_col_4",
+    "description" => __("Fourth column in the footer nav order", "siiteable"),
+    "class" => "footer-col__four",
+    "before_widget" => '<div id="%1$s" class="footer-col__four">',
     "after_widget" => "</div>",
     "before_title" => '<h3 class="widgettitle">',
     "after_title" => "</h3>",
@@ -54,9 +54,9 @@ function footer_sidebar()
   register_sidebar($args);
 
   $args = [
-    "name" => __("Small footer", "textdomain"),
+    "name" => __("Small footer", "siiteable"),
     "id" => "footer_flat",
-    "description" => __("Add a small section to the footer area", "textdomain"),
+    "description" => __("Add a small section to the footer area", "siiteable"),
     "class" => "footer-nav__flat",
     "before_widget" => '<div id="%1$s" class="footer-nav__flat">',
     "after_widget" => "</div>",
@@ -66,11 +66,11 @@ function footer_sidebar()
   register_sidebar($args);
 
   $args = [
-    "name" => __("CTA on Case Study", "textdomain"),
+    "name" => __("CTA on Case Study", "siiteable"),
     "id" => "success_cta",
     "description" => __(
       "Adds a common call to action for all case studies",
-      "textdomain"
+      "siiteable"
     ),
     "class" => "success-story__cta",
     "before_widget" => '<div id="%1$s" class="case-study__cta">',
@@ -81,11 +81,11 @@ function footer_sidebar()
   register_sidebar($args);
 
   $args = [
-    "name" => __("Below Content", "textdomain"),
+    "name" => __("Below Content", "siiteable"),
     "id" => "below_content",
     "description" => __(
       "Adds a widget area below the content area",
-      "textdomain"
+      "siiteable"
     ),
     "class" => "below-content",
     "before_widget" => '<div id="%1$s" class="below-content">',
@@ -96,11 +96,11 @@ function footer_sidebar()
   register_sidebar($args);
 
   $args = [
-    "name" => __("Above Footer", "textdomain"),
+    "name" => __("Above Footer", "siiteable"),
     "id" => "about_footer",
     "description" => __(
       "Adds a widget area above the footer area",
-      "textdomain"
+      "siiteable"
     ),
     "class" => "above-footer",
     "before_widget" => '<div id="%1$s" class="above-footer">',

@@ -1,4 +1,5 @@
 <?php 
+	$faType = get_theme_mod( 'fa_styles');
 	$buttonAlign = 'justify-content-start';
 	$buttonAlign = $addButton['button_alignment'];
 	$linkContent = '';
@@ -14,6 +15,9 @@
 		$linkText = $buttonData['button_text_copy'];
 		$btnColor = $buttonData['btn_color'];
 		$btnSize = $buttonData['button_size'];
+		$buttonIcon = $buttonData['button_icon'];
+		$buttonIcon = '<i class="' . $faType . ' ' . $buttonIcon . '"></i>';
+		$iconAlign = $buttonData['button_icon_placement'];
 		//$linkType = $linkType['cta_button_link'];
 		switch ($linkType) {
 			case "page":
@@ -54,13 +58,19 @@
 			break;
 		}
 		$btnClass = $btnSize . ' ' . $btnColor . ' ' . $linkClass;
+		if($iconAlign == 'left'):
+			$iconLeft = $buttonIcon . ' ';
+		elseif($iconAlign == 'right'):
+			$iconRight = ' ' . $buttonIcon;
+		endif;
+		$linkText = $iconLeft . $linkText . $iconRight;
 	endif;
 	
 // Button Options
 $btnAddLinks = false;
 $btnAddLinks = get_sub_field($sepPrefix . "_links");
 if($btnAddLinks = true):
-	$btnLinkOpen = '<a href=' . $linkContent . '>';
+	$btnLinkOpen = '<a class="d-block w-100" href=' . $linkContent . '>';
 	$btnLinkClose = '</a>';
 else:
 	$btnLinkOpen = null;
