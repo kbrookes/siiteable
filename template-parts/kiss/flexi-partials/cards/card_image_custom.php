@@ -4,7 +4,8 @@
 $imageSource = get_sub_field($sepPrefix . '_post_image');
 
 $imageType = get_sub_field($sepPrefix . '_image_type');
-$imageClass = 'w-full';
+$imageShadow = get_sub_field('image_shadow_shadow_select');
+$imageClass = 'w-full ' . $imageShadow;
 
 if(($cardType == "multi-post") || (($cardType == "get-post") && ($imageSource == "post_image"))) {
     $image = $cardImage;

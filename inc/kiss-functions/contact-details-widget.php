@@ -1,4 +1,4 @@
-<?php 
+<? 
 /// ADD CONTACT DETAILS WIDGET
 // Adds widget: Contact details
 class Contactdetails_Widget extends WP_Widget {
@@ -87,6 +87,7 @@ class Contactdetails_Widget extends WP_Widget {
 		echo $args['before_widget'];
 
 		// Output generated fields
+		$faType = get_theme_mod( 'fa_styles');
 		
 		$textColour = 'text-white';
 		if(!empty($instance['textcolour_select'])):
@@ -94,68 +95,68 @@ class Contactdetails_Widget extends WP_Widget {
 		endif;
 		
 		if(!empty($instance['streetaddress_textarea'] || $instance['citysuburbreg_textarea'] || $instance['state_text'] || $instance['zippostcode_text'] || $instance['country_text'] || $instance['emailiconfonta_text'] )): ?>
-		<div itemscope itemtype="http://schema.org/ContactPoint" class="<?php echo $textColour; ?>">
-			<?php if(!empty($instance['addressiconfon_text'])):?>
+		<div itemscope itemtype="http://schema.org/ContactPoint" class="<?= $textColour; ?>">
+			<? if(!empty($instance['addressiconfon_text'])):?>
 			<div class="footer-nav__row">
 				<div class="footer-nav__icon">
-					<i class="<?php echo $instance['addressiconfon_text']; ?>"></i>
+					<i class="<?= $faType . ' ' . $instance['addressiconfon_text']; ?>"></i>
 				</div>
 				<div class="footer-nav__content">
-			<?php endif; ?>
+			<? endif; ?>
 					<div itemscope itemtype="schema.org/PostalAddress" class="footer-nav__address">
-					<?php if(!empty($instance['buildingname_text'] )):?>
-						<h4 class="d-block" itemprop="buildingName"><?php echo $instance['buildingname_text']; ?></h4>
-					<?php endif; ?>
-					<?php if(!empty($instance['streetaddress_textarea'] )):?>
-						<span class="d-block" itemprop="streetAddress"><?php echo $instance['streetaddress_textarea']; ?></span>
-					<?php endif; ?>
-					<?php if(!empty($instance['citysuburbreg_text'] )):?>
-						<span class="d-block" itemprop="addressLocality"><?php echo $instance['citysuburbreg_text']; ?></span>
-					<?php endif; ?>
-					<?php if(!empty($instance['state_text'] )):?>
-						<span itemprop="addressRegion"><?php echo $instance['state_text']; ?></span>
-					<?php endif; ?>
-					<?php if(!empty($instance['zippostcode_text'] )):?>
-						<span itemprop="postalCode"><?php echo $instance['zippostcode_text']; ?></span>
-					<?php endif; ?>
-					<?php if(!empty($instance['country_text'] )):?>
-						<span class="d-block" itemprop="addressCountry"><?php echo $instance['country_text']; ?></span>
-					<?php endif; ?>
+					<? if(!empty($instance['buildingname_text'] )):?>
+						<h4 class="d-block" itemprop="buildingName"><?= $instance['buildingname_text']; ?></h4>
+					<? endif; ?>
+					<? if(!empty($instance['streetaddress_textarea'] )):?>
+						<span class="d-block" itemprop="streetAddress"><?= $instance['streetaddress_textarea']; ?></span>
+					<? endif; ?>
+					<? if(!empty($instance['citysuburbreg_text'] )):?>
+						<span class="d-block" itemprop="addressLocality"><?= $instance['citysuburbreg_text']; ?></span>
+					<? endif; ?>
+					<? if(!empty($instance['state_text'] )):?>
+						<span itemprop="addressRegion"><?= $instance['state_text']; ?></span>
+					<? endif; ?>
+					<? if(!empty($instance['zippostcode_text'] )):?>
+						<span itemprop="postalCode"><?= $instance['zippostcode_text']; ?></span>
+					<? endif; ?>
+					<? if(!empty($instance['country_text'] )):?>
+						<span class="d-block" itemprop="addressCountry"><?= $instance['country_text']; ?></span>
+					<? endif; ?>
 				   </div>
-			<?php if(!empty($instance['addressiconfon_text'])):?>
+			<? if(!empty($instance['addressiconfon_text'])):?>
 				</div>
 			</div>
-			<?php endif; ?>
-			<?php if(!empty($instance['emailiconfonta_text'] )):?>
+			<? endif; ?>
+			<? if(!empty($instance['emailiconfonta_text'] )):?>
 			<div class="footer-nav__row">
 				<div class="footer-nav__icon">
-					<i class="<?php echo $instance['emailiconfonta_text']; ?>"></i>
+					<i class="<?= $faType . ' ' .  $instance['emailiconfonta_text']; ?>"></i>
 				</div>
 				<div class="footer-nav__content">
-			<?php endif; ?>
-					<?php if(!empty($instance['emailaddress_email'] )):?>
-					<a href="mailto:<?php echo $instance['emailaddress_email']; ?>"><span itemprop="email"><?php echo $instance['emailaddress_email']; ?></span></a>
-					<?php endif; ?>
-				<?php if(!empty($instance['emailiconfonta_text'] )):?>
+			<? endif; ?>
+					<? if(!empty($instance['emailaddress_email'] )):?>
+					<a href="mailto:<?= $instance['emailaddress_email']; ?>"><span itemprop="email"><?= $instance['emailaddress_email']; ?></span></a>
+					<? endif; ?>
+				<? if(!empty($instance['emailiconfonta_text'] )):?>
 				</div>
 			</div>
-			<?php endif; ?>
-			<?php if(!empty($instance['phoneiconfonta_text'] )):?>
+			<? endif; ?>
+			<? if(!empty($instance['phoneiconfonta_text'] )):?>
 			<div class="footer-nav__row">
 				<div class="footer-nav__icon">
-					<i class="<?php echo $instance['phoneiconfonta_text']; ?>"></i>
+					<i class="<?= $faType . ' ' .  $instance['phoneiconfonta_text']; ?>"></i>
 				</div>
 				<div class="footer-nav__content">
-			<?php endif; ?>
-					<?php if(!empty($instance['phonenumber_tel'] )):?>
-					<a href="tel:<?php echo $instance['phonenumber_tel']; ?>"><span itemprop="telephone"><?php echo $instance['phonenumber_tel']; ?></span></a>
-					<?php endif; ?>
-					<?php if(!empty($instance['phoneiconfonta_text'] )):?>
+			<? endif; ?>
+					<? if(!empty($instance['phonenumber_tel'] )):?>
+					<a href="tel:<?= $instance['phonenumber_tel']; ?>"><span itemprop="telephone"><?= $instance['phonenumber_tel']; ?></span></a>
+					<? endif; ?>
+					<? if(!empty($instance['phoneiconfonta_text'] )):?>
 				</div>
 			</div>
-			<?php endif; ?>
+			<? endif; ?>
 		</div>
-		<?php endif; 
+		<? endif; 
 		
 		echo $args['after_widget'];
 	}

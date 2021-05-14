@@ -64,6 +64,7 @@
                 "id": ""
             },
             "choices": {
+                "p-0": "none",
                 "p-1": "XS",
                 "p-2": "SM",
                 "p-3": "MD",
@@ -97,6 +98,7 @@
                 "id": ""
             },
             "choices": {
+                "p-md-0": "none",
                 "p-md-1": "XS",
                 "p-md-2": "SM",
                 "p-md-3": "MD",
@@ -130,6 +132,7 @@
                 "id": ""
             },
             "choices": {
+                "p-lg-0": "none",
                 "p-lg-1": "XS",
                 "p-lg-2": "SM",
                 "p-lg-3": "MD",
@@ -163,6 +166,7 @@
                 "id": ""
             },
             "choices": {
+                "py-0": "None",
                 "py-1": "XS",
                 "py-2": "SM",
                 "py-3": "MD",
@@ -196,6 +200,7 @@
                 "id": ""
             },
             "choices": {
+                "py-md-0": "None",
                 "py-md-1": "XS",
                 "py-md-2": "SM",
                 "py-md-3": "MD",
@@ -229,6 +234,7 @@
                 "id": ""
             },
             "choices": {
+                "py-lg-0": "None",
                 "py-lg-1": "XS",
                 "py-lg-2": "SM",
                 "py-lg-3": "MD",
@@ -262,6 +268,7 @@
                 "id": ""
             },
             "choices": {
+                "px-0": "None",
                 "px-1": "XS",
                 "px-2": "SM",
                 "px-3": "MD",
@@ -295,6 +302,7 @@
                 "id": ""
             },
             "choices": {
+                "px-md-0": "None",
                 "px-md-1": "XS",
                 "px-md-2": "SM",
                 "px-md-3": "MD",
@@ -328,6 +336,7 @@
                 "id": ""
             },
             "choices": {
+                "px-lg-0": "None",
                 "px-lg-1": "XS",
                 "px-lg-2": "SM",
                 "px-lg-3": "MD",
@@ -338,25 +347,6 @@
             "default_value": "",
             "layout": "horizontal",
             "return_format": "value"
-        },
-        {
-            "key": "field_6089fb48f6e69",
-            "label": "Margin Controls",
-            "name": "margin_controls",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         }
     ],
     "location": [
@@ -376,5 +366,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1619743742
+    "modified": 1620899210
 }

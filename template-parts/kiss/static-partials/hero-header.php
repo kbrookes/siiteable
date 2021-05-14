@@ -2,8 +2,18 @@
 	
 	$page_id = get_queried_object_id();
 	
+	/// SEPARATORS INIT
+	$postType = get_post_type();
+	$sepPrefix = 'hero';
+	$templatePath = get_template_directory();
+	$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
+	
 	//// CUSTOMIZER OPTIONS
 	$heroHeight = get_theme_mod( 'hero_header_height', 0 );
+	// Override on a per-post basis
+	if(!empty(get_field($sepPrefix . '_override_height'))):
+		$heroHeight = get_field($sepPrefix . '_override_height');
+	endif;
 	
 	$heroAlignment = 'align-items-center';
 	$heroAlignment = get_theme_mod( 'hero_vertical_alignment', 0 );
@@ -29,6 +39,7 @@
 	endif;
 	
 	//// HERO TYPE OPTIONS
+	
 	
 	$heroType = '';
 	$videoType = '';
@@ -67,12 +78,6 @@
 		$heroBG = 'style="background-color: #' . get_field('hero_background_colour') . ';"';
 	endif;
 	
-	
-	/// SEPARATORS INIT
-	$postType = get_post_type();
-	$sepPrefix = 'hero';
-	$templatePath = get_template_directory();
-	$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
 	
 	$hasOverlay = false;
 	if(get_field($sepPrefix . '_overlay_add_overlay') == true):

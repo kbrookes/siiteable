@@ -115,9 +115,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "post_status",
                 "operator": "==",
-                "value": "post"
+                "value": "request-failed"
             }
         ]
     ],
@@ -129,5 +129,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1618454998
+    "modified": 1620711758
 }

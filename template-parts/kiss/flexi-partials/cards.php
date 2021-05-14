@@ -18,6 +18,8 @@
 	
 	/// GET GENERAL
 	$colCount = get_sub_field($sepPrefix . '_columns');
+	$cardDirection = get_sub_field($sepPrefix . '_image_position');
+	
 	// Custom classes, container directionp & size, title, text
 	include $templatePartials . 'general-partials.php';
 	
@@ -43,9 +45,19 @@
 			}
 			?>
 			
-			<? if(have_rows($sepPrefix . '_add_cards'))	{?>
+			<? if(have_rows($sepPrefix . '_add_cards'))	{
+				$cardCount = 0;
+			?>
 			<div class="row mb-4">
 				<? while (have_rows($sepPrefix . '_add_cards')) : the_row(); 
+					
+					if($cardDirection == 'alternating'):
+						if($cardCount % 2 == 0):
+							$cardDirection = 'order-last';
+						else:
+							$cardDirection = 'order-first';
+						endif;
+					endif;
 					
 					$cardType = get_sub_field('card_type');
 					include $cardPartials . "card_content_controls.php";
@@ -59,8 +71,11 @@
 						case "multi-post":
 							include $cardPartials . "card_custom.php";
 							break;
+						case "momentum":
+						include $cardPartials . "card_post.php";
+						break;
 					}
-					
+					$cardCount++;
 				 endwhile; ?>
 			</div>
 			<? }

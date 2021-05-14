@@ -83,7 +83,8 @@
 	// Font Weight
 	$fontWeight = 'font-weight-normal';
 	$fontWeight = $blockLayout['icon_box_font_weight'];
-	
+
+	$faType = get_theme_mod( 'fa_styles');
 	?>
 <section class="list-icons <?php echo $bgcolour . ' ' . $separatorClasses . ' ' . $containerDirection . ' ' . $customClass . ' style-' . $blockAR . ' icon-' . $iconSize; ?>">
 	<?php if($addSeparatorUpper == true):
@@ -119,6 +120,7 @@
 						}
 						if($imageType == 'FontIcon') {
 							$iconClass = get_sub_field('list_fonticon');
+							$iconClass = $faType . ' ' . $iconClass;
 							$image = '<i class="' . $iconClass . '"></i>';
 						}
 						

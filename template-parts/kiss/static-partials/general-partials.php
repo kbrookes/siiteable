@@ -57,3 +57,17 @@ $cssPaddingSm = get_sub_field($boxPaddingInit . '_' . $paddingDim . '_xs');
 $cssPaddingMd = get_sub_field($boxPaddingInit . '_' . $paddingDim . '_md');
 $cssPaddingLg = get_sub_field($boxPaddingInit . '_' . $paddingDim . '_lg');
 $boxPaddingCss = $cssPaddingSm . ' ' . $cssPaddingMd . ' ' . $cssPaddingLg;
+
+
+
+/// OPTIONS
+$optionsContainer = get_field($sepPrefix . '_container_size', 'option');
+
+/// COLUMNS
+$colXS = get_field($sepPrefix . '_column_xs', 'option');
+$colSM = get_field($sepPrefix . '_column_sm', 'option');
+$colMD = get_field($sepPrefix . '_column_md', 'option');
+$colLG = get_field($sepPrefix . '_column_lg', 'option');
+$colXL = get_field($sepPrefix . '_column_xl', 'option');
+
+$columnsClass = $colXS . ' ' . $colSM . ' ' . $colMD . ' ' . $colLG . ' ' . $colXL;

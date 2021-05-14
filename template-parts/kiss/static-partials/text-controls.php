@@ -47,4 +47,18 @@ $optionsContentTextSize = get_field($sepPrefix . '_contents_font_size', 'options
 $optionsContentTextColor = get_field($sepPrefix . '_contents_font_color', 'options');
 $optionsContentTextWeight = get_field($sepPrefix . '_contents_font_weight', 'options');
 $optionsContentTextAlignment = get_field($sepPrefix . '_contents_text_alignment', 'options');
+$optionsContentJustify = '';
 $optionsContentTextClass = $optionsContentTextSize . ' ' . $optionsContentTextColor . ' ' . $optionsContentTextWeight . ' ' . $optionsContentTextAlignment;
+
+// Convert text alignment to justify 
+switch($optionsContentTextAlignment){
+    case 'text-left':
+        $optionsContentJustify = 'justify-content-start';
+        break;
+    case 'text-center':
+        $optionsContentJustify = 'justify-content-center';
+        break;
+    case 'text-right':
+        $optionsContentJustify = 'justify-content-end';
+        break;
+}

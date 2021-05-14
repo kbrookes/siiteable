@@ -1,0 +1,50 @@
+{
+    "key": "group_609a420b026f4",
+    "title": "Container Controls",
+    "fields": [
+        {
+            "key": "field_609a4219b74a3",
+            "label": "Container Size",
+            "name": "size",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "w-full": "Full Width",
+                "container": "Standard",
+                "container-sm": "Small"
+            },
+            "default_value": false,
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_status",
+                "operator": "==",
+                "value": "request-failed"
+            }
+        ]
+    ],
+    "menu_order": 211,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1620722571
+}
