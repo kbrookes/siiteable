@@ -8,6 +8,9 @@
 	$templatePath = get_template_directory();
 	$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
 	
+	/// TEXT CONTROLS
+	include $templatePartials . 'text-controls.php';
+	
 	//// CUSTOMIZER OPTIONS
 	$heroHeight = get_theme_mod( 'hero_header_height', 0 );
 	// Override on a per-post basis
@@ -75,7 +78,7 @@
 	endif; 
 	
 	if(get_field('hero_background_colour')):
-		$heroBG = 'style="background-color: #' . get_field('hero_background_colour') . ';"';
+		$heroBG = get_field('hero_background_colour');
 	endif;
 	
 	
@@ -170,7 +173,7 @@
 	$faType = get_theme_mod( 'fa_styles');
 	
 	if($heroTitle || $heroImage || $heroContent)	:?>
-<section id="heroHeader" class="hero-header  <? echo $separatorClasses . ' ' . $heroHeight; ?> <? if($heroType == 'video'):?>video-hero video-type__<? echo $videoType; ?><? endif; ?>" <? if($heroBG): echo $heroBG; endif; ?>>
+<section id="heroHeader" class="hero-header  <? echo $separatorClasses . ' ' . $heroHeight; ?> <? if($heroBG): echo $heroBG; endif; ?> <? if($heroType == 'video'):?>video-hero video-type__<? echo $videoType; ?><? endif; ?>">
 	<div class="hero-header__wrap <? echo $overlayClass; ?>" <? if($heroImage):?>style="background-image:url(<? echo $heroImage; ?>)"<? endif; ?>>
 		<? if($heroType == 'video'):
 			if($videoType == 'local'):?>
@@ -196,12 +199,12 @@
 				<div class="hero-header__content">
 					<div class="row">
 						<div class="<?= $colClassLeft; ?>">
+							<div class="<?= $heroTextColor . ' ' .  $contentSize; ?> mb-4">
+							<?= apply_filters('the_content', $heroContent); ?>
+							</div>
 							<? if(!empty($heroTitle)): ?>
 							<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
 							<? endif; ?>
-							<div class="<?= $heroTextColor . ' ' .  $contentSize; ?>">
-							<?= apply_filters('the_content', $heroContent); ?>
-							</div>
 						</div>
 						<div class="<?= $colClassRight; ?>">
 							<? if(!empty($heroTopImage)): ?>

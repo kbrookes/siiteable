@@ -539,7 +539,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -563,7 +563,7 @@
             "key": "field_5e4a04d97999b",
             "label": "Background Colour",
             "name": "hero_background_colour",
-            "type": "color_picker",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -576,11 +576,25 @@
                 ]
             ],
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "choices": {
+                "bg-primary": "Primary",
+                "bg-secondary": "Secondary",
+                "bg-dark": "Dark",
+                "bg-light": "Light",
+                "bg-white": "White",
+                "bg-alternate": "Alternate"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_5d4cf51c41789",
@@ -679,5 +693,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1620811776
+    "modified": 1621210801
 }
