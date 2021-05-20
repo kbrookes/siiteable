@@ -51,6 +51,23 @@
 			@include media-breakpoint-up(xl){
 				max-width: 320px;	
 			}
+			.page-template-page-landing & {
+				@include media-breakpoint-up(xs){
+					max-width: 280px;	
+				}
+				@include media-breakpoint-up(sm){
+					max-width: 320px;	
+				}
+				@include media-breakpoint-up(md){
+					max-width: 380px;	
+				}
+				@include media-breakpoint-up(lg){
+					max-width: 460px;	
+				}
+				@include media-breakpoint-up(xl){
+					max-width: 520px;	
+				}
+			}
 		}
 		.navbar-collapse {
 			transition: 0.3s ease all;

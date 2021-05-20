@@ -16,6 +16,8 @@
                 "id": ""
             },
             "choices": {
+                "simple-angle": "Simple Angle",
+                "compound-angle": "Compound Angle",
                 "angle-center": "Angle - Center",
                 "angle-side": "Angle - Side",
                 "round-center": "Round - Center",
@@ -196,5 +198,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1614653298
+    "modified": 1621213642
 }
