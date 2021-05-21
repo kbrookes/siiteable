@@ -61,14 +61,14 @@ $faType = get_theme_mod( 'fa_styles');
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<? if(!empty($analyticsStandard)): ?>
-<script async src="https://www.googletagmanager.com/gtag/js?id=<?= $analyticsStandard; ?>"></script>
+<? if(!empty($analyticsStandardID)): ?>
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?= $analyticsStandardID; ?>"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', '<?= $analyticsStandard; ?>');
+  gtag('config', '<?= $analyticsStandardID; ?>');
 </script>
 <? endif; ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
