@@ -47,6 +47,7 @@ $analyticsType = '';
 $analyticsType = get_theme_mod( 'select_tag_type', 0 );
 $analyticsStandardID = get_theme_mod('analytics_standard', 0);
 
+
 /// ADD TO THE BODY CLASS
 // BUTTON SETTINGS
 $buttonType = get_theme_mod( 'button_styles');
@@ -63,14 +64,14 @@ $faType = get_theme_mod( 'fa_styles');
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<? if(!empty($analyticsStandard)): ?>
-<script async src="https://www.googletagmanager.com/gtag/js?id=<?= $analyticsStandard; ?>"></script>
+<? if(!empty($analyticsStandardID)): ?>
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?= $analyticsStandardID; ?>"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', '<?= $analyticsStandard; ?>');
+  gtag('config', '<?= $analyticsStandardID; ?>');
 </script>
 <? endif; ?>
 
