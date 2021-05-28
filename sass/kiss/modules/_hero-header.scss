@@ -17,6 +17,26 @@
 		overflow: hidden;
 		position: relative;
 		width: 100%;
+		padding-top: 94px;
+		transition: 0.3s ease all;
+		@include media-breakpoint-down(xxl){
+			padding-top: 94px;	
+		}
+		@include media-breakpoint-down(xl){
+			padding-top: 94px;	
+		}
+		@include media-breakpoint-down(lg){
+			padding-top: 90px;	
+		}
+		@include media-breakpoint-down(md){
+			padding-top: 86px;	
+		}
+		@include media-breakpoint-down(sm){
+			padding-top: 82px;	
+		}
+		@include media-breakpoint-down(xs){
+			padding-top: 69px;	
+		}
 		.container {
 			//align-items: flex-end;
 			display: flex;

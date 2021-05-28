@@ -618,10 +618,10 @@ body.blog {
   }
   .entry-content {
     p {
-      color: $gray-200;
+      color: $dark;
     }
     &__date {
-      color: $gray-600;
+      color: $gray-400;
       text-transform: uppercase;
     }
     p#breadcrumbs {

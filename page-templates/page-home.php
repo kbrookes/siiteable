@@ -33,6 +33,8 @@ get_header(); ?>
 
  get_template_part("template-parts/kiss/flexible-content"); 
  
+ echo exec( 'groups' );
+ 
  $showNews = get_field('home_news_show', 'options');
  $showPromo = get_field('home_promo', 'options');
  
@@ -53,8 +55,3 @@ get_header(); ?>
 	</section>
  <? endif;
  	get_footer();
-
-
-
-	
-	

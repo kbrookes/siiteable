@@ -1,0 +1,9 @@
+{
+  "identifier" : "4A04799D-96F1-4B81-886D-10DB6FA7FC17",
+  "ignoredFilePatterns" : [
+    "node_modules"
+  ],
+  "remotePath" : "\/www\/public\/wp-content\/themes\/mastercom",
+  "server" : "Mastercom",
+  "usesPublishing" : true
+}

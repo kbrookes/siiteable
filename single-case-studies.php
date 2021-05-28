@@ -38,10 +38,10 @@ get_header(); ?>
 			<div class="container-sm">
 				<div class="d-flex justify-content-between align-items-center my-4">
 					<?php if ( is_a( $previous_post , 'WP_Post' ) ) : ?>
-					<a class="btn-custom light" href="<?php echo get_permalink( $previous_post->ID ); ?>"><i class="<?= $faType; ?> fa-chevron-left"></i> PREVIOUS POST</a>
+					<a class="btn-custom light btn-sm" href="<?php echo get_permalink( $previous_post->ID ); ?>"><i class="<?= $faType; ?> fa-chevron-left"></i> PREVIOUS POST</a>
 					<?php endif; ?>
 					<?php if ( is_a( $next_post , 'WP_Post' ) ) : ?>
-					<a class="btn-custom light" href="<?php echo get_permalink( $next_post->ID ); ?>">NEXT POST <i class="<?= $faType; ?> fa-chevron-right"></i></a>
+					<a class="btn-custom light btn-sm" href="<?php echo get_permalink( $next_post->ID ); ?>">NEXT POST <i class="<?= $faType; ?> fa-chevron-right"></i></a>
 					<?php endif; ?>
 				</div>
 			</div>
