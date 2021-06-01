@@ -1,6 +1,21 @@
 <?
 
-$selectedPost = get_sub_field($sepPrefix . '_post_select');
+$postType = get_sub_field($sepPrefix . '_post_type');
+$catSelect = '';
+
+switch($postType) {
+    case "single":
+        $selectedPost = get_sub_field($sepPrefix . '_post_select');
+        break;
+    case "featured":
+        $catSelect = get_sub_field($sepPrefix . '_post_category');
+        break;
+    case "latest":
+        $catSelect = get_sub_field($sepPrefix . '_post_category');
+        break;
+}
+
+
 $pageID = $selectedPost->ID;
 
 $postTitle = apply_filters('the_title', get_post_field('post_title', $selectedPost), $selectedPost->ID);
