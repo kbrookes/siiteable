@@ -819,3 +819,22 @@ span.wpcf7-list-item {
     }
   }
 }
+
+/// ICON SIZES
+.icon {
+  &-xs {
+    font-size: 1rem;
+  }
+  &-sm {
+    font-size: 2rem;
+  }
+  &-md {
+    font-size: 3rem;
+  }
+  &-lg {
+    font-size: 4rem;
+  }
+  &-xl {
+    font-size: 5rem;
+  }
+}

@@ -35,6 +35,10 @@ switch($xsCol){
         $colXsRight = 'col-3';
         $colXsLeft = 'col-9';
         break;
+    case "20":
+        $colXsRight = 'col-2';
+        $colXsLeft = 'col-10';
+        break;
 }
 
 $smCol = get_field($sepPrefix . '_col_sm');
@@ -58,6 +62,10 @@ switch($smCol){
     case "25":
         $colSmRight = 'col-sm-3';
         $colSmLeft = 'col-sm-9';
+        break;
+    case "20":
+        $colSmRight = 'col-sm-2';
+        $colSmLeft = 'col-sm-10';
         break;
 }
 
@@ -83,6 +91,10 @@ switch($mdCol){
         $colMdRight = 'col-md-3';
         $colMdLeft = 'col-md-9';
         break;
+    case "25":
+        $colMdRight = 'col-md-2';
+        $colMdLeft = 'col-md-10';
+        break;
 }
 
 $lgCol = get_field($sepPrefix . '_col_lg');
@@ -106,6 +118,10 @@ switch ($lgCol){
     case "25":
         $colLgRight = 'col-lg-3';
         $colLgLeft = 'col-lg-9';
+        break;
+    case "25":
+        $colLgRight = 'col-lg-2';
+        $colLgLeft = 'col-lg-10';
         break;
 }
 
@@ -131,6 +147,10 @@ switch ($xlCol){
         $colXlRight = 'col-xl-3';
         $colXlLeft = 'col-xl-9';
         break;
+    case "20":
+    $colXlRight = 'col-xl-2';
+    $colXlLeft = 'col-xl-10';
+    break;
 }
 
 $colClassLeft = $colXsLeft . ' ' . $colSmLeft . ' ' . $colMdLeft . ' ' . $colLgLeft . ' ' . $colXlLeft;
