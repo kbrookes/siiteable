@@ -1,0 +1,81 @@
+{
+    "key": "group_60b5b6d2d4b7d",
+    "title": "Icon Controls",
+    "fields": [
+        {
+            "key": "field_60b5b6e1d5b20",
+            "label": "Icon Size",
+            "name": "icon_size",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "icon-xs": "XS",
+                "icon-sm": "SM",
+                "icon-md": "MD",
+                "icon-lg": "LG",
+                "icon-xl": "XL"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_60b5b719d5b21",
+            "label": "Icon Color",
+            "name": "icon_color",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "text-primary": "Primary",
+                "text-secondary": "Secondary",
+                "text-dark": "Dark",
+                "text-light": "Light",
+                "text-white": "White",
+                "text-alternate": "Alternate"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_status",
+                "operator": "==",
+                "value": "request-failed"
+            }
+        ]
+    ],
+    "menu_order": 220,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1622522408
+}

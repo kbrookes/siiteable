@@ -34,5 +34,9 @@ if($cardType == 'get-post' && get_sub_field($sepPrefix . '_post_content') == tru
     $cardContent = $fieldContent;
 }
 
-$title = '<h3 class="' . $titlesTextClass . '">' . $title . '</h3>';
-$subTitle = '<h4 class="' . $titlesTextClass . '">' . $subTitle . '</h4>';
+if(!empty($title)):
+    $title = '<h3 class="' . $titlesTextClass . '">' . $title . '</h3>';
+endif;
+if(!empty($subTitle)):
+    $subTitle = '<h4 class="' . $titlesTextClass . '">' . $subTitle . '</h4>';
+endif;

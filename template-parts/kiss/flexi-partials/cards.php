@@ -14,6 +14,9 @@
 	/// TEXT CONTROLS
 	include $templatePartials . 'text-controls.php';
 	
+	/// ICON CONTROLS
+	include $templatePartials . 'icon-controls.php';
+	
 	$cardBackgroundColor = get_sub_field($sepPrefix . '_background_colour');
 	
 	/// GET GENERAL
@@ -24,6 +27,12 @@
 	include $templatePartials . 'general-partials.php';
 	
 	$cardDesign = get_sub_field($sepPrefix . '_design');
+	
+	$imageColXs = get_sub_field($sepPrefix . '_col_xs');
+	$imageColSm = get_sub_field($sepPrefix . '_col_sm');
+	$imageColMd = get_sub_field($sepPrefix . '_col_md');
+	$imageColLg = get_sub_field($sepPrefix . '_col_lg');
+	$imageColXl = get_sub_field($sepPrefix . '_col_xl');
 	
 	?>
 
@@ -92,5 +101,6 @@
 	</div>
 	<? if($addSeparatorLower == true):
 		include $pathLower;
-	endif; ?>
+	endif;
+	 ?>
 </section>

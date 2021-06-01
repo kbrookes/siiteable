@@ -1,21 +1,23 @@
 <?php
 	
 	// GENERAL INIT
+	$sepPrefix = 'testimonial';
 	$templatePath = get_template_directory();
+	$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
+	
+	/// SEPARATORS
+	$separatorLayout = $templatePartials . "separators.php";
+	include $separatorLayout;
 	
 	// GET THE BOX BACKGROUND COLOUR
 	//$bgColours = $templatePath . "/template-parts/kiss/static-partials/box-background-color.php";
-	include $templatePath . "/template-parts/kiss/static-partials/box-background-color.php";
-	
+	include $templatePartials . "box-background-color.php";
 	
 	$bg_image = get_sub_field('background_image');
 	
-
-	/// SEPARATORS INIT
-	$sepPrefix = 'testimonial';
-	$separatorLayout = $templatePath . "/template-parts/kiss/static-partials/separators.php";
+	/// TEXT CONTROLS
+	include $templatePartials . 'text-controls.php';
 	
-	include $separatorLayout;
 	
 	/// CONTAINER
 	$containerClass = 'container';
@@ -67,8 +69,13 @@
 	<div class="testimonials-list">
 		<section id="testimonialLoader-<?php echo $testimonial->ID;?>" class="testimonial-row testimonials-list__item flexi-inner">
 			<div class="<?= $containerClass; ?>">
-				<? if(!empty(get_sub_field('container_title'))):?>
-				<h2><?= get_sub_field('container_title');?></h2>
+				<? if(!empty(get_sub_field('testimonial_block_title'))):?>
+				<h2 class="<?= $titleTextClass ?>"><?= get_sub_field('testimonial_block_title');?></h2>
+				<? endif; ?>
+				<? if(!empty(get_sub_field('testimonials_intro_text'))):?>
+				<div class="<?= $introTextClass; ?> mb-5">
+					<?= wpautop(get_sub_field('testimonials_intro_text')); ?>
+				</div>
 				<? endif; ?>
 				<div class="row">
 	<?php

@@ -19,12 +19,24 @@ endif;
 $cardCssRow = 'flex-column ';
 $cardCssImage = '';
 $cardCssContent = '';
+$imageCol = 'col-12 col-sm-3 col-lg-4';
+$contentCol = 'col-12 col-sm-9 col-lg-8';
+
+
+if(!empty($imageColXs || $imageColSm || $imageColMd || $imageColLg || $imageColXl)){
+    $imageCol = $imageColXs . ' ' . $imageColSm . ' ' . $imageColMd . ' ' . $imageColLg . ' ' . $imageColXl . ' justify-content-center';
+    $contentCol = 'col';
+}
 
 if($cardDesign == 'row'):
     $cardCssRow = 'row';
-    $cardCssImage = 'd-flex align-items-center col-12 col-sm-3 col-lg-4';
-    $cardCssContent = 'col-12 col-sm-9 col-lg-8';
+    $cardCssImage = 'd-flex align-items-center ' .  $imageCol;
+    $cardCssContent = $contentCol;
 endif;
+
+/// COLUMN CONTROLS
+///include $templatePartials . "column-selector.php";
+
 
 if($cardType == 'momentum'):
     $cardCssRow = $cardCssRow . 'cards-card__momentum ';
@@ -35,7 +47,7 @@ endif;
 <div class="cards-card <?= $cardBackgroundColor . ' ' . $shadow . ' ' . $cardCssRow . ' ' . $boxPaddingCss; ?>">
     <? include $cardPartials . "card_image_custom.php"; ?>
     <div class="cards-card__content <?= $cardCssContent . ' ' . $cardDirection; ?>">
-        <div class="cards-card__copy">
+        <div class="cards-card__copy mb-4">
             <? include $cardPartials . "card_content.php"; ?>
         </div>
         <? include $templatePartials . "add-button.php"; ?>
