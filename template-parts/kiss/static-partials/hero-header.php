@@ -27,11 +27,19 @@
 	$heroH1Size = 'font-md';
 	$heroH1Size = get_theme_mod( 'hero_h1_size', 0 );
 	
+	if(empty($titleTextClassG)){
+		$titleTextClassG = $heroTextColor . ' ' . $heroH1Size;
+	}
+	
 	$colWidth = 'w-75';
 	$colWidth = get_theme_mod('header_content_width', 0 );
 	
 	$contentSize = 'text-md';
 	$contentSize = get_theme_mod('hero_header_content_size', 0);
+	
+	if(empty($introTextClassG)) {
+		$introTextClassG  = $contentSize . ' ' . $heroTextColor;
+	}
 	
 	$paddingY = 'py-0';
 	$paddingY = get_theme_mod('hero_padding', 0);
@@ -199,12 +207,12 @@
 				<div class="hero-header__content">
 					<div class="row">
 						<div class="<?= $colClassLeft; ?>">
-							<div class="<?= $heroTextColor . ' ' .  $contentSize; ?> mb-4">
+							<? if(!empty($heroTitle)): ?>
+							<h1 class="<?= $titleTextClassG; ?>"><?= $heroTitle; ?></h1>
+							<? endif; ?>
+							<div class="<?= $introTextClassG; ?> mb-4">
 							<?= apply_filters('the_content', $heroContent); ?>
 							</div>
-							<? if(!empty($heroTitle)): ?>
-							<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
-							<? endif; ?>
 						</div>
 						<div class="<?= $colClassRight; ?>">
 							<? if(!empty($heroTopImage)): ?>

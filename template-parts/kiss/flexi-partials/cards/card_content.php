@@ -1,8 +1,12 @@
 <?
 
 if($titlePos == false):
-    echo $title;
-    echo $subTitle;
+    if(!empty($title)):
+        echo $title;
+    endif;
+    if(!empty($subTitle)):
+        echo $subTitle;
+    endif;
 endif; ?>
 <? if(!empty($cardContent)){?>
 <div class="<?= $contentTextClass; ?>">
