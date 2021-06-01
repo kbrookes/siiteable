@@ -37,8 +37,32 @@ endif;
     <div class="cards-card__content <?= $cardCssContent . ' ' . $cardDirection; ?>">
         <div class="cards-card__copy">
             <? include $cardPartials . "card_content.php"; ?>
+            <? var_dump($postType); ?>
         </div>
         <? include $templatePartials . "add-button.php"; ?>
     </div>
 </div>
 </div>
+
+<?
+// Custom WP query query
+$args_query = array(
+    'post_type' => array('post'),
+    'post_status' => array('publish'),
+    'posts_per_page' => 1,
+    'nopaging' => true,
+    'order' => 'DESC',
+    'category_name' => 'uncategorized',
+);
+
+$query = new WP_Query( $args_query );
+
+if ( $query->have_posts() ) {
+    while ( $query->have_posts() ) {
+        $query->the_post();
+    }
+} else {
+
+}
+
+wp_reset_postdata();
