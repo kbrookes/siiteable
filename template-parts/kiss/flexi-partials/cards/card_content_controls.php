@@ -2,7 +2,7 @@
 
 $postType = get_sub_field($sepPrefix . '_post_type');
 $catSelect = '';
-
+$catSlug = '';
 switch($postType) {
     case "single":
         $selectedPost = get_sub_field($sepPrefix . '_post_select');
@@ -16,6 +16,12 @@ switch($postType) {
         break;
 }
 
+if(empty($catSelect)){
+    $catSlug = 'uncategorized';
+} else {
+    $catSlug = $catSelect->name;
+}
+
 if($postType == 'featured'):
     // GET FEATURED POSTS
     $args_query = array(
@@ -24,9 +30,32 @@ if($postType == 'featured'):
         'posts_per_page' => 1,
         'nopaging' => true,
         'order' => 'DESC',
-        'category_name' => $catSelect,
+        'category_name' => $catSlug,
         'meta_key'         => 'featured_post',
         'meta_value'       => '1',
+    );
+    
+    $query = new WP_Query( $args_query );
+    
+    if ( $query->have_posts() ) {
+        while ( $query->have_posts() ) {
+            $query->the_post();
+            $pageID = get_the_ID();
+            $selectedPost = get_post();
+        }
+    }
+    wp_reset_postdata();
+elseif($postType == 'latest'):
+    // GET LATEST POSTS
+    $args_query = array(
+        'post_type' => array('post'),
+        'post_status' => array('publish'),
+        'posts_per_page' => 1,
+        'nopaging' => true,
+        'order' => 'DESC',
+        'category_name' => $catSlug,
+        'meta_key'         => 'featured_post',
+        'meta_value'       => '0',
     );
     
     $query = new WP_Query( $args_query );
