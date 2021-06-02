@@ -1,5 +1,6 @@
 <?
- $boxAR = get_sub_field($sepPrefix . '_image_ar');
+    
+    $boxAR = get_sub_field($sepPrefix . '_image_ar');
 ?>
 <div class="image-box <?= $boxAR . ' ' . $hasOverlayClass . ' ' . $cardCssImage . ' ' . $imageClass; ?>" style="background-image: url(<?= $image; ?>);">
     <?= $btnLinkOpen; ?>
