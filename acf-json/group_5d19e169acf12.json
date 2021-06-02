@@ -1991,16 +1991,6 @@
                                         ],
                                         [
                                             {
-                                                "field": "field_608d12801a536",
-                                                "operator": "==",
-                                                "value": "get-post"
-                                            },
-                                            {
-                                                "field": "field_608e068b7f245",
-                                                "operator": "==",
-                                                "value": "single"
-                                            },
-                                            {
                                                 "field": "field_608e07ad7f247",
                                                 "operator": "==",
                                                 "value": "post_image"
@@ -2303,7 +2293,22 @@
                                     "type": "clone",
                                     "instructions": "",
                                     "required": 0,
-                                    "conditional_logic": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608d12801a536",
+                                                "operator": "==",
+                                                "value": "manual"
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                "field": "field_608d12801a536",
+                                                "operator": "==",
+                                                "value": "momentum"
+                                            }
+                                        ]
+                                    ],
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
@@ -2311,6 +2316,42 @@
                                     },
                                     "clone": [
                                         "group_5d48ec70c0c85"
+                                    ],
+                                    "display": "group",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 1
+                                },
+                                {
+                                    "key": "field_60b6e7c527b33",
+                                    "label": "Add a button",
+                                    "name": "card_button_controls",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608d12801a536",
+                                                "operator": "==",
+                                                "value": "get-post"
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                "field": "field_608d12801a536",
+                                                "operator": "==",
+                                                "value": "multi-post"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "100",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "group_6087a906061a5"
                                     ],
                                     "display": "group",
                                     "layout": "block",
@@ -6261,5 +6302,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622533985
+    "modified": 1622612028
 }
