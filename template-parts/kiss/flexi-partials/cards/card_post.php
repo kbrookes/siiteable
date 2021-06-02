@@ -7,9 +7,24 @@ endif;
 // GET BUTTONS
 $addButton = get_sub_field($sepPrefix . '_button');
 $showButton = $addButton['add_button'];
-if($showButton != false):
+if($showButton != false){
     include $templatePartials . "/buttons-array.php";
-endif;	
+} elseif($showButton == false && $cardType == 'get-post') {
+    $showButton == true;
+    include $templatePartials . "/buttons-simple.php";
+    $addButton = array(
+        'button_alignment'    => $simpleButtonAlign,
+        'add_button'          => true,
+        'button_options'      => array(
+            'button_link_type'    => 'page',
+            'button_page_link'    => get_permalink($pageID),
+            'button_text_copy'    => $simpleButtonText,
+            'btn_color'           => $simpleButtonColor,
+            'button_size'         => $simpleButtonSize
+        )
+    );
+    include $templatePartials . "/buttons-array.php";
+}
 
 $hasOverlay = false;
 if(get_sub_field($sepPrefix . '_overlay_add_overlay') == true):
@@ -30,7 +45,7 @@ if(!empty($imageColXs || $imageColSm || $imageColMd || $imageColLg || $imageColX
 
 if($cardDesign == 'row'):
     $cardCssRow = 'row';
-    $cardCssImage = 'd-flex align-items-center ' .  $imageCol;
+    $cardCssImage = 'd-flex align-items-center ';
     $cardCssContent = $contentCol;
 endif;
 
@@ -44,37 +59,13 @@ endif;
 
 ?>
 <div class="<?= $colCount; ?>">
-<div class="cards-card <?= $cardBackgroundColor . ' ' . $shadow . ' ' . $cardCssRow . ' ' . $boxPaddingCss; ?>">
-    <? include $cardPartials . "card_image_custom.php"; ?>
-    <div class="cards-card__content <?= $cardCssContent . ' ' . $cardDirection; ?>">
-        <div class="cards-card__copy mb-4">
-            <? include $cardPartials . "card_content.php"; ?>
-            <? var_dump($postType); ?>
+    <div class="cards-card <?= $cardBackgroundColor . ' ' . $shadow . ' ' . $cardCssRow . ' ' . $boxPaddingCss; ?>">
+        <? include $cardPartials . "card_image_custom.php"; ?>
+        <div class="cards-card__content <?= $cardCssContent . ' ' . $cardDirection; ?>">
+            <div class="cards-card__copy mb-4">
+                <? include $cardPartials . "card_content.php"; ?>              
+            </div>
+            <? include $templatePartials . "add-button.php"; ?>
         </div>
-        <? include $templatePartials . "add-button.php"; ?>
     </div>
 </div>
-</div>
-
-<?
-// Custom WP query query
-$args_query = array(
-    'post_type' => array('post'),
-    'post_status' => array('publish'),
-    'posts_per_page' => 1,
-    'nopaging' => true,
-    'order' => 'DESC',
-    'category_name' => 'uncategorized',
-);
-
-$query = new WP_Query( $args_query );
-
-if ( $query->have_posts() ) {
-    while ( $query->have_posts() ) {
-        $query->the_post();
-    }
-} else {
-
-}
-
-wp_reset_postdata();

@@ -38,9 +38,11 @@ if(($cardType == "multi-post") || (($cardType == "get-post") && ($imageSource ==
     // NO image
 }
 
-if($imageType == 'bg-image'):
-    include $templatePartials . "image-ratio-box.php";
-elseif(!empty($cardImage)):?>
+if($imageType == 'bg-image'):?>
+<div class="<?= $imageCol; ?>">
+    <? include $templatePartials . "image-ratio-box.php"; ?>
+</div>
+<? elseif(!empty($cardImage)):?>
 <div class="cards-card__header <?= $cardCssImage . ' ' . $iconClass; ?>">
     <?
     echo $btnLinkOpen;
