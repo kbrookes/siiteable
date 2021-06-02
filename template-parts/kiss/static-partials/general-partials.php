@@ -11,7 +11,7 @@ $containerDirection = 'text-' . get_sub_field($sepPrefix . '_container_direction
 /// CONTAINER SIZE
 $containerSize = get_sub_field($sepPrefix . '_container_size');
 if(!empty($containerSize)){
-    
+    $containerSize = get_sub_field($sepPrefix . '_container_size');
 } else {
     $containerSize = 'container';
 }

@@ -106,14 +106,14 @@ article {
 }
 
 .separator-fill {
-	fill: $brand-primary;
+	fill: $primary;
 	&__foreground {
-		fill: $brand-primary;
+		fill: $primary;
 		.fg-primary & {
-			fill: $brand-primary;
+			fill: $primary;
 		}
 		.fg-secondary & {
-			fill: $brand-secondary;
+			fill: $secondary;
 		}
 		.fg-dark & {
 			fill: $background-dark;
@@ -129,12 +129,12 @@ article {
 		}
 	}
 	&__background {
-		fill: darken($brand-primary, 20%);
+		fill: darken($primary, 20%);
 		.shadow-primary & {
-			fill: $brand-primary;
+			fill: $primary;
 		}
 		.shadow-secondary & {
-			fill: $brand-secondary;
+			fill: $secondary;
 		}
 		.shadow-dark & {
 			fill: $background-dark;

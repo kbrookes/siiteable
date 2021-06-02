@@ -2245,7 +2245,7 @@
                                     "key": "field_5f2cc04b856ff",
                                     "label": "Card Content",
                                     "name": "card_content",
-                                    "type": "textarea",
+                                    "type": "wysiwyg",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": [
@@ -2275,10 +2275,10 @@
                                         "id": ""
                                     },
                                     "default_value": "",
-                                    "placeholder": "",
-                                    "maxlength": "",
-                                    "rows": "",
-                                    "new_lines": ""
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0
                                 },
                                 {
                                     "key": "field_608d13d3b63fc",
@@ -2413,7 +2413,7 @@
                                 ]
                             ],
                             "wrapper": {
-                                "width": "25",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -2426,6 +2426,27 @@
                             "default_value": "order-last",
                             "layout": "horizontal",
                             "return_format": "value"
+                        },
+                        {
+                            "key": "field_60b5c51cb36bf",
+                            "label": "Image Column Size",
+                            "name": "card_col",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_609b552ceadc9"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 1,
+                            "prefix_name": 1
                         },
                         {
                             "key": "field_609c97d5ce50a",
@@ -2507,6 +2528,27 @@
                             "prefix_name": 1
                         },
                         {
+                            "key": "field_60b5b7f2d2815",
+                            "label": "Icon Controls",
+                            "name": "card_icon",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_60b5b6d2d4b7d"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 1
+                        },
+                        {
                             "key": "field_6077c1d48b1d6",
                             "label": "Card Background Colour",
                             "name": "card_background_colour",
@@ -2578,7 +2620,7 @@
                         {
                             "key": "field_5f2ccd86f077f",
                             "label": "Container size",
-                            "name": "cards_container_size",
+                            "name": "card_container_size",
                             "type": "button_group",
                             "instructions": "",
                             "required": 0,
@@ -2688,7 +2730,7 @@
                                 {
                                     "key": "field_5f2cc0eb85707",
                                     "label": "Block Upper Separator",
-                                    "name": "block_upper_separator",
+                                    "name": "card_upper_separator",
                                     "type": "clone",
                                     "instructions": "",
                                     "required": 0,
@@ -2724,8 +2766,8 @@
                                 },
                                 {
                                     "key": "field_5f2cc0eb85709",
-                                    "label": "Block Lower Separator",
-                                    "name": "block_lower_separator",
+                                    "label": "Card Lower Separator",
+                                    "name": "card_lower_separator",
                                     "type": "clone",
                                     "instructions": "",
                                     "required": 0,
@@ -3821,6 +3863,102 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_60b5e1b1bb1db",
+                            "label": "Intro",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5ea0fab399f9a",
+                            "label": "Testimonials Intro Title",
+                            "name": "testimonial_block_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_60b5e1eabb1dc",
+                            "label": "Title Font Controls",
+                            "name": "testimonial_title",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6076c01d3fc68"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 1,
+                            "prefix_name": 1
+                        },
+                        {
+                            "key": "field_60b5e21ebb1dd",
+                            "label": "Testimonials Intro Text",
+                            "name": "testimonials_intro_text",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_60b5e240bb1de",
+                            "label": "Intro Font Controls",
+                            "name": "testimonial_intro",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6076c01d3fc68"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 1,
+                            "prefix_name": 1
+                        },
+                        {
                             "key": "field_5ea0d7484e5a9",
                             "label": "Testimonials Selector",
                             "name": "",
@@ -4017,25 +4155,6 @@
                             },
                             "placement": "top",
                             "endpoint": 0
-                        },
-                        {
-                            "key": "field_5ea0fab399f9a",
-                            "label": "Container Title",
-                            "name": "container_title",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
                         },
                         {
                             "key": "field_5ea0f7ece3c17",
@@ -6142,5 +6261,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1620905682
+    "modified": 1622533985
 }
