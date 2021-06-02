@@ -63,7 +63,7 @@ endif;
         <? include $cardPartials . "card_image_custom.php"; ?>
         <div class="cards-card__content <?= $cardCssContent . ' ' . $cardDirection; ?>">
             <div class="cards-card__copy mb-4">
-                <? include $cardPartials . "card_content.php"; ?>              
+                <? include $cardPartials . "card_content.php"; ?>
             </div>
             <? include $templatePartials . "add-button.php"; ?>
         </div>
