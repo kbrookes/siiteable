@@ -46,6 +46,7 @@
 			if(!empty($blockTitle)){
 				echo '<h2 class="' . $titleTextClass . '">' . $blockTitle . '</h2>';
 			} 
+			//var_dump(get_field_objects());
 			if(!empty($blockIntro)){?>
 			<div class="<?= $introTextClass; ?> mb-4">
 				<?= $blockIntro; ?>
