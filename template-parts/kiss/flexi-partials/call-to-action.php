@@ -38,11 +38,11 @@
 	<div class="cta-wrap flexi-inner">
 		<div class="container">
 			<div class="cta-wrap__inner">
-				<? if(get_sub_field('cta_title')):?>
-					<h2 class="<?= $textClass; ?>"><? the_sub_field('cta_title'); ?></h2>
+				<? if(get_sub_field('cta_block_title')):?>
+					<h2 class="<?= $titleTextClass; ?>"><? the_sub_field('cta_block_title'); ?></h2>
 				<? endif; ?>
 				<? if(get_sub_field('cta_content')):?>
-				<div class="cta-wrap__content m-t__sm <?= $textClass; ?>">
+				<div class="cta-wrap__content m-t__sm <?= $introTextClass; ?>">
 					<? the_sub_field('cta_content'); ?>
 				</div>
 				<? endif; ?>
