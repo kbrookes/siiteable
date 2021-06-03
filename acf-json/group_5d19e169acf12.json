@@ -1783,6 +1783,43 @@
                                     "ui": 1
                                 },
                                 {
+                                    "key": "field_60b75dcc46802",
+                                    "label": "Select Category",
+                                    "name": "card_post_category",
+                                    "type": "taxonomy",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_608e068b7f245",
+                                                "operator": "==",
+                                                "value": "featured"
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                "field": "field_608e068b7f245",
+                                                "operator": "==",
+                                                "value": "latest"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "taxonomy": "category",
+                                    "field_type": "select",
+                                    "allow_null": 0,
+                                    "add_term": 1,
+                                    "save_terms": 0,
+                                    "load_terms": 0,
+                                    "return_format": "object",
+                                    "multiple": 0
+                                },
+                                {
                                     "key": "field_608e07ad7f247",
                                     "label": "Image Options",
                                     "name": "card_post_image",
@@ -3664,7 +3701,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_6076c4616cf33"
+                                "group_6076c01d3fc68"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -6307,5 +6344,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622628550
+    "modified": 1622634541
 }
