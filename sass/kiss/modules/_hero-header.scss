@@ -17,6 +17,23 @@
 		overflow: hidden;
 		position: relative;
 		width: 100%;
+		transition: 1s ease-in all;
+		@include media-breakpoint-up(xs){
+			padding-top: 74px;
+		}
+		@include media-breakpoint-up(sm){
+			padding-top: 74px;
+		}
+		@include media-breakpoint-up(md){
+			padding-top: 78px;
+		}
+		@include media-breakpoint-up(lg){
+			padding-top: 83px;
+		}
+		@include media-breakpoint-up(xl){
+			padding-top: 87px;
+		}
+		
 		.container {
 			//align-items: flex-end;
 			display: flex;
