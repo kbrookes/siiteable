@@ -581,7 +581,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "30",
                 "class": "",
                 "id": ""
             },
@@ -603,11 +603,38 @@
             "placeholder": ""
         },
         {
+            "key": "field_60b82a53c8021",
+            "label": "Override Vertical Align",
+            "name": "hero_override_vertical",
+            "type": "select",
+            "instructions": "Overrides the vertical alignment set in the customiser",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "false": "No",
+                "align-items-start": "Align Top",
+                "align-items-center": "Align Center",
+                "align-items-end": "Align Bottom"
+            },
+            "default_value": "No",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_5e4a04d97999b",
             "label": "Background Colour",
             "name": "hero_background_colour",
             "type": "select",
-            "instructions": "",
+            "instructions": "Provides a background colour for the entire section",
             "required": 0,
             "conditional_logic": [
                 [
@@ -619,7 +646,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "50",
+                "width": "30",
                 "class": "",
                 "id": ""
             },
@@ -736,5 +763,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622680364
+    "modified": 1622682481
 }
