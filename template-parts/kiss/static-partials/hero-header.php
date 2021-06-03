@@ -13,16 +13,21 @@
 	
 	//// CUSTOMIZER OPTIONS
 	$heroHeight = get_theme_mod( 'hero_header_height', 0 );
-	$heroSettings = get_field($sepPrefix . '_override_height');
+	$heroHeightOverride = get_field($sepPrefix . '_override_height');
 	// Override on a per-post basis
-	if($heroSettings == "false"):
+	if($heroHeightOverride == "false"):
 		$heroHeight = get_theme_mod( 'hero_header_height', 0 );
 	else:
-		$heroHeight = get_field($sepPrefix . '_override_height');
+		$heroHeight = $heroHeightOverride;
 	endif;
 	
 	$heroAlignment = 'align-items-center';
-	$heroAlignment = get_theme_mod( 'hero_vertical_alignment', 0 );
+	$heroAlignOverride = get_field($sepPrefix . '_override_vertical');
+	if($heroAlignOverride == "false"):
+		$heroAlignment = get_theme_mod( 'hero_vertical_alignment', 0 );
+	else:
+		$heroAlignment = $heroAlignOverride;
+	endif;
 	
 	$heroTextColor = 'text-white';
 	$heroTextColor = get_theme_mod( 'hero_text_color', 0 );

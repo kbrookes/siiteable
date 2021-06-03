@@ -8,6 +8,9 @@ article {
 		position: absolute;
 		width: 100%;
 		z-index: 101;
+		&__upper {
+			top: 0;
+		}
 		&__lower {
 			bottom: 0;
 		}
@@ -147,6 +150,52 @@ article {
 		}
 		.shadow-alternate & {
 			fill: $alternate;
+		}
+	}
+}
+
+/// SET PADDING OVERRIDES
+.pb {
+	&-pc {
+		&_2 {
+			padding-bottom: 2% !important;
+		}
+		&_5 {
+			padding-bottom: 5% !important;
+		}
+		&_7 {
+			padding-bottom: 7% !important;
+		}
+		&_10 {
+			padding-bottom: 10% !important;
+		}
+		&_12 {
+			padding-bottom: 12% !important;
+		}
+		&_15 {
+			padding-bottom: 15% !important;
+		}
+	}
+} 
+.pt {
+	&-pc {
+		&_2 {
+			padding-top: 2% !important;
+		}
+		&_5 {
+			padding-top: 5% !important;
+		}
+		&_7 {
+			padding-top: 7% !important;
+		}
+		&_10 {
+			padding-top: 10% !important;
+		}
+		&_12 {
+			padding-top: 12% !important;
+		}
+		&_15 {
+			padding-top: 15% !important;
 		}
 	}
 }
