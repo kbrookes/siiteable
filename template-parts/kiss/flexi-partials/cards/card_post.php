@@ -44,7 +44,7 @@ if(!empty($imageColXs || $imageColSm || $imageColMd || $imageColLg || $imageColX
 }
 
 if($cardDesign == 'row'):
-    $cardCssRow = 'row';
+    $cardCssRow = 'row cards-card__horizontal';
     $cardCssImage = 'd-flex align-items-center ';
     $cardCssContent = $contentCol;
 endif;

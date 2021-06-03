@@ -38,8 +38,10 @@
 			align-items: stretch;
 			display: flex;
 			flex-direction: column;
-			height: 100%;
 			justify-content: space-between;
+			@include media-breakpoint-up(md){
+				height: 100%;
+			}
 			///padding: 1rem; <- Not sure why that was in there. Inteferes with horizontal cards.
 			h3 {
 				a {
@@ -53,6 +55,18 @@
 				margin-bottom: 1.5rem;
 				&:last-child {
 					margin-bottom: 0;
+				}
+			}
+		}
+		&__horizontal {
+			.image-box {
+				@include media-breakpoint-down(sm){
+					margin-bottom: 1rem;
+				}
+			}
+			.cards-card__image {
+				@include media-breakpoint-down(sm){
+					order: -1;
 				}
 			}
 		}
