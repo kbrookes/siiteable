@@ -21,6 +21,7 @@ if(get_sub_field($sepPrefix . '_button_button_options')):
 	$btnColor = $buttonData['btn_color'];
 	$btnSize = $buttonData['button_size'];
 	$buttonShadow = $buttonData['button_shadow_shadow_select'];
+	$buttonPadding = $buttonData['button_padding'];
 	$buttonIcon = $buttonData['button_icon'];
 	$buttonIcon = '<i class="' . $faType . ' ' . $buttonIcon . '"></i>';
 	$iconAlign = $buttonData['button_icon_placement'];
@@ -65,7 +66,7 @@ if(get_sub_field($sepPrefix . '_button_button_options')):
 			$linkContent = get_permalink($pageID);
 		break;
 	}
-	$btnClass = $btnSize . ' ' . $btnColor . ' ' . $linkClass . ' ' . $buttonShadow;
+	$btnClass = $btnSize . ' ' . $btnColor . ' ' . $linkClass . ' ' . $buttonPadding . ' ' . $buttonShadow;
 	if($iconAlign == 'left'):
 		$iconLeft = $buttonIcon . ' ';
 	elseif($iconAlign == 'right'):

@@ -11,6 +11,9 @@
 	/// TEXT CONTROLS
 	include $templatePartials . 'text-controls.php';
 	
+	// Custom classes, container directionp & size, title, text
+	include $templatePartials . 'general-partials.php';
+	
 	// GET BACKGROUND IMAGE
 	$bg_image = get_sub_field('background_image');
 	
@@ -29,7 +32,7 @@
 	<?php if($addSeparatorUpper == true):
 		include $pathUpper;
 	endif; ?>
-	<div class="editable-content__inner flexi-inner">
+	<div class="editable-content__inner flexi-inner <?= $boxPaddingCss; ?>">
 		<div class="container">
 			<?php if(get_sub_field('editable_title')):?>
 			<h2 class="<?= $titleTextClass; ?>" ><?php the_sub_field('editable_title'); ?></h2>
