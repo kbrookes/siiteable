@@ -71,7 +71,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_6076c4616cf33"
+                                "group_6076c01d3fc68"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -2939,7 +2939,7 @@
                         {
                             "key": "field_5e491a3c56b0a",
                             "label": "Tab Title",
-                            "name": "tab_title",
+                            "name": "tab_block_title",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -2956,10 +2956,31 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_60b8bcdbfcd51",
+                            "label": "Title Font Controls",
+                            "name": "tab_title",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6076c01d3fc68"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 1,
+                            "prefix_name": 1
+                        },
+                        {
                             "key": "field_5e491a5056b0b",
                             "label": "Tab Intro",
-                            "name": "tab_intro",
-                            "type": "textarea",
+                            "name": "tab_intro_content",
+                            "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -2969,10 +2990,31 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": "",
-                            "maxlength": "",
-                            "rows": 4,
-                            "new_lines": ""
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_60b8bd28fcd52",
+                            "label": "Intro Font Controls",
+                            "name": "tab_intro",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6076c01d3fc68"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 1,
+                            "prefix_name": 1
                         },
                         {
                             "key": "field_5e49fa6585d24",
@@ -3142,6 +3184,27 @@
                                     "maxlength": ""
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_60b8c3cf3a6da",
+                            "label": "Tab Area Padding",
+                            "name": "tab_box",
+                            "type": "clone",
+                            "instructions": "This controls padding around the tab area, not the intro area above.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6076c22a11ade"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 1
                         },
                         {
                             "key": "field_5e49f48a3cda4",
@@ -3601,6 +3664,27 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
+                        },
+                        {
+                            "key": "field_60b8c2173a6d9",
+                            "label": "Padding Controls",
+                            "name": "padding_controls",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6076c22a11ade"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 1
                         }
                     ],
                     "min": "",
@@ -3661,7 +3745,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_6076c4616cf33"
+                                "group_6076c01d3fc68"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -3709,6 +3793,27 @@
                             "prefix_name": 1
                         },
                         {
+                            "key": "field_60b93c9b864fc",
+                            "label": "Padding Controls",
+                            "name": "editable_box",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6076c22a11ade"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 1
+                        },
+                        {
                             "key": "field_5e49f7bb9fd0f",
                             "label": "Container Style",
                             "name": "",
@@ -3733,7 +3838,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
@@ -3762,7 +3867,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "75",
                                 "class": "",
                                 "id": ""
                             },
@@ -6344,5 +6449,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622634541
+    "modified": 1622752469
 }
