@@ -586,6 +586,7 @@
                 "id": ""
             },
             "choices": {
+                "false": "No",
                 "header_xs": "XS",
                 "header_sm": "SM",
                 "header_md": "MD",
@@ -593,8 +594,8 @@
                 "header_xl": "XL",
                 "full_height": "Full Height"
             },
-            "default_value": false,
-            "allow_null": 1,
+            "default_value": "No",
+            "allow_null": 0,
             "multiple": 0,
             "ui": 0,
             "return_format": "value",
@@ -735,5 +736,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622527786
+    "modified": 1622680364
 }
