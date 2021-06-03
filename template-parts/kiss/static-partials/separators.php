@@ -34,6 +34,7 @@ if((get_sub_field($sepPrefix . '_separators') != '') && ($sepOptions[$sepPrefix 
 	$upperContainerColor = $sepOptions[$sepPrefix . '_upper_separator_container_background'];
 	$upperClassVertical = $sepOptions[$sepPrefix . '_upper_separator_direction_vertical'];
 	$upperClassHorizontal = $sepOptions[$sepPrefix . '_upper_separator_direction_horizontal'];
+	$upperClassPadding = $sepOptions[$sepPrefix . '_upper_separator_separator_padding'];
 	//if($upperSeparatorType == 'fan-center' || $upperSeparatorType == 'fan-side'):
 	//	$separatorClasses = 'upperPaddingDouble ';
 	//endif;
@@ -73,6 +74,10 @@ if($upperClassVertical == 'directionXup') {
 		$paddingUpper = 'paddingUpper-xl';
 	}
 }
+
+if($upperClassPadding != "false"){
+	$paddingUpper = 'pt-pc_' . $upperClassPadding;
+}
 	
 	
 	//&& $upperSeparatorType == 'fan-center' || $upperSeparatorType == 'fan-side')):
@@ -104,6 +109,7 @@ if((get_sub_field($sepPrefix . '_separators') != '') && ($sepOptions[$sepPrefix 
 	$lowerContainerColor = $sepOptions[$sepPrefix . '_lower_separator_container_background'];
 	$lowerClassVertical = $sepOptions[$sepPrefix . '_lower_separator_direction_vertical'];
 	$lowerClassHorizontal = $sepOptions[$sepPrefix . '_lower_separator_direction_horizontal'];
+	$lowerClassPadding = $sepOptions[$sepPrefix . '_lower_separator_separator_padding'];
 	//if($lowerSeparatorType == 'fan-center' || $lowerSeparatorType == 'fan-side'):
 	//	$separatorClasses .= ' lowerPaddingDouble ';
 	//endif;
@@ -141,6 +147,10 @@ if($lowerClassVertical == 'directionXdown'){
 	if($lowerSeparatorType == 'fan-center' || $lowerSeparatorType == 'fan-side'){
 		$paddingLower = 'paddingLower-xl';
 	}
+}
+
+if($lowerClassPadding != "false"){
+	$paddingLower = 'pb-pc_' . $lowerClassPadding;
 }
 
 $separatorClasses .= ' ' . $paddingUpper . ' ' . $paddingLower;
