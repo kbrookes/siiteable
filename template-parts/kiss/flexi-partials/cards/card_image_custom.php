@@ -39,11 +39,11 @@ if(($cardType == "multi-post") || (($cardType == "get-post") && ($imageSource ==
 }
 
 if($imageType == 'bg-image'):?>
-<div class="<?= $imageCol; ?>">
+<div class="cards-card__image <?= $imageCol; ?>">
     <? include $templatePartials . "image-ratio-box.php"; ?>
 </div>
 <? elseif(!empty($cardImage)):?>
-<div class="cards-card__header <?= $cardCssImage . ' ' . $iconClass; ?>">
+<div class="cards-card__header <?= $cardCssImage . ' ' . $iconClass . ' ' . $imageCol; ?>">
     <?
     echo $btnLinkOpen;
     echo $imageEl; 

@@ -13,8 +13,11 @@
 	
 	//// CUSTOMIZER OPTIONS
 	$heroHeight = get_theme_mod( 'hero_header_height', 0 );
+	$heroSettings = get_field($sepPrefix . '_override_height');
 	// Override on a per-post basis
-	if(!empty(get_field($sepPrefix . '_override_height'))):
+	if($heroSettings == "false"):
+		$heroHeight = get_theme_mod( 'hero_header_height', 0 );
+	else:
 		$heroHeight = get_field($sepPrefix . '_override_height');
 	endif;
 	
@@ -27,9 +30,9 @@
 	$heroH1Size = 'font-md';
 	$heroH1Size = get_theme_mod( 'hero_h1_size', 0 );
 	
-	if(empty($titleTextClassG)){
+	if($titleTextClassG == 'default default default text-left'):
 		$titleTextClassG = $heroTextColor . ' ' . $heroH1Size;
-	}
+	endif;
 	
 	$colWidth = 'w-75';
 	$colWidth = get_theme_mod('header_content_width', 0 );
@@ -212,6 +215,7 @@
 							<? endif; ?>
 							<div class="<?= $introTextClassG; ?> mb-4">
 							<?= apply_filters('the_content', $heroContent); ?>
+							
 							</div>
 						</div>
 						<div class="<?= $colClassRight; ?>">
