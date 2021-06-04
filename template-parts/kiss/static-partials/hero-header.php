@@ -1,6 +1,13 @@
 <? 
 	
 	$page_id = get_queried_object_id();
+	$blogID = get_option( 'page_for_posts' );
+	$isBlogPage = false;
+	if($blogID == $page_id){
+		$isBlogPage = true;
+	} else {
+		$isBlogPage = false;
+	}
 	
 	/// SEPARATORS INIT
 	$postType = get_post_type();
@@ -13,7 +20,11 @@
 	
 	//// CUSTOMIZER OPTIONS
 	$heroHeight = get_theme_mod( 'hero_header_height', 0 );
-	$heroHeightOverride = get_field($sepPrefix . '_override_height');
+	if($isBlogPage){
+		$heroHeightOverride = get_field('override_height', 'options');
+	} else {
+		$heroHeightOverride = get_field($sepPrefix . '_override_height');
+	}
 	// Override on a per-post basis
 	if($heroHeightOverride == "false"):
 		$heroHeight = get_theme_mod( 'hero_header_height', 0 );
@@ -188,6 +199,7 @@
 	
 	$faType = get_theme_mod( 'fa_styles');
 	
+	
 	if($heroTitle || $heroImage || $heroContent)	:?>
 <section id="heroHeader" class="hero-header  <? echo $separatorClasses . ' ' . $heroHeight; ?> <? if($heroBG): echo $heroBG; endif; ?> <? if($heroType == 'video'):?>video-hero video-type__<? echo $videoType; ?><? endif; ?>">
 	<div class="hero-header__wrap <? echo $overlayClass; ?>" <? if($heroImage):?>style="background-image:url(<? echo $heroImage; ?>)"<? endif; ?>>
@@ -220,7 +232,6 @@
 							<? endif; ?>
 							<div class="<?= $introTextClassG; ?> mb-4">
 							<?= apply_filters('the_content', $heroContent); ?>
-							
 							</div>
 						</div>
 						<div class="<?= $colClassRight; ?>">
