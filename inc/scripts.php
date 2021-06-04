@@ -10,13 +10,12 @@ function siiteable_scripts()
     "strappress-style",
     get_stylesheet_directory_uri() . "/style.css",
     [],
-    "4.6.4"
+    "4.7.4"
   );
 
-  wp_enqueue_style("strappress-font-regular", get_stylesheet_directory_uri() . "/fonts/lato-v17-latin-regular.woff2", array(), null);
-  wp_enqueue_style("strappress-font-light", get_stylesheet_directory_uri() . "/fonts/lato-v17-latin-300.woff2", array(), null);
-  wp_enqueue_style("strappress-font-bold", get_stylesheet_directory_uri() . "/fonts/lato-v17-latin-700.woff2", array(), null);
-  wp_enqueue_style("strappress-font-heading", get_stylesheet_directory_uri() . "/fonts/bebas-neue-v2-latin-regular.woff2", array(), null);
+  wp_enqueue_style("strappress-font-regular", get_stylesheet_directory_uri() . "/fonts/open-sans-v18-latin-regular.woff2", array(), null);
+  wp_enqueue_style("strappress-font-light", get_stylesheet_directory_uri() . "/fonts/open-sans-v18-latin-300.woff2", array(), null);
+  wp_enqueue_style("strappress-font-bold", get_stylesheet_directory_uri() . "/fonts/open-sans-v18-latin-700.woff2", array(), null);
   wp_enqueue_style("strappress-fontawesome-base", get_stylesheet_directory_uri() . "/css/fontawesome.min.css", array(), null);
   
   $faType = get_theme_mod( 'fa_styles');

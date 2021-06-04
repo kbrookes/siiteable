@@ -226,7 +226,7 @@
 			<div class="hero-header__wrap-inner">
 				<div class="hero-header__content">
 					<div class="row">
-						<div class="<?= $colClassLeft; ?>">
+						<div class="<?= $colClassLeft; ?> align-items-center d-flex">
 							<? if(!empty($heroTitle)): ?>
 							<h1 class="<?= $titleTextClassG; ?>"><?= $heroTitle; ?></h1>
 							<? endif; ?>
