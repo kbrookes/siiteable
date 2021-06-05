@@ -20,6 +20,8 @@
                 "compound-angle": "Compound Angle",
                 "angle-center": "Angle - Center",
                 "angle-side": "Angle - Side",
+                "notch": "Center Notch",
+                "waves": "Waves",
                 "round-center": "Round - Center",
                 "round-side": "Round - Side",
                 "fan-center": "Transparency fan - Center",
@@ -228,5 +230,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1622685217
+    "modified": 1622784955
 }
