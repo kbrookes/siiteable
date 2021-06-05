@@ -119,10 +119,10 @@ article {
 			fill: $secondary;
 		}
 		.fg-dark & {
-			fill: $background-dark;
+			fill: $dark;
 		}
 		.fg-light & {
-			fill: $background-light;
+			fill: $light;
 		}
 		.fg-white & {
 			fill: $white;
@@ -140,10 +140,10 @@ article {
 			fill: $secondary;
 		}
 		.shadow-dark & {
-			fill: $background-dark;
+			fill: $dark;
 		}
 		.shadow-light & {
-			fill: $background-light;
+			fill: $light
 		}
 		.shadow-white & {
 			fill: $white;

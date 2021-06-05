@@ -10,7 +10,7 @@
 		background-size: cover;
 		position: relative;
 		/*&::before {
-			background-color: rgba($background-dark, 0.7);
+			background-color: rgba($dark, 0.7);
 			content: '';
 			left: 0;
 			height: 100%;
@@ -35,22 +35,22 @@
 		}
 		&.overlay-primary {
 			&:before {
-				background-color: $brand-primary;
+				background-color: $primary;
 			}
 		}
 		&.overlay-secondary {
 			&:before {
-				background-color: $brand-secondary;
+				background-color: $secondary;
 			}
 		}
 		&.overlay-dark {
 			&:before {
-				background-color: $background-dark;
+				background-color: $dark;
 			}
 		}
 		&.overlay-light {
 			&:before {
-				background-color: $background-light;
+				background-color: $light;
 			}
 		}
 		&.overlay-white {
@@ -141,32 +141,12 @@
 				max-width: 800px;
 			}
 		}
-		.bg-primary &,
-		.bg-secondary &,
-		.bg-dark & {
-			h2 {
-				color: $white;
-			}
-		}
 		@include media-breakpoint-up(xs) {
 			padding-bottom: 60px;
 			padding-top: 60px;
 		}
 		&__inner {
-			.bg-dark & {
-				color: $white;
-				h1, h2, h3, h4, h5, p {
-					color: $white;
-				}
-			}
-			.bg-primary &,
-			.bg-secondary &,
-			.bg-light &,
-			.bg-white {
-				h1, h2, h3, h4, h5, p {
-					color: $dark;
-				}
-			}
+			
 		}
 	}
 }
