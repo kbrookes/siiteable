@@ -27,7 +27,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "75",
                 "class": "",
                 "id": ""
             },
@@ -38,6 +38,28 @@
                 "Individual Sides": "Individual Sides"
             },
             "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_60bd8bc22c532",
+            "label": "Padding Target",
+            "name": "padding_target",
+            "type": "button_group",
+            "instructions": "Target the entire card or just the content area? (only works for cards)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "content": "Content",
+                "card": "Card"
+            },
+            "allow_null": 1,
             "default_value": "",
             "layout": "horizontal",
             "return_format": "value"
@@ -366,5 +388,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1620899210
+    "modified": 1623035027
 }
