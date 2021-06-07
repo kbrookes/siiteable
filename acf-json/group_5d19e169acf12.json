@@ -4421,7 +4421,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
@@ -4444,7 +4444,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
@@ -4465,28 +4465,23 @@
                             "placeholder": ""
                         },
                         {
-                            "key": "field_5d6c79b69a5c2",
-                            "label": "Background Image",
-                            "name": "background_image",
-                            "type": "image",
+                            "key": "field_5e40efdcec044",
+                            "label": "Custom Class",
+                            "name": "testimonial_class",
+                            "type": "text",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "url",
-                            "preview_size": "large",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         },
                         {
                             "key": "field_5d4d115045035",
@@ -4497,7 +4492,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
@@ -4607,10 +4602,10 @@
                             ]
                         },
                         {
-                            "key": "field_5e40efdcec044",
-                            "label": "Custom Class",
-                            "name": "testimonial_class",
-                            "type": "text",
+                            "key": "field_5d6c79b69a5c2",
+                            "label": "Background Image",
+                            "name": "background_image",
+                            "type": "image",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -4619,11 +4614,16 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "return_format": "url",
+                            "preview_size": "large",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
                         }
                     ],
                     "min": "",
@@ -6517,5 +6517,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623034012
+    "modified": 1623044415
 }

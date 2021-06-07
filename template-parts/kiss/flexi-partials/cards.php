@@ -76,16 +76,20 @@
 			<div class="row <?= $gutters . ' ' . $cardBottomMargin; ?>">
 				<? while (have_rows($sepPrefix . '_add_cards')) : the_row(); 
 					
-					$cardCount++;
-					$even_odd_class = ( ($cardCount % 2) == 0 ) ? "even" : "odd"; 
-					if($cardDirection == 'alternating'){
+					if($cardDirection != 'alternating'){
+						$cardOrder = $cardDirection;
+					} else {
+						$cardCount++;
+						$even_odd_class = ( ($cardCount % 2) == 0 ) ? "even" : "odd"; 
 						if($even_odd_class == 'even'){
-							$cardDirection = 'order-last';
+							$cardOrder = 'order-last';
+							//$cardDirection = 'order-last';
 						} else {
-							$cardDirection = 'order-first';
+							$cardOrder = 'order-first';
+							//$cardDirection = 'order-first';
 						}
-					}
 					
+					}
 					
 					$cardType = get_sub_field('card_type');
 					include $cardPartials . "card_content_controls.php";

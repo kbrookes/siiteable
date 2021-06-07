@@ -67,17 +67,23 @@ if($paddingTarget == 'card'){
 
 
 if($cardType == 'momentum'):
-    $cardCssRow = $cardCssRow . 'cards-card__momentum ';
+    $cardCssRow = $cardCssRow . ' cards-card__momentum ';
+    $cardCssContent = 'col-12';
 endif;
 
 ?>
 <div class="<?= $colCount; ?>">
     <div class="cards-card <?= $cardBackgroundColor . ' ' . $shadow . ' ' . $cardCssRow . ' '. $gutters . ' ' . $cardPadding; ?>">
-        <? include $cardPartials . "card_image_custom.php"; ?>
-        <div class="cards-card__content <?= $cardCssContent . ' ' . $cardDirection . ' ' . $contentPadding; ?>">
+        <? if($cardType != 'momentum'): 
+            include $cardPartials . "card_image_custom.php"; 
+        endif;
+        ?>
+        <div class="cards-card__content <?= $cardCssContent . ' ' . $cardOrder . ' ' . $contentPadding; ?>">
+            <? if($cardType != 'momentum'): ?>
             <div class="cards-card__copy">
                 <? include $cardPartials . "card_content.php"; ?>
             </div>
+            <? endif; ?>
             <? include $templatePartials . "add-button.php"; ?>
         </div>
     </div>
