@@ -58,6 +58,8 @@ $cssPaddingMd = get_sub_field($boxPaddingInit . '_' . $paddingDim . '_md');
 $cssPaddingLg = get_sub_field($boxPaddingInit . '_' . $paddingDim . '_lg');
 $boxPaddingCss = $cssPaddingSm . ' ' . $cssPaddingMd . ' ' . $cssPaddingLg;
 
+$paddingTarget = get_sub_field($boxPaddingInit . '_target');
+
 
 
 /// OPTIONS
