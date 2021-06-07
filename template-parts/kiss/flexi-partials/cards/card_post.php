@@ -52,6 +52,16 @@ elseif($cardDesign == 'card'):
     $imageCol = '';
 endif;
 
+
+/// PADDING TARGET
+if($paddingTarget == 'card'){
+    $cardPadding = $boxPaddingCss;
+    $contentPadding = '';
+} elseif($paddingTarget == 'content'){
+    $contentPadding = $boxPaddingCss;
+    $cardPadding = '';
+}
+
 /// COLUMN CONTROLS
 ///include $templatePartials . "column-selector.php";
 
@@ -62,10 +72,10 @@ endif;
 
 ?>
 <div class="<?= $colCount; ?>">
-    <div class="cards-card <?= $cardBackgroundColor . ' ' . $shadow . ' ' . $cardCssRow . ' ' . $boxPaddingCss; ?>">
+    <div class="cards-card <?= $cardBackgroundColor . ' ' . $shadow . ' ' . $cardCssRow . ' '. $gutters . ' ' . $cardPadding; ?>">
         <? include $cardPartials . "card_image_custom.php"; ?>
-        <div class="cards-card__content <?= $cardCssContent . ' ' . $cardDirection; ?>">
-            <div class="cards-card__copy mb-4">
+        <div class="cards-card__content <?= $cardCssContent . ' ' . $cardDirection . ' ' . $contentPadding; ?>">
+            <div class="cards-card__copy">
                 <? include $cardPartials . "card_content.php"; ?>
             </div>
             <? include $templatePartials . "add-button.php"; ?>

@@ -2480,6 +2480,25 @@
                             "placeholder": ""
                         },
                         {
+                            "key": "field_60bd868cfd336",
+                            "label": "Remove Gutters?",
+                            "name": "card_no_gutters",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_609d007412b62",
                             "label": "Image Position",
                             "name": "card_image_position",
@@ -2496,7 +2515,7 @@
                                 ]
                             ],
                             "wrapper": {
-                                "width": "50",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
@@ -2551,6 +2570,35 @@
                             "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 1
+                        },
+                        {
+                            "key": "field_60bd8846323b9",
+                            "label": "Card Bottom Margin",
+                            "name": "card_bottom_margin",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "mb-0": "0",
+                                "mb-1": "XS",
+                                "mb-2": "SM",
+                                "mb-3": "MD",
+                                "mb-4": "LG",
+                                "mb-5": "XL"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
                         },
                         {
                             "key": "field_6077c1678b1d3",
@@ -2709,12 +2757,13 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "48",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
                             "choices": {
-                                "container-fluid": "None",
+                                "container-none": "None",
+                                "container-fluid": "Fluid",
                                 "container": "Standard",
                                 "container-sm": "Small"
                             },
@@ -2732,7 +2781,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -2761,7 +2810,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -2879,7 +2928,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -2888,6 +2937,25 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
+                        },
+                        {
+                            "key": "field_60bd8400ebefd",
+                            "label": "Remove vertical padding?",
+                            "name": "card_remove_padding",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         },
                         {
                             "key": "field_6098db981a4f2",
@@ -6449,5 +6517,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622752469
+    "modified": 1623034012
 }

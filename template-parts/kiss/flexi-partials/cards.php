@@ -34,9 +34,24 @@
 	$imageColLg = get_sub_field($sepPrefix . '_col_lg');
 	$imageColXl = get_sub_field($sepPrefix . '_col_xl');
 	
+	/// REMOVE VERTICAL PADDING
+	$paddingY = get_sub_field($sepPrefix . '_remove_padding');
+	if($paddingY == true){
+		$paddingY = 'py-0';
+	} else {
+		$paddingY = '';
+	}
+	
+	$gutters = get_sub_field($sepPrefix . '_no_gutters');
+	if($gutters == true):
+		$gutters = ' no-gutters';
+	endif;
+	
+	$cardBottomMargin = get_sub_field($sepPrefix . '_bottom_margin');
+	
 	?>
 
-<section class="cards-layout <?= $bgcolour . ' ' . $separatorClasses . ' ' . $containerDirection . ' ' . $customClass; ?>">
+<section class="cards-layout <?= $bgcolour . ' ' . $separatorClasses . ' ' . $containerDirection . ' ' . $paddingY . ' ' . $customClass; ?>">
 	<? if($addSeparatorUpper == true):
 		include $pathUpper;
 	endif; ?>
@@ -58,16 +73,17 @@
 			<? if(have_rows($sepPrefix . '_add_cards'))	{
 				$cardCount = 0;
 			?>
-			<div class="row mb-4">
+			<div class="row <?= $gutters . ' ' . $cardBottomMargin; ?>">
 				<? while (have_rows($sepPrefix . '_add_cards')) : the_row(); 
 					
 					$cardCount++;
 					$even_odd_class = ( ($cardCount % 2) == 0 ) ? "even" : "odd"; 
-					
-					if($even_odd_class == 'even'){
-						$cardDirection = 'order-last';
-					} else {
-						$cardDirection = 'order-first';
+					if($cardDirection == 'alternating'){
+						if($even_odd_class == 'even'){
+							$cardDirection = 'order-last';
+						} else {
+							$cardDirection = 'order-first';
+						}
 					}
 					
 					
