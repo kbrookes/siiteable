@@ -76,8 +76,10 @@
 			<div class="row <?= $gutters . ' ' . $cardBottomMargin; ?>">
 				<? while (have_rows($sepPrefix . '_add_cards')) : the_row(); 
 					
-					if($cardDirection != 'alternating'){
+					if($cardDirection == 'order-last'){
 						$cardOrder = $cardDirection;
+					} elseif($cardDirection == 'order-first') {
+						$cardOrder = 'order-last order-md-first';
 					} else {
 						$cardCount++;
 						$even_odd_class = ( ($cardCount % 2) == 0 ) ? "even" : "odd"; 
