@@ -82,6 +82,7 @@ endif;
             <? if($cardType != 'momentum'): ?>
             <div class="cards-card__copy">
                 <? include $cardPartials . "card_content.php"; ?>
+                <? echo $cardOrder; ?>
             </div>
             <? endif; ?>
             <? include $templatePartials . "add-button.php"; ?>

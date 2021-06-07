@@ -85,7 +85,7 @@
 							$cardOrder = 'order-last';
 							//$cardDirection = 'order-last';
 						} else {
-							$cardOrder = 'order-first';
+							$cardOrder = 'order-last order-md-first';
 							//$cardDirection = 'order-first';
 						}
 					
