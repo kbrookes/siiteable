@@ -1,8 +1,36 @@
 .btn {
 	&-actions {
 		display: flex;
+		flex-wrap: wrap;
+	}
+	&-separator {
+		font-size: 0.8rem;
+		font-weight: bold;
+		text-align: center;
+		@include media-breakpoint-down(sm){
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
+	&-custom {
+		text-align: center;
+		@include media-breakpoint-down(sm){
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+		&__first {
+			@include media-breakpoint-up(md){
+				margin-right: 2rem;
+			}
+		}
+		&__second {
+			@include media-breakpoint-up(md){
+				margin-left: 2rem;
+			}
+		}
 	}
 }
+
 .btnType-solid .btn-custom {
 	border-radius: 0.3rem;
 	display: inline-block;

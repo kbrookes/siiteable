@@ -25,7 +25,8 @@
                 "round-center": "Round - Center",
                 "round-side": "Round - Side",
                 "fan-center": "Transparency fan - Center",
-                "fan-side": "Transparency fan - Side"
+                "fan-side": "Transparency fan - Side",
+                "compass": "Compass"
             },
             "default_value": false,
             "allow_null": 1,
@@ -230,5 +231,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1622784955
+    "modified": 1623027127
 }

@@ -52,22 +52,38 @@ elseif($cardDesign == 'card'):
     $imageCol = '';
 endif;
 
+
+/// PADDING TARGET
+if($paddingTarget == 'card'){
+    $cardPadding = $boxPaddingCss;
+    $contentPadding = '';
+} elseif($paddingTarget == 'content'){
+    $contentPadding = $boxPaddingCss;
+    $cardPadding = '';
+}
+
 /// COLUMN CONTROLS
 ///include $templatePartials . "column-selector.php";
 
 
 if($cardType == 'momentum'):
-    $cardCssRow = $cardCssRow . 'cards-card__momentum ';
+    $cardCssRow = $cardCssRow . ' cards-card__momentum ';
+    $cardCssContent = 'col-12';
 endif;
 
 ?>
 <div class="<?= $colCount; ?>">
-    <div class="cards-card <?= $cardBackgroundColor . ' ' . $shadow . ' ' . $cardCssRow . ' ' . $boxPaddingCss; ?>">
-        <? include $cardPartials . "card_image_custom.php"; ?>
-        <div class="cards-card__content <?= $cardCssContent . ' ' . $cardDirection; ?>">
-            <div class="cards-card__copy mb-4">
+    <div class="cards-card <?= $cardBackgroundColor . ' ' . $shadow . ' ' . $cardCssRow . ' '. $gutters . ' ' . $cardPadding; ?>">
+        <? if($cardType != 'momentum'): 
+            include $cardPartials . "card_image_custom.php"; 
+        endif;
+        ?>
+        <div class="cards-card__content <?= $cardCssContent . ' ' . $cardOrder . ' ' . $contentPadding; ?>">
+            <? if($cardType != 'momentum'): ?>
+            <div class="cards-card__copy">
                 <? include $cardPartials . "card_content.php"; ?>
             </div>
+            <? endif; ?>
             <? include $templatePartials . "add-button.php"; ?>
         </div>
     </div>
