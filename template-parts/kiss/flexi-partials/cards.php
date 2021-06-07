@@ -61,13 +61,15 @@
 			<div class="row mb-4">
 				<? while (have_rows($sepPrefix . '_add_cards')) : the_row(); 
 					
-					if($cardDirection == 'alternating'):
-						if($cardCount % 2 == 0):
-							$cardDirection = 'order-last';
-						else:
-							$cardDirection = 'order-first';
-						endif;
-					endif;
+					$cardCount++;
+					$even_odd_class = ( ($cardCount % 2) == 0 ) ? "even" : "odd"; 
+					
+					if($even_odd_class == 'even'){
+						$cardDirection = 'order-last';
+					} else {
+						$cardDirection = 'order-first';
+					}
+					
 					
 					$cardType = get_sub_field('card_type');
 					include $cardPartials . "card_content_controls.php";
@@ -84,8 +86,7 @@
 						case "momentum":
 						include $cardPartials . "card_post.php";
 						break;
-					}
-					$cardCount++;
+					};
 				 endwhile; ?>
 			</div>
 			<? }
