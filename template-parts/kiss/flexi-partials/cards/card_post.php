@@ -47,6 +47,9 @@ if($cardDesign == 'row'):
     $cardCssRow = 'row cards-card__horizontal';
     $cardCssImage = 'd-flex align-items-center ';
     $cardCssContent = $contentCol;
+elseif($cardDesign == 'card'):
+    $cardCssRow = 'cards-card__vertical';
+    $imageCol = '';
 endif;
 
 /// COLUMN CONTROLS

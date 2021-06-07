@@ -74,6 +74,12 @@
 				}
 			}
 		}
+		&__vertical {
+			display: block;
+			.cards-card__content {
+				padding: 1rem;
+			}
+		}
 		&__momentum {
 			.cards-card__content {
 				padding: 0;

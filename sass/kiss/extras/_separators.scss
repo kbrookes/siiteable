@@ -9,10 +9,10 @@ article {
 		width: 100%;
 		z-index: 101;
 		&__upper {
-			top: 0;
+			top: -1px;
 		}
 		&__lower {
-			bottom: 0;
+			bottom: -1px;
 		}
 	}
 }
