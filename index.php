@@ -43,6 +43,12 @@ $faType = get_theme_mod( 'fa_styles');
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+		<? /// GET FEATURED POST
+			$addFeatured = get_field('add_featured', 'options');
+			if($addFeatured == true){
+				get_template_part( 'template-parts/kiss/static-partials/featured-blog', get_post_format() ); 
+			}
+		?>
 		<?php
 		if ( have_posts() ) : 
 			$featureCount = 0;

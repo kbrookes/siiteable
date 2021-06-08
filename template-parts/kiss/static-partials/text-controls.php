@@ -77,3 +77,20 @@ switch($optionsContentTextAlignment){
         $optionsContentJustify = 'justify-content-end';
         break;
 }
+
+/// THEME MODS
+$heroTextColor = 'text-white';
+$heroTextColor = get_theme_mod( 'hero_text_color', 0 );
+
+$heroH1Size = 'font-md';
+$heroH1Size = get_theme_mod( 'hero_h1_size', 0 );
+
+$contentSize = 'text-md';
+$contentSize = get_theme_mod('hero_header_content_size', 0);
+
+$themeHeroTextColor = get_theme_mod( 'hero_text_color', 0 );
+$themeHeroTitleSize = get_theme_mod( 'hero_h1_size', 0 );
+$themeHeroContentSize = get_theme_mod('hero_header_content_size', 0);
+
+
+ 

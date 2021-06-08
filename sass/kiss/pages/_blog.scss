@@ -57,15 +57,6 @@
 
 .header-featured {
 	background-color: $white;
-	.separator-fill__foreground {
-		fill: $background-dark;
-	}
-	.separator-fill__background {
-		fill: $alternate;
-	}
-	svg {
-		transform: rotate(180deg);
-	}
 	&__inner {
 		background-color: $background-dark;
 		.blog-post {
@@ -73,7 +64,7 @@
 				color: $light;
 			}
 			&__image {
-				box-shadow: 6px 6px 0 $brand-secondary;
+				//box-shadow: 6px 6px 0 $brand-secondary;
 			}
 			&__content {
 				h3 {
