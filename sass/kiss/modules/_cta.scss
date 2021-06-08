@@ -153,20 +153,6 @@
 			padding-top: 60px;
 		}
 		&__inner {
-			.bg-dark & {
-				color: $white;
-				h1, h2, h3, h4, h5, p {
-					color: $white;
-				}
-			}
-			.bg-primary &,
-			.bg-secondary &,
-			.bg-light &,
-			.bg-white {
-				h1, h2, h3, h4, h5, p {
-					color: $dark;
-				}
-			}
 		}
 		h2 {
 			@include media-breakpoint-up(xs){
