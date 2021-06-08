@@ -4,3 +4,4 @@
  $simpleButtonSize = $simpleButton['button_simple_size'];
  $simpleButtonAlign = $simpleButton['button_simple_alignment'];
  $simpleButtonText = $simpleButton['button_simple_text'];
+ $simpleButtonPadding = $simpleButton['button_simple_padding'];
