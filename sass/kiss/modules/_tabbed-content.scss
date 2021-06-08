@@ -37,6 +37,12 @@
 		.nav-link:hover,
 		.nav-link:focus {
 		}
+		.nav-item {
+			margin-right: 2px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
 	}
 	.tab-content {
 		.tab-pane {

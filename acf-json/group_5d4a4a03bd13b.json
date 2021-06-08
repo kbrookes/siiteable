@@ -20,10 +20,13 @@
                 "compound-angle": "Compound Angle",
                 "angle-center": "Angle - Center",
                 "angle-side": "Angle - Side",
+                "notch": "Center Notch",
+                "waves": "Waves",
                 "round-center": "Round - Center",
                 "round-side": "Round - Side",
                 "fan-center": "Transparency fan - Center",
-                "fan-side": "Transparency fan - Side"
+                "fan-side": "Transparency fan - Side",
+                "compass": "Compass"
             },
             "default_value": false,
             "allow_null": 1,
@@ -164,6 +167,36 @@
             "default_value": "",
             "layout": "horizontal",
             "return_format": "value"
+        },
+        {
+            "key": "field_60b8358ece8fc",
+            "label": "Override Padding",
+            "name": "separator_padding",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "false": "No",
+                "2": "2%",
+                "5": "5%",
+                "7": "7%",
+                "10": "10%",
+                "12": "12%",
+                "15": "15%"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -198,5 +231,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1621213642
+    "modified": 1623027127
 }

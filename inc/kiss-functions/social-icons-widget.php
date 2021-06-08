@@ -1,4 +1,4 @@
-<?php 
+<? 
 // Adds widget: Social Icons
 class Socialicons_Widget extends WP_Widget {
 
@@ -130,47 +130,51 @@ class Socialicons_Widget extends WP_Widget {
 			}
 		endif;
 		
+		// Output generated fields
+		$faType = 'fab';
+		
+		
 		if(!empty($instance['facebookurl_text'] || $instance['twitterurl_text'] || $instance['instagramurl_text'] || $instance['linkedinurl_text'] || $instance['socialurl1_text'] || $instance['socialurl2_text'] || $instance['socialurl3_text'])): ?>
 		<div class="social-block">
-			<div class="social-block__inner <?php echo $iconAlign; ?>">
-				<?php if(!empty($instance['facebookicon_text']) && !empty($instance['facebookurl_text'])):?>
-				<div class="social-block__icon <?php echo $textColour; ?>">
-					<a href="<?php echo $instance['facebookurl_text']; ?>" target="_blank"><i class="<?php echo $instance['facebookicon_text']; ?>"></i></a>
+			<div class="social-block__inner <?= $iconAlign; ?>">
+				<? if(!empty($instance['facebookicon_text']) && !empty($instance['facebookurl_text'])):?>
+				<div class="social-block__icon <?= $textColour; ?>">
+					<a href="<?= $instance['facebookurl_text']; ?>" target="_blank"><i class="<?= $faType . ' ' . $instance['facebookicon_text']; ?>"></i></a>
 				</div>
-				<?php endif; ?>
-				<?php if(!empty($instance['twittericon_text']) && !empty($instance['twitterurl_text'])):?>
-				<div class="social-block__icon <?php echo $textColour; ?>">
-					<a href="<?php echo $instance['twitterurl_text']; ?>" target="_blank"><i class="<?php echo $instance['twittericon_text']; ?>"></i></a>
+				<? endif; ?>
+				<? if(!empty($instance['twittericon_text']) && !empty($instance['twitterurl_text'])):?>
+				<div class="social-block__icon <?= $textColour; ?>">
+					<a href="<?= $instance['twitterurl_text']; ?>" target="_blank"><i class="<?= $faType . ' ' . $instance['twittericon_text']; ?>"></i></a>
 				</div>
-				<?php endif; ?>
-				<?php if(!empty($instance['instagramicon_text']) && !empty($instance['instagramurl_text'])):?>
-				<div class="social-block__icon <?php echo $textColour; ?>">
-					<a href="<?php echo $instance['instagramurl_text']; ?>" target="_blank"><i class="<?php echo $instance['instagramicon_text']; ?>"></i></a>
+				<? endif; ?>
+				<? if(!empty($instance['instagramicon_text']) && !empty($instance['instagramurl_text'])):?>
+				<div class="social-block__icon <?= $textColour; ?>">
+					<a href="<?= $instance['instagramurl_text']; ?>" target="_blank"><i class="<?= $faType . ' ' . $instance['instagramicon_text']; ?>"></i></a>
 				</div>
-				<?php endif; ?>
-				<?php if(!empty($instance['linkedinicon_text']) && !empty($instance['linkedinurl_text'])):?>
-				<div class="social-block__icon <?php echo $textColour; ?>">
-					<a href="<?php echo $instance['linkedinurl_text']; ?>" target="_blank"><i class="<?php echo $instance['linkedinicon_text']; ?>"></i></a>
+				<? endif; ?>
+				<? if(!empty($instance['linkedinicon_text']) && !empty($instance['linkedinurl_text'])):?>
+				<div class="social-block__icon <?= $textColour; ?>">
+					<a href="<?= $instance['linkedinurl_text']; ?>" target="_blank"><i class="<?= $faType . ' ' . $instance['linkedinicon_text']; ?>"></i></a>
 				</div>
-				<?php endif; ?>
-				<?php if(!empty($instance['socialicon1_text']) && !empty($instance['socialurl1_text'])):?>
-				<div class="social-block__icon <?php echo $textColour; ?>">
-					<a href="<?php echo $instance['socialurl1_text']; ?>" target="_blank"><i class="<?php echo $instance['socialicon1_text']; ?>"></i></a>
+				<? endif; ?>
+				<? if(!empty($instance['socialicon1_text']) && !empty($instance['socialurl1_text'])):?>
+				<div class="social-block__icon <?= $textColour; ?>">
+					<a href="<?= $instance['socialurl1_text']; ?>" target="_blank"><i class="<?= $faType . ' ' . $instance['socialicon1_text']; ?>"></i></a>
 				</div>
-				<?php endif; ?>
-				<?php if(!empty($instance['socialicon2_text']) && !empty($instance['socialurl2_text'])):?>
-				<div class="social-block__icon <?php echo $textColour; ?>">
-					<a href="<?php echo $instance['socialurl2_text']; ?>" target="_blank"><i class="<?php echo $instance['socialicon2_text']; ?>"></i></a>
+				<? endif; ?>
+				<? if(!empty($instance['socialicon2_text']) && !empty($instance['socialurl2_text'])):?>
+				<div class="social-block__icon <?= $textColour; ?>">
+					<a href="<?= $instance['socialurl2_text']; ?>" target="_blank"><i class="<?= $faType . ' ' . $instance['socialicon2_text']; ?>"></i></a>
 				</div>
-				<?php endif; ?>
-				<?php if(!empty($instance['socialicon3_text']) && !empty($instance['socialurl3_text'])):?>
-				<div class="social-block__icon <?php echo $textColour; ?>">
-					<a href="<?php echo $instance['socialurl3_text']; ?>" target="_blank"><i class="<?php echo $instance['socialicon3_text']; ?>"></i></a>
+				<? endif; ?>
+				<? if(!empty($instance['socialicon3_text']) && !empty($instance['socialurl3_text'])):?>
+				<div class="social-block__icon <?= $textColour; ?>">
+					<a href="<?= $instance['socialurl3_text']; ?>" target="_blank"><i class="<?= $faType . ' ' . $instance['socialicon3_text']; ?>"></i></a>
 				</div>
-				<?php endif; ?>
+				<? endif; ?>
 			</div>
 		</div>
-		<?php endif;
+		<? endif;
 
 		
 		echo $args['after_widget'];

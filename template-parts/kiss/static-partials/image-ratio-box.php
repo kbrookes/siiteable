@@ -1,7 +1,9 @@
 <?
- $boxAR = get_sub_field($sepPrefix . '_image_ar');
+    
+    $boxAR = get_sub_field($sepPrefix . '_image_ar');
 ?>
-<div class="image-box <?= $boxAR . ' ' . $hasOverlayClass . '' . $cardCssImage; ?>" style="background-image: url(<?= $image; ?>);">
+<div class="image-box <?= $boxAR . ' ' . $hasOverlayClass . ' ' . $cardCssImage . ' ' . $imageClass; ?>" style="background-image: url(<?= $image; ?>);">
+    <?= $btnLinkOpen; ?>
     <div class="image-box__inner">
         <? if($hasOverlay):?>
         <div class="image-box__inner-overlay position-absolute w-100 h-100 <? echo $colorClass . ' opacity-' . $overlayOpacity; ?>"></div>
@@ -14,4 +16,5 @@
             ?>
         </div>
     </div>
+    <?= $btnLinkClose; ?>
 </div>

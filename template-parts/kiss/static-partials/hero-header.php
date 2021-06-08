@@ -1,6 +1,14 @@
 <? 
 	
 	$page_id = get_queried_object_id();
+	$blogID = get_option( 'page_for_posts' );
+	$isBlogPage = false;
+	$isPost = is_singular('post');
+	if($blogID == $page_id || $isPost){
+		$isBlogPage = true;
+	} else {
+		$isBlogPage = false;
+	}
 	
 	/// SEPARATORS INIT
 	$postType = get_post_type();
@@ -13,25 +21,55 @@
 	
 	//// CUSTOMIZER OPTIONS
 	$heroHeight = get_theme_mod( 'hero_header_height', 0 );
+	$heroAlignment = 'align-items-center';
+	if($isBlogPage){
+		$heroHeightOverride = get_field($sepPrefix . '_override_height', 'options');
+		$heroAlignOverride = get_field($sepPrefix . '_override_vertical', 'options');
+	} else {
+		$heroHeightOverride = get_field($sepPrefix . '_override_height');
+		$heroAlignOverride = get_field($sepPrefix . '_override_vertical');
+	}
 	// Override on a per-post basis
-	if(!empty(get_field($sepPrefix . '_override_height'))):
-		$heroHeight = get_field($sepPrefix . '_override_height');
+	if($heroHeightOverride == "false"):
+		$heroHeight = get_theme_mod( 'hero_header_height', 0 );
+	else:
+		$heroHeight = $heroHeightOverride;
+	endif;
+		
+	if($heroAlignOverride == "false"):
+		$heroAlignment = get_theme_mod( 'hero_vertical_alignment', 0 );
+	else:
+		$heroAlignment = $heroAlignOverride;
 	endif;
 	
-	$heroAlignment = 'align-items-center';
-	$heroAlignment = get_theme_mod( 'hero_vertical_alignment', 0 );
 	
-	$heroTextColor = 'text-white';
-	$heroTextColor = get_theme_mod( 'hero_text_color', 0 );
 	
-	$heroH1Size = 'font-md';
-	$heroH1Size = get_theme_mod( 'hero_h1_size', 0 );
+	
+	if($isBlogPage && $optionsTitleTextClass != ''):
+		$titleClass = $optionsTitleTextClass;
+	elseif($titleTextClassG == 'default default default text-left'):
+		$titleClass = $heroTextColor . ' ' . $heroH1Size;
+	elseif($titleTextClassG != 'default default default text-left'):
+		$titleClass = $titleTextClassG;
+	else:
+		$titleClass = $titleTextClass;
+	endif;
+	
+	if($isBlogPage && $optionsContentTextClass != ''):
+		$contentClass = $optionsContentTextClass;
+	elseif($introTextClassG == 'default default default text-left'):
+		$contentClass = $contentSize . ' ' . $heroTextColor;
+	elseif($introTextClassG != 'default default default text-left'):
+		$contentClass = $introTextClassG;
+	else:
+		$contentClass = $introTextClass;
+	endif;
+	
 	
 	$colWidth = 'w-75';
 	$colWidth = get_theme_mod('header_content_width', 0 );
 	
-	$contentSize = 'text-md';
-	$contentSize = get_theme_mod('hero_header_content_size', 0);
+	
 	
 	$paddingY = 'py-0';
 	$paddingY = get_theme_mod('hero_padding', 0);
@@ -79,66 +117,23 @@
 	
 	if(get_field('hero_background_colour')):
 		$heroBG = get_field('hero_background_colour');
+	else:
+		$heroBG = get_field($sepPrefix . '_bg_background_colour', 'options');
 	endif;
 	
 	
 	$hasOverlay = false;
 	if(get_field($sepPrefix . '_overlay_add_overlay') == true):
 		include $templatePartials . "overlay-partial.php";
+	elseif(get_field($sepPrefix . '_overlay_add_overlay', 'options') == true):
+		include $templatePartials . "overlay-partial.php";
 	endif;
 	
 	include $templatePartials . "column-selector.php";
-	/// GENERAL
-	$sepOptions = get_field($sepPrefix . '_sep_options');
-	$svgPath = $templatePath . "/template-parts/kiss/flexi-partials/separators/separator-";
-	$pathUpper = $templatePath . "/template-parts/kiss/flexi-partials/separator-upper.php";
-	$pathLower = $templatePath . "/template-parts/kiss/flexi-partials/separator-lower.php";
-
-
-	/// SET LOWER SEPARATORS
-	$lowerSeparatorType = '';
-	$lowerSeparatorDirection = '';
-	$lowerSeparatorForeground = '';
-	$lowerSeparatorShadow = '';
-	$boxBackground = '';
-	$hasSeparatorLower = '';
-	$lowerClassVertical = '';
-	$lowerClassHorizontal = '';
-	$separatorClasses = '';
 	
-	$addSeparatorLower = false;
-	if((get_field($sepPrefix . '_separators') != '') && ($sepOptions[$sepPrefix . '_lower_separator_separator_type'] != '')):
-		$addSeparatorLower = true;
-		$separatorClasses .= ' hasSeparatorLower hasLower';
-		//$hasSeparatorLower = 'hasSeparatorLower';
-		$lowerSeparatorType = $sepOptions[$sepPrefix . '_lower_separator_separator_type'];
-		$lowerSeparatorDirection = $sepOptions[$sepPrefix . '_lower_separator_separator_direction'];
-		$lowerSeparatorForeground = $sepOptions[$sepPrefix . '_lower_separator_separator_foreground'];
-		$lowerSeparatorShadow = $sepOptions[$sepPrefix . '_lower_separator_separator_shadow'];
-		$lowerContainerColor = $sepOptions[$sepPrefix . '_lower_separator_container_background'];
-		$lowerClassVertical = $sepOptions[$sepPrefix . '_lower_separator_direction_vertical'];
-		$lowerClassHorizontal = $sepOptions[$sepPrefix . '_lower_separator_direction_horizontal'];
-	endif;
-	
-	if(!empty($lowerClassVertical)):
-		if($lowerClassVertical == 'up'):
-			$separatorClasses .= ' lowerUp';
-		endif; 
-		$lowerClassVertical = 'directionX' . $lowerClassVertical;
-	endif; 
-	
-	if(!empty($lowerClassHorizontal)):
-		$lowerClassHorizontal = 'directionY' . $lowerClassHorizontal;
-	endif;
-	
-	$lowerSeparatorFile = $svgPath;
-	$lowerSeparatorFile .= $lowerSeparatorType;
-	$lowerSeparatorFile .= $lowerSeparatorDirection;
-	$lowerSeparatorFile .= ".svg";
-	
-	if(!empty($lowerContainerColor)):
-		$lowerBoxBackground = 'bg-' . $lowerContainerColor;
-	endif;	
+	/// SEPARATORS
+	$separatorLayout = $templatePartials . 'separators.php';
+	include $separatorLayout;
 	
 	$heroImage = '';
 	if(get_the_archive_title() == 'Archives'):
@@ -157,6 +152,8 @@
 	$pageTitle = single_post_title('', FALSE);
 	if(get_post_meta( get_the_ID(), 'hero_title', true )):
 		$heroTitle = get_post_meta( get_the_ID(), 'hero_title', true );
+	elseif(get_field('news_block_title', 'options') != '' && $isBlogPage && !is_singular()):
+		$heroTitle = get_field('news_block_title', 'options');
 	else:
 		$heroTitle = $pageTitle;
 	endif;
@@ -171,6 +168,7 @@
 	$heroTopImage = get_field('hero_content_image');
 	
 	$faType = get_theme_mod( 'fa_styles');
+	
 	
 	if($heroTitle || $heroImage || $heroContent)	:?>
 <section id="heroHeader" class="hero-header  <? echo $separatorClasses . ' ' . $heroHeight; ?> <? if($heroBG): echo $heroBG; endif; ?> <? if($heroType == 'video'):?>video-hero video-type__<? echo $videoType; ?><? endif; ?>">
@@ -198,11 +196,14 @@
 			<div class="hero-header__wrap-inner">
 				<div class="hero-header__content">
 					<div class="row">
-						<div class="<?= $colClassLeft; ?>">
+
+						<div class="<?= $colClassLeft; ?> d-flex flex-column justify-content-center">
+
 							<? if(!empty($heroTitle)): ?>
-							<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
+							<h1 class="<?= $titleClass; ?>"><?= $heroTitle; ?></h1>
 							<? endif; ?>
-							<div class="<?= $heroTextColor . ' ' .  $contentSize; ?> mb-4">
+
+							<div class="<?= $contentClass; ?> mb-4">
 							<?= apply_filters('the_content', $heroContent); ?>
 							</div>
 						</div>

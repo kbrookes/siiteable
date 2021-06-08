@@ -14,6 +14,9 @@
 	/// TEXT CONTROLS
 	include $templatePartials . 'text-controls.php';
 	
+	/// ICON CONTROLS
+	include $templatePartials . 'icon-controls.php';
+	
 	$cardBackgroundColor = get_sub_field($sepPrefix . '_background_colour');
 	
 	/// GET GENERAL
@@ -25,9 +28,30 @@
 	
 	$cardDesign = get_sub_field($sepPrefix . '_design');
 	
+	$imageColXs = get_sub_field($sepPrefix . '_col_xs');
+	$imageColSm = get_sub_field($sepPrefix . '_col_sm');
+	$imageColMd = get_sub_field($sepPrefix . '_col_md');
+	$imageColLg = get_sub_field($sepPrefix . '_col_lg');
+	$imageColXl = get_sub_field($sepPrefix . '_col_xl');
+	
+	/// REMOVE VERTICAL PADDING
+	$paddingY = get_sub_field($sepPrefix . '_remove_padding');
+	if($paddingY == true){
+		$paddingY = 'py-0';
+	} else {
+		$paddingY = '';
+	}
+	
+	$gutters = get_sub_field($sepPrefix . '_no_gutters');
+	if($gutters == true):
+		$gutters = ' no-gutters';
+	endif;
+	
+	$cardBottomMargin = get_sub_field($sepPrefix . '_bottom_margin');
+	
 	?>
 
-<section class="cards-layout <?= $bgcolour . ' ' . $separatorClasses . ' ' . $containerDirection . ' ' . $customClass; ?>">
+<section class="cards-layout <?= $bgcolour . ' ' . $separatorClasses . ' ' . $containerDirection . ' ' . $paddingY . ' ' . $customClass; ?>">
 	<? if($addSeparatorUpper == true):
 		include $pathUpper;
 	endif; ?>
@@ -37,6 +61,7 @@
 			if(!empty($blockTitle)){
 				echo '<h2 class="' . $titleTextClass . '">' . $blockTitle . '</h2>';
 			} 
+			//var_dump(get_field_objects());
 			if(!empty($blockIntro)){?>
 			<div class="<?= $introTextClass; ?> mb-4">
 				<?= $blockIntro; ?>
@@ -48,16 +73,25 @@
 			<? if(have_rows($sepPrefix . '_add_cards'))	{
 				$cardCount = 0;
 			?>
-			<div class="row mb-4">
+			<div class="row <?= $gutters . ' ' . $cardBottomMargin; ?>">
 				<? while (have_rows($sepPrefix . '_add_cards')) : the_row(); 
 					
-					if($cardDirection == 'alternating'):
-						if($cardCount % 2 == 0):
-							$cardDirection = 'order-last';
-						else:
-							$cardDirection = 'order-first';
-						endif;
-					endif;
+					if($cardDirection == 'order-last'){
+						$cardOrder = $cardDirection;
+					} elseif($cardDirection == 'order-first') {
+						$cardOrder = 'order-last order-md-first';
+					} else {
+						$cardCount++;
+						$even_odd_class = ( ($cardCount % 2) == 0 ) ? "even" : "odd"; 
+						if($even_odd_class == 'even'){
+							$cardOrder = 'order-last';
+							//$cardDirection = 'order-last';
+						} else {
+							$cardOrder = 'order-last order-md-first';
+							//$cardDirection = 'order-first';
+						}
+					
+					}
 					
 					$cardType = get_sub_field('card_type');
 					include $cardPartials . "card_content_controls.php";
@@ -74,8 +108,7 @@
 						case "momentum":
 						include $cardPartials . "card_post.php";
 						break;
-					}
-					$cardCount++;
+					};
 				 endwhile; ?>
 			</div>
 			<? }
@@ -92,5 +125,6 @@
 	</div>
 	<? if($addSeparatorLower == true):
 		include $pathLower;
-	endif; ?>
+	endif;
+	 ?>
 </section>

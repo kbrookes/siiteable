@@ -1,11 +1,11 @@
 {
-    "key": "group_608b5569765d0",
-    "title": "Shadows",
+    "key": "group_60bf1f41d57d9",
+    "title": "Background Colour Selector",
     "fields": [
         {
-            "key": "field_608b557024156",
-            "label": "Select Shadow Size",
-            "name": "shadow_select",
+            "key": "field_60bf1f4ead5a6",
+            "label": "Background Colour",
+            "name": "background_colour",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -16,13 +16,15 @@
                 "id": ""
             },
             "choices": {
-                "shadow-none": "None",
-                "shadow-sm": "Small",
-                "shadow": "Regular",
-                "shadow-lg": "Large"
+                "bg-primary": "Primary",
+                "bg-secondary": "Secondary",
+                "bg-dark": "Dark",
+                "bg-light": "Light",
+                "bg-white": "White",
+                "bg-alternate": "Alternate"
             },
             "default_value": false,
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 0,
             "return_format": "value",
@@ -33,13 +35,13 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "post_status",
                 "operator": "==",
-                "value": "post"
+                "value": "request-failed"
             }
         ]
     ],
-    "menu_order": 206,
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -47,5 +49,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622753509
+    "modified": 1623138239
 }

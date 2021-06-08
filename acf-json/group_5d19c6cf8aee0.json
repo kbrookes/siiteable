@@ -243,7 +243,7 @@
         {
             "key": "field_5d19c7033a5c7",
             "label": "Title",
-            "name": "hero_title",
+            "name": "hero_block_title",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -258,6 +258,27 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_60b5ce978f361",
+            "label": "Title Font Controls",
+            "name": "hero_title",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_6076c01d3fc68"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 1,
+            "prefix_name": 1
         },
         {
             "key": "field_5d19c7143a5c8",
@@ -277,6 +298,27 @@
             "toolbar": "full",
             "media_upload": 1,
             "delay": 0
+        },
+        {
+            "key": "field_60b5cf048f362",
+            "label": "Content Font Controls",
+            "name": "hero_intro",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_6076c01d3fc68"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 1,
+            "prefix_name": 1
         },
         {
             "key": "field_6093b05b5d09b",
@@ -539,11 +581,12 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "30",
                 "class": "",
                 "id": ""
             },
             "choices": {
+                "false": "No",
                 "header_xs": "XS",
                 "header_sm": "SM",
                 "header_md": "MD",
@@ -551,8 +594,35 @@
                 "header_xl": "XL",
                 "full_height": "Full Height"
             },
-            "default_value": false,
-            "allow_null": 1,
+            "default_value": "No",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_60b82a53c8021",
+            "label": "Override Vertical Align",
+            "name": "hero_override_vertical",
+            "type": "select",
+            "instructions": "Overrides the vertical alignment set in the customiser",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "false": "No",
+                "align-items-start": "Align Top",
+                "align-items-center": "Align Center",
+                "align-items-end": "Align Bottom"
+            },
+            "default_value": "No",
+            "allow_null": 0,
             "multiple": 0,
             "ui": 0,
             "return_format": "value",
@@ -564,7 +634,7 @@
             "label": "Background Colour",
             "name": "hero_background_colour",
             "type": "select",
-            "instructions": "",
+            "instructions": "Provides a background colour for the entire section",
             "required": 0,
             "conditional_logic": [
                 [
@@ -576,7 +646,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "50",
+                "width": "30",
                 "class": "",
                 "id": ""
             },
@@ -589,7 +659,7 @@
                 "bg-alternate": "Alternate"
             },
             "default_value": false,
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 0,
             "return_format": "value",
@@ -693,5 +763,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1621210801
+    "modified": 1623137515
 }

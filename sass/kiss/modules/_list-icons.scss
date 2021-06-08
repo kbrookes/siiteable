@@ -34,12 +34,16 @@
       @include media-breakpoint-down(xs) {
         padding: 0;
       }
+      &.text-center {
+        justify-content: center;
+      }
       &-image {
         color: $brand-primary;
         font-size: 2.8rem;
         margin: 0 15px 0 0;
         min-width: 4rem;
         margin-right: 30px;
+        line-height: 1.2;
         text-align: center;
         @include media-breakpoint-up(xs) {
           font-size: 1.8rem;
@@ -58,7 +62,7 @@
         }
         .icon-medium & {
           font-size: 6rem;
-          min-width: 8rem;
+          min-width: 6rem;
         }
         .icon-large & {
           font-size: 9rem;

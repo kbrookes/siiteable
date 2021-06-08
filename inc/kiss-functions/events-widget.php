@@ -139,7 +139,4 @@ class Eventslist_Widget extends WP_Widget {
 function register_eventslist_widget() {
     register_widget( 'Eventslist_Widget' );
 }
-add_action( 'widgets_init', 'register_eventslist_widget' );;
-
-
-
+add_action( 'widgets_init', 'register_eventslist_widget' );

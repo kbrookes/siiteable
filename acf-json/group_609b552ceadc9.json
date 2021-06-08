@@ -27,7 +27,7 @@
                 "d-none": "hidden"
             },
             "default_value": false,
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 1,
             "ajax": 0,
@@ -59,7 +59,7 @@
                 "d-sm-none": "hidden"
             },
             "default_value": false,
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 1,
             "ajax": 0,
@@ -91,7 +91,7 @@
                 "d-md-none": "hidden"
             },
             "default_value": false,
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 1,
             "ajax": 0,
@@ -123,7 +123,7 @@
                 "d-lg-none": "hidden"
             },
             "default_value": false,
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 1,
             "ajax": 0,
@@ -155,7 +155,7 @@
                 "d-xl-none": "hidden"
             },
             "default_value": false,
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 1,
             "ajax": 0,
@@ -180,5 +180,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1620794647
+    "modified": 1622525826
 }

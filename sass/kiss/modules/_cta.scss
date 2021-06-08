@@ -10,7 +10,7 @@
 		background-size: cover;
 		position: relative;
 		/*&::before {
-			background-color: rgba($background-dark, 0.7);
+			background-color: rgba($dark, 0.7);
 			content: '';
 			left: 0;
 			height: 100%;
@@ -35,22 +35,22 @@
 		}
 		&.overlay-primary {
 			&:before {
-				background-color: $brand-primary;
+				background-color: $primary;
 			}
 		}
 		&.overlay-secondary {
 			&:before {
-				background-color: $brand-secondary;
+				background-color: $secondary;
 			}
 		}
 		&.overlay-dark {
 			&:before {
-				background-color: $background-dark;
+				background-color: $dark;
 			}
 		}
 		&.overlay-light {
 			&:before {
-				background-color: $background-light;
+				background-color: $light;
 			}
 		}
 		&.overlay-white {
@@ -141,55 +141,11 @@
 				max-width: 800px;
 			}
 		}
-		.bg-primary &,
-		.bg-secondary &,
-		.bg-dark & {
-			h2 {
-				color: $white;
-			}
-		}
 		@include media-breakpoint-up(xs) {
 			padding-bottom: 60px;
 			padding-top: 60px;
 		}
 		&__inner {
 		}
-		h2 {
-			@include media-breakpoint-up(xs){
-				font-size: 1.3rem;
-			}
-			@include media-breakpoint-up(sm){
-				font-size: 1.4rem;
-			}
-			@include media-breakpoint-up(md){
-				font-size: 1.6rem;
-			}
-			@include media-breakpoint-up(lg){
-				font-size: 2rem;
-			}
-		}
-		h3 {
-			@include media-breakpoint-up(xs){
-				font-size: 1.1rem;
-			}
-			@include media-breakpoint-up(sm){
-				font-size: 1.2rem;
-			}
-			@include media-breakpoint-up(md){
-				font-size: 1.5rem;
-			}
-		}
-		p {
-			@include media-breakpoint-up(xs){
-				font-size: 1rem;
-			}
-			@include media-breakpoint-up(sm){
-				font-size: 1.1rem;
-			}
-			@include media-breakpoint-up(md){
-				font-size: 1.2rem;
-			}
-		}
-		
 	}
 }

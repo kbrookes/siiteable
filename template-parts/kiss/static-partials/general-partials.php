@@ -11,7 +11,7 @@ $containerDirection = 'text-' . get_sub_field($sepPrefix . '_container_direction
 /// CONTAINER SIZE
 $containerSize = get_sub_field($sepPrefix . '_container_size');
 if(!empty($containerSize)){
-    
+    $containerSize = get_sub_field($sepPrefix . '_container_size');
 } else {
     $containerSize = 'container';
 }
@@ -57,6 +57,8 @@ $cssPaddingSm = get_sub_field($boxPaddingInit . '_' . $paddingDim . '_xs');
 $cssPaddingMd = get_sub_field($boxPaddingInit . '_' . $paddingDim . '_md');
 $cssPaddingLg = get_sub_field($boxPaddingInit . '_' . $paddingDim . '_lg');
 $boxPaddingCss = $cssPaddingSm . ' ' . $cssPaddingMd . ' ' . $cssPaddingLg;
+
+$paddingTarget = get_sub_field($boxPaddingInit . '_target');
 
 
 

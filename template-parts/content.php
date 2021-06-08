@@ -8,7 +8,26 @@
  */
 
 	$full_img = get_the_post_thumbnail_url();
-
+	$sepPrefix = 'readmore';
+	$templatePath = get_template_directory();
+	$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
+	
+	
+	$showButton == true;
+	include $templatePartials . "/buttons-simple.php";
+	$addButton = array(
+		'button_alignment'    => $simpleButtonAlignOptions,
+		'add_button'          => true,
+		'button_options'      => array(
+			'button_link_type'    => 'page',
+			'button_page_link'    => get_permalink($pageID),
+			'button_text_copy'    => $simpleButtonTextOptions,
+			'btn_color'           => $simpleButtonColorOptions,
+			'button_size'         => $simpleButtonSizeOptions,
+			'button_padding'      => $simpleButtonPaddingOptions
+		)
+	);
+	include $templatePartials . "/buttons-array.php";
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -102,7 +121,7 @@
 					<?php if(get_field('hide_readmore') != true){?>
 					<footer class="entry-footer">
 						<?php if ( ! is_single() ) : ?>
-						<a href="<?php the_permalink(); ?>" class="btn-custom light btn-sm ">READ MORE <i class="<?= $faType; ?> fa-chevron-right"></i></a>
+						<a href="<?php the_permalink(); ?>" class="btn-custom <?= $btnClass; ?> "><?= $linkText; ?> <i class="<?= $faType; ?> fa-chevron-right"></i></a>
 						<?php endif; ?>
 						<?php strappress_entry_footer(); ?>
 					</footer><!-- .entry-footer -->

@@ -34,6 +34,21 @@ $textWeight = get_sub_field('font_weight');
 $textAlignment = get_sub_field('text_alignment');
 $textClass = $textSize . ' ' . $textColor . ' ' . $textWeight . ' ' . $textAlignment;
 
+/// NON-GROUPED text-base
+/// TITLE CONTROLS - For primary titles inside containers
+$titleTextSizeG = get_field($sepPrefix . '_title_font_size');
+$titleTextColorG = get_field($sepPrefix . '_title_font_color');
+$titleTextWeightG = get_field($sepPrefix . '_title_font_weight');
+$titleTextAlignmentG = get_field($sepPrefix . '_title_text_alignment');
+$titleTextClassG = $titleTextSizeG . ' ' . $titleTextColorG . ' ' . $titleTextWeightG . ' ' . $titleTextAlignmentG;
+
+/// INTRO CONTROLS - for single-content blocks that have seprate title & content controls
+$introTextSizeG = get_field($sepPrefix . '_intro_font_size');
+$introTextColorG = get_field($sepPrefix . '_intro_font_color');
+$introTextWeightG = get_field($sepPrefix . '_intro_font_weight');
+$introTextAlignmentG = get_field($sepPrefix . '_intro_text_alignment');
+$introTextClassG = $introTextSizeG . ' ' . $introTextColorG . ' ' . $introTextWeightG . ' ' . $introTextAlignmentG;
+
 /// OPTIONS PAGES
 /// TITLE CONTROLS - For primary titles on options pages
 $optionsTitleTextSize = get_field($sepPrefix . '_title_font_size', 'options');
@@ -62,3 +77,20 @@ switch($optionsContentTextAlignment){
         $optionsContentJustify = 'justify-content-end';
         break;
 }
+
+/// THEME MODS
+$heroTextColor = 'text-white';
+$heroTextColor = get_theme_mod( 'hero_text_color', 0 );
+
+$heroH1Size = 'font-md';
+$heroH1Size = get_theme_mod( 'hero_h1_size', 0 );
+
+$contentSize = 'text-md';
+$contentSize = get_theme_mod('hero_header_content_size', 0);
+
+$themeHeroTextColor = get_theme_mod( 'hero_text_color', 0 );
+$themeHeroTitleSize = get_theme_mod( 'hero_h1_size', 0 );
+$themeHeroContentSize = get_theme_mod('hero_header_content_size', 0);
+
+
+ 

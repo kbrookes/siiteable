@@ -6,6 +6,7 @@
 	$templatePath = get_template_directory();
 	$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
 	
+
 	/// TEXT CONTROLS
 	include $templatePartials . 'text-controls.php';
 	
@@ -18,9 +19,15 @@
 		include $templatePartials . "buttons.php";
 	endif;
 	
+	// Custom classes, container directionp & size, title, text
+	include $templatePartials . 'general-partials.php';
+	
+	$faType = get_theme_mod( 'fa_styles');
+
+	
 	/// TAB TITLE & INTRO
-	$tabTitle = get_sub_field($sepPrefix . '_title');
-	$tabIntro = get_sub_field($sepPrefix . '_intro');
+	$tabTitle = get_sub_field($sepPrefix . '_block_title');
+	$tabIntro = get_sub_field($sepPrefix . '_intro_content');
 	
 	/// TAB LAYOUT
 	$tabLayout = get_sub_field($sepPrefix . '_layout');
@@ -103,57 +110,59 @@
 	<div class="tabbed-content__inner flexi-inner <?php echo $tabColourSetup . ' ' . $tabFontSetup . ' ' . $colCount . ' ' . $containerDirection; ?>">
 		<div class="container">
 			<?php if(!empty($tabTitle)) {
-				echo '<h2 class="' . $titleTextClass . '">' . $tabTitle . '</h2>';
+				echo '<h2 class="tabbed-content__title ' . $titleTextClass . '">' . $tabTitle . '</h2>';
 			}
 			if(!empty($tabIntro)) {
-				echo '<div class="' . $introTextClass . '">' . $tabIntro . '</div>';
+				echo '<div class="tabbed-content__intro ' . $introTextClass . '">' . wpautop($tabIntro) . '</div>';
 			} ?>
 			<?php if( have_rows('tab_repeater') ): ?>
-			<ul class="nav nav-tabs" id="tabRepeater">
-				<?php
-					$i = 0;
-					$linkClass = '';
-					while ( have_rows('tab_repeater') ) : the_row(); 
-					$tabTitle = get_sub_field('tab_title');
-				?>
-				<li class="nav-item"><a class="nav-link <?php if($i == '0'): echo 'active'; endif; ?>" href="#tabID-<?php echo $i; ?>"  data-toggle="tab" role="tab" aria-controls="tabID-<?php echo $i; ?>" aria-selected="<?php if($i == '0'): echo 'true'; else: echo 'false'; endif; ?>"><?php echo $tabTitle; ?></a></li>
-				<?php 
-					$i = $i + 1;
-					endwhile ?>
-			</ul>
-			<div class="tab-content" id="tabRepeaterContent">
-				<?php 
-					$tabCount = 0;
-					while ( have_rows('tab_repeater') ) : the_row(); 
-					$tabContent = get_sub_field('tab_content');
-					$tabTitle = get_sub_field('tab_title');
-				?>
-				<div class="card tab-pane fade <?php if($tabCount == '0'): echo 'show active'; endif; ?>" id="tabID-<?php echo $tabCount; ?>" role="tabpanel" aria-labelledby="<?php the_sub_field('tab_title'); ?>">
-					<div class="card-header" role="tab" id="heading-<?php echo $tabCount; ?>">
-						<h4><a data-toggle="collapse" href="#collapse-<?php echo $tabCount; ?>" aria-expanded="true" aria-controls="collapse-<?php echo $tabCount; ?>" ><i class="<?= $faType; ?> fa-chevron-right"></i> <?php echo $tabTitle; ?></a></h4>
-					</div>
-					<div id="collapse-<?php echo $tabCount; ?>" class="collapse <?php if($tabCount == '0'): ?>show<?php endif; ?>" data-parent="#content" role="tabpanel" aria-labelledby="heading-<?php echo $tabCount; ?>">
-						<div class="card-body">
-							<div class="row">
-								<?php if(get_sub_field('tab_content_icon')): ?>
-								<div class="<?php echo $iconColClass; ?>">
-									<div class="tabbed-content__icon">
-										<?php the_sub_field('tab_content_icon'); ?>
+			<div class="tabs-area <?= $boxPaddingCss; ?>">
+				<ul class="nav nav-tabs" id="tabRepeater">
+					<?php
+						$i = 0;
+						$linkClass = '';
+						while ( have_rows('tab_repeater') ) : the_row(); 
+						$tabTitle = get_sub_field('tab_title');
+					?>
+					<li class="nav-item"><a class="nav-link <?php if($i == '0'): echo 'active'; endif; ?>" href="#tabID-<?php echo $i; ?>"  data-toggle="tab" role="tab" aria-controls="tabID-<?php echo $i; ?>" aria-selected="<?php if($i == '0'): echo 'true'; else: echo 'false'; endif; ?>"><?php echo $tabTitle; ?></a></li>
+					<?php 
+						$i = $i + 1;
+						endwhile ?>
+				</ul>
+				<div class="tab-content" id="tabRepeaterContent">
+					<?php 
+						$tabCount = 0;
+						while ( have_rows('tab_repeater') ) : the_row(); 
+						$tabContent = get_sub_field('tab_content');
+						$tabTitle = get_sub_field('tab_title');
+					?>
+					<div class="card tab-pane fade <?php if($tabCount == '0'): echo 'show active'; endif; ?>" id="tabID-<?php echo $tabCount; ?>" role="tabpanel" aria-labelledby="<?php the_sub_field('tab_title'); ?>">
+						<div class="card-header" role="tab" id="heading-<?php echo $tabCount; ?>">
+							<h4><a data-toggle="collapse" href="#collapse-<?php echo $tabCount; ?>" aria-expanded="true" aria-controls="collapse-<?php echo $tabCount; ?>" ><i class="<?= $faType; ?> fa-chevron-right"></i> <?php echo $tabTitle; ?></a></h4>
+						</div>
+						<div id="collapse-<?php echo $tabCount; ?>" class="collapse <?php if($tabCount == '0'): ?>show<?php endif; ?>" data-parent="#content" role="tabpanel" aria-labelledby="heading-<?php echo $tabCount; ?>">
+							<div class="card-body">
+								<div class="row">
+									<?php if(get_sub_field('tab_content_icon')): ?>
+									<div class="<?php echo $iconColClass; ?>">
+										<div class="tabbed-content__icon">
+											<?php the_sub_field('tab_content_icon'); ?>
+										</div>
 									</div>
-								</div>
-								<?php endif; ?>
-								<div class="<?php echo $contentColClass; ?>">
-									<div class="tabbed-content__copy" <?php echo $colSize; ?>>
-										<?php the_sub_field('tab_content'); ?>
+									<?php endif; ?>
+									<div class="<?php echo $contentColClass; ?>">
+										<div class="tabbed-content__copy" <?php echo $colSize; ?>>
+											<?php the_sub_field('tab_content'); ?>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+					<?php 
+					$tabCount = $tabCount + 1;
+					endwhile ?>
 				</div>
-				<?php 
-				$tabCount = $tabCount + 1;
-				endwhile ?>
 			</div>
 			<?php endif; ?>
 			<? include $templatePartials . "add-button.php"; ?>
