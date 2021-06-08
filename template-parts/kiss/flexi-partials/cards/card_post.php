@@ -20,7 +20,8 @@ if($showButton != false){
             'button_page_link'    => get_permalink($pageID),
             'button_text_copy'    => $simpleButtonText,
             'btn_color'           => $simpleButtonColor,
-            'button_size'         => $simpleButtonSize
+            'button_size'         => $simpleButtonSize,
+            'button_padding'      => $simpleButtonPadding
         )
     );
     include $templatePartials . "/buttons-array.php";
