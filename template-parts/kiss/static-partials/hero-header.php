@@ -199,12 +199,12 @@
 				<div class="hero-header__content">
 					<div class="row">
 						<div class="<?= $colClassLeft; ?>">
-							<div class="<?= $heroTextColor . ' ' .  $contentSize; ?> mb-4">
-							<?= apply_filters('the_content', $heroContent); ?>
-							</div>
 							<? if(!empty($heroTitle)): ?>
 							<h1 class="<?= $heroH1Size . ' ' . $heroTextColor; ?>"><?= $heroTitle; ?></h1>
 							<? endif; ?>
+							<div class="<?= $heroTextColor . ' ' .  $contentSize; ?> mb-4">
+							<?= apply_filters('the_content', $heroContent); ?>
+							</div>
 						</div>
 						<div class="<?= $colClassRight; ?>">
 							<? if(!empty($heroTopImage)): ?>
