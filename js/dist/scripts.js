@@ -2590,11 +2590,11 @@ return Popper;
 
 
 jQuery(document).ready(function($) {
-  $(window).on("load resize", function (event) {
-    var $navbar = $("#main-nav");
-    var $heroHeader = $(".hero-header__wrap");
+  //$(window).on("load resize", function (event) {
+  //  var $navbar = $("#main-nav");
+  //  var $heroHeader = $(".hero-header__wrap");
 
-    $heroHeader.css("padding-top", $navbar.outerHeight());
-  });
+  //  $heroHeader.css("padding-top", $navbar.outerHeight());
+  //});
 });
 

@@ -24,7 +24,7 @@
                 "text-xl": "XL"
             },
             "default_value": false,
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 0,
             "return_format": "value",
@@ -54,7 +54,7 @@
                 "text-alternate": "Alternate"
             },
             "default_value": false,
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 0,
             "return_format": "value",
@@ -81,7 +81,7 @@
                 "font-weight-bold": "Bold"
             },
             "default_value": false,
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 0,
             "return_format": "value",
@@ -106,7 +106,7 @@
                 "text-center": "Center",
                 "text-right": "Right"
             },
-            "allow_null": 0,
+            "allow_null": 1,
             "default_value": "",
             "layout": "horizontal",
             "return_format": "value"
@@ -129,5 +129,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622628237
+    "modified": 1623137555
 }
