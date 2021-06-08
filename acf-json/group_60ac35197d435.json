@@ -1,0 +1,140 @@
+{
+    "key": "group_60ac35197d435",
+    "title": "Margin Controls",
+    "fields": [
+        {
+            "key": "field_60ac352a55391",
+            "label": "Margin Top",
+            "name": "margin_top",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "mt-0": "0",
+                "mt-1": "XS",
+                "mt-2": "SM",
+                "mt-3": "MD",
+                "mt-4": "LG",
+                "mt-5": "XL"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_60ac356755392",
+            "label": "Margin Right",
+            "name": "margin_right",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "mr-0": "0",
+                "mr-1": "XS",
+                "mr-2": "SM",
+                "mr-3": "MD",
+                "mr-4": "LG",
+                "mr-5": "XL"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_60ac358d55393",
+            "label": "Margin Bottom",
+            "name": "margin_bottom",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "mb-0": "0",
+                "mb-1": "XS",
+                "mb-2": "SM",
+                "mb-3": "MD",
+                "mb-4": "LG",
+                "mb-5": "XL"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_60ac35a055394",
+            "label": "Margin Left",
+            "name": "margin_left",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ml-0": "0",
+                "ml-1": "XS",
+                "ml-2": "SM",
+                "ml-3": "MD",
+                "ml-4": "LG",
+                "ml-5": "XL"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_status",
+                "operator": "==",
+                "value": "wc-failed"
+            }
+        ]
+    ],
+    "menu_order": 206,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1621898701
+}

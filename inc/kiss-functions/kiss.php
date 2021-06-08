@@ -604,6 +604,13 @@ function my_custom_sizes( $sizes ) {
 	) );
 }
 
+
+//. Google Maps API key
+function my_acf_init() {
+	acf_update_setting('google_api_key', 'AIzaSyAWL3Zw816wZNsiutVTazUqNr7gt0NOheU');
+}
+add_action('acf/init', 'my_acf_init');
+
 /**
  * Responsive Image Helper Function
  *
@@ -628,3 +635,4 @@ function siiteable_responsive_image($image_id,$image_size,$max_width){
 
 	}
 }
+

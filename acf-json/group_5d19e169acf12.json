@@ -3024,8 +3024,10 @@
                             "maxlength": ""
                         },
                         {
+
                             "key": "field_60b8bcdbfcd51",
                             "label": "Title Font Controls",
+
                             "name": "tab_title",
                             "type": "clone",
                             "instructions": "",
@@ -3066,6 +3068,27 @@
                         {
                             "key": "field_60b8bd28fcd52",
                             "label": "Intro Font Controls",
+                            "name": "tab_intro",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6076c01d3fc68"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 1,
+                            "prefix_name": 1
+                        },
+                        {
+                            "key": "field_60ac3441f3bfa",
+                            "label": "Intro Fonts",
                             "name": "tab_intro",
                             "type": "clone",
                             "instructions": "",
@@ -3608,7 +3631,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
@@ -3627,6 +3650,46 @@
                             "return_format": "value",
                             "ajax": 0,
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_5e40ef65ec041",
+                            "label": "Custom Class",
+                            "name": "tab_class",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_60ac315e1f69c",
+                            "label": "Buttons",
+                            "name": "tab_button",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5d48ec70c0c85"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 1
                         },
                         {
                             "key": "field_5d4d088766046",
