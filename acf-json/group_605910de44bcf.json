@@ -251,9 +251,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "post_status",
                 "operator": "==",
-                "value": "product"
+                "value": "wc-failed"
             }
         ]
     ],
@@ -265,5 +265,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1616450299
+    "modified": 1621845338
 }

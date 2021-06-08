@@ -1,0 +1,21 @@
+.eventslist {
+    &-date {
+        text-align: center;
+        p {
+            line-height: 0.8;
+            margin: 0;
+        }
+    }
+    &-day {
+        font-family: $headings-font-family;
+        font-size: 4rem;
+    }
+    &-month {
+        font-family: $headings-font-family;
+        text-transform: uppercase;
+        font-size: 3rem;
+    }
+    &-year {
+        font-size: 1.7rem;
+    }
+}

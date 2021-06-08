@@ -4,9 +4,19 @@
 	
 	$sepPrefix = 'tab';
 	$templatePath = get_template_directory();
-	$separatorLayout = $templatePath . "/template-parts/kiss/static-partials/separators.php";
+	$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
 	
+	/// TEXT CONTROLS
+	include $templatePartials . 'text-controls.php';
+	
+	$separatorLayout = $templatePartials . "separators.php";
 	include $separatorLayout; 
+	
+	// GET BUTTONS
+	$addButton = false;
+	if(get_sub_field($sepPrefix . '_button_add_button') == true):
+		include $templatePartials . "buttons.php";
+	endif;
 	
 	/// TAB TITLE & INTRO
 	$tabTitle = get_sub_field($sepPrefix . '_title');
@@ -93,10 +103,10 @@
 	<div class="tabbed-content__inner flexi-inner <?php echo $tabColourSetup . ' ' . $tabFontSetup . ' ' . $colCount . ' ' . $containerDirection; ?>">
 		<div class="container">
 			<?php if(!empty($tabTitle)) {
-				echo '<h2 class="tabbed-content__title">' . $tabTitle . '</h2>';
+				echo '<h2 class="' . $titleTextClass . '">' . $tabTitle . '</h2>';
 			}
 			if(!empty($tabIntro)) {
-				echo '<div class="tabbed-content__intro">' . $tabIntro . '</div>';
+				echo '<div class="' . $introTextClass . '">' . $tabIntro . '</div>';
 			} ?>
 			<?php if( have_rows('tab_repeater') ): ?>
 			<ul class="nav nav-tabs" id="tabRepeater">
@@ -146,6 +156,7 @@
 				endwhile ?>
 			</div>
 			<?php endif; ?>
+			<? include $templatePartials . "add-button.php"; ?>
 		</div>			
 	</div>
 	<?php if($addSeparatorLower == true):

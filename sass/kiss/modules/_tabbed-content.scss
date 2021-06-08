@@ -3,6 +3,26 @@
 	.container {
 		max-width: 960px;
 	}
+	h2 {
+		&.text-xl {
+			margin: 0 0 3rem;
+		}
+		&.text-lg {
+			margin: 0 0 2rem;
+		}
+		&.text-md {
+			margin: 0 0 1.5rem;
+		}
+		&.text-sm {
+			margin:  0 0 1.3rem;
+		}
+		&.text-xs {
+			margin: 0 0 1rem;
+		}
+	}
+	.btn-actions {
+		margin-top: 2rem;
+	}
 	.nav-tabs {
 		.nav-link {
 			border: none;

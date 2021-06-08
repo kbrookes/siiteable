@@ -603,3 +603,9 @@ function my_custom_sizes( $sizes ) {
 		'logos-sm' => __( 'Small Logos' ),
 	) );
 }
+
+//. Google Maps API key
+function my_acf_init() {
+	acf_update_setting('google_api_key', 'AIzaSyAWL3Zw816wZNsiutVTazUqNr7gt0NOheU');
+}
+add_action('acf/init', 'my_acf_init');
