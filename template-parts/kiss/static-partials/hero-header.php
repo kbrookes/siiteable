@@ -150,13 +150,15 @@
 	}
 	
 	$pageTitle = single_post_title('', FALSE);
-	if(get_post_meta( get_the_ID(), 'hero_title', true )):
-		$heroTitle = get_post_meta( get_the_ID(), 'hero_title', true );
+	if(!empty(get_field('hero_title'))):
+		$heroTitle = get_field('hero_block_title', $page_id);
 	elseif(get_field('news_block_title', 'options') != '' && $isBlogPage && !is_singular()):
 		$heroTitle = get_field('news_block_title', 'options');
 	else:
 		$heroTitle = $pageTitle;
 	endif;
+	
+	//$titleTest = get_field('hero_block_title', $page_id);
 	
 	$titleLocation = 'hero';
 	if($postType == 'post' && $isArchives == true && (is_singular() == true)) {
