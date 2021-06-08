@@ -7,11 +7,15 @@ if(!empty(get_sub_field($sepPrefix . '_overlay_colour'))):
     $overlayColor = get_sub_field($sepPrefix . '_overlay_colour');
 elseif(!empty(get_field($sepPrefix . '_overlay_colour'))):
     $overlayColor = get_field($sepPrefix . '_overlay_colour');
+elseif(!empty(get_field($sepPrefix . '_overlay_colour', 'options'))):
+    $overlayColor = get_field($sepPrefix . '_overlay_colour', 'options');
 endif;
 if(!empty(get_sub_field($sepPrefix . '_overlay_opacity'))):
     $overlayOpacity = get_sub_field($sepPrefix . '_overlay_opacity');
 elseif(!empty(get_field($sepPrefix . '_overlay_opacity'))):
     $overlayOpacity = get_field($sepPrefix . '_overlay_opacity');
+elseif(!empty(get_field($sepPrefix . '_overlay_opacity', 'options'))):
+    $overlayOpacity = get_field($sepPrefix . '_overlay_opacity', 'options');
 endif;
 $colorClass = '';
 $opacityClass = '';

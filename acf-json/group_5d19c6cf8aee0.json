@@ -659,7 +659,7 @@
                 "bg-alternate": "Alternate"
             },
             "default_value": false,
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 0,
             "return_format": "value",
@@ -763,5 +763,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622682481
+    "modified": 1623137515
 }
