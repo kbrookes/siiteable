@@ -209,6 +209,9 @@ require get_template_directory() . '/inc/kiss-functions/social-icons-widget.php'
 
 /// CTA Widget
 require get_template_directory() . '/inc/kiss-functions/cta-widget.php'; 
+
+/// EVents Widget
+require get_template_directory() . '/inc/kiss-functions/events-widget.php'; 
  
 /// Sidebars
 require get_template_directory() . '/inc/kiss-functions/sidebars.php';
@@ -222,3 +225,5 @@ require get_template_directory() . '/inc/kiss-functions/cpt-testimonials.php';
 require get_template_directory() . '/inc/kiss-functions/cpt-case-studies.php';
 
 require get_template_directory() . '/inc/kiss-functions/options-pages.php';
+
+require get_template_directory() . '/inc/kiss-functions/cpt-events.php';

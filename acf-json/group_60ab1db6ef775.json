@@ -1,0 +1,239 @@
+{
+    "key": "group_60ab1db6ef775",
+    "title": "Events Widget Settings",
+    "fields": [
+        {
+            "key": "field_60ab3ea6a06fb",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60ab1dca3e7f3",
+            "label": "Background Colour",
+            "name": "bg_color",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "bg-white": "White",
+                "bg-dark": "Dark",
+                "bg-light": "Light",
+                "bg-primary": "Primary",
+                "bg-secondary": "Secondary",
+                "bg-alternate": "Alternate"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_60ab41f6ac7ca",
+            "label": "Vertical Spacing",
+            "name": "widget_padding",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "py-0": "0",
+                "py-1": "XS",
+                "py-2": "SM",
+                "py-3": "MD",
+                "py-4": "LG",
+                "py-5": "XL"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_60ab1e4e3e7f4",
+            "label": "Widget Title Align",
+            "name": "widget_title_align",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "text-left": "Left",
+                "text-center": "Centre",
+                "text-right": "Right"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_60ab1e813e7f5",
+            "label": "Widget Title Colour",
+            "name": "widget_title_colour",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "text-primary": "Primary",
+                "text-secondary": "Secondary",
+                "text-white": "White",
+                "text-dark": "Dark",
+                "text-light": "Light",
+                "text-alternate": "Alternate"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_60ab423dac7cb",
+            "label": "Event Title Colour",
+            "name": "event_title_colour",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "text-primary": "Primary",
+                "text-secondary": "Secondary",
+                "text-white": "White",
+                "text-dark": "Dark",
+                "text-light": "Light",
+                "text-alternate": "Alternate"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_60ab4271ac7cc",
+            "label": "Text Colour",
+            "name": "text_colour",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "text-primary": "Primary",
+                "text-secondary": "Secondary",
+                "text-white": "White",
+                "text-dark": "Dark",
+                "text-light": "Light",
+                "text-alternate": "Alternate"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_60ab4753d0e56",
+            "label": "Button Colour",
+            "name": "button_color",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "primary": "Primary",
+                "secondary": "Secondary",
+                "white": "White",
+                "dark": "Dark",
+                "light": "Light",
+                "alternate": "Alternate"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "widget",
+                "operator": "==",
+                "value": "eventslist_widget"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1621837797
+}

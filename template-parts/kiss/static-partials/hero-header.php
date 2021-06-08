@@ -196,10 +196,13 @@
 			<div class="hero-header__wrap-inner">
 				<div class="hero-header__content">
 					<div class="row">
+
 						<div class="<?= $colClassLeft; ?> d-flex flex-column justify-content-center">
+
 							<? if(!empty($heroTitle)): ?>
 							<h1 class="<?= $titleClass; ?>"><?= $heroTitle; ?></h1>
 							<? endif; ?>
+
 							<div class="<?= $contentClass; ?> mb-4">
 							<?= apply_filters('the_content', $heroContent); ?>
 							</div>

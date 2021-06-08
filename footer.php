@@ -96,8 +96,12 @@ $templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
 			<? endif; ?>
 		</div>
 	</section>
-	<? endif; ?>
-	<? 
+	<? endif; 
+	
+	if (is_active_sidebar("about_footer")):
+	   dynamic_sidebar("about_footer");
+	 endif;
+	
 	$footerCols = 4;
 	$footerCols = "col-12 col-sm-6 col-md-3";
 	$footerColSm = "col-12 col-sm-6 col-md-2";

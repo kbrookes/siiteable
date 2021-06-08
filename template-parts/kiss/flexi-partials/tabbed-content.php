@@ -6,16 +6,24 @@
 	$templatePath = get_template_directory();
 	$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
 	
+
+	/// TEXT CONTROLS
+	include $templatePartials . 'text-controls.php';
+	
 	$separatorLayout = $templatePartials . "separators.php";
 	include $separatorLayout; 
 	
-	/// TEXT CONTROLS
-	include $templatePartials . 'text-controls.php';
+	// GET BUTTONS
+	$addButton = false;
+	if(get_sub_field($sepPrefix . '_button_add_button') == true):
+		include $templatePartials . "buttons.php";
+	endif;
 	
 	// Custom classes, container directionp & size, title, text
 	include $templatePartials . 'general-partials.php';
 	
 	$faType = get_theme_mod( 'fa_styles');
+
 	
 	/// TAB TITLE & INTRO
 	$tabTitle = get_sub_field($sepPrefix . '_block_title');
@@ -157,6 +165,7 @@
 				</div>
 			</div>
 			<?php endif; ?>
+			<? include $templatePartials . "add-button.php"; ?>
 		</div>			
 	</div>
 	<?php if($addSeparatorLower == true):
