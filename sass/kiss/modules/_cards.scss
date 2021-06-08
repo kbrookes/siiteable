@@ -38,7 +38,7 @@
 			align-items: stretch;
 			display: flex;
 			flex-direction: column;
-			justify-content: space-between;
+			justify-content: center;
 			@include media-breakpoint-up(md){
 				height: 100%;
 			}
