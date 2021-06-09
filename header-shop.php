@@ -33,6 +33,10 @@ if( get_theme_mod( 'lll_header_opacity', 'false' ) == 'true' ):
     $transparentForHero = 'headerTransparent';
 endif;
 
+/// WHICH NAVIGATION
+$navType = 'nav_standard';
+$navType = (get_theme_mod('lll_hero_header_navtype', 'false');
+
 /// ADD TO THE BODY CLASS
 // BUTTON SETTINGS
 $buttonType = get_theme_mod( 'button_styles');
@@ -59,7 +63,7 @@ $templatePath = get_template_directory();
 <div id="page" class="site site-store">
 
 	<header id="masthead" class="site-header" role="banner">
-	    <? include $templatePath . "/template-parts/header/nav.php"; ?>
+	    <? include $templatePath . '/template-parts/header/' . $navType . '.php'; ?>
 	</header><!-- #masthead -->
 	
 
