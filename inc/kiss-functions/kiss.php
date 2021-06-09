@@ -271,15 +271,15 @@ function lll_customizer_settings( $wp_customize ) {
 			),
 	) );
 	
-	$wp_customize->add_setting( 'hero_h1_size' , array(
+	$wp_customize->add_setting( 'hero_text_size' , array(
 		'default'		=> 'font-md',
 		'type'          => 'theme_mod',
 		'transport'     => 'refresh',
 	) );
-	$wp_customize->add_control( 'hero_h1_size_control', array(
+	$wp_customize->add_control( 'hero_text_size_control', array(
 		'label'      => 'Heading 1 Font Size',
 		'section'    => 'hero_header_settings',
-		'settings'   => 'hero_h1_size',
+		'settings'   => 'hero_text_size',
 		'type'       => 'select',
 			'choices'    => array( 
 			  'font-xs' => 'XS',
@@ -651,3 +651,39 @@ function siiteable_responsive_image($image_id,$image_size,$max_width){
 	}
 }
 
+/// HERO SETTINGS
+function getHeroHeightElvis($prefix, $isBlogPage)
+{
+	$page = get_field($prefix . '_override_height');
+	$blog = get_field($prefix . '_override_height', 'options');
+	$theme = get_theme_mod('hero_header_height', 0); 
+	$default = 'header_md';
+
+	if($isBlogPage) {
+		return $page ?: $blog ?: $theme ?: $default;
+	}   
+	return $page ?: $theme ?: $default;
+}
+
+function getHeroAlignment($prefix, $isBlogPage){
+	$page = get_field($prefix . '_override_vertical');
+	$blog = get_field($prefix . '_override_vertical', 'options');
+	$theme = get_theme_mod( 'hero_vertical_alignment', 0 );
+	$default = 'align-items-center';
+	
+	if($isBlogPage){
+		return $page ?: $blog ?: $theme ?: $default;
+	}
+	return $page ?: $theme ?: $default;
+}
+
+/// TEXT CONTROLS
+function textTitle($prefix, $type){
+	$title = get_sub_field($prefix . '_title_font_' . $type);
+	$titles = get_sub_field($prefix . '_titles_font_' . $type);
+	$titleNG = get_field($prefix . '_title_font_' . $type);
+	$titleOption = get_field($prefix . '_title_font_' . $type, 'options');
+	$titleTheme = get_theme_mod( 'hero_text_' . $type, 0 );
+	
+	return $title ?: $titles ?: $titleNG ?: $titleOption ?: $titleTheme;
+}
