@@ -45,7 +45,7 @@ endif;
 
 /// WHICH NAVIGATION
 $navType = 'nav_standard';
-$navType = (get_theme_mod('lll_hero_header_navtype', 'false');
+$navType = (get_theme_mod('lll_hero_header_navtype', 'false'));
 
 /// ADD TO THE BODY CLASS
 // BUTTON SETTINGS
