@@ -16,24 +16,40 @@
 	$templatePath = get_template_directory();
 	$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
 	
-	/// TEXT CONTROLS
-	include $templatePartials . 'text-controls.php';
 	
-	//// CUSTOMIZER OPTIONS
-	$heroHeight = get_theme_mod( 'hero_header_height', 0 );
+	//// DEFAULT HEIGHT LOGIC
+	$heroHeightDefault = 'header_md';
+	$heroHeightTheme = trim(get_theme_mod( 'hero_header_height', 0 ));
+	$heroHeightBlog = trim(get_field($sepPrefix . '_override_height', 'options'));
+	$heroHeightPage = trim(get_field($sepPrefix . '_override_height'));
+	
+	$no_settings = trim($heroHeightTheme.$heroHeightBlog.$heroHeightPage) === '' ;
+	$blogHeight = !empty($heroHeightBlog) ? $heroHeightBlog : (!empty($heroHeightTheme) ? $heroHeightTheme : $heroHeightDefault);
+	$themeHeight = !empty($heroHeightTheme) ? $heroHeightTheme : $heroHeightDefault;
+	
+	if($no_settings) $heroHeight = $heroHeightDefault; 
+	elseif(!empty($heroHeightPage)) $heroHeight = $heroHeightPage; 
+	elseif($isBlogPage) $heroHeight = $blogHeight; 
+	else $heroHeight = $themeHeight; 
+	
+	if(empty($heroHeightPage)){
+		$tt = 'empty';
+	}
+	
+	//// DEFAULT ALIGNMENT LOGIC
 	$heroAlignment = 'align-items-center';
 	if($isBlogPage){
-		$heroHeightOverride = get_field($sepPrefix . '_override_height', 'options');
+		//$heroHeightOverride = get_field($sepPrefix . '_override_height', 'options');
 		$heroAlignOverride = get_field($sepPrefix . '_override_vertical', 'options');
 	} else {
-		$heroHeightOverride = get_field($sepPrefix . '_override_height');
+		//$heroHeightOverride = get_field($sepPrefix . '_override_height');
 		$heroAlignOverride = get_field($sepPrefix . '_override_vertical');
 	}
 	// Override on a per-post basis
 	if($heroHeightOverride == "false"):
-		$heroHeight = get_theme_mod( 'hero_header_height', 0 );
+		//$heroHeight = get_theme_mod( 'hero_header_height', 0 );
 	else:
-		$heroHeight = $heroHeightOverride;
+		//$heroHeight = $heroHeightOverride;
 	endif;
 		
 	if($heroAlignOverride == "false"):
@@ -44,26 +60,30 @@
 	
 	
 	
-	
-	if($isBlogPage && $optionsTitleTextClass != ''):
-		$titleClass = $optionsTitleTextClass;
-	elseif($titleTextClassG == 'default default default text-left'):
-		$titleClass = $heroTextColor . ' ' . $heroH1Size;
-	elseif($titleTextClassG != 'default default default text-left'):
+	/// TEXT CONTROLS
+	include $templatePartials . 'text-controls.php';
+
+	// TITLE CLASS
+	if(!empty(trim($titleTextClassG))){
 		$titleClass = $titleTextClassG;
-	else:
-		$titleClass = $titleTextClass;
-	endif;
+	} else {
+		$titleClass = $themeHeroTextColor . ' ' . $themeHeroTitleSize;
+	}
 	
-	if($isBlogPage && $optionsContentTextClass != ''):
-		$contentClass = $optionsContentTextClass;
-	elseif($introTextClassG == 'default default default text-left'):
-		$contentClass = $contentSize . ' ' . $heroTextColor;
-	elseif($introTextClassG != 'default default default text-left'):
+	if($isBlogPage && !empty(trim($optionsTitleTextClass))){
+		$titleClass = $optionsTitleTextClass;
+	}
+	
+	// CONTENT CLASS
+	if(!empty(trim($introTextClassG))){
 		$contentClass = $introTextClassG;
-	else:
-		$contentClass = $introTextClass;
-	endif;
+	} else {
+		$contentClass = $themeHeroTextColor . ' ' . $themeHeroContentSize;
+	}
+	
+	if($isBlogPage && !empty(trim($optionsContentTextClass))){
+		$contentClass = $optionsContentTextClass;
+	}
 	
 	
 	$colWidth = 'w-75';
@@ -150,7 +170,7 @@
 	}
 	
 	$pageTitle = single_post_title('', FALSE);
-	if(!empty(get_field('hero_title'))):
+	if(!empty(get_field('hero_block_title', $page_id))):
 		$heroTitle = get_field('hero_block_title', $page_id);
 	elseif(get_field('news_block_title', 'options') != '' && $isBlogPage && !is_singular()):
 		$heroTitle = get_field('news_block_title', 'options');
