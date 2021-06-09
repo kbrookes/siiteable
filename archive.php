@@ -25,17 +25,17 @@ $faType = get_theme_mod( 'fa_styles');
 		$heroAlignment = 'align-items-center';
 		$heroAlignment = get_theme_mod( 'hero_vertical_alignment', 0 );
 		
-		$heroTextColor = 'text-white';
-		$heroTextColor = get_theme_mod( 'hero_text_color', 0 );
+		$themeHeroTextColor = 'text-white';
+		$themeHeroTextColor = get_theme_mod( 'hero_text_color', 0 );
 		
-		$heroH1Size = 'font-md';
-		$heroH1Size = get_theme_mod( 'hero_h1_size', 0 );
+		$themeHeroTitleSize = 'font-md';
+		$themeHeroTitleSize = get_theme_mod( 'hero_h1_size', 0 );
 		
 		$colWidth = 'w-75';
 		$colWidth = get_theme_mod('header_content_width', 0 );
 		
-		$contentSize = 'text-md';
-		$contentSize = get_theme_mod('hero_header_content_size', 0);
+		$themeHeroContentSize = 'text-md';
+		$themeHeroContentSize = get_theme_mod('hero_header_content_size', 0);
 		
 		$paddingY = 'py-0';
 		$paddingY = get_theme_mod('hero_padding', 0);
@@ -119,8 +119,8 @@ $faType = get_theme_mod( 'fa_styles');
 	<div class="hero-header__wrap <?= $overlayClass; ?>" style="background-image:url(<?php echo $getArchiveThumbnail; ?>)">
 		<div class="container <?= $heroAlignment . ' ' . $paddingY; ?>">
 			<div class="hero-header__wrap-inner">
-				<?php the_archive_title( '<h1 class="' . $heroH1Size . ' ' . $heroTextColor . '">', '</h1>' ); ?>
-				<div class="<?= $heroTextColor . ' ' .  $contentSize; ?>">
+				<?php the_archive_title( '<h1 class="' . $themeHeroTitleSize . ' ' . $themeHeroTextColor . '">', '</h1>' ); ?>
+				<div class="<?= $themeHeroTextColor . ' ' .  $themeHeroContentSize; ?>">
 					<? the_archive_top_content(); ?>
 				</div>
 			</div>

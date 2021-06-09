@@ -76,7 +76,9 @@
 		}
 		&__vertical {
 			display: block;
+			height: 100%;
 			.cards-card__content {
+				height: auto;
 				padding: 1rem;
 			}
 		}
