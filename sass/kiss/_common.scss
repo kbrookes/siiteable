@@ -447,26 +447,6 @@ $basefontsize: 16 !default;
   &.hasOverlay {
     .image-box__inner-overlay {
       transition: 0.3s ease all;
-      &.overlay {
-        &-primary {
-          background-color: $primary;
-        }
-        &-secondary {
-          background-color: $secondary;
-        }
-        &-dark {
-          background-color: $dark;
-        }
-        &-light {
-          background-color: $light;
-        }
-        &-white {
-          background-color: $white;
-        }
-        &-alternate {
-          background-color: $alternate;
-        }
-      }
     }
   }
   .style-square &,
@@ -484,6 +464,40 @@ $basefontsize: 16 !default;
   .style-narrow &,
   &.style-narrow {
     padding-bottom: 35%;
+  }
+}
+
+/// OVERLAYS
+.overlay {
+  &-primary {
+    background-color: $primary;
+  }
+  &-secondary {
+    background-color: $secondary;
+  }
+  &-dark {
+    background-color: $dark;
+  }
+  &-light {
+    background-color: $light;
+  }
+  &-white {
+    background-color: $white;
+  }
+  &-alternate {
+    background-color: $alternate;
+  }
+  &-transparent {
+    background-color: none;
+  }
+}
+
+.top {
+  &-0 {
+    top: 0;
+  }
+  &--1 {
+    top: -1px;
   }
 }
 

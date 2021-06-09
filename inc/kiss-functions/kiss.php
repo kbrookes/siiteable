@@ -189,6 +189,21 @@ function lll_customizer_settings( $wp_customize ) {
 		),
 	));
 	
+	$wp_customize->add_setting( 'lll_hero_header_navtype' , array(
+		'default'       => 'nav_standard',
+		'transport'     => 'refresh',
+	) );
+	$wp_customize->add_control( 'lll_hero_header_navtype', array(
+		'label'      => 'Navigation Type',
+		'section'    => 'lll_header_settings',
+		'settings'   => 'lll_hero_header_navtype',
+		'type'       => 'select',
+			'choices'    => array( 
+			  'nav_standard' => 'Standard',
+			  'nav_burger' => 'Hamburger',
+			),
+	) );
+	
 	//// HERO SETTINGS
 	// Create our sections
 	

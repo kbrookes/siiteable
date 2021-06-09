@@ -2693,7 +2693,7 @@
                                 "id": ""
                             },
                             "choices": {
-                                "default": "Default",
+                                "bg-transparent": "Transparent",
                                 "bg-primary": "Primary",
                                 "bg-secondary": "Secondary",
                                 "bg-dark": "Dark",
@@ -2701,7 +2701,7 @@
                                 "bg-white": "White"
                             },
                             "default_value": false,
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "multiple": 0,
                             "ui": 0,
                             "return_format": "value",
@@ -2757,7 +2757,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "30",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
@@ -2773,6 +2773,51 @@
                             "return_format": "value"
                         },
                         {
+                            "key": "field_60c0358f552ba",
+                            "label": "Box Background Image",
+                            "name": "card_bg_image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "full",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_60c0400b97915",
+                            "label": "Background Overlays",
+                            "name": "card_overlay",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_608e0bddd4232"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 1
+                        },
+                        {
                             "key": "field_5f2cc0be85703",
                             "label": "Box Background Colour",
                             "name": "box_background_colour",
@@ -2781,7 +2826,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "30",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
@@ -2802,6 +2847,44 @@
                             "placeholder": ""
                         },
                         {
+                            "key": "field_5f2cc11d8570a",
+                            "label": "Custom Class",
+                            "name": "card_class",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_60bd8400ebefd",
+                            "label": "Remove vertical padding?",
+                            "name": "card_remove_padding",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_5f2cc0d485704",
                             "label": "Add Separators?",
                             "name": "card_separators",
@@ -2810,7 +2893,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "30",
+                                "width": "100",
                                 "class": "",
                                 "id": ""
                             },
@@ -2920,44 +3003,6 @@
                             ]
                         },
                         {
-                            "key": "field_5f2cc11d8570a",
-                            "label": "Custom Class",
-                            "name": "card_class",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "30",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_60bd8400ebefd",
-                            "label": "Remove vertical padding?",
-                            "name": "card_remove_padding",
-                            "type": "true_false",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "30",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 1,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
                             "key": "field_6098db981a4f2",
                             "label": "Card Buttons",
                             "name": "card_intro_button",
@@ -3024,10 +3069,8 @@
                             "maxlength": ""
                         },
                         {
-
                             "key": "field_60b8bcdbfcd51",
                             "label": "Title Font Controls",
-
                             "name": "tab_title",
                             "type": "clone",
                             "instructions": "",
@@ -3650,25 +3693,6 @@
                             "return_format": "value",
                             "ajax": 0,
                             "placeholder": ""
-                        },
-                        {
-                            "key": "field_5e40ef65ec041",
-                            "label": "Custom Class",
-                            "name": "tab_class",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "30",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
                         },
                         {
                             "key": "field_60ac315e1f69c",
@@ -6580,5 +6604,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623044415
+    "modified": 1623212150
 }
