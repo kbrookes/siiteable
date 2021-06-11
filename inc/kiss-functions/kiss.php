@@ -610,12 +610,14 @@ add_filter('wpcf7_form_elements', function ($content) {
 
 // Register new image sizes
 add_image_size( 'logos-sm', 120, 9999999, false );
+add_image_size( 'square-medium', 640, 640, false );
 
 add_filter( 'image_size_names_choose', 'my_custom_sizes' );
 
 function my_custom_sizes( $sizes ) {
 	return array_merge( $sizes, array(
 		'logos-sm' => __( 'Small Logos' ),
+		'square-medium' => __( 'Medium Square' ),
 	) );
 }
 

@@ -2,6 +2,7 @@
 $cardImage = get_the_post_thumbnail_url($pageID, 'full');
 if(empty($cardImage)):
     $cardImage = get_field('hero_image', $pageID);
+    $cardImageID = get_post_thumbnail_id($pageID);
 endif;
 
 // GET BUTTONS
@@ -51,6 +52,9 @@ if($cardDesign == 'row'):
 elseif($cardDesign == 'card'):
     $cardCssRow = 'cards-card__vertical';
     $imageCol = '';
+elseif($cardDesign == 'simple'):
+    $cardCssRow = 'cards-card__hover';
+    $imageCol = '';
 endif;
 
 
@@ -71,7 +75,6 @@ if($cardType == 'momentum'):
     $cardCssRow = $cardCssRow . ' cards-card__momentum ';
     $cardCssContent = 'col-12';
 endif;
-
 ?>
 <div class="<?= $colCount . ' ' . $cardBottomMargin; ?>">
     <div class="cards-card <?= $cardBackgroundColor . ' ' . $shadow . ' ' . $cardCssRow . ' '. $gutters . ' ' . $cardPadding; ?>">
@@ -79,6 +82,7 @@ endif;
             include $cardPartials . "card_image_custom.php"; 
         endif;
         ?>
+        <? if($cardDesign != 'simple'):?>
         <div class="cards-card__content <?= $cardCssContent . ' ' . $cardOrder . ' ' . $contentPadding; ?>">
             <? if($cardType != 'momentum'): ?>
             <div class="cards-card__copy">
@@ -87,5 +91,6 @@ endif;
             <? endif; ?>
             <? include $templatePartials . "add-button.php"; ?>
         </div>
+        <? endif; ?>
     </div>
 </div>
