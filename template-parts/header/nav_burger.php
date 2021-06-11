@@ -10,7 +10,7 @@
             </a>
         </div>
         <div class="nav-content d-flex align-items-center">
-            <a href="https://themoneysandwich.com/product/the-money-sandwich/" class="btn-custom primary">BUY THE BOOK</a>
+            <a href="/contact" class="btn-custom primary">CONTACT</a>
             <button class="hamburger navbar-toggler navbar-toggler-right" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <svg class="hamburger-icon" viewBox="0 0 100 100">
                     <path class="line line-1 hamburger-icon__stroke" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
