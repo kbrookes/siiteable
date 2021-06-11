@@ -73,7 +73,7 @@ if($cardType == 'momentum'):
 endif;
 
 ?>
-<div class="<?= $colCount; ?>">
+<div class="<?= $colCount . ' ' . $cardBottomMargin; ?>">
     <div class="cards-card <?= $cardBackgroundColor . ' ' . $shadow . ' ' . $cardCssRow . ' '. $gutters . ' ' . $cardPadding; ?>">
         <? if($cardType != 'momentum'): 
             include $cardPartials . "card_image_custom.php"; 
