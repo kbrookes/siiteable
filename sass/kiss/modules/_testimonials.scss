@@ -12,29 +12,12 @@
 	blockquote {
 		margin-bottom: 0;
 		margin-top: 0;
-		&.text {
-			&-xs {
-				
-			}
-			&-sm {
-				
-			}
-			&-md {
-				
-			}
-			&-lg {
-				
-			}
-			&-xl {
-				
-			}
-		}
 		footer {
-			color: $brand-secondary;
+			//color: $brand-secondary;
 			font-weight: light;
 			text-transform: uppercase;
 			cite {
-				color: $brand-primary;
+				//color: $brand-primary;
 				display: block;
 				font-style: normal;
 				font-weight: bold;
@@ -94,12 +77,12 @@
 	&.bg-secondary {
 		blockquote {
 			p {
-				color: $white;
+				//color: $white;
 			}
 			footer {
-				color: $light;
+				//color: $light;
 				cite {
-					color: $alternate;
+					//color: $alternate;
 				}
 			}
 		}
@@ -110,12 +93,12 @@
 	&.bg-dark {
 		blockquote {
 			p {
-				color: $light;	
+				//color: $light;	
 			}
 			footer {
-				color: $white;
+				//color: $white;
 				cite {
-					color: $alternate;
+					//color: $alternate;
 				}
 			}
 		}
@@ -126,12 +109,12 @@
 	&.bg-light {
 		blockquote {
 			p {
-				color: $dark;	
+				//color: $dark;	
 			}
 			footer {
-				color: $secondary;
+				//color: $secondary;
 				cite {
-					color: $primary;
+					//color: $primary;
 				}
 			}
 		}
@@ -142,12 +125,12 @@
 	&.bg-white {
 		blockquote {
 			p {
-				color: $dark;
+				//color: $dark;
 			}
 			footer {
-				color: $secondary;
+				//color: $secondary;
 				cite {
-					color: $primary;
+					//color: $primary;
 				}
 			}
 		}
