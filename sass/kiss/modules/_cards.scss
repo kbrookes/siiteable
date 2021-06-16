@@ -22,6 +22,7 @@
 		//box-shadow: 0 0 30px rgba($dark, 0.4);
 		display: flex;
 		//height: 100%;
+		position: relative;
 		&__header {
 			img {
 				width: 100%;
@@ -54,6 +55,12 @@
 				&:last-child {
 					margin-bottom: 0;
 				}
+			}
+		}
+		&__hover {
+			.cards-card__image {
+				position: relative;
+				flex: 0 0 100%;
 			}
 		}
 		&__horizontal {
