@@ -109,7 +109,7 @@ if($cardType == 'get-post' && get_sub_field($sepPrefix . '_post_content') == tru
 }
 
 $titleLink = '';
-if($cardType == 'get-post'):
+if($cardType == 'get-post' && $cardDesign != 'simple'):
     $titleLink = get_permalink($pageID);
     $title = '<a class="' . $titlesTextColor . '" href="' . $titleLink . '">' . $title . '</a>';
 endif;

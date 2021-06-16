@@ -16,64 +16,16 @@
 	$templatePath = get_template_directory();
 	$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
 	
-	
-	//// DEFAULT HEIGHT LOGIC
-	$heroHeightDefault = 'header_md';
-	$heroHeightTheme = trim(get_theme_mod( 'hero_header_height', 0 ));
-	$heroHeightBlog = trim(get_field($sepPrefix . '_override_height', 'options'));
-	$heroHeightPage = trim(get_field($sepPrefix . '_override_height'));
-	
-	$no_settings = trim($heroHeightTheme.$heroHeightBlog.$heroHeightPage) === '' ;
-	$blogHeight = !empty($heroHeightBlog) ? $heroHeightBlog : (!empty($heroHeightTheme) ? $heroHeightTheme : $heroHeightDefault);
-	$themeHeight = !empty($heroHeightTheme) ? $heroHeightTheme : $heroHeightDefault;
-	
-	if($no_settings) $heroHeight = $heroHeightDefault; 
-	elseif(!empty($heroHeightPage)) $heroHeight = $heroHeightPage; 
-	elseif($isBlogPage) $heroHeight = $blogHeight; 
-	else $heroHeight = $themeHeight; 
-	
-	if(empty($heroHeightPage)){
-		$tt = 'empty';
-	}
+	/// HERO HEIGHT
+	$heroHeight = getHeroHeightElvis($sepPrefix, $isBlogPage);
 	
 	//// DEFAULT ALIGNMENT LOGIC
-	$heroAlignment = 'align-items-center';
-	if($isBlogPage){
-		//$heroHeightOverride = get_field($sepPrefix . '_override_height', 'options');
-		$heroAlignOverride = get_field($sepPrefix . '_override_vertical', 'options');
-	} else {
-		//$heroHeightOverride = get_field($sepPrefix . '_override_height');
-		$heroAlignOverride = get_field($sepPrefix . '_override_vertical');
-	}
-	// Override on a per-post basis
-	if($heroHeightOverride == "false"):
-		//$heroHeight = get_theme_mod( 'hero_header_height', 0 );
-	else:
-		//$heroHeight = $heroHeightOverride;
-	endif;
-		
-	if($heroAlignOverride == "false"):
-		$heroAlignment = get_theme_mod( 'hero_vertical_alignment', 0 );
-	else:
-		$heroAlignment = $heroAlignOverride;
-	endif;
-	
-	
+	$heroAlignment = getHeroAlignment($sepPrefix, $isBlogPage);
 	
 	/// TEXT CONTROLS
 	include $templatePartials . 'text-controls.php';
 
-	// TITLE CLASS
-	if(!empty(trim($titleTextClassG))){
-		$titleClass = $titleTextClassG;
-	} else {
-		$titleClass = $themeHeroTextColor . ' ' . $themeHeroTitleSize;
-	}
-	
-	if($isBlogPage && !empty(trim($optionsTitleTextClass))){
-		$titleClass = $optionsTitleTextClass;
-	}
-	
+
 	// CONTENT CLASS
 	if(!empty(trim($introTextClassG))){
 		$contentClass = $introTextClassG;

@@ -88,5 +88,12 @@ $themeHeroTitleSize = get_theme_mod( 'hero_h1_size', 0 );
 $themeHeroContentSize = 'text-md';
 $themeHeroContentSize = get_theme_mod('hero_header_content_size', 0);
 
+$titleSize = textTitle($sepPrefix, size);
+$titleColor = textTitle($sepPrefix, color);
+$titleWeight = textTitle($sepPrefix, weight);
+$titleAlign = textTitle($sepPrefix, alignment);
+
+$titleClass = $titleSize . ' ' . $titleColor . ' ' . $titleWeight . ' ' . $titleAlign;
+
 
  

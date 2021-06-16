@@ -148,13 +148,9 @@ endif;
 // Button Options
 $btnAddLinks = false;
 $btnAddLinks = get_sub_field($sepPrefix . "_links");
-if($btnAddLinks = true):
-	$btnLinkOpen = '<a class="d-block w-100" href=' . $linkContent . '>';
-	$btnLinkClose = '</a>';
-else:
-	$btnLinkOpen = null;
-	$btnLinkClose = null;
-endif;
+
+/// LINK OPTIONS
+include $templatePartials . 'button_links.php';
 
 $btnHide = false;
 $btnHide = get_sub_field($sepPrefix . "_hide_button");

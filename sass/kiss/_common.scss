@@ -187,6 +187,24 @@
   }
 }
 
+h1 {
+  &.text-xs {
+    @include font-size(1.4rem);
+  }
+  &.text-sm {
+    @include font-size(2rem);
+  }
+  &.text-md {
+    @include font-size(2.2rem);
+  }
+  &.text-lg {
+    @include font-size(3.5rem);
+  }
+  &.text-xl {
+    @include font-size(5rem);
+  }
+}
+
 h2 {
   &.text-xs {
     @include font-size(1.2rem);
@@ -195,7 +213,7 @@ h2 {
     @include font-size(1.8rem);
   }
   &.text-md {
-    @include font-size(2.2rem);
+    @include font-size(2.5rem);
   }
   &.text-lg {
     @include font-size(3rem);
@@ -409,39 +427,43 @@ $basefontsize: 16 !default;
       z-index: 50;
       transition: 0.3s ease all;
     }
-    &.hasOverlay {
-      &:hover {
-        &:before {
-          background-color: transparent;
-        }
-        .image-box__inner-overlay {
-          opacity: 100;
-          &.hover {
-            &-primary {
-              background-color: $primary !important;
-            }
-            &-secondary {
-              background-color: $secondary !important;
-            }
-            &-dark {
-              background-color: $dark !important;
-            }
-            &-light {
-              background-color: $light !important;
-            }
-            &-white {
-              background-color: $white !important;
-            }
-            &-alternate {
-              background-color: $alternate !important;
-            }
-          }
-        }
-      }
-    }
     span {
       position: relative;
       z-index: 100;
+    }
+  }
+  &.hasOverlay {
+    a {
+      transition: 0.3s ease all;
+    }
+    &:hover,
+    a:hover {
+      &:before {
+        background-color: transparent;
+      }
+      .image-box__inner-overlay {
+        opacity: 100;
+        &.hover {
+          &-primary {
+            background-color: $primary !important;
+          }
+          &-secondary {
+            background-color: $secondary !important;
+          }
+          &-dark {
+            background-color: $dark !important;
+          }
+          &-light {
+            background-color: $light !important;
+          }
+          &-white {
+            background-color: $white !important;
+          }
+          &-alternate {
+            background-color: $alternate !important;
+          }
+        }
+      }
     }
   }
   &.hasOverlay {
@@ -449,23 +471,24 @@ $basefontsize: 16 !default;
       transition: 0.3s ease all;
     }
   }
-  .style-square &,
-  &.style-square {
+}
+
+// ASPECT RATIOS
+.style {
+  &-square {
     padding-bottom: 100%;
   }
-  .style-widescreen &,
-  &.style-widescreen {
+  &-widescreen {
     padding-bottom: 56.25%;
   }
-  .style-traditional &,
-  &.style-traditional {
+  &-traditional {
     padding-bottom: 75%;
   }
-  .style-narrow &,
-  &.style-narrow {
+  &-narrow {
     padding-bottom: 35%;
   }
 }
+
 
 /// OVERLAYS
 .overlay {

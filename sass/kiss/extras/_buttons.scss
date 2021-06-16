@@ -18,14 +18,20 @@
 			flex: 0 0 100%;
 			max-width: 100%;
 		}
-		&__first {
-			@include media-breakpoint-up(md){
-				margin-right: 2rem;
-			}
-		}
-		&__second {
-			@include media-breakpoint-up(md){
-				margin-left: 2rem;
+	}
+	&-count {
+		&__2 {
+			.btn-custom {
+				&__first {
+					@include media-breakpoint-up(md){
+						margin-right: 2rem;
+					}
+				}
+				&__second {
+					@include media-breakpoint-up(md){
+						margin-left: 2rem;
+					}
+				}
 			}
 		}
 	}
