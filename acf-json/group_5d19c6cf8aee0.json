@@ -586,7 +586,6 @@
                 "id": ""
             },
             "choices": {
-                "false": "No",
                 "header_xs": "XS",
                 "header_sm": "SM",
                 "header_md": "MD",
@@ -594,8 +593,8 @@
                 "header_xl": "XL",
                 "full_height": "Full Height"
             },
-            "default_value": "No",
-            "allow_null": 0,
+            "default_value": false,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 0,
             "return_format": "value",
@@ -616,13 +615,12 @@
                 "id": ""
             },
             "choices": {
-                "false": "No",
                 "align-items-start": "Align Top",
                 "align-items-center": "Align Center",
                 "align-items-end": "Align Bottom"
             },
             "default_value": "No",
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 0,
             "return_format": "value",
@@ -763,5 +761,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623137515
+    "modified": 1623206015
 }

@@ -16,54 +16,26 @@
 	$templatePath = get_template_directory();
 	$templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
 	
+	/// HERO HEIGHT
+	$heroHeight = getHeroHeightElvis($sepPrefix, $isBlogPage);
+	
+	//// DEFAULT ALIGNMENT LOGIC
+	$heroAlignment = getHeroAlignment($sepPrefix, $isBlogPage);
+	
 	/// TEXT CONTROLS
 	include $templatePartials . 'text-controls.php';
-	
-	//// CUSTOMIZER OPTIONS
-	$heroHeight = get_theme_mod( 'hero_header_height', 0 );
-	$heroAlignment = 'align-items-center';
-	if($isBlogPage){
-		$heroHeightOverride = get_field($sepPrefix . '_override_height', 'options');
-		$heroAlignOverride = get_field($sepPrefix . '_override_vertical', 'options');
-	} else {
-		$heroHeightOverride = get_field($sepPrefix . '_override_height');
-		$heroAlignOverride = get_field($sepPrefix . '_override_vertical');
-	}
-	// Override on a per-post basis
-	if($heroHeightOverride == "false"):
-		$heroHeight = get_theme_mod( 'hero_header_height', 0 );
-	else:
-		$heroHeight = $heroHeightOverride;
-	endif;
-		
-	if($heroAlignOverride == "false"):
-		$heroAlignment = get_theme_mod( 'hero_vertical_alignment', 0 );
-	else:
-		$heroAlignment = $heroAlignOverride;
-	endif;
-	
-	
-	
-	
-	if($isBlogPage && $optionsTitleTextClass != ''):
-		$titleClass = $optionsTitleTextClass;
-	elseif($titleTextClassG == 'default default default text-left'):
-		$titleClass = $heroTextColor . ' ' . $heroH1Size;
-	elseif($titleTextClassG != 'default default default text-left'):
-		$titleClass = $titleTextClassG;
-	else:
-		$titleClass = $titleTextClass;
-	endif;
-	
-	if($isBlogPage && $optionsContentTextClass != ''):
-		$contentClass = $optionsContentTextClass;
-	elseif($introTextClassG == 'default default default text-left'):
-		$contentClass = $contentSize . ' ' . $heroTextColor;
-	elseif($introTextClassG != 'default default default text-left'):
+
+
+	// CONTENT CLASS
+	if(!empty(trim($introTextClassG))){
 		$contentClass = $introTextClassG;
-	else:
-		$contentClass = $introTextClass;
-	endif;
+	} else {
+		$contentClass = $themeHeroTextColor . ' ' . $themeHeroContentSize;
+	}
+	
+	if($isBlogPage && !empty(trim($optionsContentTextClass))){
+		$contentClass = $optionsContentTextClass;
+	}
 	
 	
 	$colWidth = 'w-75';
@@ -150,13 +122,15 @@
 	}
 	
 	$pageTitle = single_post_title('', FALSE);
-	if(get_post_meta( get_the_ID(), 'hero_title', true )):
-		$heroTitle = get_post_meta( get_the_ID(), 'hero_title', true );
+	if(!empty(get_field('hero_block_title', $page_id))):
+		$heroTitle = get_field('hero_block_title', $page_id);
 	elseif(get_field('news_block_title', 'options') != '' && $isBlogPage && !is_singular()):
 		$heroTitle = get_field('news_block_title', 'options');
 	else:
 		$heroTitle = $pageTitle;
 	endif;
+	
+	//$titleTest = get_field('hero_block_title', $page_id);
 	
 	$titleLocation = 'hero';
 	if($postType == 'post' && $isArchives == true && (is_singular() == true)) {
@@ -196,10 +170,13 @@
 			<div class="hero-header__wrap-inner">
 				<div class="hero-header__content">
 					<div class="row">
+
 						<div class="<?= $colClassLeft; ?> d-flex flex-column justify-content-center">
+
 							<? if(!empty($heroTitle)): ?>
 							<h1 class="<?= $titleClass; ?>"><?= $heroTitle; ?></h1>
 							<? endif; ?>
+
 							<div class="<?= $contentClass; ?> mb-4">
 							<?= apply_filters('the_content', $heroContent); ?>
 							</div>
@@ -409,4 +386,5 @@ jQuery(document).ready(function ($) {
 	$counter++;
 	endwhile;
 endif; ?>
+
 

@@ -45,9 +45,6 @@ get_header(); ?>
    dynamic_sidebar("below_content");
  endif;
 
- if (is_active_sidebar("about_footer")):
-   dynamic_sidebar("about_footer");
- endif;
 
  get_footer();
 

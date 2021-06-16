@@ -161,4 +161,64 @@
 			}
 		}
 	}
+	&.nav-type {
+		&__fullscreen {
+			padding: 0;
+			.navbar-brand {
+				//width: 160px;
+				z-index: 101;
+			}
+			.nav-content {
+				z-index: 101;
+			}
+			.navbar-collapse {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100vh;
+			}
+			.navbar-nav {
+				align-items: center;
+				height: 100%;
+				justify-content: center;
+				.nav-link {
+					@include media-breakpoint-up(xs){
+						font-size: 1.6rem;
+					}
+					@include media-breakpoint-up(sm){
+						font-size: 1.8rem;
+					}
+					@include media-breakpoint-up(md){
+						font-size: 2rem;
+					}
+					@include media-breakpoint-up(lg){
+						font-size: 2.6rem;
+					}
+					@include media-breakpoint-up(xl){
+						font-size: 3rem;
+					}
+				}
+			}
+			.btnType-solid .btn-custom {
+				@include media-breakpoint-down(sm){
+					font-size: 1rem;
+					line-height: 1;
+					padding: 0.5; 
+				}
+			}
+			.hamburger-icon {
+				@include media-breakpoint-down(sm){
+					width: 40px;
+				}
+			}
+			&.navScrolled {
+				&.bg-dark {
+					.navbar-collapse.show {
+						background-color: $dark;
+					}
+				}
+			} 
+		}
+	}
 }

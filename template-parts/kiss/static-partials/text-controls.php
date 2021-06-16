@@ -34,7 +34,7 @@ $textWeight = get_sub_field('font_weight');
 $textAlignment = get_sub_field('text_alignment');
 $textClass = $textSize . ' ' . $textColor . ' ' . $textWeight . ' ' . $textAlignment;
 
-/// NON-GROUPED text-base
+/// NON-GROUPED text-base (e.g. Hero Headers)
 /// TITLE CONTROLS - For primary titles inside containers
 $titleTextSizeG = get_field($sepPrefix . '_title_font_size');
 $titleTextColorG = get_field($sepPrefix . '_title_font_color');
@@ -79,18 +79,21 @@ switch($optionsContentTextAlignment){
 }
 
 /// THEME MODS
-$heroTextColor = 'text-white';
-$heroTextColor = get_theme_mod( 'hero_text_color', 0 );
-
-$heroH1Size = 'font-md';
-$heroH1Size = get_theme_mod( 'hero_h1_size', 0 );
-
-$contentSize = 'text-md';
-$contentSize = get_theme_mod('hero_header_content_size', 0);
-
+$themeHeroTextColor = 'text-white';
 $themeHeroTextColor = get_theme_mod( 'hero_text_color', 0 );
+
+$themeHeroTitleSize  = 'font-md';
 $themeHeroTitleSize = get_theme_mod( 'hero_h1_size', 0 );
+
+$themeHeroContentSize = 'text-md';
 $themeHeroContentSize = get_theme_mod('hero_header_content_size', 0);
+
+$titleSize = textTitle($sepPrefix, size);
+$titleColor = textTitle($sepPrefix, color);
+$titleWeight = textTitle($sepPrefix, weight);
+$titleAlign = textTitle($sepPrefix, alignment);
+
+$titleClass = $titleSize . ' ' . $titleColor . ' ' . $titleWeight . ' ' . $titleAlign;
 
 
  

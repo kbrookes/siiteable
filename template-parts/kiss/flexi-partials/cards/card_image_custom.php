@@ -27,7 +27,7 @@ if(($cardType == "multi-post") || (($cardType == "get-post") && ($imageSource ==
         case 'icon':
             $cardImage = get_sub_field($sepPrefix . '_icon');
             $imageEl = '<i class="' . $faType . ' ' . $cardImage . '"></i>';
-            $iconClass = $iconSize . ' ' . $iconColor;
+            $iconClass = $iconSize . ' ' . $iconColor . ' ' . $iconAlignment;
             break;
         case 'bg-image':
             $cardImage = get_sub_field($sepPrefix . '_image');
@@ -38,7 +38,7 @@ if(($cardType == "multi-post") || (($cardType == "get-post") && ($imageSource ==
     // NO image
 }
                     
-
+$boxAR = get_sub_field($sepPrefix . '_image_ar');
 if($imageType == 'bg-image'):?>
 <div class="cards-card__image <?= $imageCol; ?>">
     <? include $templatePartials . "image-ratio-box.php"; ?>

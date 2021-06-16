@@ -189,6 +189,21 @@ function lll_customizer_settings( $wp_customize ) {
 		),
 	));
 	
+	$wp_customize->add_setting( 'lll_hero_header_navtype' , array(
+		'default'       => 'nav_standard',
+		'transport'     => 'refresh',
+	) );
+	$wp_customize->add_control( 'lll_hero_header_navtype', array(
+		'label'      => 'Navigation Type',
+		'section'    => 'lll_header_settings',
+		'settings'   => 'lll_hero_header_navtype',
+		'type'       => 'select',
+			'choices'    => array( 
+			  'nav_standard' => 'Standard',
+			  'nav_burger' => 'Hamburger',
+			),
+	) );
+	
 	//// HERO SETTINGS
 	// Create our sections
 	
@@ -256,15 +271,15 @@ function lll_customizer_settings( $wp_customize ) {
 			),
 	) );
 	
-	$wp_customize->add_setting( 'hero_h1_size' , array(
+	$wp_customize->add_setting( 'hero_text_size' , array(
 		'default'		=> 'font-md',
 		'type'          => 'theme_mod',
 		'transport'     => 'refresh',
 	) );
-	$wp_customize->add_control( 'hero_h1_size_control', array(
+	$wp_customize->add_control( 'hero_text_size_control', array(
 		'label'      => 'Heading 1 Font Size',
 		'section'    => 'hero_header_settings',
-		'settings'   => 'hero_h1_size',
+		'settings'   => 'hero_text_size',
 		'type'       => 'select',
 			'choices'    => array( 
 			  'font-xs' => 'XS',
@@ -595,14 +610,23 @@ add_filter('wpcf7_form_elements', function ($content) {
 
 // Register new image sizes
 add_image_size( 'logos-sm', 120, 9999999, false );
+add_image_size( 'square-medium', 640, 640, false );
 
 add_filter( 'image_size_names_choose', 'my_custom_sizes' );
 
 function my_custom_sizes( $sizes ) {
 	return array_merge( $sizes, array(
 		'logos-sm' => __( 'Small Logos' ),
+		'square-medium' => __( 'Medium Square' ),
 	) );
 }
+
+
+//. Google Maps API key
+function my_acf_init() {
+	acf_update_setting('google_api_key', 'AIzaSyAWL3Zw816wZNsiutVTazUqNr7gt0NOheU');
+}
+add_action('acf/init', 'my_acf_init');
 
 /**
  * Responsive Image Helper Function
@@ -627,4 +651,41 @@ function siiteable_responsive_image($image_id,$image_size,$max_width){
 		echo 'src="'.$image_src.'" srcset="'.$image_srcset.'" sizes="(max-width: '.$max_width.') 100vw, '.$max_width.'"';
 
 	}
+}
+
+/// HERO SETTINGS
+function getHeroHeightElvis($prefix, $isBlogPage)
+{
+	$page = get_field($prefix . '_override_height');
+	$blog = get_field($prefix . '_override_height', 'options');
+	$theme = get_theme_mod('hero_header_height', 0); 
+	$default = 'header_md';
+
+	if($isBlogPage) {
+		return $page ?: $blog ?: $theme ?: $default;
+	}   
+	return $page ?: $theme ?: $default;
+}
+
+function getHeroAlignment($prefix, $isBlogPage){
+	$page = get_field($prefix . '_override_vertical');
+	$blog = get_field($prefix . '_override_vertical', 'options');
+	$theme = get_theme_mod( 'hero_vertical_alignment', 0 );
+	$default = 'align-items-center';
+	
+	if($isBlogPage){
+		return $page ?: $blog ?: $theme ?: $default;
+	}
+	return $page ?: $theme ?: $default;
+}
+
+/// TEXT CONTROLS
+function textTitle($prefix, $type){
+	$title = get_sub_field($prefix . '_title_font_' . $type);
+	$titles = get_sub_field($prefix . '_titles_font_' . $type);
+	$titleNG = get_field($prefix . '_title_font_' . $type);
+	$titleOption = get_field($prefix . '_title_font_' . $type, 'options');
+	$titleTheme = get_theme_mod( 'hero_text_' . $type, 0 );
+	
+	return $title ?: $titles ?: $titleNG ?: $titleOption ?: $titleTheme;
 }
