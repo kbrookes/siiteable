@@ -473,6 +473,11 @@ $basefontsize: 16 !default;
   }
 }
 
+.isOverlay {
+  top: 0;
+  left: 0;
+}
+
 // ASPECT RATIOS
 .style {
   &-square {
@@ -764,7 +769,7 @@ body.blog {
       .entry-content {
         p,
         p:first-child {
-          color: $light;
+          color: $dark;
           font-size: 1.1rem;
         }
       }

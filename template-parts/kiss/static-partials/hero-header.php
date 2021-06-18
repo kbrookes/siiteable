@@ -140,13 +140,14 @@
 	$heroContent = get_post_meta( get_the_ID(), 'hero_content', true );
 	
 	$heroTopImage = get_field('hero_content_image');
+	$heroTopVideo = get_field('hero_content_video');
 	
 	$faType = get_theme_mod( 'fa_styles');
 	
 	
 	if($heroTitle || $heroImage || $heroContent)	:?>
 <section id="heroHeader" class="hero-header  <? echo $separatorClasses . ' ' . $heroHeight; ?> <? if($heroBG): echo $heroBG; endif; ?> <? if($heroType == 'video'):?>video-hero video-type__<? echo $videoType; ?><? endif; ?>">
-	<div class="hero-header__wrap <? echo $overlayClass; ?>" <? if($heroImage):?>style="background-image:url(<? echo $heroImage; ?>)"<? endif; ?>>
+	<div class="hero-header__wrap" <? if($heroImage):?>style="background-image:url(<? echo $heroImage; ?>)"<? endif; ?>>
 		<? if($heroType == 'video'):
 			if($videoType == 'local'):?>
 		<video class="video-hero__background lazy" poster="<? echo $heroVideoPoster; ?>" autoplay loop muted playsinline type="video/mpeg">
@@ -165,6 +166,9 @@
 			</iframe>
 		</div>
 			<? endif; ?>
+		<? endif; ?>
+		<? if($hasOverlay):?>
+		<div class="hero-header__overlay isOverlay position-absolute w-100 h-100 <? echo $colorClass . ' opacity-' . $overlayOpacity; ?>"></div>
 		<? endif; ?>
 		<div class="container <?= $heroAlignment . ' ' . $paddingY; ?>">
 			<div class="hero-header__wrap-inner">
@@ -185,6 +189,10 @@
 							<? if(!empty($heroTopImage)): ?>
 							<img src="<?= $heroTopImage['url']; ?>" alt="<?= $heroTopImage['alt'];?>" class="w-full" />
 							<? endif; ?>
+							<? if(!empty($heroTopVideo)):
+							videoPlayer($heroTopVideo);
+							//var_dump(videoPlayer($heroTopVideo));
+							endif; ?>
 						</div>
 					</div>
 				</div>

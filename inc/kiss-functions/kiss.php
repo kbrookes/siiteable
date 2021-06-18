@@ -689,3 +689,14 @@ function textTitle($prefix, $type){
 	
 	return $title ?: $titles ?: $titleNG ?: $titleOption ?: $titleTheme;
 }
+
+// EXTRACT YOUTUBE ID AND CREATE PLAYER
+function videoPlayer($url){
+	preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
+	$youtube_id = $match[1];
+	echo '
+	<div class="embed-responsive embed-responsive-16by9">
+	  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' . $youtube_id . '?modestbranding=1&origin=themoneysandwich.com.au"></iframe>
+	</div>
+	';
+}
