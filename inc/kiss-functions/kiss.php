@@ -529,6 +529,15 @@ Kirki::add_field( 'kiss_theme', [
 	],
 ] );
 
+// Select Play Button Icon
+Kirki::add_field( 'kiss_theme', [
+	'type'        => 'text',
+	'settings'    => 'play_button',
+	'label'       => esc_html__( 'Fontawesome class (not including "fa*") for play button', 'kirki' ),
+	'section'     => 'button_options',
+	'default'     => 'fa-play',
+] );
+
 /// Create Analytics Options Section
 Kirki::add_section( 'analytics_options', array(
 	'title'          => esc_html__( 'Analytics Options', 'kirki' ),
@@ -700,3 +709,68 @@ function videoPlayer($url){
 	</div>
 	';
 }
+
+/**
+ * Edit checkout form inputs
+ * source: https://gist.github.com/nickkuijpers/5d07ecf9b0a0678b4f4c
+ */
+add_filter('woocommerce_checkout_fields', 'addBootstrapToCheckoutFields' );
+/**
+ * @param $fields
+ * @return mixed
+ */
+function addBootstrapToCheckoutFields($fields) {
+	foreach ($fields as &$fieldset) {
+		foreach ($fieldset as &$field) {
+			// if you want to add the form-group class around the label and the input
+			$field['class'][] = 'form-group';
+
+			// add form-control to the actual input
+			$field['input_class'][] = 'form-control';
+		}
+	}
+	return $fields;
+}
+
+add_filter('woocommerce_form_field_country', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_state', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_checkbox', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_password', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_text', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_email', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_tel', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_number', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_select', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_radio', 'clean_checkout_fields_class_attribute_values', 20, 4);
+function clean_checkout_fields_class_attribute_values( $field, $key, $args, $value ){
+	if( is_checkout() ){
+		// remove "form-row"
+		$field = str_replace( array('<p class="form-row ', '<p class="form-row'), array('<p class="checkout-col ', '<p class="checkout-col '), $field);
+	}
+
+	return $field;
+}
+
+add_filter('woocommerce_form_field_textarea', 'clean_checkout_fields_class_attribute_values_textarea', 20, 4);
+function clean_checkout_fields_class_attribute_values_textarea( $field, $key, $args, $value ){
+	if( is_checkout() ){
+		// remove "form-row"
+		$field = str_replace( array('<p class="form-row ', '<p class="form-row'), array('<p class="col-12 ', '<p class="col-12 '), $field);
+	}
+
+	return $field;
+}
+
+add_filter('woocommerce_checkout_fields', 'custom_checkout_fields_class_attribute_value', 20, 1);
+function custom_checkout_fields_class_attribute_value( $fields ){
+	foreach( $fields as $fields_group_key => $group_fields_values ){
+		foreach( $group_fields_values as $field_key => $field ){
+			// Remove other classes (or set yours)
+			$fields[$fields_group_key][$field_key]['class'] = array(); 
+		}
+	}
+
+	return $fields;
+}
+
+
