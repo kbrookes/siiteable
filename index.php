@@ -12,35 +12,6 @@ $faType = get_theme_mod( 'fa_styles');
 ?>
 
 
-
-<?php 
-	$getArchiveThumbnail = '';
-	$getArchiveThumbnail = get_archive_thumbnail_src();
-	if(!empty($getArchiveThumbnail)):
-	 ?>
-<section id="heroHeader" class="hero-header">
-	<div class="hero-header__wrap" style="background-image:url(<?php echo $getArchiveThumbnail; ?>)">
-		<div class="container">
-			<div class="hero-header__wrap-inner">
-				<?php
-				the_archive_title( '<h1 class="page-title text-center mt-5">', '</h1>' );
-				the_archive_top_content();
-			?>
-			<h1>HOWDY</h1>
-			</div>
-		</div>
-	</div>
-</section>
-<script>
-	/// ADD HERO CLASS TO BODY TO DYNAMICALLY CHANGE PADDING
-	(function($) {
-		$('body').addClass('hasHero')
-		$('body').removeClass('noHero');
-	})(jQuery);
-</script>
-<?php endif; ?>
-
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		<? /// GET FEATURED POST
@@ -85,4 +56,5 @@ $faType = get_theme_mod( 'fa_styles');
 	</div><!-- #primary -->
 
 <?php
+	get_template_part( 'template-parts/kiss/flexible-content' );
 get_footer();
