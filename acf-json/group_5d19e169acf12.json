@@ -4385,7 +4385,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "30",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
@@ -4397,7 +4397,35 @@
                                 "text-xl": "XL"
                             },
                             "default_value": false,
-                            "allow_null": 0,
+                            "allow_null": 1,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_60c9986777b15",
+                            "label": "Testimonial Color",
+                            "name": "testimonial_font_color",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "text-white": "White",
+                                "text-dark": "Dark",
+                                "text-primary": "Primary",
+                                "text-secondary": "Secondary",
+                                "text-light": "Light"
+                            },
+                            "default_value": false,
+                            "allow_null": 1,
                             "multiple": 0,
                             "ui": 0,
                             "return_format": "value",
@@ -4413,7 +4441,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "30",
+                                "width": "25",
                                 "class": "",
                                 "id": ""
                             },
@@ -4425,7 +4453,35 @@
                                 "text-xl": "XL"
                             },
                             "default_value": false,
-                            "allow_null": 0,
+                            "allow_null": 1,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_60c99f2077b16",
+                            "label": "Citation Color",
+                            "name": "citation_font_color",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "text-white": "White",
+                                "text-dark": "Dark",
+                                "text-primary": "Primary",
+                                "text-secondary": "Secondary",
+                                "text-light": "Light"
+                            },
+                            "default_value": false,
+                            "allow_null": 1,
                             "multiple": 0,
                             "ui": 0,
                             "return_format": "value",
@@ -6604,5 +6660,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623212150
+    "modified": 1623826231
 }

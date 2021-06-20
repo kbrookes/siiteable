@@ -11,14 +11,14 @@
 
 $headerPosition = '';
 if( get_theme_mod( 'lll_header_fixed', 'true' ) == 'true' ):
-    $headerPosition = 'fixed-top';
+	$headerPosition = 'fixed-top';
 endif;
 
 $page_id = get_queried_object_id();
 
 $headerBg = 'bg-dark';
 if( get_theme_mod( 'lll_header_bg', '' ) != '' ):
-    $headerBg = get_theme_mod( 'lll_header_bg', 0 );
+	$headerBg = get_theme_mod( 'lll_header_bg', 0 );
 endif;
 
 $headerBgScrolled = 'bg-dark';
@@ -28,7 +28,7 @@ endif;
 
 $headerColor = 'navbar-dark';
 if( get_theme_mod( 'lll_header_color', '' ) != '' ):
-    $headerColor = get_theme_mod( 'lll_header_color', 0 );
+	$headerColor = get_theme_mod( 'lll_header_color', 0 );
 endif;
 
 $headerColorScrolled = 'navbar-dark';
@@ -40,7 +40,7 @@ endif;
 // Also triggers scroll animations
 $transparentForHero = 'headerOpaque';
 if( get_theme_mod( 'lll_header_opacity', 'false' ) == 'true' ):
-    $transparentForHero = 'headerTransparent';
+	$transparentForHero = 'headerTransparent';
 endif;
 
 /// WHICH NAVIGATION
