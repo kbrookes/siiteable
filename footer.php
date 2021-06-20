@@ -150,7 +150,7 @@ $templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
 		<div class="container">			
 			<?php if ( function_exists('footer_sidebar')) : ?>
 			<div class="footer-nav">
-				<div class="row justify-content-center mb-3 header-<?= $headerSize; ?>">
+				<div class="row justify-content-between mb-3 header-<?= $headerSize; ?>">
 					<?php if ( is_active_sidebar( 'footer_col_1' ) ) : ?>
 					<div class="<?= $footerColFirst; ?>">
 						<div class="footer-nav__inner">
