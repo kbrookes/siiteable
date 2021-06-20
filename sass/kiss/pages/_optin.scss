@@ -123,39 +123,3 @@
 	}
 }
 
-/// OPTIN FORM
-.pum-theme-421 .pum-container, .pum-theme-optin-formn .pum-container {
-	padding: 0;
-	.pum-title {
-		font-family: $headings-font-family;
-		padding: 45px;
-	}
-	.pum-content {
-		@include angled-edge('outside top', 'upper left', $brand-primary, 50);
-		background-color: $brand-primary;
-		padding: 15px 45px 45px 45px;
-		blockquote {
-			margin-bottom: 30px;
-			p {
-				color: $white;
-				font-family: $headings-font-family;
-				font-size: 1.5rem;
-			}
-			footer {
-				color: $light;
-				font-weight: 300;
-				text-transform: uppercase;
-				cite {
-					color: $white;
-					display: block;
-					font-weight: bold;
-					font-style: normal;
-					text-transform: none;
-				}
-			}
-		}
-		.evf-container {
-			margin-bottom: 0;
-		}
-	}
-}

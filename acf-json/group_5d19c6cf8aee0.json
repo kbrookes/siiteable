@@ -366,7 +366,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -380,6 +380,22 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_60cc597941c1a",
+            "label": "Add Video",
+            "name": "hero_content_video",
+            "type": "url",
+            "instructions": "Provide the YouTube video URL",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         },
         {
             "key": "field_6093b1b2a5ea8",
@@ -761,5 +777,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623206015
+    "modified": 1624005616
 }

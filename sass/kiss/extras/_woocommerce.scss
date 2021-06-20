@@ -1,0 +1,116 @@
+.woocommerce {
+    div.product {
+        p.price,
+        span.price {
+            color: $primary;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+    }
+    /// CART FIXES
+    .cart {
+        .btn-custom {
+            font-size: 2rem;
+            width: 100%;
+        }
+    }
+    &-billing-fields {
+        &__field-wrapper {
+            p {
+                align-items: flex-start;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                .woocommerce-input-wrapper {
+                    width: 100%;
+                    margin-bottom: 0.5rem;
+                }
+                
+            }   
+        }
+    }
+    /// MAKE THESE CHECKOUT FIELDS ROWS
+    &-additional-fields__field-wrapper {
+        @include make-row();
+    }
+    .checkout-col {
+        @include make-col-ready();
+    
+        @include media-breakpoint-up(xs) {
+            @include make-col(12);
+        }
+        @include media-breakpoint-up(lg) {
+            @include make-col(6);
+        }
+        &.form-row-wide {
+            @include media-breakpoint-up(lg) {
+                @include make-col(12);
+            }   
+        }
+    }
+    .wc_payment_method.payment_method_stripe {
+        label {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+    #add_payment_method,
+    .woocommerce-cart,
+    .woocommerce-checkout {
+        #payment {
+            div.payment_box {
+                .wc-credit-card-form {
+                    @include make-row();
+                    .form-row-wide {
+                        @include make-col-ready();
+                    
+                        @include media-breakpoint-up(xs) {
+                            @include make-col(12);
+                        }
+                    }
+                    .form-row-first,
+                    .form-row-last {
+                        @include make-col-ready();
+                    
+                        @include media-breakpoint-up(xs) {
+                            @include make-col(12);
+                        }
+                        
+                        @include media-breakpoint-up(md){
+                            @include make-col(6);
+                        }
+                    }
+                }
+                .form-row {
+                   margin: 0;
+                   padding: 0.5rem;
+                   &.woocommerce-SavedPaymentMethods-saveNew {
+                       display: flex;
+                       input {
+                           flex: 0 0 5%;
+                           margin-top: 0.5rem;
+                       }
+                       label {
+                           flex: 0 0 90%;
+                           line-height: 1.2;
+                       }
+                   } 
+                }
+            }
+        }
+    }
+    .wc-stripe-elements-field,
+    .wc-stripe-iban-element-field,
+    .stripe-card-group {
+        display: block;
+        width: 100%;
+    }
+    .wc-payment-form {
+        .form-row label {
+            color: $primary;
+            line-height: 1;
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+    }
+}
