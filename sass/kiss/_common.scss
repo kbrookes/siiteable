@@ -767,7 +767,6 @@ body.blog {
       .entry-content {
         p,
         p:first-child {
-          color: $light;
           font-size: 1.1rem;
         }
       }
@@ -798,7 +797,6 @@ body.blog {
 .hero-header {
   &__wrap {
     h3 {
-      color: $white;
       font-size: 1.3rem;
       font-weight: 500;
       margin-bottom: 1.6rem;
