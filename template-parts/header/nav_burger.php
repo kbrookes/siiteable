@@ -1,3 +1,19 @@
+<?
+    //$button = get_field('theme_button', 'options');
+    $sepPrefix = 'theme';
+    
+    $templatePath = get_template_directory();
+    $templatePartials = $templatePath . '/template-parts/kiss/static-partials/';
+    $cardPartials = $templatePath . '/template-parts/kiss/flexi-partials/cards/';
+    
+    $addButton = false;
+    $addButton = get_field($sepPrefix . '_button', 'options');
+    $optionsButton = true;
+    $showButton = $addButton['add_button'];
+    if($showButton == '1'):
+        include $templatePartials . "buttons.php";
+    endif;
+?>
 <nav id="main-nav" class="navbar <?php echo $headerColor . ' ' . $headerBg . ' ' . $headerPosition . ' ' . $transparentForHero . ' ' . $headerType; ?> notScrolled nav-type__fullscreen">
     <div class="container">
         <div class="navbar-brand mb-0">
@@ -10,7 +26,7 @@
             </a>
         </div>
         <div class="nav-content d-flex align-items-center">
-            <a href="/contact" class="btn-custom primary  d-none d-sm-inline-block">CONTACT</a>
+            <? include $templatePartials . "add-button.php"; ?>
             <button class="hamburger navbar-toggler navbar-toggler-right" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <svg class="hamburger-icon" viewBox="0 0 100 100">
                     <path class="line line-1 hamburger-icon__stroke" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
