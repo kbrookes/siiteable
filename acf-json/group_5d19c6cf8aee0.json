@@ -752,6 +752,11 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
+            },
+            {
+                "param": "page_type",
+                "operator": "!=",
+                "value": "posts_page"
             }
         ],
         [
@@ -777,5 +782,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1624005616
+    "modified": 1624144685
 }
