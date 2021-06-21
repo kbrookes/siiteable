@@ -2,9 +2,16 @@
 $faType = get_theme_mod( 'fa_styles');
 
 $addButton = true;
-// ALGINMENT
+
 $buttonAlign = 'justify-content-start';
-$buttonAlign = get_sub_field($sepPrefix . '_button_button_alignment');
+
+if($optionsButton == true){
+	$buttonAlign = get_field($sepPrefix . '_button_button_alignment', 'options');
+} else {
+	$buttonAlign = get_sub_field($sepPrefix . '_button_button_alignment');
+}
+
+
 // CONTENT
 $linkContent = '';
 $linkType = '';
@@ -14,8 +21,14 @@ $linkText = 'VIEW MORE';
 $setLink = 'internal';
 $linkClass = '';
 $linkSubject = '';
-if(get_sub_field($sepPrefix . '_button_button_options')):
+
+if($optionsButton == true){
+	$buttonData = get_field($sepPrefix . '_button_button_options', 'options');
+} else {
 	$buttonData = get_sub_field($sepPrefix . '_button_button_options');
+}
+
+if($buttonData):
 	$linkType = $buttonData['button_link_type'];
 	$linkText = $buttonData['button_text_copy'];
 	$btnColor = $buttonData['btn_color'];
@@ -76,7 +89,13 @@ if(get_sub_field($sepPrefix . '_button_button_options')):
 endif;
 	
 $buttonSecondary = false;
-$buttonSecondary = get_sub_field($sepPrefix . '_button_add_button_secondary');
+if($optionsButton == true){
+	$buttonSecondary = get_field($sepPrefix . '_button_add_button_secondary', 'options');
+	$buttonData2 = get_field($sepPrefix . '_button_button_options_secondary', 'options');
+} else {
+	$buttonSecondary = get_sub_field($sepPrefix . '_button_add_button_secondary');
+	$buttonData2 = get_sub_field($sepPrefix . '_button_button_options_secondary');
+}
 // CONTENT SECONDARY
 $linkContent2 = '';
 $linkType2 = '';
@@ -88,7 +107,6 @@ $linkClass2 = '';
 $linkSubject2 = '';
 
 if($buttonSecondary == 1):
-	$buttonData2 = get_sub_field($sepPrefix . '_button_button_options_secondary');
 	$linkType2 = $buttonData2['button_link_type'];
 	$linkText2 = $buttonData2['button_text_copy'];
 	$btnColor2 = $buttonData2['btn_color'];
@@ -142,17 +160,20 @@ if($buttonSecondary == 1):
 	endif;
 	$linkText2 = $iconLeft2 . $linkText2 . $iconRight2;
 endif;
-	
-// Button Options
-$btnAddLinks = false;
-$btnAddLinks = get_sub_field($sepPrefix . "_links");
-if($btnAddLinks == true):
-	$btnLinkOpen = '<a class="d-block w-100" href=' . $linkContent . '>';
-	$btnLinkClose = '</a>';
-else:
-	$btnLinkOpen = null;
-	$btnLinkClose = null;
-endif;
 
-$btnHide = false;
-$btnHide = get_sub_field($sepPrefix . "_hide_button");
+if($optionsButton != true){	
+
+	// Button Options
+	$btnAddLinks = false;
+	$btnAddLinks = get_sub_field($sepPrefix . "_links");
+	if($btnAddLinks == true):
+		$btnLinkOpen = '<a class="d-block w-100" href=' . $linkContent . '>';
+		$btnLinkClose = '</a>';
+	else:
+		$btnLinkOpen = null;
+		$btnLinkClose = null;
+	endif;
+	
+	$btnHide = false;
+	$btnHide = get_sub_field($sepPrefix . "_hide_button");
+}
