@@ -223,9 +223,8 @@ require get_template_directory() . '/inc/kiss-functions/cpt-case-studies.php';
 
 require get_template_directory() . '/inc/kiss-functions/options-pages.php';
 
-if(get_field('custom_post_types', 'options') == 'cpt-events'){
+
 	/// EVENTS CPT
 	require get_template_directory() . '/inc/kiss-functions/cpt-events.php';
 	/// EVents Widget
 	require get_template_directory() . '/inc/kiss-functions/events-widget.php'; 
-}
