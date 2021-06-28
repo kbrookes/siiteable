@@ -27,21 +27,18 @@ $clientTestimonial = get_field('cs_testimonial');
 	<?php if(is_single()):?>
 	<div class="container">
 		<div class="case-study__client mb-5">
-			<div class="row">
-				<div class="col-12 col-sm-7 col-lg-8">
-					<div class="case-study__client-intro">
-						<h3>The Client</h3>
-						<?= $clientIntro; ?>
-					</div>
+			<h3 class="text-center">The Client</h3>
+			<div class="row align-items-center case-study__client-info">
+				<div class="col-12 col-md-5 col-lg-4 client-logo">
+					<img src="<?= $clientLogo; ?>" class="img-fluid mb-3" alt="<?= $clientName; ?> Logo" />
 				</div>
-				<div class="col-12 col-sm-5 col-lg-4">
-					<div class="d-flex flex-column justify-content-center align-items-center case-study__client-info">
-						<img src="<?= $clientLogo; ?>" class="img-fluid mb-3" alt="<?= $clientName; ?> Logo" />
-						<h4 class="font-weight-bold text-primary mb-1">INDUSTRY</h4>
-						<p class="mb-2 text-uppercase text-gray-300"><?= $clientIndustry; ?></p>
-						<h4 class="font-weight-bold text-primary mb-1">LOCATION</h4>
-						<p class=" text-uppercase  text-gray-300"><?= $clientLocation; ?></p>
-					</div>
+				<div class="col-12 col-md-3 col-lg-4 client-industry text-center">
+					<h4 class="font-weight-bold text-primary mb-1">INDUSTRY</h4>
+					<p class="mb-2 text-uppercase text-gray-300"><?= $clientIndustry; ?></p>
+				</div>
+				<div class="col-12 col-md-3 col-lg-4 client-location text-center">
+					<h4 class="font-weight-bold text-primary mb-1">LOCATION</h4>
+					<p class=" text-uppercase  text-gray-300"><?= $clientLocation; ?></p>
 				</div>
 			</div>
 		</div>
@@ -62,15 +59,21 @@ $clientTestimonial = get_field('cs_testimonial');
 		<div class="row">
 			<div class="col-12 col-md-6">
 				<div class="case-study__result">
-					<h3>The Result</h3>
+					<h3>The Solution</h3>
 					<?= $clientResult; ?>
 				</div>
 			</div>
 			<div class="col-12 col-md-6">
 				<div class="case-study__result">
-					<h3>What <?= $clientName; ?> Had To Say:</h3>
+					<h3>The Experience</h3>
 					<p>"<?= esc_html($clientTestimonial->post_content);?>"</p>
 				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-md-8 col-md-offset-2 col-lg-10 col-lg-offset-1">
+				<h3>What <?= $clientName; ?> Had To Say:</h3>
+				<p>"<?= esc_html($clientTestimonial->post_content);?>"</p>
 			</div>
 		</div>
 	</div>
