@@ -706,6 +706,20 @@ function textTitle($prefix, $type){
 	return $title ?: $titles ?: $titleNG ?: $titleOption ?: $titleTheme;
 }
 
+/// TITLES
+function heroTitle($id, $isBlogPage){
+	$archiveTitle = get_the_archive_title();
+	$postTitle = get_field('hero_block_title', $id);
+	$blogArchiveTitle = get_field('news_block_title', 'options');
+	$pageTitle = single_post_title('', FALSE);
+	
+	if($isBlogPage){
+		return $pageTitle ?: $blogArchiveTitle ?: $archiveTitle ?: $postTitle;
+	}
+	return $pageTitle ?: $archiveTitle ?: $postTitle;
+	
+}
+
 // EXTRACT YOUTUBE ID AND CREATE PLAYER
 function videoPlayer($url){
 	preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);

@@ -76,7 +76,8 @@
             },
             "choices": {
                 "Transport": "Transport",
-                "Communications": "Communications"
+                "Communications": "Communications",
+                "Software": "Software"
             },
             "default_value": false,
             "allow_null": 0,
@@ -230,8 +231,43 @@
             "delay": 0
         },
         {
+            "key": "field_60d98e0a6d974",
+            "label": "Solution",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_60d98e156d975",
+            "label": "Solution",
+            "name": "cs_solution",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_605aad6097647",
-            "label": "Result",
+            "label": "Experience",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -247,7 +283,7 @@
         },
         {
             "key": "field_605aad7597648",
-            "label": "Result",
+            "label": "Experience",
             "name": "cs_result",
             "type": "wysiwyg",
             "instructions": "",
@@ -320,5 +356,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623898263
+    "modified": 1624870464
 }
