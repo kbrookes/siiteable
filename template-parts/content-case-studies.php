@@ -81,7 +81,7 @@ $clientTestimonial = get_field('cs_testimonial');
 		$faType = get_theme_mod( 'fa_styles');
 		$excerpt = get_the_excerpt();
 		if(empty($excerpt)) {
-			$excerpt = get_field('cs_intro_text');
+			$excerpt = wpautop($clientChallenge);
 		}
 	?>
 	<div class="container post-list">
@@ -91,17 +91,21 @@ $clientTestimonial = get_field('cs_testimonial');
 				<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail(); ?>
 				</a>
+				<div class="client-logo">
+					<img src="<?= $clientLogo; ?>" class="img-fluid" alt="<?= $clientName; ?> Logo" />
+				</div>
 			</div>
 			<?php endif; ?>
 			<div class="col-12 col-md-10 col-lg-8">
 				<div class="post-content">
-					<header class="entry-header">
+					<header class="entry-header d-flex justify-content-between align-items-center">
 						<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+						<p class="text-uppercase text-primary"><?= $clientIndustry . ' | ' . $clientLocation;; ?></p>
 					</header>
 					
 					<div class="entry-content">
 					
-					<?= esc_html($excerpt); ?>
+					<?= $excerpt; ?>
 					
 					</div>
 					<?php if(get_field('file_upload')){?>
@@ -112,7 +116,7 @@ $clientTestimonial = get_field('cs_testimonial');
 					<?php if(get_field('hide_readmore') != true){?>
 					<footer class="entry-footer">
 						<?php if ( ! is_single() ) : ?>
-						<a href="<?php the_permalink(); ?>" class="btn-custom primary btn-sm ">READ MORE <i class="<?= $faType; ?> fa-chevron-right"></i></a>
+						<a href="<?php the_permalink(); ?>" class="btn-custom primary ">READ MORE <i class="<?= $faType; ?> fa-chevron-right"></i></a>
 						<?php endif; ?>
 						<?php strappress_entry_footer(); ?>
 					</footer><!-- .entry-footer -->
