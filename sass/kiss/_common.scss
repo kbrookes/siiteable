@@ -767,7 +767,6 @@ body.blog {
       .entry-content {
         p,
         p:first-child {
-          color: $light;
           font-size: 1.1rem;
         }
       }
@@ -798,7 +797,6 @@ body.blog {
 .hero-header {
   &__wrap {
     h3 {
-      color: $white;
       font-size: 1.3rem;
       font-weight: 500;
       margin-bottom: 1.6rem;
@@ -879,3 +877,46 @@ span.wpcf7-list-item {
     font-size: 5rem;
   }
 }
+
+
+/*
+This mixin can be used to set the object-fit:
+@include object-fit(contain);
+
+or object-fit and object-position:
+@include object-fit(cover, top);
+*/
+@mixin object-fit($fit: fill, $position: null){
+-o-object-fit: $fit;
+   object-fit: $fit;
+  @if $position {
+    -o-object-position: $position;
+       object-position: $position;
+    font-family: 'object-fit: #{$fit}; object-position: #{$position}';
+  } @else {
+    font-family: 'object-fit: #{$fit}';
+  }
+}
+
+.of {
+  &-cover {
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+  }
+}
+
+//IE HACKS
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {  
+  .hero-header {
+    height: 1px;
+  }
+  #main-nav {
+    &.notScrolled {
+      height: 91px;
+    }
+    &.navScrolled {
+      height: 50px;
+    }
+  }
+}
+

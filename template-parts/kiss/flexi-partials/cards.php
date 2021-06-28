@@ -65,7 +65,7 @@
 	
 	<? if(!empty($cardBackgroundImage)):?>
 	<picture class="cards-layout__bgimage">
-		<img <? siiteable_responsive_image($cardBackgroundImage['id'],'full_size','100vw'); ?>" alt="" style="object-fit: cover;" />
+		<img class="of-cover" <? siiteable_responsive_image($cardBackgroundImage['id'],'full_size','100vw'); ?>" alt="" style="object-fit: cover;" />
 	</picture>
 		<? if($hasOverlay):?>
 	<div class="position-absolute w-100 h-100 top-0 <? echo $colorClass . ' opacity-' . $overlayOpacity; ?>"></div>
