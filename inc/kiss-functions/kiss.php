@@ -585,6 +585,13 @@ Kirki::add_field( 'kiss_theme', [
 	'section'     => 'analytics_options',
 ] );
 
+Kirki::add_field( 'kiss_theme', [
+	'type'        => 'text',
+	'settings'    => 'analytics_luckyorange',
+	'label'       => esc_html__( 'Lucky Orange ID', 'kirki' ),
+	'section'     => 'analytics_options',
+] );
+
 
 /// ANALYTICS CONDITIONALS
 
