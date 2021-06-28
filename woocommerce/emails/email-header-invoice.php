@@ -46,6 +46,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 										<tr>
 											<td id="header_wrapper">
 												<h1><?php echo $email_heading; ?></h1>
+												<h2 style="color: #fff;">TAX INVOICE</h2>
+												<? $abn = get_field('store_abn', 'options' );
+												if($abn):?>
+												<p>ABN: <?= $abn; ?></p>
+												<? endif; ?>
 											</td>
 										</tr>
 									</table>
