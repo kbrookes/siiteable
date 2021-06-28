@@ -213,18 +213,14 @@ require get_template_directory() . '/inc/kiss-functions/cta-widget.php';
 /// Sidebars
 require get_template_directory() . '/inc/kiss-functions/sidebars.php';
 
-///// CUSTOM POST TYPES
-
-require get_template_directory() . '/inc/kiss-functions/cpt-testimonials.php';
-
-//require get_template_directory() . '/inc/kiss-functions/cpt-products.php';
-
-require get_template_directory() . '/inc/kiss-functions/cpt-case-studies.php';
-
+/// OPTIONS PAGES
 require get_template_directory() . '/inc/kiss-functions/options-pages.php';
 
+///// CUSTOM POST TYPES
 
-	/// EVENTS CPT
-	require get_template_directory() . '/inc/kiss-functions/cpt-events.php';
-	/// EVents Widget
-	require get_template_directory() . '/inc/kiss-functions/events-widget.php'; 
+require get_template_directory() . '/inc/kiss-functions/post-types.php';
+
+
+
+
+	
