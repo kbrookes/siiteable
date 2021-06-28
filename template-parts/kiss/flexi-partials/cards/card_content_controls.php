@@ -100,10 +100,12 @@ $titlePos = get_sub_field($sepPrefix . '_title_position');
 if($cardType == 'get-post' && get_sub_field($sepPrefix . '_post_content') == true){
     // If pulling from a post, and not customising the content
     $title = $postTitle;
+    $anchor = trim(preg_replace('/[^a-z0-9]+/', '-', strtolower($postTitle)), '-');
     $subTitle = null;
     $cardContent = $the_excerpt;
 } else {
     $title = $fieldTitle;
+    $anchor = trim(preg_replace('/[^a-z0-9]+/', '-', strtolower($title)), '-');
     $subTitle = $fieldSubTitle;
     $cardContent = wpautop($fieldContent);
 }
