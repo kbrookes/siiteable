@@ -33,7 +33,8 @@
 		//height: 100%;
 		position: relative;
 		&__header {
-			img {
+			img,
+			svg {
 				width: 100%;
 			}
 		}
@@ -80,6 +81,11 @@
 			.image-box {
 				@include media-breakpoint-down(sm){
 					margin-bottom: 1rem;
+				}
+			}
+			.cards-card__header {
+				@include media-breakpoint-down(sm){
+					margin-bottom: 1.5rem;
 				}
 			}
 			.cards-card__image {
