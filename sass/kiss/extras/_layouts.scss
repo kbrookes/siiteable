@@ -29,8 +29,44 @@
 		&__content {
 			a {
 				transition: 0.3s ease all;
+				.text-light & {
+					color: $light;
+				}
+				.text-primary & {
+					color: $primary;
+				}
+				.text-secondary & {
+					color: $secondary;
+				}
+				.text-dark & {
+					color: $dark;
+				}
+				.text-white & {
+					color: $white;
+				}
+				.text-alternate & {
+					color: $alternate;
+				}
 				&:hover {
 					text-decoration: none;
+					.text-light & {
+						color: darken($light, 20%);
+					}
+					.text-primary & {
+						color: lighten($primary, 20%);
+					}
+					.text-secondary & {
+						color: darken($secondary, 20%);
+					}
+					.text-dark & {
+						color: lighten($dark, 20%);
+					}
+					.text-white & {
+						color: darken($white, 20%);
+					}
+					.text-alternate & {
+						color: darken($alternate, 20%);
+					}
 				}
 				@include media-breakpoint-up(lg){
 					font-size: 0.9rem;

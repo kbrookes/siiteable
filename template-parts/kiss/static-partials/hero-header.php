@@ -112,8 +112,9 @@ if(get_the_archive_title() == 'Archives'):
 	$isArchives = true;
 endif;
 
-
-if($postType == 'post' && $isArchives == true && (is_singular() != true)) {
+if(is_archive()){
+	$heroImage = get_archive_thumbnail_src();
+} elseif($postType == 'post' && $isArchives == true && (is_singular() != true)) {
 	$heroImage = get_field('hero_image_news', 'options');
 } elseif(get_field('hero_image')){
 	$heroImage = get_field('hero_image');
@@ -121,14 +122,7 @@ if($postType == 'post' && $isArchives == true && (is_singular() != true)) {
 	$heroImage = get_the_post_thumbnail_url($page_id);
 }
 
-$pageTitle = single_post_title('', FALSE);
-if(!empty(get_field('hero_block_title', $page_id))):
-	$heroTitle = get_field('hero_block_title', $page_id);
-elseif(get_field('news_block_title', 'options') != '' && $isBlogPage && !is_singular()):
-	$heroTitle = get_field('news_block_title', 'options');
-else:
-	$heroTitle = $pageTitle;
-endif;
+$heroTitle = heroTitle($page_id, $isBlogPage);
 
 //$titleTest = get_field('hero_block_title', $page_id);
 
@@ -180,7 +174,6 @@ if($heroTitle || $heroImage || $heroContent)	:?>
 						<? if(!empty($heroTitle)): ?>
 						<h1 class="<?= $titleClass; ?>"><?= $heroTitle; ?></h1>
 						<? endif; ?>
-
 						<div class="<?= $contentClass; ?> mb-4">
 						<?= apply_filters('the_content', $heroContent); ?>
 						</div>

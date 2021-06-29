@@ -50,7 +50,9 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-	
+	if ( is_active_sidebar( 'success_cta' ) ) :
+		dynamic_sidebar('success_cta');
+	endif;	
 	get_template_part( 'template-parts/kiss/flexible-content' );
 	
 get_footer();

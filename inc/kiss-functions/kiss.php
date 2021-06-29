@@ -585,6 +585,13 @@ Kirki::add_field( 'kiss_theme', [
 	'section'     => 'analytics_options',
 ] );
 
+Kirki::add_field( 'kiss_theme', [
+	'type'        => 'text',
+	'settings'    => 'analytics_luckyorange',
+	'label'       => esc_html__( 'Lucky Orange ID', 'kirki' ),
+	'section'     => 'analytics_options',
+] );
+
 
 /// ANALYTICS CONDITIONALS
 
@@ -697,6 +704,20 @@ function textTitle($prefix, $type){
 	$titleTheme = get_theme_mod( 'hero_text_' . $type, 0 );
 	
 	return $title ?: $titles ?: $titleNG ?: $titleOption ?: $titleTheme;
+}
+
+/// TITLES
+function heroTitle($id, $isBlogPage){
+	$archiveTitle = get_the_archive_title();
+	$postTitle = get_field('hero_block_title', $id);
+	$blogArchiveTitle = get_field('news_block_title', 'options');
+	$pageTitle = single_post_title('', FALSE);
+	
+	if($isBlogPage){
+		return $pageTitle ?: $blogArchiveTitle ?: $archiveTitle ?: $postTitle;
+	}
+	return $pageTitle ?: $archiveTitle ?: $postTitle;
+	
 }
 
 // EXTRACT YOUTUBE ID AND CREATE PLAYER

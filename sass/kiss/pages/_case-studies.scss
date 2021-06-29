@@ -5,9 +5,14 @@
 			margin-bottom: 5rem;
 		}
 		&__result {
-			p {
-				font-weight: light;
-				font-size: 1.5rem;
+		}
+		&__testimonial {
+			text-align: center;
+			.testimonial-row__item {
+				text-align: left;
+			}
+			.testimonials-list__item {
+				padding: 0;
 			}
 		}
 	}
@@ -19,5 +24,22 @@
 		font-size: 1.2rem;
 		font-weight: normal;
 		text-transform: uppercase;
+	}
+	.post-list {
+		.client-logo {
+			padding: 30px;
+		}
+		h2.entry-title {
+			font-weight: bold;
+			a {
+				color: $primary;
+			}
+		}
+		.entry-content {
+			& > p:first-child {
+				color: $dark;
+				font-size: 1.3rem;
+			}
+		}
 	}
 }
