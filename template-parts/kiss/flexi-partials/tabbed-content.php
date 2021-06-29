@@ -137,9 +137,11 @@
 						$tabTitle = get_sub_field('tab_title');
 					?>
 					<div class="card tab-pane fade <?php if($tabCount == '0'): echo 'show active'; endif; ?>" id="tabID-<?php echo $tabCount; ?>" role="tabpanel" aria-labelledby="<?php the_sub_field('tab_title'); ?>">
-						<div class="card-header" role="tab" id="heading-<?php echo $tabCount; ?>">
-							<h4><a data-toggle="collapse" href="#collapse-<?php echo $tabCount; ?>" aria-expanded="true" aria-controls="collapse-<?php echo $tabCount; ?>" ><i class="<?= $faType; ?> fa-chevron-right"></i> <?php echo $tabTitle; ?></a></h4>
-						</div>
+						<a class="<?php if($tabCount != '0'): echo 'collapsed'; endif; ?>" data-toggle="collapse" data-parent="#tabRepeaterContent" href="#collapse-<?php echo $tabCount; ?>" aria-expanded="true" aria-controls="collapse-<?php echo $tabCount; ?>" >
+							<div class="card-header" role="tab" id="heading-<?php echo $tabCount; ?>">
+								<h4><?php echo $tabTitle; ?> <i class="<?= $faType; ?> fa-chevron-right"></i></h4>
+							</div>
+						</a>
 						<div id="collapse-<?php echo $tabCount; ?>" class="collapse <?php if($tabCount == '0'): ?>show<?php endif; ?>" data-parent="#content" role="tabpanel" aria-labelledby="heading-<?php echo $tabCount; ?>">
 							<div class="card-body">
 								<div class="row">

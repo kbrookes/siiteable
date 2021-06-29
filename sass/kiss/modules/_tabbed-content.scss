@@ -46,6 +46,9 @@
 	}
 	.tab-content {
 		.tab-pane {
+			@include media-breakpoint-down(sm){
+				border-radius: 0;
+			}
 			&.active {
 				border-top-left-radius: 0;
 			}
@@ -132,23 +135,94 @@
 
 .card {
 	border: none;
+	a {
+		transition: 0.3s ease all;
+		&:hover {
+			text-decoration: none;
+		}
+	}
 	&-header {
 		border-bottom: 4px solid $dark;
+		@include media-breakpoint-down(sm){
+			border-radius: 0;
+		}
 		h4 {
 			@include media-breakpoint-up(xs){
 				margin: 0.2rem 0;
 			}
-		}
-		a {
-			transition: 0.3s ease all;
-			&:hover {
-				text-decoration: none;
-			}
+			.fontActive-white & {
+					color: $white;
+				}
+			.fontActive-dark & {
+					color: $dark;
+				}
+			.fontActive-primary & {
+					color: $primary;
+				}
+			.fontActive-secondary & {
+					color: $secondary;
+				}
+			.fontActive-light & {
+					color: $light;
+				}
 		}
 		.collapsed & {
 			.fa-chevron-right {
 				transform: rotate(90deg);
 			}
+			.inActiveBG-primary & {
+				background-color: $primary;
+			}
+			.inActiveBG-secondary & {
+				background-color: $secondary;
+			}
+			.inActiveBG-dark & {
+				background-color: $dark;
+			}
+			.inActiveBG-light & {
+				background-color: $light;
+			}
+			.inActiveBG-white & {
+				background-color: $white;
+			}
+			.inActiveBG-alternate & {
+				background-color: $alternate;
+			}
+			h4 {
+				.fontInActive-white & {
+						color: $white;
+					}
+				.fontInActive-dark & {
+						color: $dark;
+					}
+				.fontInActive-primary & {
+						color: $primary;
+					}
+				.fontInActive-secondary & {
+						color: $secondary;
+					}
+				.fontInActive-light & {
+						color: $light;
+					}
+			}
+		}
+		.activeBG-primary & {
+			background-color: $primary;
+		}
+		.activeBG-secondary & {
+			background-color: $secondary;
+		}
+		.activeBG-dark & {
+			background-color: $dark;
+		}
+		.activeBG-light & {
+			background-color: $light;
+		}
+		.activeBG-white & {
+			background-color: $white;
+		}
+		.activeBG-alternate & {
+			background-color: $alternate;
 		}
 	}
 	&-body {
@@ -185,8 +259,10 @@
 .tabFontS {
 	&-xs {
 		.tabbed-content & {
-			.nav-tabs {
-				.nav-link {
+			.nav-tabs,
+			.tab-content {
+				.nav-link,
+				.card-header a {
 					font-size: 0.8rem;
 				}
 			}
@@ -194,8 +270,10 @@
 	}
 	&-sm {
 		.tabbed-content & {
-			.nav-tabs {
-				.nav-link {
+			.nav-tabs,
+			.tab-content {
+				.nav-link,
+				.card-header a {
 					font-size: 0.9rem;
 				}
 			}
@@ -203,8 +281,10 @@
 	}
 	&-md {
 		.tabbed-content & {
-			.nav-tabs {
-				.nav-link {
+			.nav-tabs,
+			.tab-content {
+				.nav-link,
+				.card-header a {
 					font-size: 1.1rem;
 				}
 			}
@@ -212,18 +292,28 @@
 	}
 	&-lg {
 		.tabbed-content & {
-			.nav-tabs {
-				.nav-link {
+			.nav-tabs,
+			.tab-content {
+				.nav-link,
+				.card-header a {
 					font-size: 1.8rem;
+					@include media-breakpoint-down(md){
+						font-size: 1.4rem;
+					}
 				}
 			}
 		}
 	}
 	&-xl {
 		.tabbed-content & {
-			.nav-tabs {
-				.nav-link {
+			.nav-tabs,
+			.tab-content {
+				.nav-link,
+				.card-header a {
 					font-size: 2.5rem;
+					@include media-breakpoint-down(md){
+						font-size: 1.4rem;
+					}
 				}
 			}
 		}
@@ -234,8 +324,10 @@
 .tabFontW {
 	&-light {
 		.tabbed-content & {
-			.nav-tabs {
-				.nav-link {
+			.nav-tabs,
+			.tab-content {
+				.nav-link,
+				.card-header a {
 					font-weight: $headings-font-weight-light;
 				}
 			}
@@ -243,8 +335,10 @@
 	}
 	&-normal {
 		.tabbed-content & {
-			.nav-tabs {
-				.nav-link {
+			.nav-tabs,
+			.tab-content {
+				.nav-link,
+				.card-header a {
 					font-weight: $headings-font-weight;
 				}
 			}
@@ -252,8 +346,10 @@
 	}
 	&-bold {
 		.tabbed-content & {
-			.nav-tabs {
-				.nav-link {
+			.nav-tabs,
+			.tab-content {
+				.nav-link,
+				.card-header a {
 					font-weight: $headings-font-weight-bold;
 				}
 			}
