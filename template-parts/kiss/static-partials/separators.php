@@ -176,4 +176,7 @@ if($lowerClassPadding != "false"){
 	$paddingLower = 'pb-pc_' . $lowerClassPadding;
 }
 
+$separatorClassesHero = $separatorClasses;
+
 $separatorClasses .= ' ' . $paddingUpper . ' ' . $paddingLower;
+

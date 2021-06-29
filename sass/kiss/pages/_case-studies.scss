@@ -5,9 +5,14 @@
 			margin-bottom: 5rem;
 		}
 		&__result {
-			p {
-				font-weight: light;
-				font-size: 1.5rem;
+		}
+		&__testimonial {
+			text-align: center;
+			.testimonial-row__item {
+				text-align: left;
+			}
+			.testimonials-list__item {
+				padding: 0;
 			}
 		}
 	}
@@ -22,7 +27,7 @@
 	}
 	.post-list {
 		.client-logo {
-			padding: 0 10%;
+			padding: 30px;
 		}
 		h2.entry-title {
 			font-weight: bold;
