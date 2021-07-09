@@ -712,12 +712,12 @@ function heroTitle($id, $isBlogPage){
 	$postTitle = get_field('hero_block_title', $id);
 	$blogArchiveTitle = get_field('news_block_title', 'options');
 	$pageTitle = single_post_title('', FALSE);
-	
+
 	if($isBlogPage){
 		return $pageTitle ?: $blogArchiveTitle ?: $archiveTitle ?: $postTitle;
 	}
 	return $pageTitle ?: $archiveTitle ?: $postTitle;
-	
+
 }
 
 // EXTRACT YOUTUBE ID AND CREATE PLAYER
@@ -725,9 +725,7 @@ function videoPlayer($url){
 	preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
 	$youtube_id = $match[1];
 	echo '
-	<div class="embed-responsive embed-responsive-16by9">
-	  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' . $youtube_id . '?modestbranding=1&origin=themoneysandwich.com.au"></iframe>
-	</div>
+	<lite-youtube videoid="' . $youtube_id . '"></lite-youtube>
 	';
 }
 

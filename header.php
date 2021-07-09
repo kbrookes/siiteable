@@ -49,7 +49,7 @@ $navType = (get_theme_mod('lll_hero_header_navtype', 'false'));
 
 /// ADD TO THE BODY CLASS
 // BUTTON SETTINGS
-$buttonType = get_theme_mod( 'button_styles');
+$buttonType = get_theme_mod( 'button_styles', 0);
 $buttonStyle = get_theme_mod( 'border_radius', 0 );
 $buttonClass = 'btnRounded-' . $buttonStyle . ' btnType-' . $buttonType;
 
@@ -58,6 +58,7 @@ $extraBodyClasses = 'noHero ' . $buttonClass;
 $headerType = get_field('header_colour', $post->ID);
 
 $analyticsStandardID = get_theme_mod('analytics_standard', 0);
+$analyticsLO = get_theme_mod('analytics_luckyorange', 0);
 
 // GET FONTAWESOME LIBRARY
 $faType = get_theme_mod( 'fa_styles');
@@ -77,14 +78,26 @@ $templatePath = get_template_directory();
   gtag('config', '<?= $analyticsStandardID; ?>');
 </script>
 <? endif; ?>
+<? if(!empty($analyticsLO)): ?>
+<script type='text/javascript'>
+	window.__lo_site_id = <?= $analyticsLO; ?>;
+	
+		(function() {
+			var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+			wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+		  })();
+		</script>
+<? endif; ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@0.6.2/lite-youtube.js"></script>
 </head>
 
-<body <?php body_class($extraBodyClasses); ?>>
+<body <?php body_class($extraBodyClasses); ?> >
 <div id="page" class="site">
 
 	<header id="masthead" class="site-header" role="banner">
