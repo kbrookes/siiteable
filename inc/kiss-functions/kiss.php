@@ -731,6 +731,16 @@ function videoPlayer($url){
 	';
 }
 
+// EXTRACT YOUTUBE ID AND CREATE PLAYER
+function videoPlayerLite($url){
+	preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
+	$youtube_id = $match[1];
+	echo '
+	<lite-youtube videoid="' . $youtube_id . '"></lite-youtube>
+	';
+}
+
+
 /**
  * Edit checkout form inputs
  * source: https://gist.github.com/nickkuijpers/5d07ecf9b0a0678b4f4c
@@ -794,4 +804,10 @@ function custom_checkout_fields_class_attribute_value( $fields ){
 	return $fields;
 }
 
+
+/// MOVE RANKMATH DOWN
+function rankmathtobottom() {
+	return 'low';
+}
+add_filter( 'rank_math_metabox', 'rankmathtobottom');
 

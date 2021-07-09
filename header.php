@@ -82,6 +82,8 @@ $templatePath = get_template_directory();
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
+
+
 </head>
 
 <body <?php body_class($extraBodyClasses); ?>>
@@ -125,7 +127,7 @@ $templatePath = get_template_directory();
 	</header><!-- #masthead -->
 
 	<?php 
-		if(get_field('hero_title') || get_field('hero_image') || get_the_post_thumbnail_url($page_id) || get_field('hero_content') || get_field('hero-button')):
+		if(get_field('hero_title') || get_field('hero_image') || get_the_post_thumbnail_url($page_id) || get_field('hero_content') || get_field('hero-button') || get_archive_thumbnail_src() ):
 			get_template_part( 'template-parts/kiss/static-partials/hero-header' );
 		endif;
 	?>
