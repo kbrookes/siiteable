@@ -7,7 +7,7 @@
  * @package StrapPress
  */
 
-get_header('no-hero'); ?>
+get_header(); ?>
 
 
 <?php //get_template_part( 'template-parts/featured-case-study' ); ?>
@@ -16,10 +16,11 @@ get_header('no-hero'); ?>
 		<main id="main" class="site-main" role="main">
 		<?php
 		if ( have_posts() ) : ?>
-
+			<? if(empty(get_archive_thumbnail_src())){?>
 			<header class="page-header container">
 				<h1 class="page-title">Testimonials</h1>
 			</header><!-- .page-header -->
+				<? } ?>
 			<div class="testimonials-list">
 			<?php
 			/* Start the Loop */

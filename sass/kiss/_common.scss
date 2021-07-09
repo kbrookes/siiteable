@@ -323,7 +323,7 @@ $basefontsize: 16 !default;
 //// SEPARATOR COLOURS
 .fill {
   &-body {
-    fill: $white;
+    //fill: $white;
   }
   &-border {
     fill: $light;
@@ -920,3 +920,104 @@ or object-fit and object-position:
   }
 }
 
+/// VIDEO PLAYER 
+.lty-playbtn {
+  border-radius: 50%;
+  border: 8px solid $primary;
+  width: 140px;
+  height: 140px;
+  &:before {
+    border-width: 31px 0 31px 49px;
+    left: 55% !important;
+  }
+}
+
+lite-youtube {
+  background-color: #000;
+  position: relative;
+  display: block;
+  contain: content;
+  background-position: center center;
+  background-size: cover;
+  cursor: pointer;
+  //max-width: 720px;
+  width: 100%;
+}
+
+/* gradient */
+lite-youtube::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAdklEQVQoz42QQQ7AIAgEF/T/D+kbq/RWAlnQyyazA4aoAB4FsBSA/bFjuF1EOL7VbrIrBuusmrt4ZZORfb6ehbWdnRHEIiITaEUKa5EJqUakRSaEYBJSCY2dEstQY7AuxahwXFrvZmWl2rh4JZ07z9dLtesfNj5q0FU3A5ObbwAAAABJRU5ErkJggg==);
+  background-position: top;
+  background-repeat: repeat-x;
+  height: 60px;
+  padding-bottom: 50px;
+  width: 100%;
+  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* responsive iframe with a 16:9 aspect ratio
+  thanks https://css-tricks.com/responsive-iframes/
+*/
+lite-youtube::after {
+  content: "";
+  display: block;
+  padding-bottom: calc(100% / (16 / 9));
+}
+lite-youtube > iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+}
+
+/* play button */
+lite-youtube > .lty-playbtn {
+  border-radius: 50%;
+  border: 8px solid $primary;
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  cursor: pointer;
+  transform: translate3d(-50%, -50%, 0);
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  background-color: rgba($dark, 0.4);
+  /* YT's actual play button svg */
+  background-image: url("data:image/svg+xml,%3Csvg height='100px' width='100px' fill='%2300a2e0' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:serif='http://www.serif.com/' viewBox='0 0 64 64' version='1.1' xml:space='preserve' style='' x='0px' y='0px' fill-rule='evenodd' clip-rule='evenodd' stroke-linejoin='round' stroke-miterlimit='2'%3E%3Cg transform='matrix(1,0,0,1,-320,0)'%3E%3Cg transform='matrix(1,0,0,1,320,7.10543e-15)'%3E%3Crect x='0' y='0' width='64' height='64' style='' fill='none'%3E%3C/rect%3E%3Cg transform='matrix(1.11364,0,0,1.2,-357.5,-6.4)'%3E%3Cpath d='M328.204,46.656C328.204,48.381 329.163,49.985 330.741,50.898C332.318,51.811 334.292,51.905 335.962,51.146C337.096,50.63 361.66,39.465 368.204,36.49C370.051,35.651 371.222,33.909 371.222,32C371.222,30.091 370.051,28.349 368.204,27.51C359.401,23.508 343.98,16.499 335.962,12.854C334.292,12.095 332.318,12.189 330.741,13.102C329.163,14.015 328.204,15.619 328.204,17.344C328.204,23.09 328.204,32.412 328.204,39.941C328.204,40.861 329.009,41.608 330,41.608C330.991,41.608 331.796,40.861 331.796,39.941C331.796,32.412 331.796,23.09 331.796,17.344C331.796,16.769 332.116,16.235 332.641,15.93C333.167,15.626 333.825,15.595 334.382,15.848C342.4,19.492 357.821,26.502 366.624,30.503C367.24,30.783 367.63,31.364 367.63,32C367.63,32.636 367.24,33.217 366.624,33.497C360.081,36.471 335.516,47.637 334.382,48.152C333.825,48.405 333.167,48.374 332.641,48.07C332.116,47.765 331.796,47.231 331.796,46.656C331.796,45.736 330.991,44.989 330,44.989C329.009,44.989 328.204,45.736 328.204,46.656Z'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-position: 67% 50%;
+  background-repeat: no-repeat;
+  transition: 0.3s ease all;
+}
+
+lite-youtube:hover > .lty-playbtn,
+lite-youtube .lty-playbtn:focus {
+  background-color: $secondary;
+  filter: none;
+}
+
+/* Post-click styles */
+lite-youtube.lyt-activated {
+  cursor: unset;
+}
+lite-youtube.lyt-activated::before,
+lite-youtube.lyt-activated > .lty-playbtn {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lyt-visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
