@@ -362,20 +362,22 @@ $basefontsize: 16 !default;
 }
 
 @include media-breakpoint-up(md) {
-  .nav-tabs {
-    display: flex;
-  }
-
-  .card {
-    border: none;
-  }
-
-  .card .card-header {
-    display: none;
-  }
-
-  .card .collapse {
-    display: block;
+  .tabbed-content {
+    .nav-tabs {
+      display: flex;
+    }
+  
+    .card {
+      border: none;
+    }
+  
+    .card .card-header {
+      display: none;
+    }
+  
+    .card .collapse {
+      display: block;
+    }
   }
 }
 
