@@ -8,6 +8,9 @@
 					padding-bottom: 60px;
 				}
 			}
+			&:nth-child(even){
+				background-color: $secondary;
+			}
 		}
 	}
 	&-page {
@@ -44,12 +47,16 @@
 			//color: $brand-primary;
 			font-family: $headings-font-family;
 			font-size: 1.3rem;
+			width: 100%;
+			blockquote p {
+				color: $dark;
+			}
 			footer {
 				font-size: 0.9rem;
 				font-family: $font-family-base;
 				text-transform: uppercase;
 				cite {
-					//color: $brand-secondary;
+					color: $primary;
 					display: block;
 					font-weight: bold;
 					font-style: normal;
@@ -57,10 +64,23 @@
 					text-transform: none;
 				}
 			}
+			.testimonial-video {
+				width: 100%;
+				&__label {
+					margin-top: 2rem;
+					text-align: center;
+					h4 {
+						color: $primary;
+					}
+				}
+			}
+		}
+		.fill-body {
+			fill: $primary;
 		}
 	}
 	.fill-body {
-		fill: $brand-secondary;
+		fill: $primary;
 	}
 	&.bg-dark,
 	&.bg-primary {

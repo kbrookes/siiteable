@@ -98,7 +98,7 @@ class Contactdetails_Widget extends WP_Widget {
 			$textColour = 'text-' . strtolower($instance['textcolour_select']);
 		endif;
 		
-		if(!empty($instance['streetaddress_textarea'] || $instance['citysuburbreg_textarea'] || $instance['state_text'] || $instance['zippostcode_text'] || $instance['country_text'] || $instance['emailiconfonta_text'] )): ?>
+		if(!empty($instance['streetaddress_textarea'] || $instance['citysuburbreg_text'] || $instance['state_text'] || $instance['zippostcode_text'] || $instance['country_text'] || $instance['emailiconfonta_text'] )): ?>
 		<div itemscope itemtype="http://schema.org/ContactPoint" class="<?= $textColour; ?>">
 			<? if(!empty($instance['addressiconfon_text'])):?>
 			<div class="footer-nav__row">

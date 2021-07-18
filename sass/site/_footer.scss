@@ -9,6 +9,11 @@
     h3, h4, p {
 	    color: $white;
     }
+    .textwidget {
+        p {
+            line-height: 1.1;
+        }
+    }
     .header-fs {
         &-1 {
             h3.widgettitle {
