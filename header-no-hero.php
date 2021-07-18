@@ -33,6 +33,10 @@ if( get_theme_mod( 'lll_header_opacity', 'false' ) == 'true' ):
     $transparentForHero = 'headerTransparent';
 endif;
 
+/// WHICH NAVIGATION
+$navType = 'nav_standard';
+$navType = (get_theme_mod('lll_hero_header_navtype', 'false'));
+
 /// ADD TO THE BODY CLASS
 // BUTTON SETTINGS
 $buttonType = get_theme_mod( 'button_styles');
@@ -57,37 +61,7 @@ $extraBodyClasses = 'noHero ' . $buttonClass;
 <div id="page" class="site">
 
 	<header id="masthead" class="site-header" role="banner">
-	    <nav id="main-nav" class="navbar navbar-expand-lg <?php echo $headerColor . ' ' . $headerBg . ' ' . $headerPosition . ' ' . $transparentForHero; ?> notScrolled">
-	    	<div class="container">
-				<div class="navbar-brand mb-0">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="style-svg">
-						<?php 
-						   $custom_logo_id = get_theme_mod( 'custom_logo' );
-						   $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-						      ?>
-						<img class="img-fluid" src="<?php echo $image[0]; ?>" alt="">
-					</a>
-				</div>
-				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-				</button>
-		   		<div class="collapse navbar-collapse" id="navbarNav">
-	            <?php
-	            $args = array(
-	              'theme_location' => 'primary',
-	              'depth'      => 2,
-	              'container'  => false,
-	              'menu_class'     => 'navbar-nav ml-auto',
-	              'walker'     => new Bootstrap_Walker_Nav_Menu()
-	              );
-	            if (has_nav_menu('primary')) {
-	              wp_nav_menu($args);
-	            }
-	            ?>
-	          </div>
-
-	        </div>
-		</nav>
+	    <? include $templatePath . '/template-parts/header/' . $navType . '.php'; ?>
 	</header><!-- #masthead -->
 
 

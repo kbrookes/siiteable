@@ -68,6 +68,9 @@ switch($smCol){
         $colSmLeft = 'col-sm-10';
         break;
 }
+if($smCol != "0"){
+    $colSmRight = $colSmRight . ' ' . "d-sm-block";
+}
 
 $mdCol = get_field($sepPrefix . '_col_md');
 switch($mdCol){
@@ -96,6 +99,10 @@ switch($mdCol){
         $colMdLeft = 'col-md-10';
         break;
 }
+if($mdCol != "0" && $smCol != "0"){
+    $colMdRight = $colMdRight . ' ' . "d-md-block";
+}
+
 
 $lgCol = get_field($sepPrefix . '_col_lg');
 switch ($lgCol){
@@ -125,6 +132,10 @@ switch ($lgCol){
         break;
 }
 
+if($mdCol != "0" && $smCol != "0" && $lgCol != "0"){
+    $colLgRight = $colLgRight . ' ' . "d-lg-block";
+}
+
 $xlCol = get_field($sepPrefix . '_col_xl');
 switch ($xlCol){
     case "0":
@@ -151,6 +162,10 @@ switch ($xlCol){
     $colXlRight = 'col-xl-2';
     $colXlLeft = 'col-xl-10';
     break;
+}
+
+if($mdCol != "0" && $smCol != "0" && $lgCol != "0" && $xlCol != "0"){
+    $colXlRight = $colXlRight . ' ' . "d-xl-block";
 }
 
 $colClassLeft = $colXsLeft . ' ' . $colSmLeft . ' ' . $colMdLeft . ' ' . $colLgLeft . ' ' . $colXlLeft;

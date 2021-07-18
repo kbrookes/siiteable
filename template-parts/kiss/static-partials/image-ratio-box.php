@@ -1,6 +1,15 @@
 <?
     
     $boxAR = get_sub_field($sepPrefix . '_image_ar');
+    
+    if($cardType == 'get-post'){
+        /// LINK OPTIONS
+        $btnAddLinks = true;
+        $linkContent = get_permalink($pageID);
+        include $templatePartials . 'button_links.php';
+    }
+
+
 ?>
 <div class="image-box <?= $boxAR . ' ' . $hasOverlayClass . ' ' . $cardCssImage . ' ' . $imageClass; ?>" style="background-image: url(<?= $image; ?>);">
     <?= $btnLinkOpen; ?>

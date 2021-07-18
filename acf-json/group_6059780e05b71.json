@@ -478,8 +478,8 @@
             "return_format": "value"
         },
         {
-            "key": "field_605984f8feb5a",
-            "label": "Social Icons",
+            "key": "field_60ab65c11f039",
+            "label": "Menu Handling",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -494,67 +494,50 @@
             "endpoint": 0
         },
         {
-            "key": "field_60598500feb5b",
-            "label": "Show Social Icons?",
-            "name": "icons_show",
-            "type": "true_false",
+            "key": "field_60ab65cc1f03a",
+            "label": "Menu Buttons",
+            "name": "theme_button",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "clone": [
+                "group_5d48ec70c0c85"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
         },
         {
-            "key": "field_6099f7b13f298",
-            "label": "Icons Type",
-            "name": "icons_type",
-            "type": "true_false",
+            "key": "field_60cfdfda96a4c",
+            "label": "WooCommerce Settings",
+            "name": "",
+            "type": "tab",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_60598500feb5b",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "Image\/SVG",
-            "ui_off_text": "Fontawesome"
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "key": "field_60598514feb5c",
-            "label": "Icons Section Title",
-            "name": "icons_section_title",
+            "key": "field_60cfdfe896a4d",
+            "label": "ABN",
+            "name": "store_abn",
             "type": "text",
-            "instructions": "",
+            "instructions": "Add an ABN number for email invoices",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_60598500feb5b",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -567,10 +550,10 @@
             "maxlength": ""
         },
         {
-            "key": "field_6099fc48b128d",
-            "label": "Title",
-            "name": "icons_title",
-            "type": "clone",
+            "key": "field_60d009dbc86bf",
+            "label": "Custom Post Types",
+            "name": "",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -579,172 +562,33 @@
                 "class": "",
                 "id": ""
             },
-            "clone": [
-                "group_6076c01d3fc68"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 1,
-            "prefix_name": 1
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "key": "field_6059852efeb5d",
-            "label": "Social Icons",
-            "name": "icons_list",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_60598500feb5b",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "Add Icon",
-            "sub_fields": [
-                {
-                    "key": "field_60598543feb5e",
-                    "label": "Add Icon",
-                    "name": "icon_add",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_6099f7b13f298",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "url",
-                    "preview_size": "logos-sm",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_6099f7f03f299",
-                    "label": "Add Fontawesome Icon",
-                    "name": "icon_fa",
-                    "type": "text",
-                    "instructions": "Use the full fab fa-* identifier",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_6099f7b13f298",
-                                "operator": "!=",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_60598563feb5f",
-                    "label": "Add link",
-                    "name": "icon_link",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                }
-            ]
-        },
-        {
-            "key": "field_609a0575f21fe",
-            "label": "Icon Controls",
-            "name": "icons_contents",
-            "type": "clone",
+            "key": "field_60d009e5c86c0",
+            "label": "Include these post types",
+            "name": "custom_post_types",
+            "type": "checkbox",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_6076c01d3fc68"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 1,
-            "prefix_name": 1
-        },
-        {
-            "key": "field_60598582feb60",
-            "label": "Icons Padding",
-            "name": "icons_padding",
-            "type": "button_group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_60598500feb5b",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
             "choices": {
-                "p-0": "None",
-                "p-1": "XS",
-                "p-2": "SM",
-                "p-3": "MD",
-                "p-4": "LG",
-                "p-5": "XL"
+                "cpt-events": "Events",
+                "cpt-case-studies": "Case Studies",
+                "cpt-faqs": "FAQs"
             },
-            "allow_null": 0,
-            "default_value": "",
-            "layout": "horizontal",
-            "return_format": "value"
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
         }
     ],
     "location": [
@@ -764,5 +608,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1620706862
+    "modified": 1626244463
 }

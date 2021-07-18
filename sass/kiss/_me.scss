@@ -13,12 +13,14 @@
 @import "extras/buttons";
 @import "extras/separators";
 
+
 //// IMPORT BLOCKS
 @import "modules/blog-posts";
 @import "modules/cards";
 @import "modules/client-logos";
 @import "modules/cta";
 @import "modules/editable-content";
+@import "modules/eventslist";
 @import "modules/featured-case-study";
 @import "modules/hero-header";
 @import "modules/image-content";
@@ -40,3 +42,5 @@
 @import "pages/optin";
 @import "pages/testimonials";
 @import "pages/topics";
+
+@import "extras/woocommerce";

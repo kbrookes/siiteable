@@ -17,7 +17,14 @@
 	/// ICON CONTROLS
 	include $templatePartials . 'icon-controls.php';
 	
+	/// CARD BACKGROUND IMAGE
 	$cardBackgroundColor = get_sub_field($sepPrefix . '_background_colour');
+	$cardBackgroundImage = get_sub_field($sepPrefix . '_bg_image');
+	
+	if(get_sub_field($sepPrefix . '_overlay_add_overlay', 'options') == true):
+		include $templatePartials . "overlay-partial.php";
+		$hasOverly = true;
+	endif;
 	
 	/// GET GENERAL
 	$colCount = get_sub_field($sepPrefix . '_columns');
@@ -51,10 +58,19 @@
 	
 	?>
 
-<section class="cards-layout <?= $bgcolour . ' ' . $separatorClasses . ' ' . $containerDirection . ' ' . $paddingY . ' ' . $customClass; ?>">
+<section class="cards-layout <?= $bgcolour . ' ' . $separatorClasses . ' ' . $containerDirection . ' ' . $paddingY . ' ' . $customClass . ' ' . $overlayClass; ?>">
 	<? if($addSeparatorUpper == true):
 		include $pathUpper;
 	endif; ?>
+	
+	<? if(!empty($cardBackgroundImage)):?>
+	<picture class="cards-layout__bgimage">
+		<img class="of-cover" <? siiteable_responsive_image($cardBackgroundImage['id'],'full_size','100vw'); ?>" alt="" style="object-fit: cover;" />
+	</picture>
+		<? if($hasOverlay):?>
+	<div class="position-absolute w-100 h-100 top-0 <? echo $colorClass . ' opacity-' . $overlayOpacity; ?>"></div>
+		<? endif; ?>
+	<? endif; ?>
 	<div class="cards-layout__inner">
 		<div class="<?= $containerSize; ?>">
 			<?

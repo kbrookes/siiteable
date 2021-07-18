@@ -1,4 +1,13 @@
 <?php 
+$sepOptions = '';
+$addSeparators = false;
+$upperSeparatorType = '';
+$upperClassPadding = '';
+$addSeparatorUpper = false;
+$lowerSeparatorType = '';
+$lowerClassPadding = '';
+$addSeparatorLower = false;
+
 if(get_field($sepPrefix . '_separators') != ''):
 	$addSeparators = true;
 	$sepOptions = get_field($sepPrefix . '_sep_options');
@@ -10,9 +19,10 @@ elseif(get_field($sepPrefix . '_separators', 'options') != ''):
 	$sepOptions = get_field($sepPrefix . '_sep_options', 'options');
 endif;
 
-$upperSeparatorType = $sepOptions[$sepPrefix . '_upper_separator_separator_type'];
-$lowerSeparatorType = $sepOptions[$sepPrefix . '_lower_separator_separator_type'];
-
+if($sepOptions){
+	$upperSeparatorType = $sepOptions[$sepPrefix . '_upper_separator_separator_type'];
+	$lowerSeparatorType = $sepOptions[$sepPrefix . '_lower_separator_separator_type'];
+}
 /// GENERAL
 
 $svgPath = $templatePath . "/template-parts/kiss/flexi-partials/separators/separator-";
@@ -166,4 +176,7 @@ if($lowerClassPadding != "false"){
 	$paddingLower = 'pb-pc_' . $lowerClassPadding;
 }
 
+$separatorClassesHero = $separatorClasses;
+
 $separatorClasses .= ' ' . $paddingUpper . ' ' . $paddingLower;
+

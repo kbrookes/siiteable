@@ -85,6 +85,10 @@ class Contactdetails_Widget extends WP_Widget {
 
 	public function widget( $args, $instance ) {
 		echo $args['before_widget'];
+		
+		if ( ! empty( $instance['title'] ) ) {
+			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+		}
 
 		// Output generated fields
 		$faType = get_theme_mod( 'fa_styles');
@@ -94,7 +98,7 @@ class Contactdetails_Widget extends WP_Widget {
 			$textColour = 'text-' . strtolower($instance['textcolour_select']);
 		endif;
 		
-		if(!empty($instance['streetaddress_textarea'] || $instance['citysuburbreg_textarea'] || $instance['state_text'] || $instance['zippostcode_text'] || $instance['country_text'] || $instance['emailiconfonta_text'] )): ?>
+		if(!empty($instance['streetaddress_textarea'] || $instance['citysuburbreg_text'] || $instance['state_text'] || $instance['zippostcode_text'] || $instance['country_text'] || $instance['emailiconfonta_text'] )): ?>
 		<div itemscope itemtype="http://schema.org/ContactPoint" class="<?= $textColour; ?>">
 			<? if(!empty($instance['addressiconfon_text'])):?>
 			<div class="footer-nav__row">
@@ -201,11 +205,18 @@ class Contactdetails_Widget extends WP_Widget {
 	}
 
 	public function form( $instance ) {
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( '', 'textdomain' );?>
+		<p>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'textdomain' ); ?></label>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+		</p>
+		<?
 		$this->field_generator( $instance );
 	}
 
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 		foreach ( $this->widget_fields as $widget_field ) {
 			switch ( $widget_field['type'] ) {
 				default:

@@ -5,7 +5,7 @@
  */
 
 get_header(); ?>
-
+<div class="site-home"></div>
 	<?php
  // check if the flexible content field has rows of data
  if (get_field("hide_content_area") == false): ?>
@@ -29,9 +29,9 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	
-	<?php endif;
+	<?php endif; ?>
 
- get_template_part("template-parts/kiss/flexible-content"); 
+ <? get_template_part("template-parts/kiss/flexible-content"); 
  
  $showNews = get_field('home_news_show', 'options');
  $showPromo = get_field('home_promo', 'options');

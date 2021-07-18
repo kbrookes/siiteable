@@ -366,7 +366,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -380,6 +380,22 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_60cc597941c1a",
+            "label": "Add Video",
+            "name": "hero_content_video",
+            "type": "url",
+            "instructions": "Provide the YouTube video URL",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         },
         {
             "key": "field_6093b1b2a5ea8",
@@ -586,7 +602,6 @@
                 "id": ""
             },
             "choices": {
-                "false": "No",
                 "header_xs": "XS",
                 "header_sm": "SM",
                 "header_md": "MD",
@@ -594,8 +609,8 @@
                 "header_xl": "XL",
                 "full_height": "Full Height"
             },
-            "default_value": "No",
-            "allow_null": 0,
+            "default_value": false,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 0,
             "return_format": "value",
@@ -616,13 +631,12 @@
                 "id": ""
             },
             "choices": {
-                "false": "No",
                 "align-items-start": "Align Top",
                 "align-items-center": "Align Center",
                 "align-items-end": "Align Bottom"
             },
             "default_value": "No",
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 0,
             "return_format": "value",
@@ -738,6 +752,11 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
+            },
+            {
+                "param": "page_type",
+                "operator": "!=",
+                "value": "posts_page"
             }
         ],
         [
@@ -763,5 +782,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623137515
+    "modified": 1624144685
 }

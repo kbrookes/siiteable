@@ -189,6 +189,21 @@ function lll_customizer_settings( $wp_customize ) {
 		),
 	));
 	
+	$wp_customize->add_setting( 'lll_hero_header_navtype' , array(
+		'default'       => 'nav_standard',
+		'transport'     => 'refresh',
+	) );
+	$wp_customize->add_control( 'lll_hero_header_navtype', array(
+		'label'      => 'Navigation Type',
+		'section'    => 'lll_header_settings',
+		'settings'   => 'lll_hero_header_navtype',
+		'type'       => 'select',
+			'choices'    => array( 
+			  'nav_standard' => 'Standard',
+			  'nav_burger' => 'Hamburger',
+			),
+	) );
+	
 	//// HERO SETTINGS
 	// Create our sections
 	
@@ -256,15 +271,15 @@ function lll_customizer_settings( $wp_customize ) {
 			),
 	) );
 	
-	$wp_customize->add_setting( 'hero_h1_size' , array(
+	$wp_customize->add_setting( 'hero_text_size' , array(
 		'default'		=> 'font-md',
 		'type'          => 'theme_mod',
 		'transport'     => 'refresh',
 	) );
-	$wp_customize->add_control( 'hero_h1_size_control', array(
+	$wp_customize->add_control( 'hero_text_size_control', array(
 		'label'      => 'Heading 1 Font Size',
 		'section'    => 'hero_header_settings',
-		'settings'   => 'hero_h1_size',
+		'settings'   => 'hero_text_size',
 		'type'       => 'select',
 			'choices'    => array( 
 			  'font-xs' => 'XS',
@@ -514,6 +529,15 @@ Kirki::add_field( 'kiss_theme', [
 	],
 ] );
 
+// Select Play Button Icon
+Kirki::add_field( 'kiss_theme', [
+	'type'        => 'text',
+	'settings'    => 'play_button',
+	'label'       => esc_html__( 'Fontawesome class (not including "fa*") for play button', 'kirki' ),
+	'section'     => 'button_options',
+	'default'     => 'fa-play',
+] );
+
 /// Create Analytics Options Section
 Kirki::add_section( 'analytics_options', array(
 	'title'          => esc_html__( 'Analytics Options', 'kirki' ),
@@ -561,6 +585,13 @@ Kirki::add_field( 'kiss_theme', [
 	'section'     => 'analytics_options',
 ] );
 
+Kirki::add_field( 'kiss_theme', [
+	'type'        => 'text',
+	'settings'    => 'analytics_luckyorange',
+	'label'       => esc_html__( 'Lucky Orange ID', 'kirki' ),
+	'section'     => 'analytics_options',
+] );
+
 
 /// ANALYTICS CONDITIONALS
 
@@ -595,14 +626,23 @@ add_filter('wpcf7_form_elements', function ($content) {
 
 // Register new image sizes
 add_image_size( 'logos-sm', 120, 9999999, false );
+add_image_size( 'square-medium', 640, 640, false );
 
 add_filter( 'image_size_names_choose', 'my_custom_sizes' );
 
 function my_custom_sizes( $sizes ) {
 	return array_merge( $sizes, array(
 		'logos-sm' => __( 'Small Logos' ),
+		'square-medium' => __( 'Medium Square' ),
 	) );
 }
+
+
+//. Google Maps API key
+function my_acf_init() {
+	acf_update_setting('google_api_key', 'AIzaSyAWL3Zw816wZNsiutVTazUqNr7gt0NOheU');
+}
+add_action('acf/init', 'my_acf_init');
 
 /**
  * Responsive Image Helper Function
@@ -628,3 +668,144 @@ function siiteable_responsive_image($image_id,$image_size,$max_width){
 
 	}
 }
+
+/// HERO SETTINGS
+function getHeroHeightElvis($prefix, $isBlogPage)
+{
+	$page = get_field($prefix . '_override_height');
+	$blog = get_field($prefix . '_override_height', 'options');
+	$theme = get_theme_mod('hero_header_height', 0); 
+	$default = 'header_md';
+
+	if($isBlogPage) {
+		return $page ?: $blog ?: $theme ?: $default;
+	}   
+	return $page ?: $theme ?: $default;
+}
+
+function getHeroAlignment($prefix, $isBlogPage){
+	$page = get_field($prefix . '_override_vertical');
+	$blog = get_field($prefix . '_override_vertical', 'options');
+	$theme = get_theme_mod( 'hero_vertical_alignment', 0 );
+	$default = 'align-items-center';
+	
+	if($isBlogPage){
+		return $page ?: $blog ?: $theme ?: $default;
+	}
+	return $page ?: $theme ?: $default;
+}
+
+/// TEXT CONTROLS
+function textTitle($prefix, $type){
+	$title = get_sub_field($prefix . '_title_font_' . $type);
+	$titles = get_sub_field($prefix . '_titles_font_' . $type);
+	$titleNG = get_field($prefix . '_title_font_' . $type);
+	$titleOption = get_field($prefix . '_title_font_' . $type, 'options');
+	$titleTheme = get_theme_mod( 'hero_text_' . $type, 0 );
+	
+	return $title ?: $titles ?: $titleNG ?: $titleOption ?: $titleTheme;
+}
+
+/// TITLES
+function heroTitle($id, $isBlogPage){
+	$archiveTitle = get_the_archive_title();
+	$postTitle = get_field('hero_block_title', $id);
+	$blogArchiveTitle = get_field('news_block_title', 'options');
+	$pageTitle = single_post_title('', FALSE);
+
+	if($isBlogPage){
+		return $pageTitle ?: $blogArchiveTitle ?: $archiveTitle ?: $postTitle;
+	}
+	return $pageTitle ?: $archiveTitle ?: $postTitle;
+
+}
+
+// EXTRACT YOUTUBE ID AND CREATE PLAYER
+function videoPlayer($url){
+	preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
+	$youtube_id = $match[1];
+	echo '
+	<lite-youtube videoid="' . $youtube_id . '"></lite-youtube>
+	';
+}
+
+// EXTRACT YOUTUBE ID AND CREATE PLAYER
+function videoPlayerLite($url){
+	preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
+	$youtube_id = $match[1];
+	echo '
+	<lite-youtube videoid="' . $youtube_id . '"></lite-youtube>
+	';
+}
+
+
+/**
+ * Edit checkout form inputs
+ * source: https://gist.github.com/nickkuijpers/5d07ecf9b0a0678b4f4c
+ */
+add_filter('woocommerce_checkout_fields', 'addBootstrapToCheckoutFields' );
+/**
+ * @param $fields
+ * @return mixed
+ */
+function addBootstrapToCheckoutFields($fields) {
+	foreach ($fields as &$fieldset) {
+		foreach ($fieldset as &$field) {
+			// if you want to add the form-group class around the label and the input
+			$field['class'][] = 'form-group';
+
+			// add form-control to the actual input
+			$field['input_class'][] = 'form-control';
+		}
+	}
+	return $fields;
+}
+
+add_filter('woocommerce_form_field_country', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_state', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_checkbox', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_password', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_text', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_email', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_tel', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_number', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_select', 'clean_checkout_fields_class_attribute_values', 20, 4);
+add_filter('woocommerce_form_field_radio', 'clean_checkout_fields_class_attribute_values', 20, 4);
+function clean_checkout_fields_class_attribute_values( $field, $key, $args, $value ){
+	if( is_checkout() ){
+		// remove "form-row"
+		$field = str_replace( array('<p class="form-row ', '<p class="form-row'), array('<p class="checkout-col ', '<p class="checkout-col '), $field);
+	}
+
+	return $field;
+}
+
+add_filter('woocommerce_form_field_textarea', 'clean_checkout_fields_class_attribute_values_textarea', 20, 4);
+function clean_checkout_fields_class_attribute_values_textarea( $field, $key, $args, $value ){
+	if( is_checkout() ){
+		// remove "form-row"
+		$field = str_replace( array('<p class="form-row ', '<p class="form-row'), array('<p class="col-12 ', '<p class="col-12 '), $field);
+	}
+
+	return $field;
+}
+
+add_filter('woocommerce_checkout_fields', 'custom_checkout_fields_class_attribute_value', 20, 1);
+function custom_checkout_fields_class_attribute_value( $fields ){
+	foreach( $fields as $fields_group_key => $group_fields_values ){
+		foreach( $group_fields_values as $field_key => $field ){
+			// Remove other classes (or set yours)
+			$fields[$fields_group_key][$field_key]['class'] = array(); 
+		}
+	}
+
+	return $fields;
+}
+
+
+/// MOVE RANKMATH DOWN
+function rankmathtobottom() {
+	return 'low';
+}
+add_filter( 'rank_math_metabox', 'rankmathtobottom');
+
