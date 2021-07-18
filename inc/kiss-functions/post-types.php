@@ -30,6 +30,17 @@ if( $cpts && in_array('cpt-case-studies', $cpts) ) {
     add_action('init','siiteable_unregister_post_type');
 }
 
+//// FAQs
+if( $cpts && in_array('cpt-faqs', $cpts) ) {
+    require get_template_directory() . '/inc/kiss-functions/cpt-faqs.php';
+} else {
+    if( !function_exists( 'siiteable_unregister_post_type' ) ) {
+        function siiteable_unregister_post_type(){
+            unregister_post_type( 'cpt-faqs' );
+        }
+    }
+    add_action('init','siiteable_unregister_post_type');
+}
 
 
 //// TESTIMONIALS

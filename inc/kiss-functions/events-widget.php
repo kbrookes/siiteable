@@ -63,6 +63,7 @@ class Eventslist_Widget extends WP_Widget {
                 $moreLink = '<a href="' . get_field('event_link') . '" class="btn-custom ' . $buttonColor . ' " target="_blank">EVENT INFO</a>';
                 ?>
                 <div class="row">
+                    <? if($date ?: $date): ?>
                     <div class="col-12 co-sm-4 col-md-3 col-lg-2 eventslist-date">
                         <p class="font-weight-bold uppercase eventslist-day text-secondary <?= $eventTitleColor; ?>">
                             <?= $date->format('j'); ?>
@@ -73,11 +74,8 @@ class Eventslist_Widget extends WP_Widget {
                         <p class="font-weight-light eventslist-year <?= $eventTitleColor; ?>">
                             <?= $date->format('Y'); ?>
                         </p>
-                        <?php
-                        //var_dump($bgColor);
-                        
-                         ?>
                     </div>
+                    <? endif; ?>
                     <div class="col-12 col-sm-8 col-md-9 col-lg-10">
                         <header class="entry-header">
                             <h4 class="<?= $eventTitleColor; ?>"><a href="<?= $link; ?>" class="<?= $eventTitleColor; ?>" target="_blank"><?php the_title(); ?></a></h4>
