@@ -1,10 +1,12 @@
 var gulp = require("gulp"),
-	sass = require("gulp-sass"),
+	//sass = require("gulp-sass"),
 	postcss = require("gulp-postcss"),
 	autoprefixer = require("autoprefixer"),
 	cssnano = require("cssnano"),
 	critical = require("critical"),
 	sourcemaps = require("gulp-sourcemaps");
+	
+const sass = require('gulp-sass')(require('sass'));
 
 var paths = {
 	styles: {
