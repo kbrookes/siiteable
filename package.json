@@ -7,14 +7,21 @@
     "license": "MIT License",
     "keywords": "gulp",
     "devDependencies": {
+        "autoprefixer": "^10.3.2",
         "critical": "^3.0.0",
         "cssnano": "*",
         "es6-promise": "*",
         "gulp": "*",
-        "gulp-autoprefixer": "^7.0.1",
         "gulp-plumber": "*",
         "gulp-postcss": "*",
         "gulp-sass": "*",
-        "gulp-sourcemaps": "*"
+        "gulp-sourcemaps": "*",
+        "postcss": "^8.3.6"
+    },
+    "dependencies": {
+        "sass": "^1.38.1"
+    },
+    "peerDependencies": {
+        "postcss": "^8.0.0"
     }
 }
