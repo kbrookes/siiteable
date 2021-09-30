@@ -201,6 +201,7 @@ function lll_customizer_settings( $wp_customize ) {
 			'choices'    => array( 
 			  'nav_standard' => 'Standard',
 			  'nav_burger' => 'Hamburger',
+			  'nav_compound' => 'Compound',
 			),
 	) );
 	
@@ -696,14 +697,23 @@ function getHeroAlignment($prefix, $isBlogPage){
 }
 
 /// TEXT CONTROLS
-function textTitle($prefix, $type){
-	$title = get_sub_field($prefix . '_title_font_' . $type);
-	$titles = get_sub_field($prefix . '_titles_font_' . $type);
-	$titleNG = get_field($prefix . '_title_font_' . $type);
-	$titleOption = get_field($prefix . '_title_font_' . $type, 'options');
+function textStyles($prefix, $position, $type){
+	$title = get_sub_field($prefix . '_' . $position . '_font_' . $type);
+	$titles = get_sub_field($prefix . '_' . $position . '_font_' . $type);
+	$titleNG = get_field($prefix . '_' . $position . '_font_' . $type);
+	$titleOption = get_field($prefix . '_' . $position . '_font_' . $type, 'options');
 	$titleTheme = get_theme_mod( 'hero_text_' . $type, 0 );
 	
 	return $title ?: $titles ?: $titleNG ?: $titleOption ?: $titleTheme;
+}
+
+function textClass($prefix, $position, $attrs)
+{
+	$classes = [];
+	foreach ($attrs as $attr) {
+		$classes[] = textStyles($prefix, $position, $attr);
+	}
+	return implode(' ', $classes);
 }
 
 /// TITLES
@@ -716,7 +726,7 @@ function heroTitle($id, $isBlogPage){
 	if($isBlogPage){
 		return $pageTitle ?: $blogArchiveTitle ?: $archiveTitle ?: $postTitle;
 	}
-	return $pageTitle ?: $archiveTitle ?: $postTitle;
+	return $postTitle ?: $pageTitle ?: $archiveTitle;
 
 }
 
@@ -808,4 +818,22 @@ function rankmathtobottom() {
 	return 'low';
 }
 add_filter( 'rank_math_metabox', 'rankmathtobottom');
+
+//// ADD ICONS TO MENU ITEMS
+// $faType = get_theme_mod( 'fa_styles', 0); -> fix this later
+
+add_filter('wp_nav_menu_objects', function($items) {
+	foreach ($items as &$item) {
+		$icon = get_field('fontawesome_icon', $item);		
+		$text = get_field('replace_text', $item);
+		$title = $item->title;
+		if($text) {
+			$title = null;
+		}
+		if ($icon) {
+			$item->title = '<i class="fad ' . $icon . '"></i> ' . $title;
+		}
+	}
+	return $items;
+});
 

@@ -48,15 +48,12 @@
 			font-family: $headings-font-family;
 			font-size: 1.3rem;
 			width: 100%;
-			blockquote p {
-				color: $dark;
-			}
 			footer {
 				font-size: 0.9rem;
 				font-family: $font-family-base;
 				text-transform: uppercase;
 				cite {
-					color: $primary;
+					//color: $primary;
 					display: block;
 					font-weight: bold;
 					font-style: normal;

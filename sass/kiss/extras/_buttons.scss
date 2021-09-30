@@ -15,7 +15,7 @@
 	&-custom {
 		text-align: center;
 		@include media-breakpoint-down(sm){
-			flex: 0 0 100%;
+			flex: 0 0 1;
 			max-width: 100%;
 		}
 	}

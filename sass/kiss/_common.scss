@@ -703,6 +703,10 @@ $basefontsize: 16 !default;
   cursor: pointer;
   display: flex;
   padding: 0;
+  width: 50px;
+  @include media-breakpoint-down(sm){
+    width: 40px;
+  }
   &-icon {
     width: 50px;
   }
@@ -721,22 +725,22 @@ $basefontsize: 16 !default;
     &-3 {
       stroke-dasharray: 60 207;
     }
-    .navbar.text-primary & {
+    .site-header .text-primary & {
       stroke: $primary;
     }
-    .navbar.text-secondary & {
+    .site-header .text-secondary & {
       stroke: $secondary;
     }
-    .navbar.text-dark & {
+    .site-header .text-dark & {
       stroke: $dark;
     }
-    .navbar.text-light & {
+    .site-header .text-light & {
       stroke: $light;
     }
-    .navbar.text-white & {
+    .site-header .text-white & {
       stroke: $white;
     }
-    .navbar.text-alternate & {
+    .site-header .text-alternate & {
       stroke: $alternate;
     }
   }
