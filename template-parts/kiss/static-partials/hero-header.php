@@ -181,9 +181,11 @@ if($heroTitle || $heroImage || $heroContent)	:?>
 						<? if(!empty($heroTitle)): ?>
 						<h1 class="<?= $titleClass; ?>"><?= $heroTitle; ?></h1>
 						<? endif; ?>
+						<? if(!empty(apply_filters('the_content', $heroContent))){ ?>
 						<div class="<?= $contentClass; ?> mb-4">
 						<?= apply_filters('the_content', $heroContent); ?>
 						</div>
+						<? } ?>
 					</div>
 					<div class="<?= $colClassRight; ?>">
 						<? if(!empty($heroTopImage)): ?>
