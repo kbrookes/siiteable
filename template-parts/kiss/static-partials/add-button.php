@@ -5,6 +5,7 @@
     <? if($setLink=='link'):?>target="_blank"<? endif; ?>>
         <?= $linkText; ?>
     </a>
+    
     <? if($buttonSecondary == true): ?>
     <span class="btn-separator <?= $buttonPadding; ?>">OR</span>
     <a class="btn-custom btn-custom__second <?= $btnClass2; ?> order-first order-md-last d-block d-md-inline-block" 
