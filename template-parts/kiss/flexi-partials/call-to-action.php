@@ -11,6 +11,7 @@
 	// GET BUTTONS
 	$addButton = false;
 	if(get_sub_field($sepPrefix . '_button_add_button') == true):
+		$isSubField = 1; // This allows us to set whether to use get_field or get_sub_field. Probably a better way to do this.
 		include $templatePartials . "buttons.php";
 	endif;	
 	

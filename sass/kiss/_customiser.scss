@@ -1,126 +1,97 @@
-.logos-icons {
-	border-top: 1px solid lighten($light, 20%);
-	padding-top: 3rem;
-	margin-bottom: 2rem;
-	h3 {
-		font-size: 0.8rem;
-		font-weight: bold;
-		text-transform: uppercase
+/// FIX FONTS IN LOGO
+.navbar {
+	&-brand {
+		padding: 0.5rem 0;
+		svg {
+			font-family: $font-family-sans-serif;
+			font-weight: $font-weight-light;
+		}
+	}
+	&-nav {
+		width: 100%;
+		justify-content: space-between;
+	}
+	&.navbar-compound {
+		padding: 0;
+		@include media-breakpoint-up(lg){
+			padding: 0.5rem 1rem;
+		}
 	}
 }
 
-.archive-control-area {
-	h2 {
+#main-nav.text-primary .navbar-nav .nav-link:hover {
+	color: $white !important;
+}
+
+.nav-compound {
+	background-color: $dark;
+	a.text-primary:focus,
+	a.text-primary:hover {
+		color: $white !important;
+	}
+	.btn-custom {
+		@include media-breakpoint-down(xs){
+			font-size: 0.7rem !important;
+			padding: 0.5rem !important;
+		}
+	}
+}
+
+.best-prac-logos {
+	max-width: 80px;
+}
+
+/// FORMS
+#happyforms_widget-2 {
+	background-color: #00aac3;
+	h3 {
+		text-align: center;
+		margin-bottom: 1rem;
+		text-transform: uppercase;
 		font-weight: $font-weight-light;
 	}
 }
+.happyforms-form {
+	max-width: 1140px !important;
+	width: 100%;
+	margin: 0 auto;
+}
 
-.case-studies {
-	margin: 60px auto;
-	div[class^='case-study'] {
+.happyforms-flex {
+	justify-content: center;
+}
+
+/// Font adjustment for footer
+#block-3 {
+	p {
+		font-size: 0.8rem;
+	}
+}
+
+/// CLIENT LOGOS
+.logos-icons {
+	padding: 2rem 0;
+	width: 1140px;
+	@include make-container();
+	.client-logos {
+		margin: 0 auto;
+		text-align: center;
+		& > .d-flex.align-items-center {
+			@include make-row();
+		}
+		&__icon {
+			@include make-col-ready();
+			@include media-breakpoint-up(xs) {
+				@include make-col(6);
+			}
+			@include media-breakpoint-up(lg) {
+				@include make-col(4);
+			}
+		}
+	}
+	.client-accreditations {
 		h3 {
-			border-bottom: 1px solid $primary;
-			font-weight: $font-weight-light;
-			margin-bottom: 2rem;
-		}
-	}
-}
-
-.footer-nav {
-	border-bottom: 1px solid lighten($dark, 20%);
-	margin-bottom: 1rem;
-	h3.widgettitle {
-		font-weight: $font-weight-bold;
-		&::after {
-			font-family: 'Font Awesome 5 Pro';
-			content: '\f067';
-			margin-left: 1rem;
-		}
-	}
-	ul {
-		li {
-			font-size: 0.75rem;
-		}
-	}
-}
-
-.image-box {
-	&__inner {
-		&-icon {
-			bottom: -1rem !important;
-			right: -1.5rem !important;
-			.fill-primary,
-			.fill-white {
-				transition: 0.3s ease all;
-			}
-		}
-	}
-	&:hover {
-	  .image-box__inner-icon {
-		  .fill-primary {
-			  fill: $dark;
-		  }
-	  }
-	}
-}
-
-.dropdown-menu {
-	background-color: $primary;
-	.dropdown-item {
-		color: $white;
-		&:hover {
-			background-color: darken($primary, 20%);
-		}
-	}
-}
-
-.menu-sidebar {
-	&.widget {
-		ul {
-			list-style: none;
-			padding: 0;
-			li {
-				margin-bottom: 1rem;
-			}
-		}
-	}
-}
-
-.hero-header {
-	&__icon {
-		//display: none;
-		position: absolute;
-		top: -9rem;
-		right: -14rem;
-		z-index: 50;
-		width: 43%;
-	}
-}
-
-.mastercom-phone {
-	.textwidget {
-		padding: 0;
-		p {
-			@include media-breakpoint-up(xs){
-				font-size: 1.4rem;
-			}
-			@include media-breakpoint-up(sm){
-				font-size: 1rem;
-			}
-			@include media-breakpoint-up(md){
-				font-size: 1.2rem;
-			}
-			@include media-breakpoint-up(lg){
-				font-size: 1.4rem;
-			}
-			margin: 0;
-			a {
-				color: $dark;
-				&:hover {
-					color: $primary;
-					text-decoration: none;
-				}
-			}
+			text-align: center;
 		}
 	}
 }

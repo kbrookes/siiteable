@@ -138,6 +138,13 @@ $heroTopVideo = get_field('hero_content_video');
 
 $faType = get_theme_mod( 'fa_styles');
 
+// GET BUTTONS
+$addButton = false;
+if(get_field($sepPrefix . '_button_add_button') == true):
+	$isSubField = 0; // This allows us to set whether to use get_field or get_sub_field. Probably a better way to do this.
+	include $templatePartials . "buttons.php";
+endif;
+
 
 if($heroTitle || $heroImage || $heroContent)	:?>
 <section id="heroHeader" class="hero-header  <? echo $separatorClassesHero . ' ' . $heroHeight; ?> <? if($heroBG): echo $heroBG; endif; ?> <? if($heroType == 'video'):?>video-hero video-type__<? echo $videoType; ?><? endif; ?>">
@@ -190,66 +197,7 @@ if($heroTitle || $heroImage || $heroContent)	:?>
 				</div>
 			</div>
 			<div class="hero_header__content-actions">
-				<? if( have_rows('header_multi_buttons') ): 
-					$counter = 1;
-				?>
-				<? endif; ?>
-				<? while( have_rows('header_multi_buttons') ): the_row();
-					// vars
-					$linkType = '';
-					$externalLink = false;
-					$mailto = false;
-					$setLink = 'internal';
-					$linkClass = '';
-					$buttonCopy = 'LEARN HOW';
-					$butPrefix = 'hero-button';
-					$videoIDButton = '';
-					$buttonOptions = get_sub_field($butPrefix . '_button_options');
-					if(get_sub_field($butPrefix . '_add_button') == true):
-						
-						//$linkType = get_field($butPrefix . '_hero_link_type');
-						$btnColor = $buttonOptions['btn_color'];
-						$linkType = $buttonOptions['button_link_type'];
-						$buttonCopy = $buttonOptions['button_text_copy'];
-						switch ($linkType) {
-							case "None":
-								$setLink = null;
-								$linkContent = null;
-								break;
-							case "page":
-								$setLink = 'internal';
-								$linkContent = $buttonOptions['button_page_link'];
-								break;
-							case "external":
-								$setLink = 'external';
-								$linkContent = $buttonOptions['button_external_link'];
-								$externalLink = true;
-								break;
-							case "email":
-								$setLink = 'email';
-								$linkContent = $buttonOptions['button_email_address'];
-								$mailto = true;
-								break;
-							case "form":
-								$setLink = 'form';
-								$linkContent = '';
-								$linkClass = $buttonOptions['button_popup'];
-								break;
-							case "video":
-								$setLink = 'video-popup';
-								$linkContent = '';
-								$linkClass = $buttonOptions['button_popup'];
-								$videoIDButton = $buttonOptions['button_video_id'];
-								break;
-						}
-					endif; ?>
-					
-					
-				<? if($setLink){ ?>
-					<a class="btn-custom <?= $btnColor; ?> <? if($counter > 1):?>ml-4<? endif; ?> <? if($setLink=='form'): echo $linkClass; endif; ?>" href="<? if($setLink=='email'):?>mailto:<? endif; ?><? echo $linkContent; ?>" <? if($setLink=='external'):?>target="_blank"<? endif; ?> <? if($linkType == 'video'):?>data-toggle="modal" data-target="#videoModal<? echo $counter;?>" data-youtubeid="<? echo $videoIDButton; ?>"<? endif; ?>><? echo $buttonCopy; ?></a>
-				<? } 
-					$counter++;
-					endwhile; ?>
+				<? include $templatePartials . "add-button.php";?>
 			</div>
 		</div>
 	</div>

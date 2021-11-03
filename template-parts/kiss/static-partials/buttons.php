@@ -7,8 +7,10 @@ $buttonAlign = 'justify-content-start';
 
 if($optionsButton == true){
 	$buttonAlign = get_field($sepPrefix . '_button_button_alignment', 'options');
-} else {
+} elseif($isSubField || empty($isSubField)) {
 	$buttonAlign = get_sub_field($sepPrefix . '_button_button_alignment');
+} elseif(!$isSubField) {
+	$buttonAlign = get_field($sepPrefix . '_button_button_alignment');
 }
 
 
@@ -24,8 +26,10 @@ $linkSubject = '';
 
 if($optionsButton == true){
 	$buttonData = get_field($sepPrefix . '_button_button_options', 'options');
-} else {
+} elseif($isSubField || empty($isSubField)) {
 	$buttonData = get_sub_field($sepPrefix . '_button_button_options');
+} elseif(!$isSubField) {
+	$buttonData = get_field($sepPrefix . '_button_button_options');
 }
 
 if($buttonData):

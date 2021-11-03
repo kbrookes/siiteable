@@ -13,10 +13,11 @@
                 </div>
             </div>
             <div class="d-flex col-8 col-lg-9 justify-content-end align-items-center">
-                <a href="/quote" class="btn-custom secondary font-weight-bold mr-md-4"><i class="fad fa-chevron-left"></i> REQUEST A QUOTE</a>
-                <a href="https://linkedin.com/??" class="d-none d-md-flex text-white mr-4 nav-icon nav-icon__linkedin"><i class="fab fa-linkedin-in"></i></a>
-                <a href="/contact" class="d-none d-md-flex text-white mr-4 nav-icon nav-icon__email"><i class="fad fa-envelope"></i></a>
-                <a href="tel:0293323323" class="d-none d-md-flex text-white font-weight-bold nav-phone align-items-center"><i class="fad fa-phone-alt mr-md-1"></i><span class="d-none d-lg-inline"> 02 9332 3323</span></a>
+                <!--<a href="/quote" class="btn-custom secondary font-weight-bold mr-md-4"><i class="fad fa-chevron-left"></i> REQUEST A QUOTE</a>-->
+                <a href="tel:0293323323" class="d-none d-md-flex text-white font-weight-bold nav-phone align-items-center mr-4"><i class="fad fa-phone-alt mr-md-1"></i><span class="d-none d-lg-inline"> 02 9332 3323</span></a>
+                <a href="/contact" class="d-none d-md-flex text-white nav-icon nav-icon__email align-items-center font-weight-bold"><i class="fad fa-envelope"></i></a>
+                <a href="https://linkedin.com/??" class="d-none d-md-flex text-white ml-4 nav-icon nav-icon__linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <img src="http://obriensaus.com.au/wp-content/uploads/2021/10/certificates-header.png" class="best-prac-logos ml-3" alt="best practice certification" />
                 <button class="hamburger navbar-toggler navbar-toggler-right m-2 d-lg-none" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                       <svg class="hamburger-icon" viewBox="0 0 100 100">
                         <path class="line line-1 hamburger-icon__stroke" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />

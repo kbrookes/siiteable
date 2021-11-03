@@ -8,10 +8,11 @@ endif;
 // GET BUTTONS
 $addButton = get_sub_field($sepPrefix . '_button');
 $showButton = $addButton['add_button'];
-if($showButton != false){
+if($showButton == true && $cardType != 'get-post'){
     include $templatePartials . "/buttons-array.php";
-} elseif($showButton == false && $cardType == 'get-post') {
-    $showButton == true;
+} elseif($cardType == 'get-post') {
+    //$showButton == true;
+    $isSubField = 1;
     include $templatePartials . "/buttons-simple.php";
     $addButton = array(
         'button_alignment'    => $simpleButtonAlign,
@@ -90,7 +91,8 @@ endif;
                 <? include $cardPartials . "card_content.php"; ?>
             </div>
             <? endif; ?>
-            <? include $templatePartials . "add-button.php"; ?>
+            <? include $templatePartials . "add-button.php"; 
+            ?>
         </div>
         <? endif; ?>
     </div>

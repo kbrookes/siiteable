@@ -134,17 +134,21 @@ endif;
 		<div class="row justify-content-center">
 			<?php if(has_post_thumbnail()):?>
 			<div class="col-12 col-md-2 col-lg-4">
-				<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail(); ?>
-				</a>
-				<div class="client-logo">
-					<img src="<?= $clientLogo; ?>" class="img-fluid" alt="<?= $clientName; ?> Logo" />
+				<div class="client-images position-relative">
+					<a href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail(); ?>
+					</a>
+					<div class="client-logo">
+						<div class="client-logo__container rounded-circle p-4">
+							<img src="<?= $clientLogo; ?>" class="img-fluid" alt="<?= $clientName; ?> Logo" />
+						</div>
+					</div>
 				</div>
 			</div>
 			<?php endif; ?>
 			<div class="col-12 col-md-10 col-lg-8">
 				<div class="post-content">
-					<header class="entry-header d-flex justify-content-between align-items-center">
+					<header class="entry-header">
 						<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 						<p class="text-uppercase text-primary"><?= $clientIndustry . ' | ' . $clientLocation;; ?></p>
 					</header>
