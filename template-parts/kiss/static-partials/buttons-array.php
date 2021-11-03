@@ -1,7 +1,23 @@
 <?php 
 	$faType = get_theme_mod( 'fa_styles');
 	$buttonAlign = 'justify-content-start';
-	$buttonAlign = $addButton['button_alignment'];
+	switch($addButton['button_alignment']){
+		case 'left':
+			$buttonAlign = 'justify-content-start';
+			break;
+		case 'start':
+			$buttonAlign = 'justify-content-start';
+			break;
+		case 'center':
+			$buttonAlign = 'justify-content-center';
+			break;
+		case 'right':
+			$buttonAlign = 'justify-content-end';
+			break;
+		case 'end':
+			$buttonAlign = 'justify-content-end';
+			break;
+	}
 	$linkContent = '';
 	$linkType = '';
 	$externalLink = false;
